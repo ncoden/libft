@@ -1,4 +1,4 @@
-libft
+Libft
 =====
 
 Libft project of the 42 school.
