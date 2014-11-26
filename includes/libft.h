@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/26 12:34:33 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/26 16:08:46 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define ABS(X) ((X > 0) ? X : -(X))
 # define MAX(N, M) ((N > M) ? N : M)
 # define MIN(N, M) ((N < M) ? N : M)
+# define SIGN(X) ((X > 0) ? 1 : -1)
+# define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
 
 typedef struct	s_list
 {
