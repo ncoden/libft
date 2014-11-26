@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/24 21:48:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/26 12:34:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <mlx.h>
 
+# define BUFF_SIZE 512
 # define ABS(X) ((X > 0) ? X : -(X))
 # define MAX(N, M) ((N > M) ? N : M)
 # define MIN(N, M) ((N < M) ? N : M)
@@ -27,6 +29,26 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_fd
+{
+	int				fd;
+	int				start;
+	t_list			*lst;
+	struct s_fd		*next;
+}				t_fd;
+
+typedef struct	s_env
+{
+	void	*mlx;
+	void	*win;
+}				t_env;
+
+typedef struct	s_pos
+{
+	int		x;
+	int		y;
+}				t_pos;
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -139,5 +161,11 @@ t_list			*ft_lstlnrby(t_list **alst, void *content, size_t csize,
 					int (*f)(const void *, const void *, size_t, size_t));
 int				ft_min(int nbr1, int nbr2);
 int				ft_max(int nbr1, int nbr2);
+int				ft_readline(int const fd, char **line);
+
+t_pos			*ft_posnew(int x, int y);
+void			ft_posset(t_pos *pos, int x, int y);
+void			ft_printline(t_env *e, t_pos *from, t_pos *to, int color);
+void			ft_printsqr(t_env *e, t_pos *from, t_pos *to, int color);
 
 #endif
