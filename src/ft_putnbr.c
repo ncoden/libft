@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 08:41:58 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/18 11:58:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/26 12:40:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 		ft_putstr("-2147483648");
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-	}
-	else if (n <= 9)
-		ft_putchar('0' + n);
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putchar('0' + (n % 10));
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n = -n;
+		}
+		if (n <= 9)
+			ft_putchar('0' + n);
+		else
+		{
+			ft_putnbr(n / 10);
+			ft_putchar('0' + (n % 10));
+		}
 	}
 }
