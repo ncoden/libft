@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/11/25 16:00:17 by ncoden           ###   ########.fr        #
+#    Updated: 2014/11/26 14:44:27 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,26 +114,26 @@ SRC = ft_atoi.c\
 	ft_lstpushrby.c\
 	ft_lstlnrby.c\
 	ft_min.c\
-	ft_max.c
+	ft_max.c\
+	ft_readline.c\
+	ft_posnew.c\
+	ft_posset.c\
+	ft_printline.c\
+	ft_printsqr.c
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 
 all: $(NAME)
-
 $(NAME): build $(OBJ)
-		@ar rc $(NAME) $(OBJ)
-		@ranlib $(NAME)
-
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 build:
-		@mkdir -p $(OBJDIR)
-
+	@mkdir -p $(OBJDIR)
 clean:
-		@rm -f $(OBJ)
-
+	@rm -f $(OBJ)
 fclean: clean
-		@rm -f $(NAME)
-
+	@rm -f $(NAME)
 re: fclean all
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
