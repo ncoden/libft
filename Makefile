@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/11/26 14:44:27 by ncoden           ###   ########.fr        #
+#    Updated: 2014/11/27 18:08:47 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,15 @@ SRC = ft_atoi.c\
 	ft_posnew.c\
 	ft_posset.c\
 	ft_printline.c\
-	ft_printsqr.c
+	ft_printsqr.c\
+	ft_vecnew.c\
+	ft_vecset.c\
+	ft_printvec.c\
+	ft_lstlen.c\
+	ft_lsttotab.c\
+	ft_tabtolst.c\
+	ft_readtolst.c\
+	ft_readtotab.c
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/26 16:08:46 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/27 18:08:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <mlx.h>
+# include <math.h>
 
 # define BUFF_SIZE 512
 # define ABS(X) ((X > 0) ? X : -(X))
@@ -51,6 +52,13 @@ typedef struct	s_pos
 	int		x;
 	int		y;
 }				t_pos;
+
+typedef struct	s_vec
+{
+	t_pos	pos;
+	int		len;
+	double	ang;
+}				t_vec;
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -164,10 +172,19 @@ t_list			*ft_lstlnrby(t_list **alst, void *content, size_t csize,
 int				ft_min(int nbr1, int nbr2);
 int				ft_max(int nbr1, int nbr2);
 int				ft_readline(int const fd, char **line);
+int				ft_lstlen(t_list *lst);
+void			**ft_lsttotab(t_list *lst);
+t_list			*ft_tabtolst(void **);
+t_list			*ft_readtolst(int fd);
+char			**ft_readtotab(int fd);
 
 t_pos			*ft_posnew(int x, int y);
 void			ft_posset(t_pos *pos, int x, int y);
 void			ft_printline(t_env *e, t_pos *from, t_pos *to, int color);
 void			ft_printsqr(t_env *e, t_pos *from, t_pos *to, int color);
+
+t_vec			*ft_vecnew(t_pos *pos, int len, double ang);
+void			ft_vecset(t_vec *vec, t_pos *pos, int len, double ang);
+void			ft_printvec(t_env *e, t_vec *vec, int color);
 
 #endif
