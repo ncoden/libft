@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 13:28:07 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/07 14:15:03 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/28 12:40:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static char		**alloc_tab(const char *s, char c)
 	i = 0;
 	word_found = 0;
 	word_number = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c && word_found == 1)

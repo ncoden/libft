@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:02:31 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/27 13:40:21 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/28 11:51:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vec		*ft_vecnew(t_pos *pos, int len, double ang)
 {
-	t_vec	 *new;
+	t_vec	*new;
 
 	if (!(new = (t_vec *)malloc(sizeof(t_vec))))
 		return (NULL);
