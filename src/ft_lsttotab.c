@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 15:28:57 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/27 18:07:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/28 19:11:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	**ft_lsttotab(t_list *lst)
 				next = lst->next;
 				free(lst);
 				lst = next;
+				i++;
 			}
 			tab[i] = NULL;
 		}
