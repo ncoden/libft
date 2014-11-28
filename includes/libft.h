@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/27 18:08:13 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/28 19:13:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,9 @@ void			**ft_lsttotab(t_list *lst);
 t_list			*ft_tabtolst(void **);
 t_list			*ft_readtolst(int fd);
 char			**ft_readtotab(int fd);
+char			**ft_strdiv(char *s, char c);
+size_t			ft_memlen(void *mem, size_t memsize);
+size_t			ft_tablen(void *tab);
 
 t_pos			*ft_posnew(int x, int y);
 void			ft_posset(t_pos *pos, int x, int y);

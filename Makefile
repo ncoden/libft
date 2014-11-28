@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/11/27 18:08:47 by ncoden           ###   ########.fr        #
+#    Updated: 2014/11/28 19:11:38 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,10 +127,14 @@ SRC = ft_atoi.c\
 	ft_lsttotab.c\
 	ft_tabtolst.c\
 	ft_readtolst.c\
-	ft_readtotab.c
+	ft_readtotab.c\
+	ft_tablen.c\
+	ft_memlen.c\
+	ft_strdiv.c
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+INCS = $(addprefix -I , $(INCDIR))
 
 all: $(NAME)
 $(NAME): build $(OBJ)
@@ -145,5 +149,5 @@ fclean: clean
 re: fclean all
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-		@$(CC) -c -o $@ $< -I $(INCDIR) $(CFLAGS)
+		@$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
 
