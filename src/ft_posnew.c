@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 11:45:11 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/26 12:40:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/28 11:51:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_pos		*ft_posnew(int x, int y)
 {
-	t_pos	 *new;
+	t_pos	*new;
 
 	if (!(new = (t_pos *)malloc(sizeof(t_pos))))
 		return (NULL);
