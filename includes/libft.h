@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/28 19:13:07 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/11/29 23:06:25 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ typedef struct	s_fd
 	struct s_fd		*next;
 }				t_fd;
 
+typedef struct	s_err
+{
+	int		err;
+	char	*mess;
+}				t_err;
+
 typedef struct	s_env
 {
 	void	*mlx;
@@ -53,12 +59,47 @@ typedef struct	s_pos
 	int		y;
 }				t_pos;
 
+typedef struct	s_size2d
+{
+	size_t	x;
+	size_t	y;
+}				t_size2d;
+
 typedef struct	s_vec
 {
 	t_pos	pos;
 	int		len;
 	double	ang;
 }				t_vec;
+
+typedef struct	s_pos3d
+{
+	int		x;
+	int		y;
+	int		z;
+}				t_pos3d;
+
+typedef struct	s_ang3d
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_ang3d;
+
+typedef struct	s_cam
+{
+	t_pos3d		pos;
+	t_ang3d		ang;
+	int			d;
+	t_size2d	view;
+}				t_cam;
+
+typedef struct	s_env3d
+{
+	void	*mlx;
+	void	*win;
+	t_cam	*cam;
+}				t_env3d;
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -174,20 +215,39 @@ int				ft_max(int nbr1, int nbr2);
 int				ft_readline(int const fd, char **line);
 int				ft_lstlen(t_list *lst);
 void			**ft_lsttotab(t_list *lst);
-t_list			*ft_tabtolst(void **);
+t_list			*ft_tabtolst(void **tab);
 t_list			*ft_readtolst(int fd);
 char			**ft_readtotab(int fd);
 char			**ft_strdiv(char *s, char c);
 size_t			ft_memlen(void *mem, size_t memsize);
 size_t			ft_tablen(void *tab);
+double			ft_degtorad(double deg);
+double			ft_radtodeg(double rad);
+t_err			*ft_errnew(int err, char *mess);
 
 t_pos			*ft_posnew(int x, int y);
 void			ft_posset(t_pos *pos, int x, int y);
 void			ft_printline(t_env *e, t_pos *from, t_pos *to, int color);
 void			ft_printsqr(t_env *e, t_pos *from, t_pos *to, int color);
+t_size2d		*ft_size2dnew(size_t x, size_t y);
+void			ft_size2dset(t_size2d *size2d, size_t x, size_t y);
+t_env			*ft_envnew(void *mlx, int size_x, int size_y, char *title);
 
 t_vec			*ft_vecnew(t_pos *pos, int len, double ang);
 void			ft_vecset(t_vec *vec, t_pos *pos, int len, double ang);
 void			ft_printvec(t_env *e, t_vec *vec, int color);
+
+t_pos3d			*ft_pos3dnew(int x, int y, int z);
+void			ft_pos3dset(t_pos3d *pos3d, int x, int y, int z);
+t_ang3d			*ft_ang3dnew(double x, double y, double z);
+void			ft_ang3dset(t_ang3d *ang3d, double x, double y, double z);
+t_cam			*ft_camnew(t_pos3d *pos, t_ang3d *ang, int d, t_size2d *view);
+void			ft_camset(t_cam *cam, t_pos3d *pos, t_ang3d *ang, int d);
+void			ft_camsetview(t_cam *cam, int size_x, int size_y);
+t_env3d			*ft_env3dnew(void *mlx, t_cam *cam, char *title);
+void			ft_env3dset(t_env3d *env3d, void *mlx, t_cam *cam, char *title);
+void			ft_print3dline(t_env3d *e, t_pos3d *from, t_pos3d *to,
+					int color);
+t_pos			*ft_3dto2dpos(t_env3d *e, t_pos3d *pos);
 
 #endif
