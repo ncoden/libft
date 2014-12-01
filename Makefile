@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/11/29 23:06:30 by ncoden           ###   ########.fr        #
+#    Updated: 2014/12/01 19:29:27 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRC = ft_3dto2dpos.c\
 	ft_bzero.c\
 	ft_camnew.c\
 	ft_camset.c\
-	ft_camsetview.c\
 	ft_degtorad.c\
 	ft_env3dnew.c\
 	ft_env3dset.c\

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/29 23:06:25 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/01 19:04:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,11 +243,11 @@ t_ang3d			*ft_ang3dnew(double x, double y, double z);
 void			ft_ang3dset(t_ang3d *ang3d, double x, double y, double z);
 t_cam			*ft_camnew(t_pos3d *pos, t_ang3d *ang, int d, t_size2d *view);
 void			ft_camset(t_cam *cam, t_pos3d *pos, t_ang3d *ang, int d);
-void			ft_camsetview(t_cam *cam, int size_x, int size_y);
-t_env3d			*ft_env3dnew(void *mlx, t_cam *cam, char *title);
+t_env3d			*ft_env3dnew(void *mlx, int size_x, int size_y, char *title);
 void			ft_env3dset(t_env3d *env3d, void *mlx, t_cam *cam, char *title);
 void			ft_print3dline(t_env3d *e, t_pos3d *from, t_pos3d *to,
 					int color);
-t_pos			*ft_3dto2dpos(t_env3d *e, t_pos3d *pos);
+void			ft_3dto2dpos(t_env3d *e, t_pos3d *pos3d, t_pos *pos2d);
+
 
 #endif
