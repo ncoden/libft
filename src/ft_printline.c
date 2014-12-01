@@ -6,12 +6,12 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 18:48:21 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/30 15:24:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/01 19:30:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-	#include <stdio.h>
+
 void		ft_printline(t_env *e, t_pos *from, t_pos *to, int color)
 {
 	int		len;
