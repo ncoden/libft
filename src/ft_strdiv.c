@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:52:37 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/28 19:11:47 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/01 19:31:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void			make_tab(char **tab, char *s, char c)
 	size = 0;
 	while (*s != '\0')
 	{
-		if (*s == c  && size > 0)
+		if (*s == c && size > 0)
 		{
 			*s = '\0';
 			tab[i] = s - size;
