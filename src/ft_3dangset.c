@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ang3dset.c                                      :+:      :+:    :+:   */
+/*   ft_3dangset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 15:06:52 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/29 15:10:15 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 15:42:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_ang3dset(t_ang3d *ang3d, double x, double y, double z)
+void		ft_3dangset(t_3dang *ang, double x, double y, double z)
 {
-	ang3d->x = x;
-	ang3d->y = y;
-	ang3d->z = z;
+	ang->x = x;
+	ang->y = y;
+	ang->z = z;
 }

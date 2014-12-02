@@ -6,13 +6,13 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 18:48:21 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 19:30:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 14:56:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_printline(t_env *e, t_pos *from, t_pos *to, int color)
+void		ft_printline(t_env *e, t_2dpos *from, t_2dpos *to, int color)
 {
 	int		len;
 	double	xang;

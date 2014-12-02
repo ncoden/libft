@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_end3dnew.c                                      :+:      :+:    :+:   */
+/*   ft_3dendnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 19:24:01 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 19:15:07 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 15:21:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static inline void	clear(t_env3d *e)
+static inline void	clear(t_3denv *e)
 {
 	if (e->win)
 		mlx_destroy_window(e->mlx, e->win);
@@ -22,22 +22,22 @@ static inline void	clear(t_env3d *e)
 		free(e);
 }
 
-t_env3d				*ft_env3dnew(void *mlx, int size_x, int size_y, char *title)
+t_3denv				*ft_3denvnew(void *mlx, size_t x, size_t y, char *title)
 {
-	t_env3d		*e;
+	t_3denv		*e;
 
-	if ((e = (t_env3d *)malloc(sizeof(t_env3d))))
+	if ((e = (t_3denv *)malloc(sizeof(t_3denv))))
 	{
 		if (mlx == NULL)
 			mlx = mlx_init();
 		if (mlx != NULL)
 		{
 			e->mlx = mlx;
-			if ((e->win = mlx_new_window(e->mlx, size_x, size_y, title)))
+			if ((e->win = mlx_new_window(e->mlx, x, y, title)))
 			{
-				if ((e->cam = ft_camnew(NULL, NULL, 0, NULL)))
+				if ((e->cam = ft_3dcamnew(NULL, NULL, 0, NULL)))
 				{
-					ft_size2dset(&e->cam->view, size_x, size_y);
+					ft_2dsizeset(&e->cam->view, x, y);
 					return (e);
 				}
 			}

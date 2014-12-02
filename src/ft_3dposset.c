@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pos3dset.c                                      :+:      :+:    :+:   */
+/*   ft_3dposset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 15:06:52 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/29 16:09:05 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 14:52:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_pos3dset(t_pos3d *pos3d, int x, int y, int z)
+void		ft_3dposset(t_3dpos *pos, int x, int y, int z)
 {
-	if (pos3d)
+	if (pos)
 	{
-		pos3d->x = x;
-		pos3d->y = y;
-		pos3d->z = z;
+		pos->x = x;
+		pos->y = y;
+		pos->z = z;
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 19:08:50 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 17:10:45 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 15:22:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_env		*ft_envnew(void *mlx, int size_x, int size_y, char *title)
+t_env		*ft_envnew(void *mlx, size_t x, size_t y, char *title)
 {
 	t_env	*new;
 
@@ -24,7 +24,7 @@ t_env		*ft_envnew(void *mlx, int size_x, int size_y, char *title)
 		if (!(new = (t_env *)malloc(sizeof(t_env))))
 			return (NULL);
 		new->mlx = mlx;
-		if (!(new->win = mlx_new_window(mlx, size_x, size_y, title)))
+		if (!(new->win = mlx_new_window(mlx, x, y, title)))
 		{
 			free(new);
 			return (NULL);

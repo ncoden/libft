@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size2dset.c                                     :+:      :+:    :+:   */
+/*   ft_2dsizeset.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/01 16:30:24 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 16:56:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 14:54:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_size2dset(t_size2d *size2d, size_t x, size_t y)
+void		ft_2dsizeset(t_2dsize *size, size_t x, size_t y)
 {
-	if (size2d)
+	if (size)
 	{
-		size2d->x = x;
-		size2d->y = y;
+		size->x = x;
+		size->y = y;
 	}
 }

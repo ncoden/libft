@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_posnew.c                                        :+:      :+:    :+:   */
+/*   ft_2dposnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 11:45:11 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/28 11:51:21 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 15:17:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_pos		*ft_posnew(int x, int y)
+t_2dpos		*ft_2dposnew(int x, int y)
 {
-	t_pos	*new;
+	t_2dpos	*new;
 
-	if (!(new = (t_pos *)malloc(sizeof(t_pos))))
+	if (!(new = (t_2dpos *)malloc(sizeof(t_2dpos))))
 		return (NULL);
 	new->x = x;
 	new->y = y;

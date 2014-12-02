@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 19:04:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/02 15:08:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,53 +53,53 @@ typedef struct	s_env
 	void	*win;
 }				t_env;
 
-typedef struct	s_pos
+typedef struct	s_2dpos
 {
 	int		x;
 	int		y;
-}				t_pos;
+}				t_2dpos;
 
-typedef struct	s_size2d
+typedef struct	s_2dsize
 {
 	size_t	x;
 	size_t	y;
-}				t_size2d;
+}				t_2dsize;
 
 typedef struct	s_vec
 {
-	t_pos	pos;
+	t_2dpos	pos;
 	int		len;
 	double	ang;
 }				t_vec;
 
-typedef struct	s_pos3d
+typedef struct	s_3dpos
 {
 	int		x;
 	int		y;
 	int		z;
-}				t_pos3d;
+}				t_3dpos;
 
-typedef struct	s_ang3d
+typedef struct	s_3dang
 {
 	double	x;
 	double	y;
 	double	z;
-}				t_ang3d;
+}				t_3dang;
 
-typedef struct	s_cam
+typedef struct	s_3dcam
 {
-	t_pos3d		pos;
-	t_ang3d		ang;
+	t_3dpos		pos;
+	t_3dang		ang;
 	int			d;
-	t_size2d	view;
-}				t_cam;
+	t_2dsize	view;
+}				t_3dcam;
 
-typedef struct	s_env3d
+typedef struct	s_3denv
 {
 	void	*mlx;
 	void	*win;
-	t_cam	*cam;
-}				t_env3d;
+	t_3dcam	*cam;
+}				t_3denv;
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
@@ -225,29 +225,26 @@ double			ft_degtorad(double deg);
 double			ft_radtodeg(double rad);
 t_err			*ft_errnew(int err, char *mess);
 
-t_pos			*ft_posnew(int x, int y);
-void			ft_posset(t_pos *pos, int x, int y);
-void			ft_printline(t_env *e, t_pos *from, t_pos *to, int color);
-void			ft_printsqr(t_env *e, t_pos *from, t_pos *to, int color);
-t_size2d		*ft_size2dnew(size_t x, size_t y);
-void			ft_size2dset(t_size2d *size2d, size_t x, size_t y);
-t_env			*ft_envnew(void *mlx, int size_x, int size_y, char *title);
+t_2dpos			*ft_2dposnew(int x, int y);
+void			ft_2dposset(t_2dpos *pos, int x, int y);
+void			ft_printline(t_env *e, t_2dpos *from, t_2dpos *to, int color);
+void			ft_printsqr(t_env *e, t_2dpos *from, t_2dpos *to, int color);
+t_2dsize		*ft_2dsizenew(size_t x, size_t y);
+void			ft_2dsizeset(t_2dsize *size, size_t x, size_t y);
+t_env			*ft_envnew(void *mlx, size_t x, size_t y, char *title);
 
-t_vec			*ft_vecnew(t_pos *pos, int len, double ang);
-void			ft_vecset(t_vec *vec, t_pos *pos, int len, double ang);
+t_vec			*ft_vecnew(t_2dpos *pos, int len, double ang);
+void			ft_vecset(t_vec *vec, t_2dpos *pos, int len, double ang);
 void			ft_printvec(t_env *e, t_vec *vec, int color);
 
-t_pos3d			*ft_pos3dnew(int x, int y, int z);
-void			ft_pos3dset(t_pos3d *pos3d, int x, int y, int z);
-t_ang3d			*ft_ang3dnew(double x, double y, double z);
-void			ft_ang3dset(t_ang3d *ang3d, double x, double y, double z);
-t_cam			*ft_camnew(t_pos3d *pos, t_ang3d *ang, int d, t_size2d *view);
-void			ft_camset(t_cam *cam, t_pos3d *pos, t_ang3d *ang, int d);
-t_env3d			*ft_env3dnew(void *mlx, int size_x, int size_y, char *title);
-void			ft_env3dset(t_env3d *env3d, void *mlx, t_cam *cam, char *title);
-void			ft_print3dline(t_env3d *e, t_pos3d *from, t_pos3d *to,
+t_3dpos			*ft_3dposnew(int x, int y, int z);
+void			ft_3dposset(t_3dpos *pos, int x, int y, int z);
+t_3dang			*ft_3dangnew(double x, double y, double z);
+void			ft_3dangset(t_3dang *ang, double x, double y, double z);
+t_3dcam			*ft_3dcamnew(t_3dpos *pos, t_3dang *ang, int d, t_2dsize *view);
+t_3denv			*ft_3denvnew(void *mlx, size_t x, size_t y, char *title);
+void			ft_print3dline(t_3denv *e, t_3dpos *from, t_3dpos *to,
 					int color);
-void			ft_3dto2dpos(t_env3d *e, t_pos3d *pos3d, t_pos *pos2d);
-
+void			ft_3dto2dpos(t_3denv *e, t_3dpos *pos3d, t_2dpos *pos2d);
 
 #endif
