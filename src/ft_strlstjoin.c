@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:34:53 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/07 17:03:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/03 16:41:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strlstjoin(t_list *lst)
 	lst_first = lst;
 	while (lst != NULL)
 	{
-		size += lst->content_size - 1;
+		size += lst->size - 1;
 		lst = lst->next;
 	}
 	lst = lst_first;
@@ -32,7 +32,7 @@ char	*ft_strlstjoin(t_list *lst)
 	while (lst != NULL)
 	{
 		ft_strcpy(&(str[size]), lst->content);
-		size += lst->content_size - 1;
+		size += lst->size - 1;
 		lst = lst->next;
 	}
 	return (str);

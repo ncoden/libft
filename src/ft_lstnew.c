@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 15:38:29 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/20 19:02:18 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/03 16:37:12 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void const *content, size_t size)
 {
 	t_list	*lst;
 
@@ -21,14 +21,14 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (content != NULL)
 		{
-			if (!(lst->content = ft_memdup(content, content_size)))
+			if (!(lst->content = ft_memdup(content, size)))
 				return (NULL);
-			lst->content_size = content_size;
+			lst->size = size;
 		}
 		else
 		{
 			lst->content = NULL;
-			lst->content_size = 0;
+			lst->size = 0;
 		}
 		lst->next = NULL;
 	}

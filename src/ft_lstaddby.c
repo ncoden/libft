@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/20 19:21:39 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/21 16:59:57 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/03 16:34:08 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_lstaddby(t_list **alst, t_list *new,
 		view = *alst;
 		view_prev = NULL;
 		while (view != NULL && (*f)(new->content, view->content,
-			new->content_size, view->content_size) <= 0)
+			new->size, view->size) <= 0)
 		{
 			view_prev = view;
 			view = view->next;
