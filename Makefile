@@ -40,10 +40,10 @@ SRC = ft_2dposnew.c\
 	  ft_isdigit.c\
 	  ft_isprint.c\
 	  ft_itoa.c\
-	  ft_lstadd.c\
+	  ft_lstaddfront.c\
 	  ft_lstaddafter.c\
 	  ft_lstaddby.c\
-	  ft_lstaddend.c\
+	  ft_lstaddback.c\
 	  ft_lstaddrby.c\
 	  ft_lstccpy_tostr.c\
 	  ft_lstcpy_tostr.c\

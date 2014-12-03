@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/02 16:21:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/03 17:34:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,40 @@
 # define SIGN(X) ((X > 0) ? 1 : -1)
 # define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
 
+typedef	enum	e_bool
+{
+	TRUE = 0,
+	FALSE = 1,
+}				t_bool;
+typedef enum	e_type
+{
+	CHAR,
+	INT,
+	SIZE_T,
+	FLOAT,
+	DOUBLE,
+	STR,
+	MEM,
+	T_2DPOS,
+	T_2DLINE,
+	T_2DSQR,
+	T_3DPOS,
+	T_3DLINE,
+	T_3DCUBE
+}				t_type;
+
 typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
+	size_t			size;
 	struct s_list	*next;
 }				t_list;
+typedef struct	s_tlist
+{
+	void			*content;
+	t_type			type;
+	struct s_list	*next;
+}				t_tlist;
 
 typedef struct	s_fd
 {
@@ -40,7 +68,6 @@ typedef struct	s_fd
 	t_list			*lst;
 	struct s_fd		*next;
 }				t_fd;
-
 typedef struct	s_err
 {
 	int		err;
@@ -58,19 +85,23 @@ typedef struct	s_2dpos
 	int		x;
 	int		y;
 }				t_2dpos;
-
 typedef struct	s_2dsize
 {
 	size_t	x;
 	size_t	y;
 }				t_2dsize;
-
 typedef struct	s_vec
 {
 	t_2dpos	pos;
 	int		len;
 	double	ang;
 }				t_vec;
+typedef struct	s_2dline
+{
+	t_2dpos	from;
+	t_2dpos to;
+	int		color;
+}				t_2dline;
 
 typedef struct	s_3dpos
 {
@@ -78,14 +109,12 @@ typedef struct	s_3dpos
 	int		y;
 	int		z;
 }				t_3dpos;
-
 typedef struct	s_3dang
 {
 	double	x;
 	double	y;
 	double	z;
 }				t_3dang;
-
 typedef struct	s_3dcam
 {
 	t_3dpos		pos;
@@ -93,12 +122,12 @@ typedef struct	s_3dcam
 	int			d;
 	t_2dsize	view;
 }				t_3dcam;
-
 typedef struct	s_3denv
 {
 	void	*mlx;
 	void	*win;
 	t_3dcam	*cam;
+	t_tlist	*content;
 }				t_3denv;
 
 int				ft_atoi(const char *str);
@@ -180,34 +209,34 @@ void			ft_putendl(const char *s);
 void			ft_putendl_fd(const char *s, int fd);
 void			ft_putspace(size_t len);
 
-void			ft_lstadd(t_list **alst, t_list *new);
-void			ft_lstaddend(t_list **alst, t_list *new);
+void			ft_lstaddfront(t_list **alst, t_list *new);
+void			ft_lstaddback(t_list **alst, t_list *new);
 void			ft_lstaddafter(t_list *lst, t_list *new);
 void			ft_lstaddby(t_list **alst, t_list *new,
 					int (*f)(const void *, const void *, size_t, size_t));
 void			ft_lstaddrby(t_list **alst, t_list *new,
 					int (*f)(const void *, const void *, size_t, size_t));
 
-t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstnew(void const *content, size_t size);
 t_list			*ft_lstpushfront(t_list **alst, const void *content,
-					size_t csize);
+					size_t size);
 t_list			*ft_lstpushback(t_list **alst, const void *content,
-					size_t csize);
+					size_t size);
 t_list			*ft_lstpushafter(t_list *lst, const void *content,
-					size_t csize);
-t_list			*ft_lstpushby(t_list **alst, void *content, size_t csize,
+					size_t size);
+t_list			*ft_lstpushby(t_list **alst, void *content, size_t size,
 					int (*f)(const void *, const void *, size_t, size_t));
-t_list			*ft_lstpushrby(t_list **alst, void *content, size_t csize,
+t_list			*ft_lstpushrby(t_list **alst, void *content, size_t size,
 					int (*f)(const void *, const void *, size_t, size_t));
 
-t_list			*ft_lstln(void *content, size_t content_size);
-t_list			*ft_lstlnfront(t_list **alst, void *content, size_t csize);
-t_list			*ft_lstlnback(t_list **alst, void *content, size_t csize);
+t_list			*ft_lstln(void *content, size_t size);
+t_list			*ft_lstlnfront(t_list **alst, void *content, size_t size);
+t_list			*ft_lstlnback(t_list **alst, void *content, size_t size);
 t_list			*ft_lstlnafter(t_list *lst, void *content,
-					size_t content_size);
-t_list			*ft_lstlnby(t_list **alst, void *content, size_t csize,
+					size_t size);
+t_list			*ft_lstlnby(t_list **alst, void *content, size_t size,
 					int (*f)(const void *, const void *, size_t, size_t));
-t_list			*ft_lstlnrby(t_list **alst, void *content, size_t csize,
+t_list			*ft_lstlnrby(t_list **alst, void *content, size_t size,
 					int (*f)(const void *, const void *, size_t, size_t));
 
 char			*ft_lstcpy_tostr(t_list *lst, char *dst, size_t n);

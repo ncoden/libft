@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_tlstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 17:40:48 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:34:08 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/03 16:44:12 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/03 17:11:10 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_tlist		*ft_tlstnew(void *content, t_type type)
 {
-	if (alst != NULL && new != NULL)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	t_tlist		*new;
+
+	if (!(new = (t_tlist *)malloc(sizeof(t_list))))
+		return (NULL);
+	new->content = content;
+	new->type = type;
+	new->next = NULL;
+	return (new);
 }

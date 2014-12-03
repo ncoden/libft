@@ -31,6 +31,6 @@ void		ft_lstaddrby(t_list **alst, t_list *new,
 		if (view_prev != NULL)
 			ft_lstaddafter(view_prev, new);
 		else
-			ft_lstadd(alst, new);
+			ft_lstaddfront(alst, new);
 	}
 }

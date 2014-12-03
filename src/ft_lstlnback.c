@@ -21,7 +21,7 @@ t_list	*ft_lstlnback(t_list **alst, void *content, size_t csize)
 		new_lst = ft_lstln(content, csize);
 		if (new_lst == NULL)
 			return (NULL);
-		ft_lstaddend(alst, new_lst);
+		ft_lstaddback(alst, new_lst);
 		return (new_lst);
 	}
 	return (NULL);

@@ -52,7 +52,7 @@ static int		read_to_lst(t_fd *fdatas)
 	new_lst = ft_lstln(buffer, BUFF_SIZE);
 	if (new_lst == NULL)
 		return (-1);
-	ft_lstaddend(&(fdatas->lst), new_lst);
+	ft_lstaddback(&(fdatas->lst), new_lst);
 	return (read(fdatas->fd, (char *)(new_lst->content), BUFF_SIZE));
 }
 

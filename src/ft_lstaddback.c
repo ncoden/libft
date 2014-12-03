@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushfront.c                                  :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 12:17:52 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:37:12 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/07 10:27:10 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/03 17:36:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstpushfront(t_list **alst, const void *content, size_t csize)
+void	ft_lstaddback(t_list **alst, t_list *new)
 {
-	t_list	*new_lst;
+	t_list	*view;
 
-	if (alst != NULL)
+	if (alst != NULL && new != NULL)
 	{
-		new_lst = ft_lstnew(content, csize);
-		if (new_lst == NULL)
-			return (NULL);
-		ft_lstaddfront(alst, new_lst);
-		return (new_lst);
+		view = *alst;
+		if (view != NULL)
+		{
+			while (view->next != NULL)
+				view = view->next;
+			view->next = new;
+		}
+		else
+			*alst = new;
 	}
-	return (NULL);
 }
