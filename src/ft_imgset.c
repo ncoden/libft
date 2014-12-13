@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstnew.c                                       :+:      :+:    :+:   */
+/*   ft_imgset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 16:44:12 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/08 14:57:36 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/05 14:35:26 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/08 18:15:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlist		*ft_tlstnew(void *content, t_type type)
+t_bool			ft_imgset(t_img *img, void *mlx, size_t x, size_t y)
 {
-	t_tlist		*new;
+	int		bpp;
 
-	if (!(new = (t_tlist *)malloc(sizeof(t_list))))
-		return (NULL);
-	new->content = content;
-	new->type = type;
-	new->next = NULL;
-	return (new);
+	if (mlx)
+	{
+		if ((img->data = mlx_new_image(mlx, x, y)))
+			if ((img->buff = mlx_get_data_addr(img->data, &bpp,
+					(int *)&img->size_x, (int *)&img->endian)))
+				return (1);
+		ft_imgclr(img, mlx);
+	}
+	return (0);
 }

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		ft_printvec(t_env *e, t_vec *vec, int color)
+void		ft_printvec(t_2denv *e, t_vec *vec, int color)
 {
 	int		len;
 	double	xang;

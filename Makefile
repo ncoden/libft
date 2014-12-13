@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/12/02 14:45:49 by ncoden           ###   ########.fr        #
+#    Updated: 2014/12/09 00:35:59 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,32 +18,43 @@ SRCDIR = src
 OBJDIR = obj
 INCDIR = includes
 
-SRC = ft_2dposnew.c\
+SRC = ft_2denvnew.c\
+	  ft_2denvupdate.c\
+	  ft_2dposnew.c\
 	  ft_2dposset.c\
 	  ft_2dsizenew.c\
 	  ft_2dsizeset.c\
 	  ft_3dangnew.c\
 	  ft_3dangset.c\
 	  ft_3dcamnew.c\
+	  ft_3denvdel.c\
 	  ft_3denvnew.c\
+	  ft_3denvprint.c\
+	  ft_3denvpush.c\
+	  ft_3denvupdate.c\
+	  ft_3dlinenew.c\
 	  ft_3dposnew.c\
 	  ft_3dposset.c\
 	  ft_3dto2dpos.c\
 	  ft_atoi.c\
 	  ft_bzero.c\
 	  ft_degtorad.c\
-	  ft_envnew.c\
 	  ft_errnew.c\
+	  ft_getendian.c\
+	  ft_imgclr.c\
+	  ft_imgdel.c\
+	  ft_imgnew.c\
+	  ft_imgset.c\
 	  ft_isalnum.c\
 	  ft_isalpha.c\
 	  ft_isascii.c\
 	  ft_isdigit.c\
 	  ft_isprint.c\
 	  ft_itoa.c\
-	  ft_lstaddfront.c\
 	  ft_lstaddafter.c\
-	  ft_lstaddby.c\
 	  ft_lstaddback.c\
+	  ft_lstaddby.c\
+	  ft_lstaddfront.c\
 	  ft_lstaddrby.c\
 	  ft_lstccpy_tostr.c\
 	  ft_lstcpy_tostr.c\
@@ -84,6 +95,9 @@ SRC = ft_2dposnew.c\
 	  ft_min.c\
 	  ft_nbrlen.c\
 	  ft_power.c\
+	  ft_print2dline.c\
+	  ft_print2dline_left.c\
+	  ft_print2dline_right.c\
 	  ft_print3dline.c\
 	  ft_printline.c\
 	  ft_printsqr.c\
@@ -141,10 +155,15 @@ SRC = ft_2dposnew.c\
 	  ft_strtrim.c\
 	  ft_tablen.c\
 	  ft_tabtolst.c\
+	  ft_tlstaddback.c\
+	  ft_tlstaddfront.c\
+	  ft_tlstnew.c\
+	  ft_tlstpushback.c\
+	  ft_tlstpushfront.c\
 	  ft_tolower.c\
 	  ft_toupper.c\
 	  ft_vecnew.c\
-	  ft_vecset.c
+	  ft_vecset.c\
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))

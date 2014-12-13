@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 18:34:52 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/25 22:58:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/09 15:28:36 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,14 @@ static char		*make_str(t_fd *fdatas, int const line_end)
 	return (str);
 }
 
-int				ft_readline(int const fd, char **line)
+int				ft_readline(int fd, char **line)
 {
 	int				line_end;
 	int				can_read;
 	t_fd			*fdatas;
 	static t_fd		*flst;
 
-	fdatas = get_fdatas(&flst, fd);
-	if (fdatas == NULL)
+	if (!(fdatas = get_fdatas(&flst, fd)))
 		return (-1);
 	if (fdatas->start == -1)
 	{
@@ -124,11 +123,11 @@ int				ft_readline(int const fd, char **line)
 	}
 	line_end = get_line_end(fdatas, &can_read);
 	*line = make_str(fdatas, line_end);
-	if (can_read == 0)
+	if (line_end < BUFF_SIZE && can_read == 0)
 		fdatas->start = -1;
-	if (can_read == -1)
-		return (-1);
-	if (line == NULL)
+	if (line_end == BUFF_SIZE && can_read == 0)
+		return (0);
+	if (can_read == -1 || line == NULL)
 		return (-1);
 	return (1);
 }

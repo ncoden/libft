@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		ft_printline(t_env *e, t_2dpos *from, t_2dpos *to, int color)
+void		ft_printline(t_2denv *e, t_2dpos *from, t_2dpos *to, int color)
 {
 	int		len;
 	double	xang;

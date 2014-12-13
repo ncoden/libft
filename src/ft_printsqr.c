@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void		ft_printsqr(t_env *e, t_2dpos *from, t_2dpos *to, int color)
+void		ft_printsqr(t_2denv *e, t_2dpos *from, t_2dpos *to, int color)
 {
 	int		x;
 	int		y;

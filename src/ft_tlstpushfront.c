@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_3dendnew.c                                      :+:      :+:    :+:   */
+/*   ft_tlstpushfront.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/29 19:24:01 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/05 18:38:36 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/03 17:47:09 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/03 19:30:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_3denv				*ft_3denvnew(void *mlx, size_t x, size_t y, char *title)
+t_tlist		*ft_tlstpushfront(t_tlist **alst, void *content, t_type type)
 {
-	t_3denv		*e;
+	t_tlist	*new;
 
-	if ((e = (t_3denv *)malloc(sizeof(t_3denv))))
-		if (mlx || (mlx = mlx_init()))
-		{
-			e->mlx = mlx;
-			if ((e->win = mlx_new_window(mlx, x, y, title)))
-				if (ft_imgset(&e->img, mlx, x, y))
-					if ((e->cam = ft_3dcamnew(NULL, NULL, 0, NULL)))
-					{
-						ft_2dsizeset(&e->cam->view, x, y);
-						return (e);
-					}
-		}
-	ft_3denvdel(e);
+	if (alst != NULL)
+	{
+		if (!(new = ft_tlstnew(content, type)))
+			return (NULL);
+		ft_tlstaddfront(alst, new);
+		return (new);
+	}
 	return (NULL);
 }

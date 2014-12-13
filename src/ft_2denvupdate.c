@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstnew.c                                       :+:      :+:    :+:   */
+/*   ft_2denvupdate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 16:44:12 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/08 14:57:36 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/08 16:17:30 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/13 19:12:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlist		*ft_tlstnew(void *content, t_type type)
+void		ft_2denvupdate(t_2denv *e)
 {
-	t_tlist		*new;
-
-	if (!(new = (t_tlist *)malloc(sizeof(t_list))))
-		return (NULL);
-	new->content = content;
-	new->type = type;
-	new->next = NULL;
-	return (new);
+	if (e && e->mlx && e->win && e->img.data)
+		mlx_put_image_to_window(e->mlx, e->win, e->img.data, 0, 0);
 }

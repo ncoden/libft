@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstnew.c                                       :+:      :+:    :+:   */
+/*   ft_getendian.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 16:44:12 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/08 14:57:36 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/04 18:36:50 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/13 19:09:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlist		*ft_tlstnew(void *content, t_type type)
+t_bool		ft_getendian(void)
 {
-	t_tlist		*new;
+	short		nbr;
 
-	if (!(new = (t_tlist *)malloc(sizeof(t_list))))
-		return (NULL);
-	new->content = content;
-	new->type = type;
-	new->next = NULL;
-	return (new);
+	nbr = 1;
+	return (*(char *)&nbr != 1);
 }

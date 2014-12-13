@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_3dendnew.c                                      :+:      :+:    :+:   */
+/*   ft_3denvprint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/29 19:24:01 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/05 18:38:36 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/03 19:31:07 by ncoden            #+#    #+#             */
+/*   Updated: 2014/12/08 19:43:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_3denv				*ft_3denvnew(void *mlx, size_t x, size_t y, char *title)
+void		ft_3denvprint(t_3denv *e)
 {
-	t_3denv		*e;
+	t_tlist		*view;
 
-	if ((e = (t_3denv *)malloc(sizeof(t_3denv))))
-		if (mlx || (mlx = mlx_init()))
+	if (e)
+	{
+		ft_bzero(e->img.buff, sizeof(int) * e->cam->view.x * e->cam->view.y);
+		view = e->obj;
+		while (view != NULL)
 		{
-			e->mlx = mlx;
-			if ((e->win = mlx_new_window(mlx, x, y, title)))
-				if (ft_imgset(&e->img, mlx, x, y))
-					if ((e->cam = ft_3dcamnew(NULL, NULL, 0, NULL)))
-					{
-						ft_2dsizeset(&e->cam->view, x, y);
-						return (e);
-					}
+			if (view->type == T_3DLINE)
+				ft_print3dline(e, (t_3dline *)view->content);
+			view = view->next;
 		}
-	ft_3denvdel(e);
-	return (NULL);
+		ft_3denvupdate(e);
+	}
 }

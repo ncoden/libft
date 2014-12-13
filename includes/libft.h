@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 17:34:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2014/12/09 00:02:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@
 # include <math.h>
 
 # define BUFF_SIZE 512
+# define TRUE 1
+# define FALSE 0
+
 # define ABS(X) ((X > 0) ? X : -(X))
 # define MAX(N, M) ((N > M) ? N : M)
 # define MIN(N, M) ((N < M) ? N : M)
 # define SIGN(X) ((X > 0) ? 1 : -1)
 # define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
 
-typedef	enum	e_bool
-{
-	TRUE = 0,
-	FALSE = 1,
-}				t_bool;
+typedef char	t_bool;
 typedef enum	e_type
 {
 	CHAR,
@@ -58,7 +57,7 @@ typedef struct	s_tlist
 {
 	void			*content;
 	t_type			type;
-	struct s_list	*next;
+	struct s_tlist	*next;
 }				t_tlist;
 
 typedef struct	s_fd
@@ -73,62 +72,6 @@ typedef struct	s_err
 	int		err;
 	char	*mess;
 }				t_err;
-
-typedef struct	s_env
-{
-	void	*mlx;
-	void	*win;
-}				t_env;
-
-typedef struct	s_2dpos
-{
-	int		x;
-	int		y;
-}				t_2dpos;
-typedef struct	s_2dsize
-{
-	size_t	x;
-	size_t	y;
-}				t_2dsize;
-typedef struct	s_vec
-{
-	t_2dpos	pos;
-	int		len;
-	double	ang;
-}				t_vec;
-typedef struct	s_2dline
-{
-	t_2dpos	from;
-	t_2dpos to;
-	int		color;
-}				t_2dline;
-
-typedef struct	s_3dpos
-{
-	int		x;
-	int		y;
-	int		z;
-}				t_3dpos;
-typedef struct	s_3dang
-{
-	double	x;
-	double	y;
-	double	z;
-}				t_3dang;
-typedef struct	s_3dcam
-{
-	t_3dpos		pos;
-	t_3dang		ang;
-	int			d;
-	t_2dsize	view;
-}				t_3dcam;
-typedef struct	s_3denv
-{
-	void	*mlx;
-	void	*win;
-	t_3dcam	*cam;
-	t_tlist	*content;
-}				t_3denv;
 
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
@@ -256,11 +199,107 @@ void			**ft_lsttotab(t_list *lst);
 t_list			*ft_tabtolst(void **tab);
 size_t			ft_tablen(void *tab);
 
-int				ft_readline(int const fd, char **line);
+void			ft_tlstaddfront(t_tlist **alst, t_tlist *new);
+void			ft_tlstaddback(t_tlist **alst, t_tlist *new);
+t_tlist			*ft_tlstnew(void *content, t_type type);
+t_tlist			*ft_tlstpushfront(t_tlist **alst, void *content,
+					t_type type);
+t_tlist			*ft_tlstpushback(t_tlist **alst, void *content,
+					t_type type);
+
+int				ft_readline(int fd, char **line);
 t_list			*ft_readtolst(int fd);
 char			**ft_readtotab(int fd);
 
-t_env			*ft_envnew(void *mlx, size_t x, size_t y, char *title);
+typedef struct	s_img
+{
+	void	*data;
+	char	*buff;
+	int		bpp;
+	t_bool	endian;
+	size_t	size_x;
+}				t_img;
+
+typedef struct	s_2dpos
+{
+	int		x;
+	int		y;
+}				t_2dpos;
+typedef struct	s_2dsize
+{
+	size_t	x;
+	size_t	y;
+}				t_2dsize;
+typedef struct	s_vec
+{
+	t_2dpos	pos;
+	int		len;
+	double	ang;
+}				t_vec;
+typedef struct	s_2dline
+{
+	t_2dpos	from;
+	t_2dpos to;
+	int		color;
+}				t_2dline;
+typedef struct	s_2dcam
+{
+	t_2dpos		pos;
+	double		ang;
+	int			d;
+	t_2dsize	view;
+}				t_2dcam;
+typedef struct	s_2denv
+{
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	t_2dcam	*cam;
+	t_tlist	*obj;
+}				t_2denv;
+
+typedef struct	s_3dpos
+{
+	int		x;
+	int		y;
+	int		z;
+}				t_3dpos;
+typedef struct	s_3dang
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_3dang;
+typedef struct	s_3dline
+{
+	t_3dpos	from;
+	t_3dpos to;
+	int		color;
+}				t_3dline;
+typedef struct	s_3dcam
+{
+	t_3dpos		pos;
+	t_3dang		ang;
+	int			d;
+	t_2dsize	view;
+}				t_3dcam;
+typedef struct	s_3denv
+{
+	void	*mlx;
+	void	*win;
+	t_img	img;
+	t_3dcam	*cam;
+	t_tlist	*obj;
+}				t_3denv;
+
+t_bool			ft_getendian();
+t_img			*ft_imgnew(void *mlx, size_t x, size_t y);
+t_bool			ft_imgset(t_img *img, void *mlx, size_t x, size_t y);
+void			ft_imgclr(t_img *img, void *mlx);
+void			ft_imgdel(t_img *img, void *mlx);
+
+t_2denv			*ft_2denvnew(void *mlx, size_t x, size_t y, char *title);
+void			ft_2denvupdate(t_2denv *e);
 t_2dpos			*ft_2dposnew(int x, int y);
 t_2dsize		*ft_2dsizenew(size_t x, size_t y);
 void			ft_2dsizeset(t_2dsize *size, size_t x, size_t y);
@@ -269,18 +308,31 @@ t_vec			*ft_vecnew(t_2dpos *pos, int len, double ang);
 void			ft_vecset(t_vec *vec, t_2dpos *pos, int len, double ang);
 
 t_3denv			*ft_3denvnew(void *mlx, size_t x, size_t y, char *title);
+void			ft_3denvupdate(t_3denv *e);
+void			ft_3denvdel(t_3denv *e);
 t_3dcam			*ft_3dcamnew(t_3dpos *pos, t_3dang *ang, int d, t_2dsize *view);
 t_3dpos			*ft_3dposnew(int x, int y, int z);
 void			ft_3dposset(t_3dpos *pos, int x, int y, int z);
 t_3dang			*ft_3dangnew(double x, double y, double z);
 void			ft_3dangset(t_3dang *ang, double x, double y, double z);
+t_3dline		*ft_3dlinenew(t_3dpos *from, t_3dpos *to, int color);
 void			ft_3dto2dpos(t_3denv *e, t_3dpos *pos3d, t_2dpos *pos2d);
+t_tlist			*ft_3denvpush(t_3denv *e, void *content, t_type type);
+void			ft_3denvprint(t_3denv *e);
 
-void			ft_printline(t_env *e, t_2dpos *from, t_2dpos *to, int color);
-void			ft_printsqr(t_env *e, t_2dpos *from, t_2dpos *to, int color);
-void			ft_printvec(t_env *e, t_vec *vec, int color);
-void			ft_print3dline(t_3denv *e, t_3dpos *from, t_3dpos *to,
-					int color);
+void			ft_print2dline(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant1(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant2(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant3(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant4(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant5(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant6(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant7(t_2denv *e, t_2dline *line);
+inline void		ft_print2dline_octant8(t_2denv *e, t_2dline *line);
+void			ft_printline(t_2denv *e, t_2dpos *from, t_2dpos *to, int color);
+void			ft_printsqr(t_2denv *e, t_2dpos *from, t_2dpos *to, int color);
+void			ft_printvec(t_2denv *e, t_vec *vec, int color);
+void			ft_print3dline(t_3denv *e, t_3dline *line);
 
 t_err			*ft_errnew(int err, char *mess);
 
