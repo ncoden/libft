@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2014/12/09 00:35:59 by ncoden           ###   ########.fr        #
+#    Updated: 2015/01/14 18:58:49 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,165 +18,168 @@ SRCDIR = src
 OBJDIR = obj
 INCDIR = includes
 
-SRC = ft_2denvnew.c\
-	  ft_2denvupdate.c\
-	  ft_2dposnew.c\
-	  ft_2dposset.c\
-	  ft_2dsizenew.c\
-	  ft_2dsizeset.c\
-	  ft_3dangnew.c\
-	  ft_3dangset.c\
-	  ft_3dcamnew.c\
-	  ft_3denvdel.c\
-	  ft_3denvnew.c\
-	  ft_3denvprint.c\
-	  ft_3denvpush.c\
-	  ft_3denvupdate.c\
-	  ft_3dlinenew.c\
-	  ft_3dposnew.c\
-	  ft_3dposset.c\
-	  ft_3dto2dpos.c\
-	  ft_atoi.c\
-	  ft_bzero.c\
-	  ft_degtorad.c\
-	  ft_errnew.c\
-	  ft_getendian.c\
-	  ft_imgclr.c\
-	  ft_imgdel.c\
-	  ft_imgnew.c\
-	  ft_imgset.c\
-	  ft_isalnum.c\
-	  ft_isalpha.c\
-	  ft_isascii.c\
-	  ft_isdigit.c\
-	  ft_isprint.c\
-	  ft_itoa.c\
-	  ft_lstaddafter.c\
-	  ft_lstaddback.c\
-	  ft_lstaddby.c\
-	  ft_lstaddfront.c\
-	  ft_lstaddrby.c\
-	  ft_lstccpy_tostr.c\
-	  ft_lstcpy_tostr.c\
-	  ft_lstdel.c\
-	  ft_lstdelone.c\
-	  ft_lstdup.c\
-	  ft_lstfold.c\
-	  ft_lstiter.c\
-	  ft_lstlen.c\
-	  ft_lstln.c\
-	  ft_lstlnafter.c\
-	  ft_lstlnback.c\
-	  ft_lstlnby.c\
-	  ft_lstlnfront.c\
-	  ft_lstlnrby.c\
-	  ft_lstmap.c\
-	  ft_lstnew.c\
-	  ft_lstpushafter.c\
-	  ft_lstpushback.c\
-	  ft_lstpushby.c\
-	  ft_lstpushfront.c\
-	  ft_lstpushrby.c\
-	  ft_lstshift.c\
-	  ft_lsttotab.c\
-	  ft_max.c\
-	  ft_memalloc.c\
-	  ft_memccpy.c\
-	  ft_memchr.c\
-	  ft_memcmp.c\
-	  ft_memcpy.c\
-	  ft_memdel.c\
-	  ft_memdup.c\
-	  ft_memequ.c\
-	  ft_memlen.c\
-	  ft_memmove.c\
-	  ft_memset.c\
-	  ft_memsub.c\
-	  ft_min.c\
-	  ft_nbrlen.c\
-	  ft_power.c\
-	  ft_print2dline.c\
-	  ft_print2dline_left.c\
-	  ft_print2dline_right.c\
-	  ft_print3dline.c\
-	  ft_printline.c\
-	  ft_printsqr.c\
-	  ft_printvec.c\
-	  ft_putchar.c\
-	  ft_putchar_fd.c\
-	  ft_putendl.c\
-	  ft_putendl_fd.c\
-	  ft_putnbr.c\
-	  ft_putnbr_fd.c\
-	  ft_putnbrleft.c\
-	  ft_putnbrright.c\
-	  ft_putnchar.c\
-	  ft_putnstr.c\
-	  ft_putspace.c\
-	  ft_putstr.c\
-	  ft_putstr_fd.c\
-	  ft_putstrleft.c\
-	  ft_putstrright.c\
-	  ft_radtodeg.c\
-	  ft_readline.c\
-	  ft_readtolst.c\
-	  ft_readtotab.c\
-	  ft_strcat.c\
-	  ft_strccpy.c\
-	  ft_strchr.c\
-	  ft_strclr.c\
-	  ft_strcmp.c\
-	  ft_strcpy.c\
-	  ft_strdel.c\
-	  ft_strdiv.c\
-	  ft_strdjoin.c\
-	  ft_strdup.c\
-	  ft_strequ.c\
-	  ft_stricpy.c\
-	  ft_striter.c\
-	  ft_striteri.c\
-	  ft_strjoin.c\
-	  ft_strlcat.c\
-	  ft_strlen.c\
-	  ft_strlstjoin.c\
-	  ft_strmap.c\
-	  ft_strmapi.c\
-	  ft_strncat.c\
-	  ft_strncmp.c\
-	  ft_strncpy.c\
-	  ft_strnequ.c\
-	  ft_strnew.c\
-	  ft_strnstr.c\
-	  ft_strrchr.c\
-	  ft_strsplit.c\
-	  ft_strsplit_tolst.c\
-	  ft_strstr.c\
-	  ft_strsub.c\
-	  ft_strtrim.c\
-	  ft_tablen.c\
-	  ft_tabtolst.c\
-	  ft_tlstaddback.c\
-	  ft_tlstaddfront.c\
-	  ft_tlstnew.c\
-	  ft_tlstpushback.c\
-	  ft_tlstpushfront.c\
-	  ft_tolower.c\
-	  ft_toupper.c\
-	  ft_vecnew.c\
-	  ft_vecset.c\
+SRC =\
+	chr/ft_isalnum.c\
+	chr/ft_isalpha.c\
+	chr/ft_isascii.c\
+	chr/ft_isdigit.c\
+	chr/ft_isprint.c\
+	chr/ft_tolower.c\
+	chr/ft_toupper.c\
+	env2d/ft_2denvnew.c\
+	env2d/ft_2denvupdate.c\
+	env2d/ft_2dposnew.c\
+	env2d/ft_2dposset.c\
+	env2d/ft_2dsizenew.c\
+	env2d/ft_2dsizeset.c\
+	env2d/ft_print2dline.c\
+	env2d/ft_print2dline_left.c\
+	env2d/ft_print2dline_right.c\
+	env2d/ft_printline.c\
+	env2d/ft_printsqr.c\
+	env2d/ft_printvec.c\
+	env3d/ft_3dangnew.c\
+	env3d/ft_3dangset.c\
+	env3d/ft_3dcamnew.c\
+	env3d/ft_3denvdel.c\
+	env3d/ft_3denvnew.c\
+	env3d/ft_3denvprint.c\
+	env3d/ft_3denvpush.c\
+	env3d/ft_3denvupdate.c\
+	env3d/ft_3dlinenew.c\
+	env3d/ft_3dposnew.c\
+	env3d/ft_3dposset.c\
+	env3d/ft_3dto2dpos.c\
+	env3d/ft_print3dline.c\
+	err/ft_errnew.c\
+	img/ft_imgclr.c\
+	img/ft_imgdel.c\
+	img/ft_imgnew.c\
+	img/ft_imgset.c\
+	lst/ft_lstaddafter.c\
+	lst/ft_lstaddback.c\
+	lst/ft_lstaddby.c\
+	lst/ft_lstaddfront.c\
+	lst/ft_lstaddrby.c\
+	lst/ft_lstccpy_tostr.c\
+	lst/ft_lstcpy_tostr.c\
+	lst/ft_lstdel.c\
+	lst/ft_lstdelone.c\
+	lst/ft_lstdup.c\
+	lst/ft_lstfold.c\
+	lst/ft_lstiter.c\
+	lst/ft_lstlen.c\
+	lst/ft_lstln.c\
+	lst/ft_lstlnafter.c\
+	lst/ft_lstlnback.c\
+	lst/ft_lstlnby.c\
+	lst/ft_lstlnfront.c\
+	lst/ft_lstlnrby.c\
+	lst/ft_lstmap.c\
+	lst/ft_lstnew.c\
+	lst/ft_lstpushafter.c\
+	lst/ft_lstpushback.c\
+	lst/ft_lstpushby.c\
+	lst/ft_lstpushfront.c\
+	lst/ft_lstpushrby.c\
+	lst/ft_lstshift.c\
+	lst/ft_lsttotab.c\
+	mem/ft_bzero.c\
+	mem/ft_getendian.c\
+	mem/ft_memalloc.c\
+	mem/ft_memccpy.c\
+	mem/ft_memchr.c\
+	mem/ft_memcmp.c\
+	mem/ft_memcpy.c\
+	mem/ft_memdel.c\
+	mem/ft_memdup.c\
+	mem/ft_memequ.c\
+	mem/ft_memlen.c\
+	mem/ft_memmove.c\
+	mem/ft_memset.c\
+	mem/ft_memsub.c\
+	nbr/ft_atoi.c\
+	nbr/ft_degtorad.c\
+	nbr/ft_itoa.c\
+	nbr/ft_max.c\
+	nbr/ft_min.c\
+	nbr/ft_nbrlen.c\
+	nbr/ft_power.c\
+	nbr/ft_radtodeg.c\
+	put/ft_putchar.c\
+	put/ft_putchar_fd.c\
+	put/ft_putendl.c\
+	put/ft_putendl_fd.c\
+	put/ft_putnbr.c\
+	put/ft_putnbr_fd.c\
+	put/ft_putnbrleft.c\
+	put/ft_putnbrright.c\
+	put/ft_putnchar.c\
+	put/ft_putnstr.c\
+	put/ft_putspace.c\
+	put/ft_putstr.c\
+	put/ft_putstr_fd.c\
+	put/ft_putstrleft.c\
+	put/ft_putstrright.c\
+	read/ft_readline.c\
+	read/ft_readtolst.c\
+	read/ft_readtotab.c\
+	str/ft_strcat.c\
+	str/ft_strccpy.c\
+	str/ft_strchr.c\
+	str/ft_strclr.c\
+	str/ft_strcmp.c\
+	str/ft_strcpy.c\
+	str/ft_strdel.c\
+	str/ft_strdiv.c\
+	str/ft_strdjoin.c\
+	str/ft_strdup.c\
+	str/ft_strequ.c\
+	str/ft_stricpy.c\
+	str/ft_striter.c\
+	str/ft_striteri.c\
+	str/ft_strjoin.c\
+	str/ft_strlcat.c\
+	str/ft_strlen.c\
+	str/ft_strlstjoin.c\
+	str/ft_strmap.c\
+	str/ft_strmapi.c\
+	str/ft_strncat.c\
+	str/ft_strncmp.c\
+	str/ft_strncpy.c\
+	str/ft_strnequ.c\
+	str/ft_strnew.c\
+	str/ft_strnstr.c\
+	str/ft_strrchr.c\
+	str/ft_strsplit.c\
+	str/ft_strsplit_tolst.c\
+	str/ft_strstr.c\
+	str/ft_strsub.c\
+	str/ft_strtrim.c\
+	tab/ft_tablen.c\
+	tab/ft_tabtolst.c\
+	tlst/ft_tlstaddback.c\
+	tlst/ft_tlstaddfront.c\
+	tlst/ft_tlstnew.c\
+	tlst/ft_tlstpushback.c\
+	tlst/ft_tlstpushfront.c\
+	vec/ft_vecnew.c\
+	vec/ft_vecset.c
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
-OBJ = $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+OBJS = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o,$(SRC)))
+OBJS_DIRS = $(sort $(dir $(OBJS)))
 INCS = $(addprefix -I , $(INCDIR))
 
 all: $(NAME)
-$(NAME): build $(OBJ)
-	@ar rc $(NAME) $(OBJ)
+$(NAME): build $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 build:
 	@mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJS_DIRS)
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJS)
 fclean: clean
 	@rm -f $(NAME)
 re: fclean all
