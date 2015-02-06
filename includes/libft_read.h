@@ -19,12 +19,12 @@ typedef struct	s_fd
 {
 	int				fd;
 	int				start;
-	t_list			*lst;
+	t_lst			*lst;
 	struct s_fd		*next;
 }				t_fd;
 
 int				ft_readline(int fd, char **line);
-t_list			*ft_readtolst(int fd);
+t_lst			*ft_readtolst(int fd);
 char			**ft_readtotab(int fd);
 
 #endif

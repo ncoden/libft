@@ -14,7 +14,7 @@
 
 char		**ft_readtotab(int fd)
 {
-	t_list	*lst;
+	t_lst	*lst;
 	char	**tab;
 
 	lst = ft_readtolst(fd);

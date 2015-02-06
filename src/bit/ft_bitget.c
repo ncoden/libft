@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   ft_bitget.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/04 10:47:28 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/04 17:27:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
+inline t_bool	ft_bitget(void *bits, t_bitn n)
 {
-	t_tlst		*new;
-
-	if (alst != NULL)
-	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
-	}
-	return (NULL);
+	return ((((char *)bits)[n / 8] >> n % 8) & 1);
 }

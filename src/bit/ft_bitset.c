@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   ft_bitset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/04 12:19:07 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/04 17:28:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
+inline void		ft_bitset(void *bits, t_bitn n, t_bool value)
 {
-	t_tlst		*new;
-
-	if (alst != NULL)
-	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
-	}
-	return (NULL);
+	if (value)
+		((char *)bits)[n / 8] |= 1 << (n % 8);
+	else
+		((char *)bits)[n / 8] &= ~(1 << (n % 8));
 }

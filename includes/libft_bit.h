@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   libft_bit.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/04 15:50:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_BIT_H
+# define LIBFT_BIT_H
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
-{
-	t_tlst		*new;
+typedef unsigned char		t_bitn;
 
-	if (alst != NULL)
-	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
-	}
-	return (NULL);
-}
+typedef unsigned char		t_bits;
+typedef unsigned short int	t_16bits;
+typedef unsigned long int	t_32bits;
+typedef double				t_64bits;
+
+inline t_bool				ft_bitget(void *bits, t_bitn n);
+inline void					ft_bitset(void *bits, t_bitn n, t_bool value);
+
+#endif

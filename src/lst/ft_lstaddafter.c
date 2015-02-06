@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstaddafter(t_list *lst, t_list *new)
+void	ft_lstaddafter(t_lst *lst, t_lst *new)
 {
 	if (lst != NULL && new != NULL)
 	{

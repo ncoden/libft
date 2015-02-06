@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-void	**ft_lsttotab(t_list *lst)
+void	**ft_lsttotab(t_lst *lst)
 {
 	int		i;
 	int		size;
-	t_list	*next;
+	t_lst	*next;
 	void	**tab;
 
 	tab = NULL;

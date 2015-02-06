@@ -14,7 +14,7 @@
 
 void		ft_3denvprint(t_3denv *e)
 {
-	t_tlist		*view;
+	t_tlst		*view;
 
 	if (e)
 	{

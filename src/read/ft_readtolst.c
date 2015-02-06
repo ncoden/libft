@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-t_list		*ft_readtolst(int fd)
+t_lst		*ft_readtolst(int fd)
 {
-	t_list	*lst;
-	t_list	*lst_first;
+	t_lst	*lst;
+	t_lst	*lst_first;
 	char	*buffer;
 
 	lst = NULL;

@@ -43,7 +43,7 @@ static t_fd		*get_fdatas(t_fd **flst, int const fd)
 
 static int		read_to_lst(t_fd *fdatas)
 {
-	t_list	*new_lst;
+	t_lst	*new_lst;
 	char	*buffer;
 
 	buffer = (char *)malloc(BUFF_SIZE + 1);
@@ -59,7 +59,7 @@ static int		read_to_lst(t_fd *fdatas)
 static int		get_line_end(t_fd *fdatas, int *can_read)
 {
 	int		i_buffer;
-	t_list	*lst;
+	t_lst	*lst;
 	char	*found;
 
 	i_buffer = 0;

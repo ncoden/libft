@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-t_list	*ft_tabtolst(void **tab)
+t_lst	*ft_tabtolst(void **tab)
 {
 	int		i;
-	t_list	*lst;
+	t_lst	*lst;
 
 	i = 0;
 	lst = NULL;

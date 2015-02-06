@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_lstshift(t_list **alst)
+void	ft_lstshift(t_lst **alst)
 {
-	t_list	*new_first;
+	t_lst	*new_first;
 
 	if (alst != NULL && *alst != NULL)
 	{

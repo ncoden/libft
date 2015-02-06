@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-t_list		*ft_lstln(void *content, size_t size)
+t_lst		*ft_lstln(void *content, size_t size)
 {
-	t_list	*lst;
+	t_lst	*lst;
 
-	lst = (t_list *)malloc(sizeof(t_list));
+	lst = (t_lst *)malloc(sizeof(t_lst));
 	if (lst != NULL)
 	{
 		if (content != NULL)

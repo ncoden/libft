@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-t_list		*ft_lstpushrby(t_list **alst, void *content, size_t csize,
+t_lst		*ft_lstpushrby(t_lst **alst, void *content, size_t csize,
 				int (*f)(const void *, const void *, size_t, size_t))
 {
-	t_list		*new;
+	t_lst		*new;
 
 	if (alst != NULL && f != NULL)
 	{

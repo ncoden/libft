@@ -6,12 +6,12 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 11:00:11 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 17:24:48 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/02/03 08:08:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_ENV2D_H
-# define LIBFT_ENV2D_H
+#ifndef LIBFT_2DENV_H
+# define LIBFT_2DENV_H
 
 # include "libft_core.h"
 # include "libft_img.h"
@@ -50,7 +50,7 @@ typedef struct	s_2denv
 	void	*win;
 	t_img	img;
 	t_2dcam	*cam;
-	t_tlist	*obj;
+	t_tlst	*obj;
 }				t_2denv;
 
 t_2denv			*ft_2denvnew(void *mlx, size_t x, size_t y, char *title);

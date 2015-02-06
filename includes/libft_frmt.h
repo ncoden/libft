@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   libft_frmt.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/03 15:29:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/06 04:53:32 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_FRMT_H
+# define LIBFT_FRMT_H
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
+# include "libft.h"
+
+typedef struct		s_frmt
 {
-	t_tlst		*new;
+	int			min_len;
+	int			precision;
+	char		format;
 
-	if (alst != NULL)
-	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
-	}
-	return (NULL);
-}
+	t_bool		opt_alt : 1;
+	t_bool		opt_zero : 1;
+	t_bool		opt_minus : 1;
+	t_bool		opt_space : 1;
+	t_bool		opt_plus : 1;
+}					t_frmt;
+
+t_bits				ft_frmtoptsget(t_frmt *format);
+void				ft_frmtoptsset(t_frmt *format, t_bits opts);
+
+#endif

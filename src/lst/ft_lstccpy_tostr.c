@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_lstccpy_tostr(t_list *lst, char *dst, char c, size_t n)
+char	*ft_lstccpy_tostr(t_lst *lst, char *dst, char c, size_t n)
 {
 	size_t		i;
 	char		*found;

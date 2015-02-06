@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstfold.c                                       :+:      :+:    :+:   */
+/*   ft_prsstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 10:48:23 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:34:08 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/04 17:51:27 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/06 05:10:48 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void*, size_t))
+unsigned int	ft_prsstr(char **cursor, const char *str)
 {
-	void	*result;
+	int		i;
+	char	*lcursor;
 
-	if (lst != NULL)
+	if (str && cursor && (lcursor = *cursor))
 	{
-		result = lst->content;
-		lst = lst->next;
-		while (lst != NULL)
+		i = 0;
+		while (lcursor[i] == str[i] && str[i] != '\0')
+			i++;
+		if (str[i] == '\0')
 		{
-			result = (*f)(result, lst->content, lst->size);
-			lst = lst->next;
+			*cursor = &lcursor[i];
+			return (i);
 		}
-		return (result);
 	}
-	return (NULL);
+	return (0);
 }

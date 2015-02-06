@@ -6,12 +6,12 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 11:03:00 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 19:11:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/02/03 08:09:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_ENV3D_H
-# define LIBFT_ENV3D_H
+#ifndef LIBFT_3DENV_H
+# define LIBFT_3DENV_H
 
 # include "libft_core.h"
 # include "libft_2denv.h"
@@ -57,7 +57,7 @@ typedef struct	s_3denv
 	void	*win;
 	t_img	img;
 	t_3dcam	*cam;
-	t_tlist	*obj;
+	t_tlst	*obj;
 }				t_3denv;
 
 t_3denv			*ft_3denvnew(void *mlx, size_t x, size_t y, char *title);
@@ -70,7 +70,7 @@ t_3dang			*ft_3dangnew(double x, double y, double z);
 void			ft_3dangset(t_3dang *ang, double x, double y, double z);
 t_3dline		*ft_3dlinenew(t_3dpos *from, t_3dpos *to, int color);
 void			ft_3dto2dpos(t_3denv *e, t_3dpos *pos3d, t_2dpos *pos2d);
-t_tlist			*ft_3denvpush(t_3denv *e, void *content, t_type type);
+t_tlst			*ft_3denvpush(t_3denv *e, void *content, t_type type);
 void			ft_3denvprint(t_3denv *e);
 
 void			ft_print3dline(t_3denv *e, t_3dline *line);

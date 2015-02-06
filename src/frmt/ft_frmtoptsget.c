@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   ft_frmtoptsget.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/06 04:54:09 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/06 05:01:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
+t_bits			ft_frmtoptsget(t_frmt *format)
 {
-	t_tlst		*new;
+	t_bits		opts;
 
-	if (alst != NULL)
+	opts = (t_bits)0;
+	if (format)
 	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
+		ft_bitset(&opts, 0, format->opt_alt);
+		ft_bitset(&opts, 1, format->opt_zero);
+		ft_bitset(&opts, 2, format->opt_minus);
+		ft_bitset(&opts, 3, format->opt_space);
+		ft_bitset(&opts, 4, format->opt_plus);
 	}
-	return (NULL);
+	return (opts);
 }

@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/01/14 18:58:49 by ncoden           ###   ########.fr        #
+#    Updated: 2015/02/06 06:53:05 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,10 @@ OBJDIR = obj
 INCDIR = includes
 
 SRC =\
+	bit/ft_bitget.c\
+	bit/ft_bitset.c\
+	chr/ft_chrpos.c\
+	chr/ft_chrswitch.c\
 	chr/ft_isalnum.c\
 	chr/ft_isalpha.c\
 	chr/ft_isascii.c\
@@ -52,6 +56,8 @@ SRC =\
 	env3d/ft_3dto2dpos.c\
 	env3d/ft_print3dline.c\
 	err/ft_errnew.c\
+	frmt/ft_frmtoptsget.c\
+	frmt/ft_frmtoptsset.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
@@ -106,6 +112,11 @@ SRC =\
 	nbr/ft_nbrlen.c\
 	nbr/ft_power.c\
 	nbr/ft_radtodeg.c\
+	prs/ft_prschr.c\
+	prs/ft_prschrs.c\
+	prs/ft_prsichrs.c\
+	prs/ft_prsnbr.c\
+	prs/ft_prsstr.c\
 	put/ft_putchar.c\
 	put/ft_putchar_fd.c\
 	put/ft_putendl.c\

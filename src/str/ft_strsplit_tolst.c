@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-t_list	*ft_strsplit_tolst(const char *s, char c)
+t_lst	*ft_strsplit_tolst(const char *s, char c)
 {
 	size_t		i;
 	size_t		size_word;
-	t_list		*lst;
+	t_lst		*lst;
 
 	i = 0;
 	size_word = 0;

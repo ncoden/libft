@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-void		ft_lstaddrby(t_list **alst, t_list *new,
+void		ft_lstaddrby(t_lst **alst, t_lst *new,
 				int (*f)(const void *, const void *, size_t, size_t))
 {
-	t_list		*view;
-	t_list		*view_prev;
+	t_lst		*view;
+	t_lst		*view_prev;
 
 	if (alst != NULL && new != NULL && f != NULL)
 	{

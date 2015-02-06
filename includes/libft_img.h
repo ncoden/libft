@@ -6,12 +6,12 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:56:26 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 16:48:44 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/02/03 08:09:28 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDE_IMG_H
-# define INCLUDE_IMG_H
+#ifndef LIBFT_IMG_H
+# define LIBFT_IMG_H
 
 # include "libft_core.h"
 

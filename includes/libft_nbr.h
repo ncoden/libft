@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 16:55:09 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/02/06 05:34:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define MIN(N, M) ((N < M) ? N : M)
 # define SIGN(X) ((X > 0) ? 1 : -1)
 # define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
+# define UPDIV(N, D) (((N - 1) / D) + 1)
 
 size_t			ft_nbrlen(int nbr);
 int				ft_min(int nbr1, int nbr2);

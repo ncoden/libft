@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstfold.c                                       :+:      :+:    :+:   */
+/*   ft_chrpos.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 10:48:23 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:34:08 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/03 13:39:59 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/06 06:51:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void*, size_t))
+int				ft_chrpos(const char *chrs, char c)
 {
-	void	*result;
+	int			i;
 
-	if (lst != NULL)
+	if (c == '\0')
+		return (-1);
+	i = 0;
+	while (chrs[i] != '\0')
 	{
-		result = lst->content;
-		lst = lst->next;
-		while (lst != NULL)
-		{
-			result = (*f)(result, lst->content, lst->size);
-			lst = lst->next;
-		}
-		return (result);
+		if (chrs[i] == c)
+			return (i);
+		i++;
 	}
-	return (NULL);
+	return (-1);
 }

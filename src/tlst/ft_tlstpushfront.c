@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-t_tlist		*ft_tlstpushfront(t_tlist **alst, void *content, t_type type)
+t_tlst		*ft_tlstpushfront(t_tlst **alst, void *content, t_type type)
 {
-	t_tlist	*new;
+	t_tlst	*new;
 
 	if (alst != NULL)
 	{

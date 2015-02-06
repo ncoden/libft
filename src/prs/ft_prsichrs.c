@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tlstpushback.c                                  :+:      :+:    :+:   */
+/*   ft_prsichrs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/03 17:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 19:28:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/03 19:21:08 by ncoden            #+#    #+#             */
+/*   Updated: 2015/02/06 05:11:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_tlst	*ft_tlstpushback(t_tlst **alst, void *content, t_type type)
+unsigned int	*ft_prsichrs(char **cursor, const char *chrs)
 {
-	t_tlst		*new;
+	unsigned int	*counts;
+	char			*found;
 
-	if (alst != NULL)
+	if (chrs && cursor && *cursor)
 	{
-		if (!(new = ft_tlstnew(content, type)))
-			return (NULL);
-		ft_tlstaddback(alst, new);
-		return (new);
+		if ((counts = (unsigned int *)ft_memalloc(ft_strlen(chrs) *
+				sizeof(unsigned int))))
+		{
+			while ((found = ft_strchr(chrs, **cursor)))
+			{
+				counts[found - chrs]++;
+				(*cursor)++;
+			}
+			return (counts);
+		}
 	}
 	return (NULL);
 }

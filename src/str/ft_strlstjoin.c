@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char	*ft_strlstjoin(t_list *lst)
+char	*ft_strlstjoin(t_lst *lst)
 {
 	size_t		size;
-	t_list		*lst_first;
+	t_lst		*lst_first;
 	char		*str;
 
 	size = 0;
