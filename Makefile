@@ -203,4 +203,3 @@ re: fclean all
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 		@$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
-
