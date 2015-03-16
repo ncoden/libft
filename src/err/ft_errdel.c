@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errnew.c                                        :+:      :+:    :+:   */
+/*   ft_errdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/29 17:39:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/03/16 10:03:42 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/16 09:49:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/03/16 09:51:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_err			*ft_errnew(int err, char *mess)
+void			ft_errdel(t_err *err)
 {
-	t_err		*new;
-
-	if (mess)
+	if (err)
 	{
-		if (new = (t_err *)malloc(sizeof(t_err)))
-		{
-			if (new->mess = ft_strdup(mess))
-			{
-				new->err = err;
-				return (new);
-			}
-			ft_errdel(new);
-		}
+		if (err->mess)
+			free(err->mess);
+		free(err);
 	}
-	return (NULL);
 }
