@@ -16,8 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <mlx.h>
 # include <math.h>
+
+# include "../lib/minilibx/mlx.h"
 
 # include "libft_core.h"
 

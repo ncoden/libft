@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpairnew.c                                      :+:      :+:    :+:   */
+/*   ft_frmtiput.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/31 18:11:03 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 07:20:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_cpair			*ft_cpairnew(char index, void *data)
+size_t			ft_frmtiput(void *data, t_frmt *format)
 {
-	t_cpair		*new;
+	char		format_chr;
 
-	if (data)
+	if (data && format)
 	{
-		if ((new = (t_cpair *)malloc(sizeof(t_cpair))))
-		{
-			new->index = index;
-			new->data = data;
-			return (new);
-		}
+		format_chr = format->format;
+		if (format_chr == 'd' || format_chr == 'i')
+			return (ft_frmtiputd(*(long long int *)data, format));
 	}
-	return (NULL);
+	return (0);
 }

@@ -61,14 +61,14 @@ void			ft_2dsizeset(t_2dsize *size, size_t x, size_t y);
 void			ft_2dposset(t_2dpos *pos, int x, int y);
 
 void			ft_print2dline(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant1(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant2(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant3(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant4(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant5(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant6(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant7(t_2denv *e, t_2dline *line);
-inline void		ft_print2dline_octant8(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant1(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant2(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant3(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant4(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant5(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant6(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant7(t_2denv *e, t_2dline *line);
+void			ft_print2dline_octant8(t_2denv *e, t_2dline *line);
 void			ft_printline(t_2denv *e, t_2dpos *from, t_2dpos *to, int color);
 void			ft_printsqr(t_2denv *e, t_2dpos *from, t_2dpos *to, int color);
 

@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpairnew.c                                      :+:      :+:    :+:   */
+/*   ft_putllong.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/29 15:29:04 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 07:23:05 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-t_cpair			*ft_cpairnew(char index, void *data)
+void			ft_putllong(long long int nbr)
 {
-	t_cpair		*new;
-
-	if (data)
+	if (nbr == LLONG_MIN)
 	{
-		if ((new = (t_cpair *)malloc(sizeof(t_cpair))))
+		ft_putchar('-');
+		ft_putllong(-(LLONG_MIN / 10));
+		ft_putchar('0' - LLONG_MIN % 10);
+	}
+	else
+	{
+		if (nbr < 0)
 		{
-			new->index = index;
-			new->data = data;
-			return (new);
+			ft_putchar('-');
+			nbr = -nbr;
+		}
+		if (nbr <= 9)
+			ft_putchar('0' + nbr);
+		else
+		{
+			ft_putllong(nbr / 10);
+			ft_putchar('0' + (nbr % 10));
 		}
 	}
-	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/03/16 10:04:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/01 07:18:08 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_pair			*ft_pairnew(char *index, void *data)
 
 	if (index && data)
 	{
-		if (new = (t_pair *)malloc(sizeof(t_pair)))
+		if ((new = (t_pair *)malloc(sizeof(t_pair))))
 		{
-			if (new->index = ft_strdup(index))
+			if ((new->index = ft_strdup(index)))
 			{
 				new->data = data;
 				return (new);

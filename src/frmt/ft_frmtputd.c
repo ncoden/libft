@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpairnew.c                                      :+:      :+:    :+:   */
+/*   ft_frmtputd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 07:17:23 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_cpair			*ft_cpairnew(char index, void *data)
+void			ft_frmtputd(long long int nbr, t_frmt *format)
 {
-	t_cpair		*new;
+	int		len;
 
-	if (data)
+	len = ft_llonglen(nbr);
+	if (nbr >= 0)
 	{
-		if ((new = (t_cpair *)malloc(sizeof(t_cpair))))
-		{
-			new->index = index;
-			new->data = data;
-			return (new);
-		}
+		if (format->opt_plus)
+			ft_putchar('+');
+		else if (format->opt_space)
+			ft_putchar(' ');
+		len++;
 	}
-	return (NULL);
+	if (!format->opt_minus && len < format->min_len)
+		ft_putnchar(format->opt_zero ? '0' : ' ', format->min_len - len);
+	ft_putllong(nbr);
+	if (format->opt_minus && len < format->min_len)
+		ft_putnchar(' ', format->min_len - len);
 }

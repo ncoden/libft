@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/02/06 15:59:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/03/31 17:41:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # define UPDIV(N, D) (((N - 1) / D) + 1)
 
 size_t			ft_nbrlen(int nbr);
+size_t			ft_longlen(long int nbr);
+size_t			ft_llonglen(long long int nbr);
+
 int				ft_min(int nbr1, int nbr2);
 int				ft_max(int nbr1, int nbr2);
 int				ft_power(int nbr, int power);

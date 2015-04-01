@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpairnew.c                                      :+:      :+:    :+:   */
+/*   ft_frmtnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/18 07:52:15 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 07:23:52 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_cpair			*ft_cpairnew(char index, void *data)
+t_frmt			*ft_frmtnew(char format, int min_len, int precision,
+					t_bits options)
 {
-	t_cpair		*new;
+	t_fmrt		*new;
 
-	if (data)
+	if ((new = (t_frmt *)malloc(sizeof(t_frmt))))
 	{
-		if ((new = (t_cpair *)malloc(sizeof(t_cpair))))
-		{
-			new->index = index;
-			new->data = data;
-			return (new);
-		}
+		new->format = format;
+		new->min_len = min_len;
+		new->precision = precision;
+		ft_frmtoptsset(new, options);
 	}
-	return (NULL);
+	return (new);
 }

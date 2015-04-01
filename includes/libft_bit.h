@@ -20,7 +20,7 @@ typedef unsigned short int	t_16bits;
 typedef unsigned long int	t_32bits;
 typedef double				t_64bits;
 
-inline t_bool				ft_bitget(void *bits, t_bitn n);
-inline void					ft_bitset(void *bits, t_bitn n, t_bool value);
+t_bool						ft_bitget(void *bits, t_bitn n);
+void						ft_bitset(void *bits, t_bitn n, t_bool value);
 
 #endif

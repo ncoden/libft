@@ -6,7 +6,7 @@
 /*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 19:12:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 20:16:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/03/29 16:02:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	ft_putendl(const char *s);
 void	ft_putnbr(int nbr);
 void	ft_putnbrleft(int nbr, size_t min_len);
 void	ft_putnbrright(int nbr, size_t min_len);
+
+void	ft_putlong(long int nbr);
+void	ft_putllong(long long int nbr);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(const char *s, int fd);

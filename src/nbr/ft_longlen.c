@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cpairnew.c                                      :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/16 09:31:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/31 17:36:09 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 07:20:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_cpair			*ft_cpairnew(char index, void *data)
+size_t		ft_longlen(long int nbr)
 {
-	t_cpair		*new;
+	size_t		len;
 
-	if (data)
+	len = 1;
+	while (nbr > 9 || nbr < -9)
 	{
-		if ((new = (t_cpair *)malloc(sizeof(t_cpair))))
-		{
-			new->index = index;
-			new->data = data;
-			return (new);
-		}
+		nbr /= 10;
+		len++;
 	}
-	return (NULL);
+	if (nbr < 0)
+		len++;
+	return (len);
 }

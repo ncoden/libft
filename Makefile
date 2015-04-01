@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/03/16 10:50:22 by ncoden           ###   ########.fr        #
+#    Updated: 2015/03/31 18:15:25 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
+LIBDIR = lib
 SRCDIR = src
 OBJDIR = obj
 INCDIR = includes
 
+LIB = minilibx/libmlx.a
 SRC =\
 	bit/ft_bitget.c\
 	bit/ft_bitset.c\
@@ -57,8 +59,12 @@ SRC =\
 	env3d/ft_print3dline.c\
 	err/ft_errnew.c\
 	err/ft_errdel.c\
+	frmt/ft_frmtiput.c\
+	frmt/ft_frmtiputd.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
+	frmt/ft_frmtput.c\
+	frmt/ft_frmtputd.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
@@ -108,6 +114,8 @@ SRC =\
 	nbr/ft_atoi.c\
 	nbr/ft_degtorad.c\
 	nbr/ft_itoa.c\
+	nbr/ft_llonglen.c\
+	nbr/ft_longlen.c\
 	nbr/ft_max.c\
 	nbr/ft_min.c\
 	nbr/ft_nbrlen.c\
@@ -127,6 +135,8 @@ SRC =\
 	put/ft_putchar_fd.c\
 	put/ft_putendl.c\
 	put/ft_putendl_fd.c\
+	put/ft_putllong.c\
+	put/ft_putlong.c\
 	put/ft_putnbr.c\
 	put/ft_putnbr_fd.c\
 	put/ft_putnbrleft.c\
@@ -183,23 +193,32 @@ SRC =\
 	vec/ft_vecnew.c\
 	vec/ft_vecset.c
 
+LIBS = $(addprefix $(LIBDIR)/, $(LIB))
+LIBS_DIRS = $(sort $(dir $(LIBS)))
+
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o,$(SRC)))
 OBJS_DIRS = $(sort $(dir $(OBJS)))
+
+INCDIR += $(LIBS_DIRS)
 INCS = $(addprefix -I , $(INCDIR))
 
 all: $(NAME)
-$(NAME): build $(OBJS)
+$(NAME): build $(LIBS) $(OBJS)
 	@ar rc $(NAME) $(OBJS)
+	@ar crsT $(NAME) $(NAME) $(LIBS)
 	@ranlib $(NAME)
 build:
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJS_DIRS)
 clean:
+	@rm -f $(LIBS)
 	@rm -f $(OBJS)
 fclean: clean
 	@rm -f $(NAME)
 re: fclean all
 
+$(LIBDIR)/%.a:
+	@make -s -C $(@D)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-		@$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
+	@$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
