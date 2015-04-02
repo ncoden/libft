@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bit.h                                        :+:      :+:    :+:   */
+/*   ft_wchrbin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/02 12:37:01 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 18:03:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BIT_H
-# define LIBFT_BIT_H
+#include "libft.h"
 
-typedef unsigned char		t_bitn;
+char		ft_wchrbin(wchar_t c)
+{
+	char		i;
 
-typedef unsigned char		t_bits;
-typedef unsigned short int	t_16bits;
-typedef unsigned int		t_32bits;
-typedef double				t_64bits;
-
-t_bool						ft_bitget(void *bits, t_bitn n);
-void						ft_bitset(void *bits, t_bitn n, t_bool value);
-
-#endif
+	i = 0;
+	while (c > 0)
+	{
+		c = c >> 1;
+		i++;
+	}
+	return (i);
+}

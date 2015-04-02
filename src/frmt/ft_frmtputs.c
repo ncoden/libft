@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bit.h                                        :+:      :+:    :+:   */
+/*   ft_frmtputs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/02 12:37:01 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/01 08:21:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BIT_H
-# define LIBFT_BIT_H
+#include "libft.h"
 
-typedef unsigned char		t_bitn;
-
-typedef unsigned char		t_bits;
-typedef unsigned short int	t_16bits;
-typedef unsigned int		t_32bits;
-typedef double				t_64bits;
-
-t_bool						ft_bitget(void *bits, t_bitn n);
-void						ft_bitset(void *bits, t_bitn n, t_bool value);
-
-#endif
+void			ft_frmtputs(char *str, t_frmt *format)
+{
+	(void)format;
+	ft_putstr(str);
+}

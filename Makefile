@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/03/31 18:15:25 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/02 10:43:15 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,10 +61,12 @@ SRC =\
 	err/ft_errdel.c\
 	frmt/ft_frmtiput.c\
 	frmt/ft_frmtiputd.c\
+	frmt/ft_frmtiputs.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
 	frmt/ft_frmtput.c\
 	frmt/ft_frmtputd.c\
+	frmt/ft_frmtputs.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
@@ -190,8 +192,12 @@ SRC =\
 	tlst/ft_tlstnew.c\
 	tlst/ft_tlstpushback.c\
 	tlst/ft_tlstpushfront.c\
+	uni/ft_utf8chrencode.c\
+	uni/ft_utf8chrsize.c\
 	vec/ft_vecnew.c\
-	vec/ft_vecset.c
+	vec/ft_vecset.c\
+	wchr/ft_putwchr.c\
+	wchr/ft_wchrbin.c
 
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))
 LIBS_DIRS = $(sort $(dir $(LIBS)))

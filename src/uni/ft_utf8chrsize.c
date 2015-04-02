@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bit.h                                        :+:      :+:    :+:   */
+/*   ft_utf8chrsize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/02 12:37:01 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/02 08:51:35 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/02 19:30:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BIT_H
-# define LIBFT_BIT_H
+#include "libft.h"
 
-typedef unsigned char		t_bitn;
-
-typedef unsigned char		t_bits;
-typedef unsigned short int	t_16bits;
-typedef unsigned int		t_32bits;
-typedef double				t_64bits;
-
-t_bool						ft_bitget(void *bits, t_bitn n);
-void						ft_bitset(void *bits, t_bitn n, t_bool value);
-
-#endif
+char			ft_utf8chrsize(t_utf8chr c)
+{
+	if (c < 0xFF)
+		return (1);
+	else if (c < 0xFFFF)
+		return (2);
+	else if (c < 0xFFFFFF)
+		return (3);
+	else if (c < 0xFFFFFFFF)
+		return (4);
+	else
+		return (-1);
+}

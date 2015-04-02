@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bit.h                                        :+:      :+:    :+:   */
+/*   ft_putwchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/02 12:37:01 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/06 08:41:04 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/02 14:25:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BIT_H
-# define LIBFT_BIT_H
+#include "libft.h"
 
-typedef unsigned char		t_bitn;
+void	ft_putwchr(wchar_t c)
+{
+	t_utf8chr	utf8;
 
-typedef unsigned char		t_bits;
-typedef unsigned short int	t_16bits;
-typedef unsigned int		t_32bits;
-typedef double				t_64bits;
-
-t_bool						ft_bitget(void *bits, t_bitn n);
-void						ft_bitset(void *bits, t_bitn n, t_bool value);
-
-#endif
+	utf8 = ft_utf8chrencode(c);
+	write(1, &utf8, ft_utf8chrsize(utf8));
+}
