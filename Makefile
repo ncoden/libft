@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/02 10:43:15 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/04 20:09:09 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRC =\
 	err/ft_errdel.c\
 	frmt/ft_frmtiput.c\
 	frmt/ft_frmtiputd.c\
+	frmt/ft_frmtiputx.c\
 	frmt/ft_frmtiputs.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
@@ -122,6 +123,10 @@ SRC =\
 	nbr/ft_min.c\
 	nbr/ft_nbrlen.c\
 	nbr/ft_power.c\
+	nbr/ft_putnbrbase.c\
+	nbr/ft_putnbrhex.c\
+	nbr/ft_putllongbase.c\
+	nbr/ft_putllonghex.c\
 	nbr/ft_radtodeg.c\
 	pair/ft_cpairnew.c\
 	pair/ft_fpairnew.c\
@@ -131,12 +136,14 @@ SRC =\
 	prs/ft_prschr.c\
 	prs/ft_prschrs.c\
 	prs/ft_prsichrs.c\
+	prs/ft_prsxchrs.c\
 	prs/ft_prsnbr.c\
 	prs/ft_prsstr.c\
 	put/ft_putchar.c\
 	put/ft_putchar_fd.c\
 	put/ft_putendl.c\
 	put/ft_putendl_fd.c\
+	put/ft_putistr.c\
 	put/ft_putllong.c\
 	put/ft_putlong.c\
 	put/ft_putnbr.c\
@@ -194,10 +201,17 @@ SRC =\
 	tlst/ft_tlstpushfront.c\
 	uni/ft_utf8chrencode.c\
 	uni/ft_utf8chrsize.c\
+	uni/ft_utf8encode.c\
 	vec/ft_vecnew.c\
 	vec/ft_vecset.c\
 	wchr/ft_putwchr.c\
-	wchr/ft_wchrbin.c
+	wchr/ft_wchrbin.c\
+	wstr/ft_putiwstr.c\
+	wstr/ft_putnwstr.c\
+	wstr/ft_putwstr.c\
+	wstr/ft_putwstrleft.c\
+	wstr/ft_putwstrright.c\
+	wstr/ft_wstrlen.c
 
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))
 LIBS_DIRS = $(sort $(dir $(LIBS)))

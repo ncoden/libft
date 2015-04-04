@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 15:29:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:49:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/04 18:42:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			ft_frmtputs(char *str, t_frmt *format);
 
 size_t			ft_frmtiput(void *data, t_frmt *format);
 size_t			ft_frmtiputd(long long int nbr, t_frmt *format);
+size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format);
 size_t			ft_frmtiputs(char *str, t_frmt *format);
 
 #endif

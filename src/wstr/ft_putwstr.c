@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrleft.c                                    :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/18 11:43:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 17:43:28 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 15:29:07 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/04 15:58:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstrleft(const char *str, size_t min_len)
+void			ft_putwstr(const wchar_t *wstr)
 {
-	size_t		len;
-
-	if (str)
+	if (wstr)
 	{
-		len = ft_strlen(str);
-		if (len > 0)
-			write (1, str, len);
-		if (len < min_len)
-			ft_putspace(min_len - len);
+		while (*wstr != '\0')
+		{
+			ft_putwchr(*wstr);
+			wstr++;
+		}
 	}
 }

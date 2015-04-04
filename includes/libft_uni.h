@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/01 17:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/02 19:42:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/04 16:48:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,19 @@
 
 # define UTF8_SUBCHR		(0x1A)
 
-typedef unsigned char		t_utf8;
-typedef unsigned int		t_utf8chr;
+# define UTF8_BITSNBR1		(7)
+# define UTF8_BITSNBR2		(11)
+# define UTF8_BITSNBR3		(16)
+# define UTF8_BITSNBR4		(21)
 
-typedef unsigned short		t_utf16;
-typedef unsigned int		t_utf32;
+typedef char				t_utf8;
+typedef short				t_utf16;
+typedef int					t_utf32;
 
-t_utf8chr					ft_utf8chrencode(unsigned int c);
-char						ft_utf8chrsize(t_utf8chr c);
+wchar_t						ft_utf8chrencode(wchar_t c);
+char						ft_utf8chrsize(wchar_t c);
+
+t_utf8						*ft_utf8encode(const wchar_t *wstr);
+void						ft_utf8wencode(wchar_t *wstr);
 
 #endif

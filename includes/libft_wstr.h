@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrleft.c                                    :+:      :+:    :+:   */
+/*   libft_wstr.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/18 11:43:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 17:43:28 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 15:32:36 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/04 18:26:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_WSTR_H
+# define LIBFT_WSTR_H
 
-void	ft_putstrleft(const char *str, size_t min_len)
-{
-	size_t		len;
+size_t			ft_wstrlen(const wchar_t *wstr);
 
-	if (str)
-	{
-		len = ft_strlen(str);
-		if (len > 0)
-			write (1, str, len);
-		if (len < min_len)
-			ft_putspace(min_len - len);
-	}
-}
+void			ft_putwstr(const wchar_t *wstr);
+size_t			ft_putiwstr(const wchar_t *wstr);
+void			ft_putnwstr(const wchar_t *wstr, int n);
+void			ft_putwstrleft(const wchar_t *wstr, size_t min_len);
+void			ft_putwstrright(const wchar_t *wstr, size_t min_len);
+
+#endif

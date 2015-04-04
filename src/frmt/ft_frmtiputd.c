@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:12:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/01 07:17:17 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/04 18:43:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t			ft_frmtiputd(long long int nbr, t_frmt *format)
 		ft_putnchar(format->opt_zero ? '0' : ' ', format->min_len - len);
 	ft_putllong(nbr);
 	if (format->opt_minus && len < format->min_len)
-		ft_putnchar(' ', format->min_len - len);
+		ft_putspace(format->min_len - len);
 	return (MAX(len, format->min_len));
 }

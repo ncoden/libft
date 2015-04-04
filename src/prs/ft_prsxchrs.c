@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prschrs.c                                       :+:      :+:    :+:   */
+/*   ft_prsxchrs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 19:21:08 by ncoden            #+#    #+#             */
-/*   Updated: 2015/02/06 05:13:45 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/04 18:11:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bits			*ft_prschrs(char **cursor, const char *chrs)
+t_bits			*ft_prsxchrs(char **cursor, const char *chrs)
 {
 	t_bits		*counts;
 	char		*found;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_nbr.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/03/31 17:41:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/04 20:08:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ int				ft_max(int nbr1, int nbr2);
 int				ft_power(int nbr, int power);
 double			ft_degtorad(double deg);
 double			ft_radtodeg(double rad);
+
+void			ft_putnbrbase(int nbr, char *base);
+void			ft_putnbrhex(int nbr);
+void			ft_putllongbase(long long int nbr, char *base);
+void			ft_putllonghex(long long int nbr);
 
 #endif
