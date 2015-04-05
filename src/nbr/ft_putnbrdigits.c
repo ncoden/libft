@@ -17,11 +17,11 @@ static void		put_nbr_recursive(unsigned int nbr, const char *digits,
 						size_t digits_size)
 {
 	if (nbr < digits_size)
-		ft_putchar(digits[nbr]);
+		ft_putchr(digits[nbr]);
 	else
 	{
 		put_nbr_recursive(nbr / digits_size, digits, digits_size);
-		ft_putchar(digits[nbr % digits_size]);
+		ft_putchr(digits[nbr % digits_size]);
 	}
 }
 
@@ -33,11 +33,11 @@ void			ft_putnbrdigits(int nbr, const char *digits)
 	{
 		len = ft_strlen(digits);
 		if (nbr < 0)
-			ft_putchar('-');
+			ft_putchr('-');
 		if (nbr == INT_MIN)
 		{
 			put_nbr_recursive(INT_MIN / len, digits, len);
-			ft_putchar('0' - INT_MIN % 10);
+			ft_putchr('0' - INT_MIN % 10);
 		}
 		else
 		{

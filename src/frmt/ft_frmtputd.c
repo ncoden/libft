@@ -25,13 +25,13 @@ void			ft_frmtputd(long long int nbr, t_frmt *format)
 		if (nbr >= 0)
 		{
 			if (format->opt_plus)
-				ft_putchar('+');
+				ft_putchr('+');
 			else if (format->opt_space)
-				ft_putchar(' ');
+				ft_putchr(' ');
 			len++;
 		}
 		if (!format->opt_minus && len < format->min_len)
-			ft_putnchar(format->opt_zero ? '0' : ' ', format->min_len - len);
+			ft_putnchr(format->opt_zero ? '0' : ' ', format->min_len - len);
 		ft_putllong(nbr);
 		if (format->opt_minus && len < format->min_len)
 			ft_putspace(format->min_len - len);

@@ -28,7 +28,7 @@ size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format)
 		if (format->opt_alt)
 			ft_putstr(format->format == 'X' ? "0X" : "0x");
 		if (len < format->precision)
-			ft_putnchar('0', format->precision - len);
+			ft_putnchr('0', format->precision - len);
 		if (format->format == 'X')
 			ft_putllongdigits(nbr, "0123456789ABCDEF");
 		else

@@ -16,7 +16,7 @@ void		ft_putspace(size_t len)
 {
 	while (len > 0)
 	{
-		ft_putchar(' ');
+		ft_putchr(' ');
 		len--;
 	}
 }

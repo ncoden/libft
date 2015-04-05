@@ -15,15 +15,15 @@
 void			ft_putullongbase(unsigned long long int nbr, unsigned char base)
 {
 	if (base == 1)
-		ft_putnchar('1', nbr);
+		ft_putnchr('1', nbr);
 	else if (base < 10)
 	{
 		if (nbr < base)
-			ft_putchar('0' + nbr);
+			ft_putchr('0' + nbr);
 		else
 		{
 			ft_putullongbase(nbr / base, base);
-			ft_putchar('0' + nbr % base);
+			ft_putchr('0' + nbr % base);
 		}
 	}
 }

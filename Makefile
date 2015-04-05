@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/05 13:32:59 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/05 13:40:16 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ SRC =\
 	chr/ft_isascii.c\
 	chr/ft_isdigit.c\
 	chr/ft_isprint.c\
-	chr/ft_putchar.c\
-	chr/ft_putchar_fd.c\
-	chr/ft_putnchar.c\
+	chr/ft_putchr.c\
+	chr/ft_putchr_fd.c\
+	chr/ft_putnchr.c\
 	chr/ft_putspace.c\
 	chr/ft_tolower.c\
 	chr/ft_toupper.c\

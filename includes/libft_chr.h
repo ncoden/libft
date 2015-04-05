@@ -25,9 +25,9 @@ int				ft_toupper(int c);
 int				ft_chrpos(const char *chrs, char c);
 char			ft_chrswitch(const char *chrs, char c);
 
-void			ft_putchar(char c);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putnchar(char c, size_t n);
+void			ft_putchr(char c);
+void			ft_putchr_fd(char c, int fd);
+void			ft_putnchr(char c, size_t n);
 void			ft_putspace(size_t n);
 
 #endif

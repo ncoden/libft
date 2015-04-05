@@ -18,18 +18,18 @@ void			ft_putllongbase(long long int nbr, char base)
 	{
 		if (nbr < 0)
 		{
-			ft_putchar('-');
+			ft_putchr('-');
 			ft_putnbrbase(-(nbr / base), base);
-			ft_putchar('0' - (nbr % base));
+			ft_putchr('0' - (nbr % base));
 		}
 		else if (nbr < base)
-			ft_putchar('0' + nbr);
+			ft_putchr('0' + nbr);
 		else
 		{
 			ft_putnbrbase(nbr / base, base);
-			ft_putchar('0' + nbr % base);
+			ft_putchr('0' + nbr % base);
 		}
 	}
 	else if (base == 1)
-		ft_putnchar('1', nbr);
+		ft_putnchr('1', nbr);
 }

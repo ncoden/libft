@@ -25,7 +25,7 @@ void			ft_frmtputp(size_t ptr, t_frmt *format)
 			ft_putspace(format->min_len - total_len);
 		ft_putstr("0x");
 		if (len < format->precision)
-			ft_putnchar('0', format->precision - len);
+			ft_putnchr('0', format->precision - len);
 		ft_putptrdigits(ptr, "0123456789abcdef");
 		if (format->opt_minus && total_len < format->min_len)
 			ft_putspace(format->min_len - total_len);

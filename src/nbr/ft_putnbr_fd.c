@@ -16,15 +16,15 @@ void	ft_putnbr_fd(int nbr, int fd)
 {
 	if (nbr < 0)
 	{
-		ft_putchar('-');
+		ft_putchr('-');
 		ft_putnbr(-(nbr / 10));
-		ft_putchar_fd('0' - (nbr % 10), fd);
+		ft_putchr_fd('0' - (nbr % 10), fd);
 	}
 	else if (nbr < 10)
-		ft_putchar_fd('0' + nbr, fd);
+		ft_putchr_fd('0' + nbr, fd);
 	else
 	{
 		ft_putnbr(nbr / 10);
-		ft_putchar_fd('0' + (nbr % 10), fd);
+		ft_putchr_fd('0' + (nbr % 10), fd);
 	}
 }

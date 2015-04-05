@@ -16,11 +16,11 @@ static void		put_nbr_recursive(size_t nbr, const char *digits,
 						size_t base_size)
 {
 	if (nbr < base_size)
-		ft_putchar(digits[nbr]);
+		ft_putchr(digits[nbr]);
 	else
 	{
 		put_nbr_recursive(nbr / base_size, digits, base_size);
-		ft_putchar(digits[nbr % base_size]);
+		ft_putchr(digits[nbr % base_size]);
 	}
 }
 
