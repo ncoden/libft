@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiputx.c                                     :+:      :+:    :+:   */
+/*   ft_frmtputx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:12:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 12:29:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:29:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format)
+void			ft_frmtputx(unsigned long long int nbr, t_frmt *format)
 {
 	int			len;
 	int			total_len;
@@ -35,7 +35,5 @@ size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format)
 			ft_putllongdigits(nbr, "0123456789abcdef");
 		if (format->opt_minus && total_len < format->min_len)
 			ft_putspace(format->min_len - total_len);
-		return (MAX(total_len, format->min_len));
 	}
-	return (0);
 }

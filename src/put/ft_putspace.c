@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:48:38 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/18 20:30:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:19:25 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void		ft_putspace(size_t len)
 {
-	size_t		i;
-
-	i = 0;
-	while (i < len)
+	while (len > 0)
 	{
 		ft_putchar(' ');
-		i++;
+		len--;
 	}
 }

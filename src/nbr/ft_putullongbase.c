@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtnew.c                                       :+:      :+:    :+:   */
+/*   ft_putullongbase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/18 07:52:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 12:43:53 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/05 12:04:22 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_frmt			*ft_frmtnew(char format, int min_len, int precision,
-					t_bits options)
+void			ft_putullongbase(unsigned long long int nbr, unsigned char base)
 {
-	t_frmt		*new;
-
-	if ((new = (t_frmt *)malloc(sizeof(t_frmt))))
+	if (base > 0 && base < 10)
 	{
-		new->format = format;
-		new->min_len = min_len;
-		new->precision = precision;
-		ft_frmtoptsset(new, options);
+		if (nbr < base)
+			ft_putchar('0' + nbr);
+		else
+		{
+			ft_putullongbase(nbr / base, base);
+			ft_putchar('0' + nbr % base);
+		}
 	}
-	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 20:01:35 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 20:09:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 11:52:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void			ft_putllonghex(long long int nbr)
 {
-	ft_putllongbase(nbr, "0123456789ABCDEF");
+	ft_putllongdigits(nbr, "0123456789ABCDEF");
 }

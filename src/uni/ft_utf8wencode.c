@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 15:19:24 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 15:59:04 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:44:38 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void			ft_utf8wencode(wchar_t *wstr)
 {
-	while (*str != '\0')
+	while (*wstr != '\0')
 	{
-		*str = ft_utf8chrencode(*str);
-		str++;
+		*wstr = ft_utf8chrencode(*wstr);
+		wstr++;
 	}
 }

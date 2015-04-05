@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/04 20:09:09 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/05 12:42:06 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,13 +61,20 @@ SRC =\
 	err/ft_errdel.c\
 	frmt/ft_frmtiput.c\
 	frmt/ft_frmtiputd.c\
-	frmt/ft_frmtiputx.c\
+	frmt/ft_frmtiputo.c\
+	frmt/ft_frmtiputp.c\
 	frmt/ft_frmtiputs.c\
+	frmt/ft_frmtiputx.c\
+	frmt/ft_frmtnew.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
 	frmt/ft_frmtput.c\
 	frmt/ft_frmtputd.c\
+	frmt/ft_frmtputo.c\
+	frmt/ft_frmtputp.c\
 	frmt/ft_frmtputs.c\
+	frmt/ft_frmtputx.c\
+	frmt/ft_frmtset.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
@@ -117,17 +124,24 @@ SRC =\
 	nbr/ft_atoi.c\
 	nbr/ft_degtorad.c\
 	nbr/ft_itoa.c\
+	nbr/ft_llongbaselen.c\
 	nbr/ft_llonglen.c\
-	nbr/ft_longlen.c\
 	nbr/ft_max.c\
 	nbr/ft_min.c\
+	nbr/ft_nbrbaselen.c\
 	nbr/ft_nbrlen.c\
 	nbr/ft_power.c\
-	nbr/ft_putnbrbase.c\
+	nbr/ft_putnbrdigits.c\
 	nbr/ft_putnbrhex.c\
-	nbr/ft_putllongbase.c\
+	nbr/ft_putllongdigits.c\
 	nbr/ft_putllonghex.c\
+	nbr/ft_putptrdigits.c\
+	nbr/ft_putptrhex.c\
+	nbr/ft_putullongbase.c\
+	nbr/ft_ptrbaselen.c\
+	nbr/ft_ptrlen.c\
 	nbr/ft_radtodeg.c\
+	nbr/ft_ullongbaselen.c\
 	pair/ft_cpairnew.c\
 	pair/ft_fpairnew.c\
 	pair/ft_npairnew.c\
@@ -202,6 +216,7 @@ SRC =\
 	uni/ft_utf8chrencode.c\
 	uni/ft_utf8chrsize.c\
 	uni/ft_utf8encode.c\
+	uni/ft_utf8wencode.c\
 	vec/ft_vecnew.c\
 	vec/ft_vecset.c\
 	wchr/ft_putwchr.c\

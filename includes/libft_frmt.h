@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 15:29:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 18:42:17 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:22:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,16 @@ void			ft_frmtoptsset(t_frmt *format, t_bits opts);
 
 void			ft_frmtput(void *data, t_frmt *format);
 void			ft_frmtputd(long long int nbr, t_frmt *format);
+void			ft_frmtputo(unsigned long long int nbr, t_frmt *format);
+void			ft_frmtputp(size_t ptr, t_frmt *format);
 void			ft_frmtputs(char *str, t_frmt *format);
+void			ft_frmtputx(unsigned long long int nbr, t_frmt *format);
 
 size_t			ft_frmtiput(void *data, t_frmt *format);
 size_t			ft_frmtiputd(long long int nbr, t_frmt *format);
-size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format);
+size_t			ft_frmtiputo(unsigned long long int nbr, t_frmt *format);
+size_t			ft_frmtiputp(size_t ptr, t_frmt *format);
 size_t			ft_frmtiputs(char *str, t_frmt *format);
+size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 20:08:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:12:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,35 @@
 # define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
 # define UPDIV(N, D) (((N - 1) / D) + 1)
 
-size_t			ft_nbrlen(int nbr);
-size_t			ft_longlen(long int nbr);
-size_t			ft_llonglen(long long int nbr);
-
 int				ft_min(int nbr1, int nbr2);
 int				ft_max(int nbr1, int nbr2);
 int				ft_power(int nbr, int power);
 double			ft_degtorad(double deg);
 double			ft_radtodeg(double rad);
 
-void			ft_putnbrbase(int nbr, char *base);
+size_t			ft_nbrlen(int nbr);
+size_t			ft_nbrbaselen(int nbr, int base);
+
+void			ft_putnbrbase(int nbr, char base);
+void			ft_putnbrdigits(int nbr, const char *digits);
 void			ft_putnbrhex(int nbr);
-void			ft_putllongbase(long long int nbr, char *base);
+
+size_t			ft_ptrlen(size_t nbr);
+size_t			ft_ptrbaselen(size_t nbr, unsigned int base);
+
+void			ft_putptrbase(size_t nbr, char base);
+void			ft_putptrdigits(size_t nbr, const char *digits);
+void			ft_putptrhex(size_t nbr);
+
+size_t			ft_llonglen(long long int nbr);
+size_t			ft_llongbaselen(long long int nbr, int base);
+
+void			ft_putllongbase(long long int nbr, char base);
+void			ft_putllongdigits(long long int nbr, const char *digits);
 void			ft_putllonghex(long long int nbr);
+
+size_t			ft_ullongbaselen(unsigned long long int nbr, unsigned int base);
+
+void			ft_putullongbase(unsigned long long int nbr, unsigned char base);
 
 #endif

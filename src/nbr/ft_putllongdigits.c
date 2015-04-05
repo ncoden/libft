@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putllongbase.c                                  :+:      :+:    :+:   */
+/*   ft_putllongdigits.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 20:05:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 12:05:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-static void		put_nbr_recursive(unsigned long long int nbr, char *base,
-					size_t base_size)
+static void		put_nbr_recursive(unsigned long long int nbr, const char *digits,
+					size_t digits_size)
 {
-	if (nbr < base_size)
-		ft_putchar(base[nbr]);
+	if (nbr < digits_size)
+		ft_putchar(digits[nbr]);
 	else
 	{
-		put_nbr_recursive(nbr / base_size, base, base_size);
-		ft_putchar(base[nbr % base_size]);
+		put_nbr_recursive(nbr / digits_size, digits, digits_size);
+		ft_putchar(digits[nbr % digits_size]);
 	}
 }
 
-void			ft_putllongbase(long long int nbr, char *base)
+void			ft_putllongdigits(long long int nbr, const char *digits)
 {
 	size_t len;
 
-	if (base)
+	if (digits)
 	{
-		len = ft_strlen(base);
+		len = ft_strlen(digits);
 		if (nbr < 0)
 			ft_putchar('-');
-		if (nbr == INT_MIN)
+		if (nbr == LLONG_MIN)
 		{
-			put_nbr_recursive(INT_MIN / len, base, len);
-			ft_putchar('0' - INT_MIN % 10);
+			put_nbr_recursive(LLONG_MIN / len, digits, len);
+			ft_putchar('0' - LLONG_MIN % 10);
 		}
 		else
 		{
 			if (nbr < 0)
 				nbr = -nbr;
-			put_nbr_recursive((unsigned long long int)nbr, base, len);
+			put_nbr_recursive((unsigned long long int)nbr, digits, len);
 		}
 	}
 }
