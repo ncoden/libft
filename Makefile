@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/05 12:42:06 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/05 13:32:59 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,10 @@ SRC =\
 	chr/ft_isascii.c\
 	chr/ft_isdigit.c\
 	chr/ft_isprint.c\
+	chr/ft_putchar.c\
+	chr/ft_putchar_fd.c\
+	chr/ft_putnchar.c\
+	chr/ft_putspace.c\
 	chr/ft_tolower.c\
 	chr/ft_toupper.c\
 	env2d/ft_2denvnew.c\
@@ -57,8 +61,8 @@ SRC =\
 	env3d/ft_3dposset.c\
 	env3d/ft_3dto2dpos.c\
 	env3d/ft_print3dline.c\
-	err/ft_errnew.c\
 	err/ft_errdel.c\
+	err/ft_errnew.c\
 	frmt/ft_frmtiput.c\
 	frmt/ft_frmtiputd.c\
 	frmt/ft_frmtiputo.c\
@@ -131,49 +135,47 @@ SRC =\
 	nbr/ft_nbrbaselen.c\
 	nbr/ft_nbrlen.c\
 	nbr/ft_power.c\
-	nbr/ft_putnbrdigits.c\
-	nbr/ft_putnbrhex.c\
+	nbr/ft_ptrbaselen.c\
+	nbr/ft_ptrlen.c\
+	nbr/ft_putllong.c\
+	nbr/ft_putllongbase.c\
 	nbr/ft_putllongdigits.c\
 	nbr/ft_putllonghex.c\
+	nbr/ft_putnbr.c\
+	nbr/ft_putnbr_fd.c\
+	nbr/ft_putnbrbase.c\
+	nbr/ft_putnbrdigits.c\
+	nbr/ft_putnbrhex.c\
+	nbr/ft_putnbrleft.c\
+	nbr/ft_putnbrright.c\
+	nbr/ft_putptrbase.c\
 	nbr/ft_putptrdigits.c\
 	nbr/ft_putptrhex.c\
 	nbr/ft_putullongbase.c\
-	nbr/ft_ptrbaselen.c\
-	nbr/ft_ptrlen.c\
 	nbr/ft_radtodeg.c\
 	nbr/ft_ullongbaselen.c\
 	pair/ft_cpairnew.c\
 	pair/ft_fpairnew.c\
 	pair/ft_npairnew.c\
-	pair/ft_pairnew.c\
 	pair/ft_pairdel.c\
+	pair/ft_pairnew.c\
 	prs/ft_prschr.c\
 	prs/ft_prschrs.c\
 	prs/ft_prsichrs.c\
-	prs/ft_prsxchrs.c\
 	prs/ft_prsnbr.c\
 	prs/ft_prsstr.c\
-	put/ft_putchar.c\
-	put/ft_putchar_fd.c\
-	put/ft_putendl.c\
-	put/ft_putendl_fd.c\
-	put/ft_putistr.c\
-	put/ft_putllong.c\
-	put/ft_putlong.c\
-	put/ft_putnbr.c\
-	put/ft_putnbr_fd.c\
-	put/ft_putnbrleft.c\
-	put/ft_putnbrright.c\
-	put/ft_putnchar.c\
-	put/ft_putnstr.c\
-	put/ft_putspace.c\
-	put/ft_putstr.c\
-	put/ft_putstr_fd.c\
-	put/ft_putstrleft.c\
-	put/ft_putstrright.c\
+	prs/ft_prsxchrs.c\
 	read/ft_readline.c\
 	read/ft_readtolst.c\
 	read/ft_readtotab.c\
+	str/ft_putendl.c\
+	str/ft_putendl_fd.c\
+	str/ft_putistr.c\
+	str/ft_putnstr.c\
+	str/ft_putstr.c\
+	str/ft_putstr_fd.c\
+	str/ft_putstrleft.c\
+	str/ft_putstrright.c\
 	str/ft_strcat.c\
 	str/ft_strccpy.c\
 	str/ft_strchr.c\

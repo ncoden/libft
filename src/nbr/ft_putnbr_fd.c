@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putullongbase.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:16:25 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/06 08:29:52 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/05 13:04:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putullongbase(unsigned long long int nbr, unsigned char base)
+void	ft_putnbr_fd(int nbr, int fd)
 {
-	if (base == 1)
-		ft_putnchar('1', nbr);
-	else if (base < 10)
+	if (nbr < 0)
 	{
-		if (nbr < base)
-			ft_putchar('0' + nbr);
-		else
-		{
-			ft_putullongbase(nbr / base, base);
-			ft_putchar('0' + nbr % base);
-		}
+		ft_putchar('-');
+		ft_putnbr(-(nbr / 10));
+		ft_putchar_fd('0' - (nbr % 10), fd);
+	}
+	else if (nbr < 10)
+		ft_putchar_fd('0' + nbr, fd);
+	else
+	{
+		ft_putnbr(nbr / 10);
+		ft_putchar_fd('0' + (nbr % 10), fd);
 	}
 }

@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putptrbase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 08:41:58 by ncoden            #+#    #+#             */
-/*   Updated: 2015/03/29 16:05:09 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/05 13:15:05 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void			ft_putptrbase(size_t nbr, unsigned char base)
 {
-	if (nbr == -2147483648)
-		ft_putstr("-2147483648");
-	else
+	if (base == 1)
+		ft_putnchar('1', nbr);
+	else if (base < 10)
 	{
-		if (nbr < 0)
-		{
-			ft_putchar('-');
-			nbr = -nbr;
-		}
-		if (nbr <= 9)
+		if (nbr < base)
 			ft_putchar('0' + nbr);
 		else
 		{
-			ft_putnbr(nbr / 10);
-			ft_putchar('0' + (nbr % 10));
+			ft_putnbrbase(nbr / base, base);
+			ft_putchar('0' + nbr % base);
 		}
 	}
 }

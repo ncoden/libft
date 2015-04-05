@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_str.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:47:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 17:06:02 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 13:31:12 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,14 @@ t_lst			*ft_strsplit_tolst(const char *s, char c);
 char			*ft_strstr(const char *str, const char *to_find);
 char			*ft_strsub(const char *s, unsigned int start, size_t len);
 char			*ft_strtrim(const char *s);
+
+void			ft_putstr(const char *s);
+void			ft_putstr_fd(const char *s, int fd);
+size_t			ft_putistr(const char *s);
+void			ft_putnstr(const char *s, size_t n);
+void			ft_putstrleft(const char *s, size_t min_len);
+void			ft_putstrright(const char *s, size_t min_len);
+void			ft_putendl(const char *s);
+void			ft_putendl_fd(const char *s, int fd);
 
 #endif

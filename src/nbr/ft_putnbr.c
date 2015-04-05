@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putllong.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/29 15:29:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 20:06:42 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/06 08:41:58 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/05 13:03:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
-void			ft_putllong(long long int nbr)
+void	ft_putnbr(int nbr)
 {
-	if (nbr == LLONG_MIN)
+	if (nbr < 0)
 	{
 		ft_putchar('-');
-		ft_putllong(-(LLONG_MIN / 10));
-		ft_putchar('0' - LLONG_MIN % 10);
+		ft_putnbr(-(nbr / 10));
+		ft_putchar('0' - (nbr % 10));
 	}
+	else if (nbr < 10)
+		ft_putchar('0' + nbr);
 	else
 	{
-		if (nbr < 0)
-		{
-			ft_putchar('-');
-			nbr = -nbr;
-		}
-		if (nbr <= 9)
-			ft_putchar('0' + nbr);
-		else
-		{
-			ft_putllong(nbr / 10);
-			ft_putchar('0' + (nbr % 10));
-		}
+		ft_putnbr(nbr / 10);
+		ft_putchar('0' + (nbr % 10));
 	}
 }

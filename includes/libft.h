@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 15:37:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 13:26:36 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@
 # include "libft_nbr.h"
 # include "libft_prs.h"
 # include "libft_pair.h"
-# include "libft_put.h"
 # include "libft_read.h"
 # include "libft_str.h"
 # include "libft_tlst.h"
