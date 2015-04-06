@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_ullonglen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 08:29:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:43:52 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/31 17:36:09 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/05 14:04:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchr_fd(char c, int fd)
+size_t		ft_ullonglen(unsigned long long int nbr)
 {
-	write(fd, &c, 1);
+	size_t		len;
+
+	len = 1;
+	while (nbr > 9)
+	{
+		nbr /= 10;
+		len++;
+	}
+	return (len);
 }

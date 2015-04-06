@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:30:44 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/05 14:02:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ size_t			ft_ptrbaselen(size_t nbr, unsigned int base);
 size_t			ft_llonglen(long long int nbr);
 size_t			ft_llongbaselen(long long int nbr, int base);
 
+size_t			ft_ullonglen(unsigned long long int nbr);
 size_t			ft_ullongbaselen(unsigned long long int nbr, unsigned int base);
 
 void			ft_putnbr(int nbr);
@@ -54,6 +55,8 @@ void			ft_putllongbase(long long int nbr, char base);
 void			ft_putllongdigits(long long int nbr, const char *digits);
 void			ft_putllonghex(long long int nbr);
 
-void			ft_putullongbase(unsigned long long int nbr, unsigned char base);
+void			ft_putullong(unsigned long long int nbr);
+void			ft_putullongbase(unsigned long long int nbr,
+					unsigned char base);
 
 #endif

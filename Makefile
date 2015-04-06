@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/05 13:40:16 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/05 14:30:04 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRC =\
 	frmt/ft_frmtiputo.c\
 	frmt/ft_frmtiputp.c\
 	frmt/ft_frmtiputs.c\
+	frmt/ft_frmtiputu.c\
 	frmt/ft_frmtiputx.c\
 	frmt/ft_frmtnew.c\
 	frmt/ft_frmtoptsget.c\
@@ -77,6 +78,7 @@ SRC =\
 	frmt/ft_frmtputo.c\
 	frmt/ft_frmtputp.c\
 	frmt/ft_frmtputs.c\
+	frmt/ft_frmtputu.c\
 	frmt/ft_frmtputx.c\
 	frmt/ft_frmtset.c\
 	img/ft_imgclr.c\
@@ -151,9 +153,11 @@ SRC =\
 	nbr/ft_putptrbase.c\
 	nbr/ft_putptrdigits.c\
 	nbr/ft_putptrhex.c\
+	nbr/ft_putullong.c\
 	nbr/ft_putullongbase.c\
 	nbr/ft_radtodeg.c\
 	nbr/ft_ullongbaselen.c\
+	nbr/ft_ullonglen.c\
 	pair/ft_cpairnew.c\
 	pair/ft_fpairnew.c\
 	pair/ft_npairnew.c\
