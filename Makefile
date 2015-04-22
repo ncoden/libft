@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/05 14:30:04 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/22 18:28:02 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRC =\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
 	frmt/ft_frmtiput.c\
+	frmt/ft_frmtiputc.c\
 	frmt/ft_frmtiputd.c\
 	frmt/ft_frmtiputo.c\
 	frmt/ft_frmtiputp.c\
@@ -74,6 +75,7 @@ SRC =\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
 	frmt/ft_frmtput.c\
+	frmt/ft_frmtputc.c\
 	frmt/ft_frmtputd.c\
 	frmt/ft_frmtputo.c\
 	frmt/ft_frmtputp.c\
@@ -155,6 +157,7 @@ SRC =\
 	nbr/ft_putptrhex.c\
 	nbr/ft_putullong.c\
 	nbr/ft_putullongbase.c\
+	nbr/ft_putullongdigits.c\
 	nbr/ft_radtodeg.c\
 	nbr/ft_ullongbaselen.c\
 	nbr/ft_ullonglen.c\
@@ -234,6 +237,9 @@ SRC =\
 	wstr/ft_putwstrright.c\
 	wstr/ft_wstrlen.c
 
+DEVNAME = libft
+DEVMAIN = main.c
+
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))
 LIBS_DIRS = $(sort $(dir $(LIBS)))
 
@@ -244,20 +250,28 @@ OBJS_DIRS = $(sort $(dir $(OBJS)))
 INCDIR += $(LIBS_DIRS)
 INCS = $(addprefix -I , $(INCDIR))
 
+TEMPNAME = $(addprefix $(OBJDIR)/, $(NAME))
+DEVMAIN_OBJ = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o,$(DEVMAIN)))
+
 all: $(NAME)
 $(NAME): build $(LIBS) $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@ar crsT $(NAME) $(NAME) $(LIBS)
+	@ar rc $(TEMPNAME) $(OBJS)
+	@libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
 	@ranlib $(NAME)
 build:
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJS_DIRS)
 clean:
+	@rm -f $(TEMPNAME)
 	@rm -f $(LIBS)
 	@rm -f $(OBJS)
 fclean: clean
 	@rm -f $(NAME)
 re: fclean all
+
+dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
+	@gcc -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS) $(CFLAGS)
+	@./$(DEVNAME)
 
 $(LIBDIR)/%.a:
 	@make -s -C $(@D)

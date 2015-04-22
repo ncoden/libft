@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 15:29:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:05:30 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 18:09:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ void			ft_putllong(long long int nbr)
 	if (nbr < 0)
 	{
 		ft_putchr('-');
-		ft_putnbr(-(nbr / 10));
+		if (nbr <= -10)
+			ft_putllong(-(nbr / 10));
 		ft_putchr('0' - (nbr % 10));
 	}
 	else if (nbr < 10)
 		ft_putchr('0' + nbr);
 	else
 	{
-		ft_putnbr(nbr / 10);
+		ft_putllong(nbr / 10);
 		ft_putchr('0' + (nbr % 10));
 	}
 }

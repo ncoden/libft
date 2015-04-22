@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrbase.c                                    :+:      :+:    :+:   */
+/*   ft_putullongdigits.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 16:13:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 18:41:30 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-void			ft_putnbrbase(int nbr, char base)
+static void		put_nbr_recursive(unsigned long long int nbr,
+					const char *digits, size_t digits_size)
 {
-	if (base > 1 && base < 10)
+	if (nbr < digits_size)
+		ft_putchr(digits[nbr]);
+	else
 	{
-		if (nbr < 0)
-		{
-			ft_putchr('-');
-			if (nbr <= -(base))
-				ft_putnbrbase(-(nbr / base), base);
-			ft_putchr('0' - (nbr % base));
-		}
-		else if (nbr < base)
-			ft_putchr('0' + nbr);
-		else
-		{
-			ft_putnbrbase(nbr / base, base);
-			ft_putchr('0' + nbr % base);
-		}
+		put_nbr_recursive(nbr / digits_size, digits, digits_size);
+		ft_putchr(digits[nbr % digits_size]);
 	}
-	else if (base == 1)
-		ft_putnchr('1', nbr);
+}
+
+void			ft_putullongdigits(unsigned long long int nbr, const char *digits)
+{
+	if (digits)
+		put_nbr_recursive(nbr, digits, ft_strlen(digits));
 }

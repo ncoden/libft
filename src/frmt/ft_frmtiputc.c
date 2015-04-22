@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtputs.c                                      :+:      :+:    :+:   */
+/*   ft_frmtiputc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 16:05:09 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 14:40:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_frmtputs(char *str, t_frmt *format)
+size_t			ft_frmtiputc(wchar_t c, t_frmt *format)
 {
-	int			len;
-
-	if (!str)
-		ft_putstr("(null)");
-	if (format && str)
-	{
-		if (format->format == 'S')
-			len = ft_wstrlen((wchar_t *)str);
-		else
-			len = ft_strlen(str);
-		if (format->precision >= 0)
-			len = MIN(len, format->precision);
-		if (!format->opt_minus && len < format->min_len)
-			ft_putspace(format->min_len - len);
-		if (format->format == 'S')
-			ft_putnwstr((wchar_t *)str, len);
-		else
-			write (1, str, len);
-		if (format->opt_minus && len < format->min_len)
-			ft_putspace(format->min_len - len);
-	}
+	if (!format)
+		return (0);
+	if (!format->opt_minus && format->min_len > 1)
+		ft_putspace(format->min_len - 1);
+	if (format->format == 'C')
+		ft_putwchr(c);
+	else
+		ft_putchr((char)c);
+	if (format->opt_minus && format->min_len > 1)
+		ft_putspace(format->min_len - 1);
+	return (MAX(1, format->min_len));
 }

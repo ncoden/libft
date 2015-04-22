@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:11:03 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:59:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 14:00:51 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ size_t			ft_frmtiput(void *data, t_frmt *format)
 		c = format->format;
 		if (data)
 		{
-			if (c == 'd' || c == 'D' || c == 'i')
+			if (c == 'c' || c == 'C')
+				return (ft_frmtiputc(*(wchar_t *)data, format));
+			else if (c == 'd' || c == 'D' || c == 'i')
 				return (ft_frmtiputd(*(long long int *)data, format));
 			else if (c == 'o' || c == 'O')
 				return (ft_frmtiputo(*(unsigned long long int *)data, format));
-			else if (c == 's' || c == 'S')
-				return (ft_frmtiputs((char *)data, format));
 			else if (c == 'u' || c == 'U')
 				return (ft_frmtiputu(*(unsigned long long int *)data, format));
 			else if (c == 'x' || c == 'X')
@@ -34,6 +34,8 @@ size_t			ft_frmtiput(void *data, t_frmt *format)
 		}
 		if (c == 'p')
 			return (ft_frmtiputp((size_t)data, format));
+		else if (c == 's' || c == 'S')
+			return (ft_frmtiputs((char *)data, format));
 	}
 	return (0);
 }

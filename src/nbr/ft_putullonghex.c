@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrbase.c                                    :+:      :+:    :+:   */
+/*   ft_putullonghex.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 16:13:11 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 20:01:35 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/22 18:24:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbrbase(int nbr, char base)
+void			ft_putullonghex(unsigned long long int nbr)
 {
-	if (base > 1 && base < 10)
-	{
-		if (nbr < 0)
-		{
-			ft_putchr('-');
-			if (nbr <= -(base))
-				ft_putnbrbase(-(nbr / base), base);
-			ft_putchr('0' - (nbr % base));
-		}
-		else if (nbr < base)
-			ft_putchr('0' + nbr);
-		else
-		{
-			ft_putnbrbase(nbr / base, base);
-			ft_putchr('0' + nbr % base);
-		}
-	}
-	else if (base == 1)
-		ft_putnchr('1', nbr);
+	ft_putullongdigits(nbr, "0123456789ABCDEF");
 }

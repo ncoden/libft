@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 14:02:34 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 18:24:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ void			ft_putllonghex(long long int nbr);
 void			ft_putullong(unsigned long long int nbr);
 void			ft_putullongbase(unsigned long long int nbr,
 					unsigned char base);
+void			ft_putullongdigits(unsigned long long int nbr,
+					const char *digits);
+void			ft_putullonghex(unsigned long long int nbr);
 
 #endif

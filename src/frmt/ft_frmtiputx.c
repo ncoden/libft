@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:12:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 12:29:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/22 18:27:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format)
 
 	if (format)
 	{
-		len = ft_nbrbaselen(nbr, 16);
+		len = ft_ullongbaselen(nbr, 16);
 		total_len = format->precision > len ? format->precision : len;
 		if (format->opt_alt)
 			total_len += 2;
@@ -30,9 +30,9 @@ size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format)
 		if (len < format->precision)
 			ft_putnchr('0', format->precision - len);
 		if (format->format == 'X')
-			ft_putllongdigits(nbr, "0123456789ABCDEF");
+			ft_putullongdigits(nbr, "0123456789ABCDEF");
 		else
-			ft_putllongdigits(nbr, "0123456789abcdef");
+			ft_putullongdigits(nbr, "0123456789abcdef");
 		if (format->opt_minus && total_len < format->min_len)
 			ft_putspace(format->min_len - total_len);
 		return (MAX(total_len, format->min_len));
