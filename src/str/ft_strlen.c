@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/04 10:16:50 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/04 10:20:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/23 19:28:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t		ft_strlen(const char *str)
 
 	size = 0;
 	while (str[size] != '\0')
-	{
 		size++;
-	}
 	return (size);
 }
