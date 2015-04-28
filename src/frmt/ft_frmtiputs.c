@@ -6,35 +6,55 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 14:55:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 07:31:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_frmtiputs(char *str, t_frmt *format)
+static inline size_t	get_len(char *str, t_frmt *format)
+{
+	if (str)
+	{
+		if (format->precision != -1)
+		{
+			if (format->format == 'S')
+				return (ft_wstrnsize((wchar_t *)str, format->precision));
+			else
+				return (ft_strnlen(str, format->precision));
+		}
+		else
+		{
+			if (format->format == 'S')
+				return (ft_wstrsize((wchar_t *)str));
+			else
+				return (ft_strlen(str));
+		}
+	}
+	return (0);
+}
+
+size_t					ft_frmtiputs(char *str, t_frmt *format)
 {
 	int			len;
 
 	if (!format)
 		return (0);
-	if (!str)
+	if (!str && format->precision == -1)
 	{
 		ft_putstr("(null)");
 		return (6);
 	}
-	if (format->format == 'S')
-		len = ft_wstrlen((wchar_t *)str);
-	else
-		len = ft_strlen(str);
-	if (format->precision >= 0)
-		len = MIN(len, format->precision);
+	len = get_len(str, format);
 	if (!format->opt_minus && len < format->min_len)
-		ft_putspace(format->min_len - len);
-	if (format->format == 'S')
-		ft_putnwstr((wchar_t *)str, len);
-	else
-		write (1, str, len);
+		ft_putnchr(format->opt_zero ? '0' : ' ', format->min_len - len);
+	if (str)
+	{
+		if (format->format == 'S')
+			ft_putnbwstr((wchar_t *)str, len);
+		else
+			write(1, str, len);
+	}
 	if (format->opt_minus && len < format->min_len)
 		ft_putspace(format->min_len - len);
 	return (MAX(len, format->min_len));
