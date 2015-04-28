@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwstrleft.c                                   :+:      :+:    :+:   */
+/*   ft_putnbwstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/18 11:43:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 17:56:10 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/27 19:32:56 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/28 08:05:05 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwstrleft(const wchar_t *wstr, size_t min_len)
+void			ft_putnbwstr(const wchar_t *s, size_t byte_nbr)
 {
-	size_t		len;
+	char		unicode;
 
-	if (wstr)
+	if (s)
 	{
-		len = ft_wstrlen(wstr);
-		if (len > 0)
-			ft_putwstr(wstr);
-		if (len < min_len)
-			ft_putspace(min_len - len);
+		unicode = ft_getunicode();
+		if (unicode == UNI_UTF8)
+			ft_putnbwstr_utf8(s, byte_nbr);
 	}
 }

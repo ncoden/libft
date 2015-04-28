@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 18:41:30 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/26 16:59:25 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static void		put_nbr_recursive(unsigned long long int nbr,
 	}
 }
 
-void			ft_putullongdigits(unsigned long long int nbr, const char *digits)
+void			ft_putullongdigits(unsigned long long int nbr,
+					const char *digits)
 {
 	if (digits)
 		put_nbr_recursive(nbr, digits, ft_strlen(digits));

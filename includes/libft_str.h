@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:47:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:31:12 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 07:53:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strdjoin(const char *s1, const char *d, const char *s2);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlen(const char *str);
+size_t			ft_strnlen(const char *s, size_t n);
 char			*ft_strmap(const char *s, char (*f)(char));
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char			*ft_strncat(char *dest, const char *src, size_t nb);

@@ -6,12 +6,19 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/01 17:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 16:48:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:31:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_UNI_H
 # define LIBFT_UNI_H
+
+# include <locale.h>
+
+# define UNI_UNKNOW			(-1)
+# define UNI_UTF8			(1)
+# define UNI_UTF16			(2)
+# define UNI_UTF32			(3)
 
 # define UTF8_BEM_MASK1		(0x00)
 # define UTF8_BEM_MASK2		(0xC080)
@@ -34,10 +41,24 @@ typedef char				t_utf8;
 typedef short				t_utf16;
 typedef int					t_utf32;
 
-wchar_t						ft_utf8chrencode(wchar_t c);
+char						ft_getunicode();
+t_bool						ft_setunicode(char format);
+
 char						ft_utf8chrsize(wchar_t c);
+wchar_t						ft_utf8chrencode(wchar_t c);
 
 t_utf8						*ft_utf8encode(const wchar_t *wstr);
 void						ft_utf8wencode(wchar_t *wstr);
+
+char						ft_wchrsize_utf8(wchar_t c);
+size_t						ft_wstrsize_utf8(const wchar_t *str);
+size_t						ft_wstrnsize_utf8(const wchar_t *str, size_t n);
+
+void						ft_putwchr_utf8(wchar_t c);
+
+void						ft_putwstr_utf8(const wchar_t *s);
+void						ft_putnwstr_utf8(const wchar_t *s, size_t n);
+void						ft_putnbwstr_utf8(const wchar_t *s,
+								size_t byte_nbr);
 
 #endif

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
+/*   ft_putnbwstr_utf8.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/04 15:34:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 15:58:27 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 15:29:07 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/28 08:14:02 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_wstrlen(const wchar_t *wstr)
+void			ft_putnbwstr_utf8(const wchar_t *s, size_t byte_nbr)
 {
-	size_t	size;
+	size_t		i;
 
-	size = 0;
-	while (wstr[size] != '\0')
-		size++;
-	return (size);
+	if (s)
+	{
+		i = 0;
+		while (*s != '\0' && i < byte_nbr)
+		{
+			i += ft_wchrsize_utf8(*s);
+			if (i <= byte_nbr)
+				ft_putwchr_utf8(*s);
+			s++;
+		}
+	}
 }

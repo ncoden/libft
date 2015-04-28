@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwstrright.c                                  :+:      :+:    :+:   */
+/*   ft_putnwstr_utf8.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/19 12:27:24 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/04 17:56:06 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 15:29:07 by ncoden            #+#    #+#             */
+/*   Updated: 2015/04/28 08:02:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwstrright(const wchar_t *wstr, size_t min_len)
+void			ft_putnwstr_utf8(const wchar_t *s, size_t n)
 {
-	size_t		len;
+	size_t		i;
 
-	if (wstr)
+	if (s)
 	{
-		len = ft_wstrlen(wstr);
-		if (len < min_len)
-			ft_putspace(min_len - len);
-		if (len > 0)
-			ft_putwstr(wstr);
+		i = 0;
+		while (s[i] != '\0' && i < n)
+		{
+			ft_putwchr_utf8(s[i]);
+			i++;
+		}
 	}
 }

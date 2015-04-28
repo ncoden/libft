@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/22 18:28:02 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/28 07:57:28 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -158,6 +158,7 @@ SRC =\
 	nbr/ft_putullong.c\
 	nbr/ft_putullongbase.c\
 	nbr/ft_putullongdigits.c\
+	nbr/ft_putullonghex.c\
 	nbr/ft_radtodeg.c\
 	nbr/ft_ullongbaselen.c\
 	nbr/ft_ullonglen.c\
@@ -208,6 +209,7 @@ SRC =\
 	str/ft_strncpy.c\
 	str/ft_strnequ.c\
 	str/ft_strnew.c\
+	str/ft_strnlen.c\
 	str/ft_strnstr.c\
 	str/ft_strrchr.c\
 	str/ft_strsplit.c\
@@ -222,20 +224,29 @@ SRC =\
 	tlst/ft_tlstnew.c\
 	tlst/ft_tlstpushback.c\
 	tlst/ft_tlstpushfront.c\
+	uni/ft_getunicode.c\
+	uni/ft_putnbwstr_utf8.c\
+	uni/ft_putnwstr_utf8.c\
+	uni/ft_putwchr_utf8.c\
+	uni/ft_putwstr_utf8.c\
+	uni/ft_setunicode.c\
 	uni/ft_utf8chrencode.c\
 	uni/ft_utf8chrsize.c\
 	uni/ft_utf8encode.c\
 	uni/ft_utf8wencode.c\
+	uni/ft_wchrsize_utf8.c\
+	uni/ft_wstrnsize_utf8.c\
+	uni/ft_wstrsize_utf8.c\
 	vec/ft_vecnew.c\
 	vec/ft_vecset.c\
 	wchr/ft_putwchr.c\
 	wchr/ft_wchrbin.c\
-	wstr/ft_putiwstr.c\
+	wchr/ft_wchrsize.c\
+	wstr/ft_putnbwstr.c\
 	wstr/ft_putnwstr.c\
 	wstr/ft_putwstr.c\
-	wstr/ft_putwstrleft.c\
-	wstr/ft_putwstrright.c\
-	wstr/ft_wstrlen.c
+	wstr/ft_wstrnsize.c\
+	wstr/ft_wstrsize.c
 
 DEVNAME = libft
 DEVMAIN = main.c
