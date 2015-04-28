@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/28 10:51:37 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/28 10:52:51 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,14 +66,14 @@ SRC =\
 	frmt/ft_frmtnew.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
-	frmt/ft_frmtiput.c\
-	frmt/ft_frmtiputc.c\
-	frmt/ft_frmtiputd.c\
-	frmt/ft_frmtiputo.c\
-	frmt/ft_frmtiputp.c\
-	frmt/ft_frmtiputs.c\
-	frmt/ft_frmtiputu.c\
-	frmt/ft_frmtiputx.c\
+	frmt/ft_frmtput.c\
+	frmt/ft_frmtputc.c\
+	frmt/ft_frmtputd.c\
+	frmt/ft_frmtputo.c\
+	frmt/ft_frmtputp.c\
+	frmt/ft_frmtputs.c\
+	frmt/ft_frmtputu.c\
+	frmt/ft_frmtputx.c\
 	frmt/ft_frmtset.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\

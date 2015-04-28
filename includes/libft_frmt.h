@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 15:29:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 14:19:31 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:56:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,13 @@ void			ft_frmtset(t_frmt *format, char format_chr,
 t_bits			ft_frmtoptsget(t_frmt *format);
 void			ft_frmtoptsset(t_frmt *format, t_bits opts);
 
-void			ft_frmtput(void *data, t_frmt *format);
-void			ft_frmtputc(wchar_t chr, t_frmt *format);
-void			ft_frmtputd(long long int nbr, t_frmt *format);
-void			ft_frmtputo(unsigned long long int nbr, t_frmt *format);
-void			ft_frmtputp(size_t ptr, t_frmt *format);
-void			ft_frmtputs(char *str, t_frmt *format);
-void			ft_frmtputu(unsigned long long int nbr, t_frmt *format);
-void			ft_frmtputx(unsigned long long int nbr, t_frmt *format);
-
-size_t			ft_frmtiput(void *data, t_frmt *format);
-size_t			ft_frmtiputc(wchar_t chr, t_frmt *format);
-size_t			ft_frmtiputd(long long int nbr, t_frmt *format);
-size_t			ft_frmtiputo(unsigned long long int nbr, t_frmt *format);
-size_t			ft_frmtiputp(size_t ptr, t_frmt *format);
-size_t			ft_frmtiputs(char *str, t_frmt *format);
-size_t			ft_frmtiputu(unsigned long long int nbr, t_frmt *format);
-size_t			ft_frmtiputx(unsigned long long int nbr, t_frmt *format);
+size_t			ft_frmtput(void *data, t_frmt *format);
+size_t			ft_frmtputc(wchar_t chr, t_frmt *format);
+size_t			ft_frmtputd(long long int nbr, t_frmt *format);
+size_t			ft_frmtputo(unsigned long long int nbr, t_frmt *format);
+size_t			ft_frmtputp(size_t ptr, t_frmt *format);
+size_t			ft_frmtputs(char *str, t_frmt *format);
+size_t			ft_frmtputu(unsigned long long int nbr, t_frmt *format);
+size_t			ft_frmtputx(unsigned long long int nbr, t_frmt *format);
 
 #endif

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiputc.c                                     :+:      :+:    :+:   */
+/*   ft_frmtputc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/28 08:09:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:53:22 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_frmtiputc(wchar_t c, t_frmt *format)
+size_t			ft_frmtputc(wchar_t c, t_frmt *format)
 {
 	char		len;
 

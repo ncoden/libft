@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiputd.c                                     :+:      :+:    :+:   */
+/*   ft_frmtputd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:12:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/26 17:57:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:53:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static inline int		get_total_len(long long int nbr, int len,
 	return (total_len);
 }
 
-size_t					ft_frmtiputd(long long int nbr, t_frmt *format)
+size_t					ft_frmtputd(long long int nbr, t_frmt *format)
 {
 	int		len;
 	int		total_len;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiput.c                                      :+:      :+:    :+:   */
+/*   ft_frmtput.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:11:03 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/22 14:00:51 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:57:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_frmtiput(void *data, t_frmt *format)
+size_t			ft_frmtput(void *data, t_frmt *format)
 {
 	char		c;
 
@@ -22,20 +22,20 @@ size_t			ft_frmtiput(void *data, t_frmt *format)
 		if (data)
 		{
 			if (c == 'c' || c == 'C')
-				return (ft_frmtiputc(*(wchar_t *)data, format));
+				return (ft_frmtputc(*(wchar_t *)data, format));
 			else if (c == 'd' || c == 'D' || c == 'i')
-				return (ft_frmtiputd(*(long long int *)data, format));
+				return (ft_frmtputd(*(long long int *)data, format));
 			else if (c == 'o' || c == 'O')
-				return (ft_frmtiputo(*(unsigned long long int *)data, format));
+				return (ft_frmtputo(*(unsigned long long int *)data, format));
 			else if (c == 'u' || c == 'U')
-				return (ft_frmtiputu(*(unsigned long long int *)data, format));
+				return (ft_frmtputu(*(unsigned long long int *)data, format));
 			else if (c == 'x' || c == 'X')
-				return (ft_frmtiputx(*(unsigned long long int *)data, format));
+				return (ft_frmtputx(*(unsigned long long int *)data, format));
 		}
 		if (c == 'p')
-			return (ft_frmtiputp((size_t)data, format));
+			return (ft_frmtputp((size_t)data, format));
 		else if (c == 's' || c == 'S')
-			return (ft_frmtiputs((char *)data, format));
+			return (ft_frmtputs((char *)data, format));
 	}
 	return (0);
 }

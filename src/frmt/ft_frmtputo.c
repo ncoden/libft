@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiputo.c                                     :+:      :+:    :+:   */
+/*   ft_frmtputo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 18:12:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/26 19:10:03 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:54:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_frmtiputo(unsigned long long int nbr, t_frmt *format)
+size_t			ft_frmtputo(unsigned long long int nbr, t_frmt *format)
 {
 	int			len;
 	int			total_len;

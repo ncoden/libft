@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_frmtiputs.c                                     :+:      :+:    :+:   */
+/*   ft_frmtputs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/28 07:31:00 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 10:55:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static inline size_t	get_len(char *str, t_frmt *format)
 	return (0);
 }
 
-size_t					ft_frmtiputs(char *str, t_frmt *format)
+size_t					ft_frmtputs(char *str, t_frmt *format)
 {
 	int			len;
 
