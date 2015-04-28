@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 11:18:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/28 10:55:37 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/28 14:20:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ size_t					ft_frmtputs(char *str, t_frmt *format)
 
 	if (!format)
 		return (0);
-	if (!str && format->precision == -1)
+	if (!str)
 	{
-		ft_putstr("(null)");
-		return (6);
+		if (format->format == 'S')
+			str = (char *)L"(null)";
+		else
+			str = "(null)";
 	}
 	len = get_len(str, format);
 	if (!format->opt_minus && len < format->min_len)
