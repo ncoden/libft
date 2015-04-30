@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:13:04 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/03 19:09:37 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/04/30 19:32:02 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t			i;
 	unsigned char	*b_char;
 
+	if (!b)
+		return (NULL);
 	i = 0;
 	b_char = b;
 	while (i < len)
