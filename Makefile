@@ -6,19 +6,23 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/28 10:52:51 by ncoden           ###   ########.fr        #
+#    Updated: 2015/04/30 18:14:39 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
 
+# COMPILATION
+CC = gcc
+CCFLAGS = -Wall -Werror -Wextra
+
+# DIRECTORIES
 LIBDIR = lib
 SRCDIR = src
 OBJDIR = obj
 INCDIR = includes
 
+# SOURCES
 LIB = minilibx/libmlx.a
 SRC =\
 	bit/ft_bitget.c\
@@ -238,45 +242,61 @@ SRC =\
 	wstr/ft_putnwstr.c\
 	wstr/ft_putwstr.c\
 	wstr/ft_wstrnsize.c\
-	wstr/ft_wstrsize.c
+	wstr/ft_wstrsize.c\
 
+
+# **************************************************************************** #
+
+# DEBUG
 DEVNAME = libft
 DEVMAIN = main.c
+
+# ALLOWED EXTENSIONS
+EXTENSIONS = .c .s
+
+
+# **************************************************************************** #
+
+.PHONY: all $(NAME) build clean fclean re dev
+.SILENT:
 
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))
 LIBS_DIRS = $(sort $(dir $(LIBS)))
 
+SRC := $(filter $(addprefix %, $(EXTENSIONS)), $(SRC))
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
-OBJS = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o,$(SRC)))
+OBJS = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(basename $(SRC))))
 OBJS_DIRS = $(sort $(dir $(OBJS)))
 
 INCDIR += $(LIBS_DIRS)
 INCS = $(addprefix -I , $(INCDIR))
 
 TEMPNAME = $(addprefix $(OBJDIR)/, $(NAME))
-DEVMAIN_OBJ = $(addprefix $(OBJDIR)/, $(patsubst %.c, %.o,$(DEVMAIN)))
+DEVMAIN_OBJ = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(basename $(DEVMAIN))))
 
 all: $(NAME)
 $(NAME): build $(LIBS) $(OBJS)
-	@ar rc $(TEMPNAME) $(OBJS)
-	@libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
-	@ranlib $(NAME)
+	ar rc $(TEMPNAME) $(OBJS)
+	libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
+	ranlib $(NAME)
 build:
-	@mkdir -p $(OBJDIR)
-	@mkdir -p $(OBJS_DIRS)
+	mkdir -p $(OBJDIR)
+	mkdir -p $(OBJS_DIRS)
 clean:
-	@rm -f $(TEMPNAME)
-	@rm -f $(LIBS)
-	@rm -f $(OBJS)
+	rm -f $(TEMPNAME)
+	rm -f $(LIBS)
+	rm -f $(OBJS)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re: fclean all
 
 dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
-	@gcc -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS) $(CFLAGS)
-	@./$(DEVNAME)
+	gcc -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS)
+	./$(DEVNAME)
 
 $(LIBDIR)/%.a:
-	@make -s -C $(@D)
+	make -s -C $(@D)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@$(CC) -c -o $@ $< $(INCS) $(CFLAGS)
+	$(CC) -c -o $@ $< $(INCS) $(CCFLAGS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.s
+	$(ASM) -o $@ $< $(INCS) $(ASMFLAGS)
