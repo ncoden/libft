@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/04/30 18:14:39 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/02 14:38:58 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -261,15 +261,15 @@ EXTENSIONS = .c .s
 .SILENT:
 
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))
-LIBS_DIRS = $(sort $(dir $(LIBS)))
 
 SRC := $(filter $(addprefix %, $(EXTENSIONS)), $(SRC))
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(basename $(SRC))))
 OBJS_DIRS = $(sort $(dir $(OBJS)))
 
-INCDIR += $(LIBS_DIRS)
-INCS = $(addprefix -I , $(INCDIR))
+INCS_DIRS = $(addsuffix /, $(INCDIR))
+INCS_DIRS += $(addsuffix /, $(dir $(LIBS)))
+INCS = $(addprefix -I , $(INCS_DIRS))
 
 TEMPNAME = $(addprefix $(OBJDIR)/, $(NAME))
 DEVMAIN_OBJ = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(basename $(DEVMAIN))))
