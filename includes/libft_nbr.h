@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/26 15:47:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/03 17:01:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # define SIGN(X) ((X > 0) ? 1 : -1)
 # define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
 # define UPDIV(N, D) (((N - 1) / D) + 1)
+
+int				ft_atoi(const char *str);
+char			*ft_itoa(int n);
 
 int				ft_min(int nbr1, int nbr2);
 int				ft_max(int nbr1, int nbr2);
