@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/02 14:07:21 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/03 13:05:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <math.h>
 
-# include "mlx.h"
+# include "../lib/minilibx/mlx.h"
 
 # include "libft_core.h"
 
