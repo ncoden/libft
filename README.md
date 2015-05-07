@@ -15,6 +15,6 @@ All modifications must respect the [42 norm](http://ncoden.fr/datas/42/norm.pdf)
 
 There is no description of all functions of the library. Maybe soon?
 
-#### Liscence
-This library is under the Apache 2.0 Liscence.
+#### Licence
+This library is under the Apache 2.0 Licence.
 Please refer to the LICENCE file for more details.
