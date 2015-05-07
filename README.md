@@ -17,4 +17,4 @@ There is no description of all functions of the library. Maybe soon?
 
 #### Liscence
 This library is under the Apache 2.0 Liscence.
-Please refer to the LISCENCE file for more details.
+Please refer to the LICENCE file for more details.
