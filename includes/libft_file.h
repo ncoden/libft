@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_read.h                                       :+:      :+:    :+:   */
+/*   libft_file.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:36:21 by ncoden            #+#    #+#             */
-/*   Updated: 2015/01/14 16:56:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/08 08:10:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_READ_H
-# define LIBFT_READ_H
+#ifndef LIBFT_FILE_H
+# define LIBFT_FILE_H
 
 # include "libft_lst.h"
 
