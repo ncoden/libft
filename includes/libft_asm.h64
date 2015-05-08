@@ -1,17 +1,17 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    libfts.hs                                          :+:      :+:    :+:    ;
+;    libft_asm.h64                                      :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/02 14:10:51 by ncoden            #+#    #+#              ;
-;    Updated: 2015/05/04 16:02:54 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/05/08 08:52:09 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%ifndef LIBFTS_MAIN_HS
-	%define LIBFTS_MAIN_HS
+%ifndef LIBFT_ASM.H64
+	%define LIBFT_ASM.H64
 
 	%define CALL_READ			(0x2000003)
 	%define CALL_WRITE			(0x2000004)
