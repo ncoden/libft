@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/08 08:11:26 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/08 08:39:14 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@ NAME = libft.a
 # COMPILATION
 CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
+
+ASM = ~/.brew/Cellar/nasm/dev/bin/nasm
+# dev : NASM v2.11.08 modified to accept extern redeclaration as global
+ASMFLAGS = -f macho64
 
 # DIRECTORIES
 LIBDIR = lib
@@ -29,17 +33,17 @@ SRC =\
 	bit/ft_bitset.c\
 	chr/ft_chrpos.c\
 	chr/ft_chrswitch.c\
-	chr/ft_isalnum.c\
-	chr/ft_isalpha.c\
-	chr/ft_isascii.c\
-	chr/ft_isdigit.c\
-	chr/ft_isprint.c\
-	chr/ft_putchr.c\
-	chr/ft_putchr_fd.c\
+	chr/ft_isalnum.s\
+	chr/ft_isalpha.s\
+	chr/ft_isascii.s\
+	chr/ft_isdigit.s\
+	chr/ft_isprint.s\
+	chr/ft_putchr.s\
+	chr/ft_putchr_fd.s\
 	chr/ft_putnchr.c\
 	chr/ft_putspace.c\
-	chr/ft_tolower.c\
-	chr/ft_toupper.c\
+	chr/ft_tolower.s\
+	chr/ft_toupper.s\
 	env2d/ft_2denvnew.c\
 	env2d/ft_2denvupdate.c\
 	env2d/ft_2dposnew.c\
@@ -67,6 +71,7 @@ SRC =\
 	env3d/ft_print3dline.c\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
+	file/ft_putfile.s\
 	file/ft_readline.c\
 	file/ft_readtolst.c\
 	file/ft_readtotab.c\
@@ -114,19 +119,19 @@ SRC =\
 	lst/ft_lstpushrby.c\
 	lst/ft_lstshift.c\
 	lst/ft_lsttotab.c\
-	mem/ft_bzero.c\
+	mem/ft_bzero.s\
 	mem/ft_getendian.c\
 	mem/ft_memalloc.c\
 	mem/ft_memccpy.c\
 	mem/ft_memchr.c\
 	mem/ft_memcmp.c\
-	mem/ft_memcpy.c\
+	mem/ft_memcpy.s\
 	mem/ft_memdel.c\
 	mem/ft_memdup.c\
 	mem/ft_memequ.c\
 	mem/ft_memlen.c\
 	mem/ft_memmove.c\
-	mem/ft_memset.c\
+	mem/ft_memset.s\
 	mem/ft_memsub.c\
 	nbr/ft_atoi.c\
 	nbr/ft_degtorad.c\
@@ -144,8 +149,8 @@ SRC =\
 	nbr/ft_putllongbase.c\
 	nbr/ft_putllongdigits.c\
 	nbr/ft_putllonghex.c\
-	nbr/ft_putnbr.c\
-	nbr/ft_putnbr_fd.c\
+	nbr/ft_putnbr.s\
+	nbr/ft_putnbr_fd.s\
 	nbr/ft_putnbrbase.c\
 	nbr/ft_putnbrdigits.c\
 	nbr/ft_putnbrhex.c\
@@ -176,27 +181,27 @@ SRC =\
 	str/ft_putendl_fd.c\
 	str/ft_putistr.c\
 	str/ft_putnstr.c\
-	str/ft_putstr.c\
-	str/ft_putstr_fd.c\
+	str/ft_putstr.s\
+	str/ft_putstr_fd.s\
 	str/ft_putstrleft.c\
 	str/ft_putstrright.c\
-	str/ft_strcat.c\
+	str/ft_strcat.s\
 	str/ft_strccpy.c\
 	str/ft_strchr.c\
 	str/ft_strclr.c\
 	str/ft_strcmp.c\
-	str/ft_strcpy.c\
+	str/ft_strcpy.s\
 	str/ft_strdel.c\
 	str/ft_strdiv.c\
 	str/ft_strdjoin.c\
-	str/ft_strdup.c\
+	str/ft_strdup.s\
 	str/ft_strequ.c\
 	str/ft_stricpy.c\
 	str/ft_striter.c\
 	str/ft_striteri.c\
 	str/ft_strjoin.c\
 	str/ft_strlcat.c\
-	str/ft_strlen.c\
+	str/ft_strlen.s\
 	str/ft_strlstjoin.c\
 	str/ft_strmap.c\
 	str/ft_strmapi.c\
