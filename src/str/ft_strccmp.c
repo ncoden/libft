@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readtotab.c                                     :+:      :+:    :+:   */
+/*   ft_strccmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/27 18:03:56 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/28 17:52:12 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 09:39:04 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/08 10:38:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_readtotab(int fd)
+int				ft_strccmp(const char *s1, const char *s2, char c)
 {
-	t_lst	*lst;
-	char	**tab;
+	size_t		i;
 
-	lst = ft_readtolst(fd);
-	tab = (char **)ft_lsttotab(lst);
-	return (tab);
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s2[i] != c)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	if (s1[i] == s2[i] || s2[i] == c)
+		return (0);
+	return (s1[i] - s2[i]);
 }

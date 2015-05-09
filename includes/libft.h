@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/08 08:13:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/09 15:32:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@
 
 # include "libft_core.h"
 
+# include "libft_array.h"
 # include "libft_bit.h"
 # include "libft_chr.h"
 # include "libft_2denv.h"
 # include "libft_3denv.h"
+# include "libft_env.h"
 # include "libft_err.h"
 # include "libft_file.h"
 # include "libft_frmt.h"
@@ -36,6 +38,7 @@
 # include "libft_prs.h"
 # include "libft_pair.h"
 # include "libft_str.h"
+# include "libft_trm.h"
 # include "libft_tlst.h"
 # include "libft_uni.h"
 # include "libft_vec.h"

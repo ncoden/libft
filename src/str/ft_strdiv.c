@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdiv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:52:37 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/01 19:31:54 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/09 15:27:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void			get_size(char *s, char c, size_t *size, size_t *count)
 	}
 }
 
-static void			make_tab(char **tab, char *s, char c)
+static void			make_array(char **array, char *s, char c)
 {
 	int		i;
 	size_t	size;
@@ -51,7 +51,7 @@ static void			make_tab(char **tab, char *s, char c)
 		if (*s == c && size > 0)
 		{
 			*s = '\0';
-			tab[i] = s - size;
+			array[i] = s - size;
 			size = 0;
 			i++;
 		}
@@ -61,23 +61,23 @@ static void			make_tab(char **tab, char *s, char c)
 	}
 	if (size > 0)
 	{
-		tab[i] = s - size;
+		array[i] = s - size;
 		i++;
 	}
-	tab[i] = NULL;
+	array[i] = NULL;
 }
 
 char				**ft_strdiv(char *s, char c)
 {
 	size_t	size;
 	size_t	count;
-	char	**tab;
+	char	**array;
 
 	if (!s)
 		return (NULL);
 	get_size(s, c, &size, &count);
-	if (!(tab = (char **)malloc(sizeof(char *) * (count + 1))))
+	if (!(array = (char **)malloc(sizeof(char *) * (count + 1))))
 		return (NULL);
-	make_tab(tab, s, c);
-	return (tab);
+	make_array(array, s, c);
+	return (array);
 }

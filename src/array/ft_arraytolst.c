@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strccpy.c                                       :+:      :+:    :+:   */
+/*   ft_arraytolst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 13:48:59 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/08 09:58:45 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/27 16:30:16 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/09 15:22:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strccpy(char *dst, const char *src, char c, size_t n)
+t_lst	*ft_arraytolst(void **array)
 {
-	size_t		i;
+	int		i;
+	t_lst	*lst;
 
 	i = 0;
-	while (i < n)
+	lst = NULL;
+	while (array[i] != NULL)
 	{
-		dst[i] = src[i];
-		if (src[i] == c)
-			return (&(dst[i + 1]));
+		if (!ft_lstlnback(&lst, array[i], sizeof(array[i])))
+			return (NULL);
 		i++;
 	}
-	return (0);
+	if (array != NULL)
+		free(array);
+	return (lst);
 }

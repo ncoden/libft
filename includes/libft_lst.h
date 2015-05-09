@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_lst.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/02/03 08:25:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/09 15:24:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ int				ft_lstlen(t_lst *lst);
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem));
 void			ft_lstshift(t_lst **alst);
 
-void			**ft_lsttotab(t_lst *lst);
+void			**ft_lsttoarray(t_lst *lst);
 
 #endif

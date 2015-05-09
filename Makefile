@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/08 08:39:14 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/09 18:03:00 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ ASM = ~/.brew/Cellar/nasm/dev/bin/nasm
 # dev : NASM v2.11.08 modified to accept extern redeclaration as global
 ASMFLAGS = -f macho64
 
+LNK = gcc
+LNKFLAGS = -ltermcap
+
 # DIRECTORIES
 LIBDIR = lib
 SRCDIR = src
@@ -29,6 +32,8 @@ INCDIR = includes
 # SOURCES
 LIB = minilibx/libmlx.a
 SRC =\
+	array/ft_arraylen.c\
+	array/ft_arraytolst.c\
 	bit/ft_bitget.c\
 	bit/ft_bitset.c\
 	chr/ft_chrpos.c\
@@ -44,6 +49,7 @@ SRC =\
 	chr/ft_putspace.c\
 	chr/ft_tolower.s\
 	chr/ft_toupper.s\
+	env/ft_envget.c\
 	env2d/ft_2denvnew.c\
 	env2d/ft_2denvupdate.c\
 	env2d/ft_2dposnew.c\
@@ -74,7 +80,7 @@ SRC =\
 	file/ft_putfile.s\
 	file/ft_readline.c\
 	file/ft_readtolst.c\
-	file/ft_readtotab.c\
+	file/ft_readtoarray.c\
 	frmt/ft_frmtnew.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
@@ -118,7 +124,7 @@ SRC =\
 	lst/ft_lstpushfront.c\
 	lst/ft_lstpushrby.c\
 	lst/ft_lstshift.c\
-	lst/ft_lsttotab.c\
+	lst/ft_lsttoarray.c\
 	mem/ft_bzero.s\
 	mem/ft_getendian.c\
 	mem/ft_memalloc.c\
@@ -189,6 +195,7 @@ SRC =\
 	str/ft_strccpy.c\
 	str/ft_strchr.c\
 	str/ft_strclr.c\
+	str/ft_strccmp.c\
 	str/ft_strcmp.c\
 	str/ft_strcpy.s\
 	str/ft_strdel.c\
@@ -218,13 +225,13 @@ SRC =\
 	str/ft_strstr.c\
 	str/ft_strsub.c\
 	str/ft_strtrim.c\
-	tab/ft_tablen.c\
-	tab/ft_tabtolst.c\
 	tlst/ft_tlstaddback.c\
 	tlst/ft_tlstaddfront.c\
 	tlst/ft_tlstnew.c\
 	tlst/ft_tlstpushback.c\
 	tlst/ft_tlstpushfront.c\
+	trm/ft_trmget.c\
+	trm/ft_trmset.c\
 	uni/ft_getunicode.c\
 	uni/ft_putnbwstr_utf8.c\
 	uni/ft_putnwstr_utf8.c\
@@ -296,7 +303,7 @@ fclean: clean
 re: fclean all
 
 dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
-	gcc -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS)
+	$(LNK) -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS) $(LNKFLAGS)
 	./$(DEVNAME)
 
 $(LIBDIR)/%.a:

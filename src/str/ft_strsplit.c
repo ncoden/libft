@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 13:28:07 by ncoden            #+#    #+#             */
-/*   Updated: 2014/11/28 12:40:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/09 15:27:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**alloc_tab(const char *s, char c)
+static char		**alloc_array(const char *s, char c)
 {
 	size_t		i;
 	size_t		word_found;
@@ -44,18 +44,18 @@ char			**ft_strsplit(const char *s, char c)
 	size_t		i;
 	size_t		i_word;
 	size_t		size_word;
-	char		**tab;
+	char		**array;
 
 	i = 0;
 	i_word = 0;
 	size_word = 0;
-	if (!(tab = alloc_tab(s, c)))
+	if (!(array = alloc_array(s, c)))
 		return (NULL);
 	while (i == 0 || (i > 0 && s[i - 1] != '\0'))
 	{
 		if ((s[i] == '\0' || s[i] == c) && size_word > 0)
 		{
-			if (!(tab[i_word] = ft_strsub(s, i - size_word, size_word)))
+			if (!(array[i_word] = ft_strsub(s, i - size_word, size_word)))
 				return (NULL);
 			i_word++;
 			size_word = 0;
@@ -64,6 +64,6 @@ char			**ft_strsplit(const char *s, char c)
 			size_word++;
 		i++;
 	}
-	tab[i_word] = 0;
-	return (tab);
+	array[i_word] = 0;
+	return (array);
 }
