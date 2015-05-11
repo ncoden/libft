@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_trm.h                                        :+:      :+:    :+:   */
+/*   libft_ilst.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/11 18:53:58 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/11 20:58:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_TRM_H
-# define LIBFT_TRM_H
+#ifndef LIBFT_ILST_H
+# define LIBFT_ILST_H
 
-# include <term.h>
-# include <termios.h>
-# include <curses.h>
-# include <sys/ioctl.h>
-# include <signal.h>
+# define EXTEND_ILST(type)	struct {EXTEND_LST(type); char *index;}
 
-typedef struct		s_trm
+typedef struct	s_ilst
 {
-	struct termios	*opts;
-	t_ilst_evnt		*on_key;
-	t_evnt			*on_resize;
-}					t_trm;
-
-struct termios		*ft_trmget();
-t_bool				ft_trmset(struct termios *trm);
+	EXTEND_ILST	(s_ilst);
+	void		*data;
+	size_t		size;
+}				t_ilst;
 
 #endif

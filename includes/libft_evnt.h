@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_trm.h                                        :+:      :+:    :+:   */
+/*   libft_evnt.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/11 18:53:58 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/11 20:51:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_TRM_H
-# define LIBFT_TRM_H
+#ifndef LIBFT_EVNT_H
+# define LIBFT_EVNT_H
 
-# include <term.h>
-# include <termios.h>
-# include <curses.h>
-# include <sys/ioctl.h>
-# include <signal.h>
+# include "libft_ilst.h"
 
-typedef struct		s_trm
+typedef struct	s_evnt
 {
-	struct termios	*opts;
-	t_ilst_evnt		*on_key;
-	t_evnt			*on_resize;
-}					t_trm;
+	void		(*func)();
+	char		*data;
+}				t_evnt;
 
-struct termios		*ft_trmget();
-t_bool				ft_trmset(struct termios *trm);
+typedef struct	s_ilst_evnt
+{
+	EXTEND_ILST	(s_ilst_evnt);
+	t_evnt		event;
+}				t_ilst_evnt;
 
 #endif
