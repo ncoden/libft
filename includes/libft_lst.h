@@ -6,18 +6,20 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/09 15:24:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/11 20:58:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_LST_H
 # define LIBFT_LST_H
 
+# define EXTEND_LST(type)	struct {struct type *next;}
+
 typedef struct	s_lst
 {
-	void			*content;
-	size_t			size;
-	struct s_lst	*next;
+	EXTEND_LST	(s_lst);
+	void		*content;
+	size_t		size;
 }				t_lst;
 
 void			ft_lstaddfront(t_lst **alst, t_lst *new);
