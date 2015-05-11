@@ -15,18 +15,18 @@
 char	*ft_lstcpy_tostr(t_lst *lst, char *dst, size_t n)
 {
 	size_t		i;
-	size_t		i_content;
+	size_t		i_data;
 	char		*view;
 
 	i = 0;
 	while (lst != NULL)
 	{
-		view = (char *)(lst->content);
-		i_content = 0;
+		view = (char *)(lst->data);
+		i_data = 0;
 		while (view[i] != '\0')
 		{
-			dst[i] = view[i_content];
-			i_content++;
+			dst[i] = view[i_data];
+			i_data++;
 			i++;
 			if (i == n)
 				return (dst);

@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-t_lst		*ft_lstpushafter(t_lst *lst, const void *content, size_t csize)
+t_lst		*ft_lstpushafter(t_lst *lst, const void *data, size_t csize)
 {
 	t_lst	*new;
 
-	new = ft_lstnew(content, csize);
+	new = ft_lstnew(data, csize);
 	if (lst != NULL && new != NULL)
 	{
 		new->next = lst->next;

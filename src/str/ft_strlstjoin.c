@@ -31,7 +31,7 @@ char	*ft_strlstjoin(t_lst *lst)
 	size = 0;
 	while (lst != NULL)
 	{
-		ft_strcpy(&(str[size]), lst->content);
+		ft_strcpy(&(str[size]), lst->data);
 		size += lst->size - 1;
 		lst = lst->next;
 	}

@@ -19,7 +19,7 @@ t_lst	*ft_lstdup(t_lst *lst)
 	new_lst = NULL;
 	while (lst != NULL)
 	{
-		if (!(ft_lstpushback(&new_lst, lst->content, lst->size)))
+		if (!(ft_lstpushback(&new_lst, lst->data, lst->size)))
 			return (NULL);
 		lst = lst->next;
 	}

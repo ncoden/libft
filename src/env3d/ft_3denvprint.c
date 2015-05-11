@@ -23,7 +23,7 @@ void		ft_3denvprint(t_3denv *e)
 		while (view != NULL)
 		{
 			if (view->type == T_3DLINE)
-				ft_print3dline(e, (t_3dline *)view->content);
+				ft_print3dline(e, (t_3dline *)view->data);
 			view = view->next;
 		}
 		ft_3denvupdate(e);

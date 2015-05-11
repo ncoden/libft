@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-t_tlst		*ft_tlstpushfront(t_tlst **alst, void *content, t_type type)
+t_tlst		*ft_tlstpushfront(t_tlst **alst, void *data, t_type type)
 {
 	t_tlst	*new;
 
 	if (alst != NULL)
 	{
-		if (!(new = ft_tlstnew(content, type)))
+		if (!(new = ft_tlstnew(data, type)))
 			return (NULL);
 		ft_tlstaddfront(alst, new);
 		return (new);

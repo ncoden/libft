@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-t_tlst		*ft_tlstnew(void *content, t_type type)
+t_tlst		*ft_tlstnew(void *data, t_type type)
 {
 	t_tlst		*new;
 
 	if (!(new = (t_tlst *)malloc(sizeof(t_lst))))
 		return (NULL);
-	new->content = content;
+	new->data = data;
 	new->type = type;
 	new->next = NULL;
 	return (new);

@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-t_lst		*ft_lstlnby(t_lst **alst, void *content, size_t csize,
+t_lst		*ft_lstlnby(t_lst **alst, void *data, size_t csize,
 				int (*f)(const void *, const void *, size_t, size_t))
 {
 	t_lst		*new;
 
 	if (alst != NULL && f != NULL)
 	{
-		new = ft_lstln(content, csize);
+		new = ft_lstln(data, csize);
 		if (new != NULL)
 			ft_lstaddby(alst, new, f);
 		return (new);

@@ -70,7 +70,7 @@ t_3dang			*ft_3dangnew(double x, double y, double z);
 void			ft_3dangset(t_3dang *ang, double x, double y, double z);
 t_3dline		*ft_3dlinenew(t_3dpos *from, t_3dpos *to, int color);
 void			ft_3dto2dpos(t_3denv *e, t_3dpos *pos3d, t_2dpos *pos2d);
-t_tlst			*ft_3denvpush(t_3denv *e, void *content, t_type type);
+t_tlst			*ft_3denvpush(t_3denv *e, void *data, t_type type);
 void			ft_3denvprint(t_3denv *e);
 
 void			ft_print3dline(t_3denv *e, t_3dline *line);

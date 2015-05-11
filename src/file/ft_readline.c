@@ -53,7 +53,7 @@ static int		read_to_lst(t_fd *fdatas)
 	if (new_lst == NULL)
 		return (-1);
 	ft_lstaddback(&(fdatas->lst), new_lst);
-	return (read(fdatas->fd, (char *)(new_lst->content), BUFF_SIZE));
+	return (read(fdatas->fd, (char *)(new_lst->data), BUFF_SIZE));
 }
 
 static int		get_line_end(t_fd *fdatas, int *can_read)
@@ -70,11 +70,11 @@ static int		get_line_end(t_fd *fdatas, int *can_read)
 	while (*can_read)
 	{
 		if (i_buffer == 0)
-			found = ft_strchr((char *)(lst->content + fdatas->start), '\n');
+			found = ft_strchr((char *)(lst->data + fdatas->start), '\n');
 		else
-			found = ft_strchr((char *)(lst->content), '\n');
+			found = ft_strchr((char *)(lst->data), '\n');
 		if (found != NULL)
-			return (i_buffer * BUFF_SIZE + (found - (char *)lst->content));
+			return (i_buffer * BUFF_SIZE + (found - (char *)lst->data));
 		*can_read = read_to_lst(fdatas);
 		i_buffer++;
 		lst = lst->next;
@@ -94,7 +94,7 @@ static char		*make_str(t_fd *fdatas, int const line_end)
 		return (NULL);
 	while (i <= max)
 	{
-		ft_strncpy(&(str[i]), fdatas->lst->content + fdatas->start, (max - i));
+		ft_strncpy(&(str[i]), fdatas->lst->data + fdatas->start, (max - i));
 		i += BUFF_SIZE - fdatas->start;
 		if (i <= max)
 			ft_lstshift(&(fdatas->lst));

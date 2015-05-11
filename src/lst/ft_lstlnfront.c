@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-t_lst	*ft_lstlnfront(t_lst **alst, void *content, size_t csize)
+t_lst	*ft_lstlnfront(t_lst **alst, void *data, size_t csize)
 {
 	t_lst	*new_lst;
 
 	if (alst != NULL)
 	{
-		new_lst = ft_lstln(content, csize);
+		new_lst = ft_lstln(data, csize);
 		if (new_lst == NULL)
 			return (NULL);
 		ft_lstaddfront(alst, new_lst);

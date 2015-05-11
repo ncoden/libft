@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_tlst		*ft_3denvpush(t_3denv *e, void *content, t_type type)
+t_tlst		*ft_3denvpush(t_3denv *e, void *data, t_type type)
 {
-	return (ft_tlstpushback(&e->obj, content, type));
+	return (ft_tlstpushback(&e->obj, data, type));
 }

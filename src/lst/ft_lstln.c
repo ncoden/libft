@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-t_lst		*ft_lstln(void *content, size_t size)
+t_lst		*ft_lstln(void *data, size_t size)
 {
 	t_lst	*lst;
 
 	lst = (t_lst *)malloc(sizeof(t_lst));
 	if (lst != NULL)
 	{
-		if (content != NULL)
+		if (data != NULL)
 			lst->size = size;
 		else
 			lst->size = 0;
-		lst->content = content;
+		lst->data = data;
 		lst->next = NULL;
 	}
 	return (lst);

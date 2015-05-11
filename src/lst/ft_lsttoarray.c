@@ -28,7 +28,7 @@ void	**ft_lsttoarray(t_lst *lst)
 			i = 0;
 			while (i < size)
 			{
-				array[i] = lst->content;
+				array[i] = lst->data;
 				next = lst->next;
 				free(lst);
 				lst = next;

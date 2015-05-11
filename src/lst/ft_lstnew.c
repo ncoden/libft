@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-t_lst	*ft_lstnew(void const *content, size_t size)
+t_lst	*ft_lstnew(void const *data, size_t size)
 {
 	t_lst	*lst;
 
 	if (!(lst = (t_lst *)ft_memalloc(sizeof(t_lst))))
 		return (NULL);
-	if (content != NULL)
+	if (data != NULL)
 	{
-		if (!(lst->content = ft_memdup(content, size)))
+		if (!(lst->data = ft_memdup(data, size)))
 		{
 			return (NULL);
 			free(lst);
@@ -29,7 +29,7 @@ t_lst	*ft_lstnew(void const *content, size_t size)
 	}
 	else
 	{
-		lst->content = NULL;
+		lst->data = NULL;
 		lst->size = 0;
 	}
 	lst->next = NULL;

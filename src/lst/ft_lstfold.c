@@ -18,11 +18,11 @@ void	*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void*, size_t))
 
 	if (lst != NULL)
 	{
-		result = lst->content;
+		result = lst->data;
 		lst = lst->next;
 		while (lst != NULL)
 		{
-			result = (*f)(result, lst->content, lst->size);
+			result = (*f)(result, lst->data, lst->size);
 			lst = lst->next;
 		}
 		return (result);

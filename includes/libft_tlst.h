@@ -15,15 +15,15 @@
 
 typedef struct	s_tlst
 {
-	void			*content;
+	void			*data;
 	t_type			type;
 	struct s_tlst	*next;
 }				t_tlst;
 
 void			ft_tlstaddfront(t_tlst **alst, t_tlst *new);
 void			ft_tlstaddback(t_tlst **alst, t_tlst *new);
-t_tlst			*ft_tlstnew(void *content, t_type type);
-t_tlst			*ft_tlstpushfront(t_tlst **alst, void *content, t_type type);
-t_tlst			*ft_tlstpushback(t_tlst **alst, void *content, t_type type);
+t_tlst			*ft_tlstnew(void *data, t_type type);
+t_tlst			*ft_tlstpushfront(t_tlst **alst, void *data, t_type type);
+t_tlst			*ft_tlstpushback(t_tlst **alst, void *data, t_type type);
 
 #endif

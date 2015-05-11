@@ -20,7 +20,7 @@ char	*ft_lstccpy_tostr(t_lst *lst, char *dst, char c, size_t n)
 	i = 0;
 	while (lst != NULL)
 	{
-		found = ft_strccpy(&(dst[i]), (char *)lst->content, c, n - i);
+		found = ft_strccpy(&(dst[i]), (char *)lst->data, c, n - i);
 		if (found != NULL)
 			return (found);
 		i += lst->size;

@@ -22,7 +22,7 @@ void		ft_lstaddrby(t_lst **alst, t_lst *new,
 	{
 		view = *alst;
 		view_prev = NULL;
-		while (view != NULL && (*f)(new->content, view->content,
+		while (view != NULL && (*f)(new->data, view->data,
 			new->size, view->size) > 0)
 		{
 			view_prev = view;
