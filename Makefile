@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/09 18:03:00 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/12 22:47:16 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,8 @@ SRC =\
 	env3d/ft_print3dline.c\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
+	evnt/ft_evntnew.c\
+	evnt/ft_evntset.c\
 	file/ft_putfile.s\
 	file/ft_readline.c\
 	file/ft_readtolst.c\
@@ -230,7 +232,7 @@ SRC =\
 	tlst/ft_tlstnew.c\
 	tlst/ft_tlstpushback.c\
 	tlst/ft_tlstpushfront.c\
-	trm/ft_trmget.c\
+	trm/ft_trmnew.c\
 	trm/ft_trmset.c\
 	uni/ft_getunicode.c\
 	uni/ft_putnbwstr_utf8.c\

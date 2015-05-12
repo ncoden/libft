@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_trmget.c                                        :+:      :+:    :+:   */
+/*   ft_evntnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/11 21:16:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/12 22:48:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-struct termios		*ft_trmget(void)
+t_evnt			*ft_evntnew(void (*func)(void *), void *data)
 {
-	static struct termios	*trm;
+	t_evnt		*event;
 
-	if (trm == NULL)
-	{
-		if (!(trm = (struct termios *)malloc(sizeof(struct termios))))
-			return (NULL);
-		if (!(tgetent(NULL, ft_envget("TERM"))))
-			return (NULL);
-		if (tcgetattr(0, trm) == -1)
-			return (NULL);
-	}
-	return (trm);
+	if (!(event = (t_evnt *)malloc(sizeof(t_evnt))))
+		return (NULL);
+	event->func = func;
+	event->data = data;
+	return (event);
 }

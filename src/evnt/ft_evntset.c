@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_evnt.h                                       :+:      :+:    :+:   */
+/*   ft_evntset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/12 22:48:50 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/12 22:49:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_EVNT_H
-# define LIBFT_EVNT_H
+#include "libft.h"
 
-# include "libft_ilst.h"
-
-typedef struct	s_evnt
+void			ft_evntset(t_evnt *event, void (*func)(void *), void *data)
 {
-	void		(*func)(void *);
-	void		*data;
-}				t_evnt;
-
-typedef struct	s_ilst_evnt
-{
-	EXTEND_ILST	(s_ilst_evnt);
-	t_evnt		event;
-}				t_ilst_evnt;
-
-t_evnt			*ft_evntnew(void (*func)(void *), void *data);
-void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
-
-#endif
+	if (event)
+	{
+		event->func = func;
+		event->data = data;
+	}
+}

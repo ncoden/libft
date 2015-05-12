@@ -6,17 +6,17 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 16:22:13 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/09 17:16:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/12 17:10:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_trmset(struct termios *trm)
+t_bool			ft_trmset(t_trm *trm)
 {
 	if (trm)
 	{
-		if (tcsetattr(0, TCSADRAIN, trm) != -1)
+		if (tcsetattr(0, TCSADRAIN, &trm->opts) != -1)
 			return (1);
 	}
 	return (0);

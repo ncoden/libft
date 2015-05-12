@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/12 00:42:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/12 17:15:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 
 typedef struct		s_trm
 {
-	struct termios	*opts;
+	struct termios	opts;
 	t_ilst_evnt		*on_key_press;
 	t_evnt			*on_resize;
 }					t_trm;
 
-struct termios		*ft_trmget();
-t_bool				ft_trmset(struct termios *trm);
+t_trm				*ft_trmnew();
+t_bool				ft_trmset(t_trm *trm);
 
 #endif
