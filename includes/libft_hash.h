@@ -6,14 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 15:39:50 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/13 16:33:08 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_HASH_H
 # define LIBFT_HASH_H
 
-# define EXTEND_HASH(type)	struct {EXTEND_LST(type); void *key; size_t keysize}
+# define EXTEND_HASH(type)	struct {EXTEND_LST(type); void *key; size_t ksize;}
 
 typedef struct	s_hash
 {
