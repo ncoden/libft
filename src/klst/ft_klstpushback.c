@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstnew.c                                       :+:      :+:    :+:   */
+/*   ft_klstpushback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/12 22:50:39 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 18:48:54 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 19:13:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstnew(char *key, void *data, size_t size)
+t_klst			*ft_klstpushback(t_klst **alst, char *key, void *data,
+					size_t size)
 {
-	t_klst		*klst;
+	t_klst		*new;
 
-	if (key != NULL)
+	if (alst != NULL)
 	{
-		if (!(klst = (t_klst *)malloc(sizeof(t_klst))))
+		if (!(new = ft_klstnew(key, data, size)))
 			return (NULL);
-		klst->key = key;
-		if (data != NULL)
-			klst->size = size;
-		else
-			klst->size = 0;
-		klst->data = data;
-		klst->next = NULL;
-		return (klst);
+		ft_lstaddback((t_lst **)alst, (t_lst *)new);
+		return (new);
 	}
 	return (NULL);
 }

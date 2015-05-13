@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/13 18:42:22 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/13 18:52:38 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,8 @@ SRC =\
 	img/ft_imgnew.c\
 	img/ft_imgset.c\
 	klst/ft_klstnew.c\
+	klst/ft_klstpushback.c\
+	klst/ft_klstpushfront.c\
 	lst/ft_lstaddafter.c\
 	lst/ft_lstaddback.c\
 	lst/ft_lstaddby.c\
