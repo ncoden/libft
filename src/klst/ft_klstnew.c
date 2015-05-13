@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hashnew.c                                       :+:      :+:    :+:   */
+/*   ft_klstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/12 22:50:39 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 16:29:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/13 18:43:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_hash			*ft_hashnew(const void *key, const void *data, size_t ksize,
-								size_t size)
+t_klst			*ft_klstnew(void *key, void *data, size_t ksize, size_t size)
 {
-	t_hash		*hash;
+	t_klst		*klst;
 
 	if (key != NULL && ksize > 0)
 	{
-		if (!(hash = (t_hash *)malloc(sizeof(t_hash))))
+		if (!(klst = (t_klst *)malloc(sizeof(t_klst))))
 			return (NULL);
-		hash->key = key;
-		hash->ksize = ksize;
+		klst->key = key;
+		klst->ksize = ksize;
 		if (data != NULL)
-			hash->size = size;
+			klst->size = size;
 		else
-			hash->size = 0;
-		hash->data = data;
-		hash->next = NULL;
-		return (hash);
+			klst->size = 0;
+		klst->data = data;
+		klst->next = NULL;
+		return (klst);
 	}
 	return (NULL);
 }

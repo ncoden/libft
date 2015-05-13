@@ -22,7 +22,7 @@
 typedef struct		s_trm
 {
 	struct termios	opts;
-	t_hash_evnt		*on_key_press;
+	t_klst_evnt		*on_key_press;
 	t_evnt			*on_resize;
 }					t_trm;
 
