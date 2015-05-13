@@ -21,7 +21,7 @@ t_lst	*ft_arraytolst(void **array)
 	lst = NULL;
 	while (array[i] != NULL)
 	{
-		if (!ft_lstlnback(&lst, array[i], sizeof(array[i])))
+		if (!ft_lstpushback(&lst, array[i], sizeof(array[i])))
 			return (NULL);
 		i++;
 	}

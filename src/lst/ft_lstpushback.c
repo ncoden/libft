@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 11:24:47 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:37:12 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 16:20:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_lst	*ft_lstpushback(t_lst **alst, const void *data, size_t csize)
+t_lst	*ft_lstpushback(t_lst **alst, void *data, size_t csize)
 {
 	t_lst	*new_lst;
 

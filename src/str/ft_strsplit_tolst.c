@@ -25,7 +25,7 @@ t_lst	*ft_strsplit_tolst(const char *s, char c)
 	{
 		if ((s[i] == '\0' || s[i] == c) && size_word > 0)
 		{
-			ft_lstlnback(&lst,
+			ft_lstpushback(&lst,
 				(void*)ft_strsub(s, i - size_word, size_word), size_word + 1);
 			size_word = 0;
 		}

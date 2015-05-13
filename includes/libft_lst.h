@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/11 20:58:45 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/13 16:11:43 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,14 @@ void			ft_lstaddby(t_lst **alst, t_lst *new,
 void			ft_lstaddrby(t_lst **alst, t_lst *new,
 						int (*f)(const void *, const void *, size_t, size_t));
 
-t_lst			*ft_lstnew(void const *data, size_t size);
-t_lst			*ft_lstpushfront(t_lst **alst, const void *data,
-						size_t size);
-t_lst			*ft_lstpushback(t_lst **alst, const void *data,
-						size_t size);
-t_lst			*ft_lstpushafter(t_lst *lst, const void *data,
+t_lst			*ft_lstnew(void *data, size_t size);
+t_lst			*ft_lstpushfront(t_lst **alst, void *data, size_t size);
+t_lst			*ft_lstpushback(t_lst **alst, void *data, size_t size);
+t_lst			*ft_lstpushafter(t_lst *lst, void *data,
 						size_t size);
 t_lst			*ft_lstpushby(t_lst **alst, void *data, size_t size,
 						int (*f)(const void *, const void *, size_t, size_t));
 t_lst			*ft_lstpushrby(t_lst **alst, void *data, size_t size,
-						int (*f)(const void *, const void *, size_t, size_t));
-
-t_lst			*ft_lstln(void *data, size_t size);
-t_lst			*ft_lstlnfront(t_lst **alst, void *data, size_t size);
-t_lst			*ft_lstlnback(t_lst **alst, void *data, size_t size);
-t_lst			*ft_lstlnafter(t_lst *lst, void *data,
-						size_t size);
-t_lst			*ft_lstlnby(t_lst **alst, void *data, size_t size,
-						int (*f)(const void *, const void *, size_t, size_t));
-t_lst			*ft_lstlnrby(t_lst **alst, void *data, size_t size,
 						int (*f)(const void *, const void *, size_t, size_t));
 
 char			*ft_lstcpy_tostr(t_lst *lst, char *dst, size_t n);

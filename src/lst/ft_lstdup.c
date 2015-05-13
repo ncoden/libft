@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:09:12 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:34:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/13 16:01:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_lst	*ft_lstdup(t_lst *lst)
 	new_lst = NULL;
 	while (lst != NULL)
 	{
-		if (!(ft_lstpushback(&new_lst, lst->data, lst->size)))
+		if (!(ft_lstpushback(&new_lst, ft_memdup(lst->data, lst->size),
+				lst->size)))
 			return (NULL);
 		lst = lst->next;
 	}

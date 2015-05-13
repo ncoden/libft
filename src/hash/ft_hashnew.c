@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlnrby.c                                      :+:      :+:    :+:   */
+/*   ft_hashnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/21 12:02:40 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/03 16:37:12 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/12 22:50:39 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 15:40:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_lst		*ft_lstlnrby(t_lst **alst, void *data, size_t csize,
-				int (*f)(const void *, const void *, size_t, size_t))
+t_hash			*ft_hashnew(const void *key, const void *data, size_t keysize,
+								size_t size)
 {
-	t_lst		*new;
+	t_lst	*lst;
 
-	if (alst != NULL && f != NULL)
+	if (!(lst = (t_lst *)ft_memalloc(sizeof(t_lst))))
+		return (NULL);
+	if (data != NULL)
 	{
-		new = ft_lstln(data, csize);
-		if (new != NULL)
-			ft_lstaddrby(alst, new, f);
-		return (new);
+		if (!(lst->data = ft_memdup(data, size)))
+		{
+			return (NULL);
+			free(lst);
+		}
+		lst->size = size;
 	}
-	return (NULL);
+	else
+	{
+		lst->data = NULL;
+		lst->size = 0;
+	}
+	lst->next = NULL;
+	return (lst);
 }

@@ -22,7 +22,7 @@ t_lst		*ft_readtolst(int fd)
 	lst_first = NULL;
 	while (ft_readline(fd, &buffer))
 	{
-		if (!(lst = ft_lstlnafter(lst, buffer, sizeof(buffer))))
+		if (!(lst = ft_lstpushafter(lst, buffer, sizeof(buffer))))
 			return (NULL);
 		if (lst_first == NULL)
 			lst_first = lst;

@@ -49,7 +49,7 @@ static int		read_to_lst(t_fd *fdatas)
 	buffer = (char *)malloc(BUFF_SIZE + 1);
 	if (buffer == NULL)
 		return (-1);
-	new_lst = ft_lstln(buffer, BUFF_SIZE);
+	new_lst = ft_lstnew(buffer, BUFF_SIZE);
 	if (new_lst == NULL)
 		return (-1);
 	ft_lstaddback(&(fdatas->lst), new_lst);
