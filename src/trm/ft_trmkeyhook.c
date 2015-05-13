@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_klst.h                                       :+:      :+:    :+:   */
+/*   ft_trmkeyhook.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 21:18:38 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 19:30:12 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 21:45:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_KLST_H
-# define LIBFT_KLST_H
+#include "libft.h"
 
-# define EXTEND_KLST(type)	struct {EXTEND_LST(type); char *key;}
-
-typedef struct	s_klst
+void			ft_trmkeyhook(t_trm *trm, char *key, void (*func)(void *),
+					void *data)
 {
-	EXTEND_KLST	(s_klst);
-	void		*data;
-	size_t		size;
-}				t_klst;
+	t_klst_evnt	*event;
 
-t_klst			*ft_klstnew(char *key, void *data, size_t size);
-t_klst			*ft_klstget(t_klst *lst, char *key);
-
-#endif
+	if (trm)
+	{
+		if ((event = (t_klst_evnt *)malloc(sizeof(t_klst_evnt))))
+		{
+			event->event.func = func;
+			event->event.data = data;
+			event->key = key;
+			event->next = NULL;
+			ft_lstaddback((t_lst **)&(trm->on_key_press), (t_lst *)event);
+		}
+	}
+}

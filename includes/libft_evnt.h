@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 16:32:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/13 20:50:52 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ typedef struct	s_klst_evnt
 
 t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
+
+void			ft_evntcall(t_evnt *event);
+void			ft_evnttrigger(t_klst_evnt *events, char *name);
 
 #endif

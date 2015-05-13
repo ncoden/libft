@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_klst.h                                       :+:      :+:    :+:   */
+/*   ft_klstget.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 21:18:38 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 21:41:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_KLST_H
-# define LIBFT_KLST_H
+#include "libft.h"
 
-# define EXTEND_KLST(type)	struct {EXTEND_LST(type); char *key;}
-
-typedef struct	s_klst
+t_klst			*ft_klstget(t_klst *lst, char *key)
 {
-	EXTEND_KLST	(s_klst);
-	void		*data;
-	size_t		size;
-}				t_klst;
-
-t_klst			*ft_klstnew(char *key, void *data, size_t size);
-t_klst			*ft_klstget(t_klst *lst, char *key);
-
-#endif
+	if (!lst || !key)
+		return (NULL);
+	while (lst != NULL)
+	{
+		if (ft_strequ(lst->key, key))
+			return (lst);
+		lst = lst->next;
+	}
+	return (NULL);
+}

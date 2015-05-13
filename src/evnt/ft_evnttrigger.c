@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_klst.h                                       :+:      :+:    :+:   */
+/*   ft_evnttrigger.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 21:18:38 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/13 21:45:50 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_KLST_H
-# define LIBFT_KLST_H
+#include "libft.h"
 
-# define EXTEND_KLST(type)	struct {EXTEND_LST(type); char *key;}
-
-typedef struct	s_klst
+void			ft_evnttrigger(t_klst_evnt *events, char *key)
 {
-	EXTEND_KLST	(s_klst);
-	void		*data;
-	size_t		size;
-}				t_klst;
+	t_klst_evnt	*lst;
 
-t_klst			*ft_klstnew(char *key, void *data, size_t size);
-t_klst			*ft_klstget(t_klst *lst, char *key);
-
-#endif
+	if (events && key)
+	{
+		if ((lst = (t_klst_evnt *)ft_klstget((t_klst *)events, key)))
+			lst->event.func(lst->event.data);
+	}
+}
