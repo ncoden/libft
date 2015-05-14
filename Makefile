@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/13 21:18:51 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/14 17:03:08 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -232,6 +232,7 @@ SRC =\
 	tlst/ft_tlstnew.c\
 	tlst/ft_tlstpushback.c\
 	tlst/ft_tlstpushfront.c\
+	trm/ft_trmclr.c\
 	trm/ft_trmkeycmd.c\
 	trm/ft_trmkeyhook.c\
 	trm/ft_trmputcmd.c\
