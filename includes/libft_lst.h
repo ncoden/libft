@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 16:11:43 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/15 17:14:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_LST_H
 
 # define EXTEND_LST(type)	struct {struct type *next;}
+# define LST_DATA(lst)		(lst + sizeof(void *))
 
 typedef struct	s_lst
 {

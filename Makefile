@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/15 16:51:26 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/15 17:28:23 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,16 +99,22 @@ SRC =\
 	frmt/ft_frmtset.c\
 	ilst/ft_ilstget.c\
 	ilst/ft_ilstnew.c\
+	ilst/ft_ilstnew__.c\
 	ilst/ft_ilstpushback.c\
+	ilst/ft_ilstpushback__.c\
 	ilst/ft_ilstpushfront.c\
+	ilst/ft_ilstpushfront__.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
 	img/ft_imgset.c\
 	klst/ft_klstget.c\
 	klst/ft_klstnew.c\
+	klst/ft_klstnew__.c\
 	klst/ft_klstpushback.c\
+	klst/ft_klstpushback__.c\
 	klst/ft_klstpushfront.c\
+	klst/ft_klstpushfront__.c\
 	lst/ft_lstaddafter.c\
 	lst/ft_lstaddback.c\
 	lst/ft_lstaddby.c\
