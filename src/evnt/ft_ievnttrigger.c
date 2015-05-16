@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_evnttrigger.c                                   :+:      :+:    :+:   */
+/*   ft_ievnttrigger.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/15 19:41:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/16 16:32:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_evnttrigger(t_klst_evnt *events, char *key)
+void			ft_ievnttrigger(t_ilst_evnt *events, int index)
 {
-	t_klst_evnt	*lst;
+	t_ilst_evnt	*lst;
 
-	if (events && key)
+	if (events)
 	{
-		if ((lst = ft_klstget_evnt(events, key)))
+		if ((lst = FT_ILSTGET_EVNT(events, index)))
 			lst->event.func(lst->event.data);
 	}
 }
