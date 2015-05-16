@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/15 19:50:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/16 16:01:36 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ t_ilst			*ft_ilstnew__(size_t size, int index);
 t_ilst			*ft_ilstpushback__(size_t size, t_ilst **alst, int index);
 t_ilst			*ft_ilstpushfront__(size_t size, t_ilst **alst, int index);
 
-# define		ft_ilstnew_(t, i)			ft_ilstnew__(sizeof(t), i)
-# define		ft_ilstpushback_(t, a, i)	ft_ilstpushback__(sizeof(t), a, i)
-# define		ft_ilstpushfront_(t, a, i)	ft_ilstpushfront__(sizeof(t), a, i)
-# define		ft_ilstget_(t, l, i)		(t *)ft_ilstget((t_ilst *)l, i)
+# define FT_ILSTNEW_(t, i)			ft_ilstnew__(sizeof(t), i)
+# define FT_ILSTPUSHBACK_(t, a, i)	ft_ilstpushback__(sizeof(t), a, i)
+# define FT_ILSTPUSHFRONT_(t, a, i)	ft_ilstpushfront__(sizeof(t), a, i)
+# define FT_ILSTGET_(t, l, i)		(t *)ft_ilstget((t_ilst *)l, i)
 
 #endif
