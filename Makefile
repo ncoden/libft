@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/16 17:39:14 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/16 18:16:45 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -198,6 +198,9 @@ SRC =\
 	prs/ft_prsnbr.c\
 	prs/ft_prsstr.c\
 	prs/ft_prsxchrs.c\
+	sgnl/ft_sgnlhook.c\
+	sgnl/ft_sgnldel.c\
+	sgnl/ft_sgnltrigger.c\
 	str/ft_putendl.c\
 	str/ft_putendl_fd.c\
 	str/ft_putistr.c\
