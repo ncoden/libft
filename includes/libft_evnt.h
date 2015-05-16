@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 16:12:37 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/16 17:37:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			ft_ievnttrigger(t_ilst_evnt *events, int index);
 # define FT_ILSTPUSHBACK_EVNT(...)	FT_ILSTPUSHBACK_(t_ilst_evnt, __VA_ARGS__)
 # define FT_ILSTPUSHFRONT_EVNT(...)	FT_ILSTPUSHFRONT_(t_ilst_evnt, __VA_ARGS__)
 # define FT_ILSTGET_EVNT(...)		FT_ILSTGET_(t_ilst_evnt, __VA_ARGS__)
+# define FT_ILSTDEL_EVNT(...)		FT_ILSTDEL_(t_ilst_evnt, __VA_ARGS__)
 
 void			ft_kevnttrigger(t_klst_evnt *events, char *key);
 
@@ -51,5 +52,6 @@ void			ft_kevnttrigger(t_klst_evnt *events, char *key);
 # define FT_KLSTPUSHBACK_EVNT(...)	FT_KLSTPUSHBACK_(t_klst_evnt, __VA_ARGS__)
 # define FT_KLSTPUSHFRONT_EVNT(...)	FT_KLSTPUSHFRONT_(t_klst_evnt, __VA_ARGS__)
 # define FT_KLSTGET_EVNT(...)		FT_KLSTGET_(t_klst_evnt, __VA_ARGS__)
+# define FT_KLSTDEL_EVNT(...)		FT_KLSTDEL_(t_ilst_evnt, __VA_ARGS__)
 
 #endif

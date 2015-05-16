@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 16:00:40 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/16 17:36:44 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_klst			*ft_klstpushback(t_klst **alst, char *key, void *data,
 t_klst			*ft_klstpushfront(t_klst **alst, char *key, void *data,
 					size_t size);
 t_klst			*ft_klstget(t_klst *lst, char *key);
+t_bool			ft_klstdel(t_klst **alst, char *key, void (*func)(t_klst *));
 
 t_klst			*ft_klstnew__(size_t size, char *key);
 t_klst			*ft_klstpushback__(size_t size, t_klst **alst, char *key);
@@ -38,5 +39,6 @@ t_klst			*ft_klstpushfront__(size_t size, t_klst **alst, char *key);
 # define FT_KLSTPUSHBACK_(t, a, k)	ft_klstpushback__(sizeof(t), a, k)
 # define FT_KLSTPUSHFRONT_(t, a, k)	ft_klstpushfront__(sizeof(t), a, k)
 # define FT_KLSTGET_(t, l, k)		(t *)ft_klstget((t_klst *)l, k)
+# define FT_KLSTDEL_(t, l, k, f)	ft_klstdel((t_klst *)l, k, void (*f)(t))
 
 #endif
