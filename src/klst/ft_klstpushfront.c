@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/20 19:12:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 19:14:01 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/16 18:46:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,17 @@ t_klst			*ft_klstpushfront(t_klst **alst, char *key, void *data,
 
 	if (alst != NULL)
 	{
-		if (!(new = ft_klstnew(key, data, size)))
-			return (NULL);
-		ft_lstaddfront((t_lst **)alst, (t_lst *)new);
+		if ((new = ft_klstget(*alst, key)))
+		{
+			new->data = data;
+			new->size = size;
+		}
+		else
+		{
+			if (!(new = ft_klstnew(key, data, size)))
+				return (NULL);
+			ft_lstaddfront((t_lst **)alst, (t_lst *)new);
+		}
 		return (new);
 	}
 	return (NULL);
