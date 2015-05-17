@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 18:27:41 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 19:18:57 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/17 21:49:46 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void			ft_sgnlset(t_ilst_evnt *events)
 {
-	ft_sgnldel();
+	ft_sgnlclr();
 	g_sgnl = events;
 	while (events != NULL)
 	{
