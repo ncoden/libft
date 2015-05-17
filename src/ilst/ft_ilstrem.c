@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_sgnl.h                                       :+:      :+:    :+:   */
+/*   ft_ilstrem.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 19:34:01 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/17 19:29:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_SGNL_H
-# define LIBFT_SGNL_H
+#include "libft.h"
 
-# include "libft_evnt.h"
+t_ilst			*ft_ilstrem(t_ilst **alst, int index)
+{
+	t_ilst		*lst;
+	t_ilst		*prev;
 
-t_ilst_evnt		*g_sgnl;
-
-void			ft_sgnlhook(char sig, void (*func)(void *), void *data);
-void			ft_sgnlset(t_ilst_evnt *events);
-void			ft_sgnltrigger(char sig);
-
-void			ft_sgnlclr();
-void			ft_sgnlclrone(char sig);
-void			ft_sgnldel();
-void			ft_sgnldelone(char sig);
-
-#endif
+	if (!alst || !func)
+		return (NULL);
+	lst = *alst;
+	prev = NULL;
+	while (lst != NULL)
+	{
+		if (lst->index == index)
+		{
+			if (prev == NULL)
+				*alst = NULL;
+			else
+				prev->next = lst->next;
+			return (lst);
+		}
+		prev = lst;
+		lst = lst->next;
+	}
+	return (NULL);
+}

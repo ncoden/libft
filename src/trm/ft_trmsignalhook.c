@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstdel.c                                       :+:      :+:    :+:   */
+/*   ft_trmsignalhook.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 17:39:48 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/14 17:12:55 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/17 18:25:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_klstdel(t_klst **alst, char *key, void (*func)(t_klst *lst))
+void			ft_trmsignalhook(t_trm *trm, char sig, void (*func)(void *),
+					void *data)
 {
-	t_klst		*lst;
-	t_klst		*prev;
+	t_ilst_evnt	*event;
 
-	if (!alst || !func)
-		return (FALSE);
-	lst = *alst;
-	prev = NULL;
-	while (lst != NULL)
+	if ((event = FT_ILSTPUSHFRONT_EVNT(&trm->on_signal, sig)))
 	{
-		if (ft_strequ(lst->key, key))
-		{
-			if (prev == NULL)
-				*alst = NULL;
-			else
-				prev->next = lst->next;
-			(*func)(lst);
-			return (TRUE);
-		}
-		prev = lst;
-		lst = lst->next;
+		event->event.func = func;
+		event->event.data = data;
 	}
-	return (FALSE);
 }

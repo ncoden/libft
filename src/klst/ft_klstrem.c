@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnldel.c                                       :+:      :+:    :+:   */
+/*   ft_klstrem.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/16 16:06:47 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 17:38:19 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/17 19:30:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_sgnldel(char sig)
+t_klst			*ft_klstrem(t_klst **alst, char *key)
 {
-	if (g_sgnl)
-		FT_ILSTDEL_EVNT(&g_sgnl, sig, &free);
+	t_klst		*lst;
+	t_klst		*prev;
+
+	if (!alst || !func)
+		return (NULL);
+	lst = *alst;
+	prev = NULL;
+	while (lst != NULL)
+	{
+		if (ft_strequ(lst->key, key))
+		{
+			if (prev == NULL)
+				*alst = NULL;
+			else
+				prev->next = lst->next;
+			return (lst);
+		}
+		prev = lst;
+		lst = lst->next;
+	}
+	return (NULL);
 }

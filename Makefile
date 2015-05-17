@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/16 18:16:45 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/17 19:25:28 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,7 @@ SRC =\
 	frmt/ft_frmtputu.c\
 	frmt/ft_frmtputx.c\
 	frmt/ft_frmtset.c\
-	ilst/ft_ilstdel.c\
+	ilst/ft_ilstdelone.c\
 	ilst/ft_ilstget.c\
 	ilst/ft_ilstnew.c\
 	ilst/ft_ilstnew__.c\
@@ -110,7 +110,7 @@ SRC =\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
 	img/ft_imgset.c\
-	klst/ft_klstdel.c\
+	klst/ft_klstdelone.c\
 	klst/ft_klstget.c\
 	klst/ft_klstnew.c\
 	klst/ft_klstnew__.c\
@@ -198,8 +198,12 @@ SRC =\
 	prs/ft_prsnbr.c\
 	prs/ft_prsstr.c\
 	prs/ft_prsxchrs.c\
-	sgnl/ft_sgnlhook.c\
+	sgnl/ft_sgnlclr.c\
+	sgnl/ft_sgnlclrone.c\
 	sgnl/ft_sgnldel.c\
+	sgnl/ft_sgnldelone.c\
+	sgnl/ft_sgnlhook.c\
+	sgnl/ft_sgnlset.c\
 	sgnl/ft_sgnltrigger.c\
 	str/ft_putendl.c\
 	str/ft_putendl_fd.c\
@@ -255,6 +259,8 @@ SRC =\
 	trm/ft_trmputcmd.c\
 	trm/ft_trmnew.c\
 	trm/ft_trmset.c\
+	trm/ft_trmsignalcmd.c\
+	trm/ft_trmsignalhook.c\
 	uni/ft_getunicode.c\
 	uni/ft_putnbwstr_utf8.c\
 	uni/ft_putnwstr_utf8.c\
