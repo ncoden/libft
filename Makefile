@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/17 22:07:10 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/18 01:31:11 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -264,6 +264,7 @@ SRC =\
 	trm/ft_trmset.c\
 	trm/ft_trmsignalcmd.c\
 	trm/ft_trmsignalhook.c\
+	trm/ft_trmstop.c\
 	uni/ft_getunicode.c\
 	uni/ft_putnbwstr_utf8.c\
 	uni/ft_putnwstr_utf8.c\
