@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 18:23:09 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/17 22:06:43 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_trm
 
 t_trm				*ft_trmnew(void);
 t_bool				ft_trmset(t_trm *trm);
+void				ft_trmloop(t_trm *trm);
 
 void				ft_trmputcmd(char *tc_cmd);
 char				*ft_trmgetcmd(char *tc_cmd);
