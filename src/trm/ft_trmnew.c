@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/12 17:11:43 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/18 19:02:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ t_trm			*ft_trmnew(void)
 		return (NULL);
 	if ((tgetent(NULL, name)))
 	{
-		if (tcgetattr(0, &trm->opts) != -1)
+		if (tcgetattr(ft_trmgetout(), &trm->opts) != -1)
+		{
+			trm->level = 0;
 			return (trm);
+		}
 	}
 	free(trm);
 	return (NULL);

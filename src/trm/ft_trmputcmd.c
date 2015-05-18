@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 19:39:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/13 21:57:28 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/18 19:29:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void			ft_trmputcmd(char *tc_cmd)
 	if (tc_cmd)
 	{
 		if ((cmd = tgetstr(tc_cmd, NULL)))
-			tputs(cmd, 0, (int (*)(int))&ft_putchr);
+			tputs(cmd, 0, (int (*)(int))&ft_putchr_trm);
 	}
 }
