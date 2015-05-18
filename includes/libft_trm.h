@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 01:42:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/18 16:22:48 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_bool				ft_trmset(t_trm *trm);
 void				ft_trmloop(t_trm *trm);
 void				ft_trmstop(t_trm *trm);
 
+char				*ft_trmread(t_trm *trm);
 void				ft_trmputcmd(char *tc_cmd);
 char				*ft_trmgetcmd(char *tc_cmd);
 void				ft_trmclr(void);

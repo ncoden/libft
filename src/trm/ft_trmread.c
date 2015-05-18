@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_trmloop.c                                       :+:      :+:    :+:   */
+/*   ft_trmread.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 16:21:04 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/18 16:15:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/18 16:24:30 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_trmloop(t_trm *trm)
+char			*ft_trmread(t_trm *trm)
 {
-	char			*cmd;
-	char			level;
-	t_ilst_evnt		*sgnl_save;
+	int				len;
+	static char		buffer[256];
 
-	if (trm)
+	if (!trm)
+		return (NULL);
+	if ((len = read(0, buffer, 255)))
 	{
-		trm->level++;
-		level = trm->level;
-		sgnl_save = ft_sgnlget();
-		ft_sgnlset(trm->on_signal);
-		ft_trmset(trm);
-		while (trm->level == level)
-		{
-			if ((cmd = ft_trmread(trm)))
-				ft_kevnttrigger(trm->on_key_press, cmd);
-		}
-		ft_sgnlset(sgnl_save);
+		buffer[len] = '\0';
+		return (buffer);
 	}
+	return (NULL);
 }
