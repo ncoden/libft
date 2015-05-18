@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 19:33:05 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/18 15:57:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,32 @@ void			ft_evntcall(t_evnt *event);
 
 void			ft_ievnttrigger(t_ilst_evnt *events, int index);
 
-# define FT_ILSTNEW_EVNT(...)		FT_ILSTNEW_(t_ilst_evnt, __VA_ARGS__)
-# define FT_ILSTPUSHBACK_EVNT(...)	FT_ILSTPUSHBACK_(t_ilst_evnt, __VA_ARGS__)
-# define FT_ILSTPUSHFRONT_EVNT(...)	FT_ILSTPUSHFRONT_(t_ilst_evnt, __VA_ARGS__)
-# define FT_ILSTGET_EVNT(...)		FT_ILSTGET_(t_ilst_evnt, __VA_ARGS__)
-# define FT_ILSTDELONE_EVNT(...)	FT_ILSTDELONE_(t_ilst_evnt, __VA_ARGS__)
-# define FT_ILSTREM_EVNT(...)		FT_ILSTREM_(t_ilst_evnt, __VA_ARGS__)
+/*
+** The following macros are very useful, but the norm don't accept them
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** # define ft_ilstnew_evnt(...)		ft_ilstnew_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_ilstpushback_evnt(...)	\
+**				ft_ilstpushback_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_ilstpushfront_evnt(...)	\
+**				ft_ilstpushfront_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_ilstget_evnt(...)		ft_ilstget_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_ilstdelone_evnt(...)		ft_ilstdelone_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_ilstrem_evnt(...)		ft_ilstrem_(t_ilst_evnt, __VA_ARGS__)
+*/
 
 void			ft_kevnttrigger(t_klst_evnt *events, char *key);
 
-# define FT_KLSTNEW_EVNT(...)		FT_KLSTNEW_(t_klst_evnt, __VA_ARGS__)
-# define FT_KLSTPUSHBACK_EVNT(...)	FT_KLSTPUSHBACK_(t_klst_evnt, __VA_ARGS__)
-# define FT_KLSTPUSHFRONT_EVNT(...)	FT_KLSTPUSHFRONT_(t_klst_evnt, __VA_ARGS__)
-# define FT_KLSTGET_EVNT(...)		FT_KLSTGET_(t_klst_evnt, __VA_ARGS__)
-# define FT_KLSTDELONE_EVNT(...)	FT_KLSTDELONE_(t_ilst_evnt, __VA_ARGS__)
-# define FT_KLSTREM_EVNT(...)		FT_KLSTREM_(t_klst_evnt, __VA_ARGS__)
+/*
+** The following macros are very useful, but the norm don't accept them
+** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** # define ft_klstnew_evnt(...)		ft_klstnew_(t_klst_evnt, __VA_ARGS__)
+** # define ft_klstpushback_evnt(...)	\
+**				ft_klstpushback_(t_klst_evnt, __VA_ARGS__)
+** # define ft_klstpushfront_evnt(...)	\
+**				ft_klstpushfront_(t_klst_evnt, __VA_ARGS__)
+** # define ft_klstget_evnt(...)		ft_klstget_(t_klst_evnt, __VA_ARGS__)
+** # define ft_klstdelone_evnt(...)		ft_klstdelone_(t_ilst_evnt, __VA_ARGS__)
+** # define ft_klstrem_evnt(...)		ft_klstrem_(t_klst_evnt, __VA_ARGS__)
+*/
 
 #endif

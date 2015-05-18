@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 16:11:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 18:25:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/18 16:03:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void			ft_sgnlhook(char sig, void (*func)(void *), void *data)
 
 	if (func)
 	{
-		if ((event = FT_ILSTPUSHFRONT_EVNT(&g_sgnl, sig)))
+		if ((event = (t_ilst_evnt *)ft_ilstpushfront__(sizeof(t_ilst_evnt),
+			(t_ilst **)&g_sgnl, sig)))
 		{
 			event->event.func = func;
 			event->event.data = data;
