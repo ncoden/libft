@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/18 19:31:11 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/19 16:22:56 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,7 @@ SRC =\
 	evnt/ft_kevnttrigger.c\
 	file/ft_putfile.s\
 	file/ft_readline.c\
+	file/ft_readstop.c\
 	file/ft_readtolst.c\
 	file/ft_readtoarray.c\
 	frmt/ft_frmtnew.c\
