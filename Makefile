@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/19 16:22:56 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/19 16:27:00 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -257,6 +257,7 @@ SRC =\
 	tlst/ft_tlstpushfront.c\
 	trm/ft_putchr_trm.c\
 	trm/ft_putstr_trm.c\
+	trm/ft_read_trm.c\
 	trm/ft_trmcloseout.c\
 	trm/ft_trmclr.c\
 	trm/ft_trmgetcmd.c\
@@ -266,7 +267,6 @@ SRC =\
 	trm/ft_trmnew.c\
 	trm/ft_trmloop.c\
 	trm/ft_trmputcmd.c\
-	trm/ft_trmread.c\
 	trm/ft_trmset.c\
 	trm/ft_trmsignalcmd.c\
 	trm/ft_trmsignalhook.c\
