@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 15:50:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 00:01:02 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_klst			*ft_klstpushfront(t_klst **alst, char *key, void *data,
 t_klst			*ft_klstget(t_klst *lst, char *key);
 t_bool			ft_klstdelone(t_klst **alst, char *key,
 					void (*func)(t_klst *));
-t_klst			*ft_klstrem(t_ilst **alst, char *key);
+t_klst			*ft_klstrem(t_klst **alst, char *key);
 
 t_klst			*ft_klstnew__(size_t size, char *key);
 t_klst			*ft_klstpushback__(size_t size, t_klst **alst, char *key);
