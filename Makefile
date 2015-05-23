@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/19 18:02:03 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/24 00:09:08 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,8 +85,8 @@ SRC =\
 	file/ft_putfile.s\
 	file/ft_readline.c\
 	file/ft_readstop.c\
-	file/ft_readtolst.c\
 	file/ft_readtoarray.c\
+	file/ft_readtolst.c\
 	frmt/ft_frmtnew.c\
 	frmt/ft_frmtoptsget.c\
 	frmt/ft_frmtoptsset.c\
@@ -99,6 +99,7 @@ SRC =\
 	frmt/ft_frmtputu.c\
 	frmt/ft_frmtputx.c\
 	frmt/ft_frmtset.c\
+	ilst/ft_ilstadd.c\
 	ilst/ft_ilstdelone.c\
 	ilst/ft_ilstget.c\
 	ilst/ft_ilstinsert.c\
@@ -106,10 +107,11 @@ SRC =\
 	ilst/ft_ilstmerge.c\
 	ilst/ft_ilstnew.c\
 	ilst/ft_ilstnew__.c\
-	ilst/ft_ilstpushback.c\
-	ilst/ft_ilstpushback__.c\
-	ilst/ft_ilstpushfront.c\
-	ilst/ft_ilstpushfront__.c\
+	ilst/ft_ilstprev.c\
+	ilst/ft_ilstpush.c\
+	ilst/ft_ilstpush__.c\
+	ilst/ft_ilstrem.c\
+	ilst/ft_ilstset.c\
 	img/ft_imgclr.c\
 	img/ft_imgdel.c\
 	img/ft_imgnew.c\
@@ -122,6 +124,7 @@ SRC =\
 	klst/ft_klstpushback__.c\
 	klst/ft_klstpushfront.c\
 	klst/ft_klstpushfront__.c\
+	klst/ft_klstrem.c\
 	lst/ft_lstaddafter.c\
 	lst/ft_lstaddback.c\
 	lst/ft_lstaddby.c\
@@ -135,13 +138,13 @@ SRC =\
 	lst/ft_lstfold.c\
 	lst/ft_lstiter.c\
 	lst/ft_lstlen.c\
+	lst/ft_lstmap.c\
 	lst/ft_lstnew.c\
 	lst/ft_lstpushafter.c\
 	lst/ft_lstpushback.c\
 	lst/ft_lstpushby.c\
 	lst/ft_lstpushfront.c\
 	lst/ft_lstpushrby.c\
-	lst/ft_lstmap.c\
 	lst/ft_lstshift.c\
 	lst/ft_lsttoarray.c\
 	mem/ft_bzero.s\
@@ -221,10 +224,10 @@ SRC =\
 	str/ft_putstrleft.c\
 	str/ft_putstrright.c\
 	str/ft_strcat.s\
+	str/ft_strccmp.c\
 	str/ft_strccpy.c\
 	str/ft_strchr.c\
 	str/ft_strclr.c\
-	str/ft_strccmp.c\
 	str/ft_strcmp.c\
 	str/ft_strcpy.s\
 	str/ft_strdel.c\
@@ -268,9 +271,10 @@ SRC =\
 	trm/ft_trmgetout.c\
 	trm/ft_trmkeycmd.c\
 	trm/ft_trmkeyhook.c\
-	trm/ft_trmnew.c\
 	trm/ft_trmloop.c\
+	trm/ft_trmnew.c\
 	trm/ft_trmputcmd.c\
+	trm/ft_trmread.c\
 	trm/ft_trmset.c\
 	trm/ft_trmsignalcmd.c\
 	trm/ft_trmsignalhook.c\
@@ -297,7 +301,7 @@ SRC =\
 	wstr/ft_putnwstr.c\
 	wstr/ft_putwstr.c\
 	wstr/ft_wstrnsize.c\
-	wstr/ft_wstrsize.c\
+	wstr/ft_wstrsize.c
 
 
 # **************************************************************************** #

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 17:51:02 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/19 17:56:12 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/23 23:46:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_ilst			*ft_ilstinsert(t_ilst **dst, t_ilst *src)
 	{
 		if (!(dup = ft_memdup(src, sizeof(t_ilst))))
 			return (NULL);
-		ft_lstaddback((t_lst **)dst, (t_lst *)dup);
+		ft_ilstadd(dst, dup);
 		src = src->next;
 	}
 	return (*dst);

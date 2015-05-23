@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ilstpushback__.c                                :+:      :+:    :+:   */
+/*   ft_trmread.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 18:47:59 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/18 16:15:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/18 19:15:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_ilst			*ft_ilstpushback__(size_t size, t_ilst **alst, int index)
+char			*ft_trmread(void)
 {
-	t_ilst		*ilst;
+	int				len;
+	static char		buffer[256];
 
-	if (alst != NULL)
+	if ((len = read(0, buffer, 255)))
 	{
-		if (!(ilst = ft_ilstget(*alst, index)))
-		{
-			if (!(ilst = ft_ilstnew__(size, index)))
-				return (NULL);
-			ft_lstaddback((t_lst **)alst, (t_lst *)ilst);
-		}
-		return (ilst);
+		buffer[len] = '\0';
+		return (buffer);
 	}
 	return (NULL);
 }

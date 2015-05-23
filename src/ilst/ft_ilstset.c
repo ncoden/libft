@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ilstinsert__.c                                  :+:      :+:    :+:   */
+/*   ft_ilstset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/19 17:51:02 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/23 23:46:32 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/23 23:25:24 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/23 23:27:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_ilst			*ft_ilstinsert__(size_t size, t_ilst **dst, t_ilst *src)
+void			ft_ilstset(t_ilst *lst, int index, void *data, size_t size)
 {
-	t_ilst		*cpy;
-
-	while (src != NULL)
-	{
-		if (!(cpy = ft_memdup(src, size)))
-			return (NULL);
-		ft_ilstadd(dst, cpy);
-		src = src->next;
-	}
-	return (*dst);
+	lst->index = index;
+	lst->data = data;
+	if (data)
+		lst->size = size;
+	else
+		lst->size = 0;
 }

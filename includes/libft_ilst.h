@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/19 17:59:01 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/23 23:45:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ typedef struct	s_ilst
 }				t_ilst;
 
 t_ilst			*ft_ilstnew(int index, void *data, size_t size);
-t_ilst			*ft_ilstpushback(t_ilst **alst, int index, void *data,
-					size_t size);
-t_ilst			*ft_ilstpushfront(t_ilst **alst, int index, void *data,
-					size_t size);
+void			ft_ilstset(t_ilst *lst, int index, void *data, size_t size);
+
 t_ilst			*ft_ilstget(t_ilst *lst, int index);
+t_ilst			*ft_ilstprev(t_ilst *lst, int index);
+t_ilst			*ft_ilstadd(t_ilst **alst, t_ilst *new);
+t_ilst			*ft_ilstpush(t_ilst **alst, int index, void *data,
+					size_t size);
 t_bool			ft_ilstdelone(t_ilst **alst, int index,
 					void (*func)(t_ilst *lst));
 t_ilst			*ft_ilstrem(t_ilst **alst, int index);
@@ -37,8 +39,7 @@ t_ilst			*ft_ilstmerge(t_ilst **dst, t_ilst *src);
 t_ilst			*ft_ilstinsert(t_ilst **dst, t_ilst *src);
 
 t_ilst			*ft_ilstnew__(size_t size, int index);
-t_ilst			*ft_ilstpushback__(size_t size, t_ilst **alst, int index);
-t_ilst			*ft_ilstpushfront__(size_t size, t_ilst **alst, int index);
+t_ilst			*ft_ilstpush__(size_t size, t_ilst **alst, int index);
 t_ilst			*ft_ilstinsert__(size_t size, t_ilst **dst, t_ilst *src);
 
 /*
