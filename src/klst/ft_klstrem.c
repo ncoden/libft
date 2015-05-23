@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 19:30:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 00:01:30 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_klst			*ft_klstrem(t_klst **alst, char *key)
 	t_klst		*lst;
 	t_klst		*prev;
 
-	if (!alst || !func)
+	if (!alst)
 		return (NULL);
 	lst = *alst;
 	prev = NULL;
