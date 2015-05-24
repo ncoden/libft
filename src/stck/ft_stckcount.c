@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_stck.h                                       :+:      :+:    :+:   */
+/*   ft_stckcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 19:54:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/24 20:14:21 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 20:16:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_STCK_H
-# define LIBFT_STCK_H
+#include "libft.h"
 
-# define STCK_SIZE			(8)
-
-typedef struct	s_stck
+int				ft_stckcount(t_stck *stck)
 {
-	struct s_stck	*next;
-	int				count;
-	int				size;
-	void			**datas;
-}				t_stck;
+	int			count;
 
-t_stck			*ft_stcknew(int size);
-
-t_bool			ft_stckpush(t_stck **astck, void *data);
-void			*ft_stckpull(t_stck **astck);
-
-void			*ft_stckhead(t_stck *stck);
-int				ft_stckcount(t_stck *stck);
-
-#endif
+	count = 0;
+	while (stck->next != NULL)
+	{
+		count += stck->count;
+		stck = stck->next;
+	}
+	return (count);
+}
