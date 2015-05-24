@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstrem.c                                       :+:      :+:    :+:   */
+/*   ft_klstcrush.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 15:21:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/19 16:31:12 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:10:10 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstrem(t_klst **alst, char *key)
+void			ft_klstcrush(t_klst **dst, t_klst *src, void (*func)(t_klst *))
 {
-	t_klst		*lst;
-	t_klst		*prev;
+	t_klst		*node;
 
-	if (!(lst = ft_klstprev(*alst, key, &prev)))
-		return (NULL);
-	if (prev)
-		prev->next = lst->next;
-	else
-		*alst = (*alst)->next;
-	return (lst);
+	while (src != NULL)
+	{
+		if ((node = ft_klstadd(dst, src)))
+			(*func)(node);
+		src = src->next;
+	}
 }

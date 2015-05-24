@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstpushback.c                                  :+:      :+:    :+:   */
+/*   ft_klstinsert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 18:46:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/19 17:51:02 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:04:46 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstpushback(t_klst **alst, char *key, void *data,
-					size_t size)
+t_klst			*ft_klstinsert(t_klst **dst, t_klst *src)
 {
-	t_klst		*new;
+	t_klst		*cpy;
+	t_klst		*node;
+	t_klst		*diff;
 
-	if (alst != NULL)
+	diff = NULL;
+	while (src != NULL)
 	{
-		if ((new = ft_klstget(*alst, key)))
-		{
-			new->data = data;
-			new->size = size;
-		}
-		else
-		{
-			if (!(new = ft_klstnew(key, data, size)))
-				return (NULL);
-			ft_lstaddback((t_lst **)alst, (t_lst *)new);
-		}
-		return (new);
+		if (!(cpy = ft_memdup(src, sizeof(t_klst))))
+			return (NULL);
+		if ((node = ft_klstadd(dst, cpy)))
+			ft_klstadd(&diff, node);
+		src = src->next;
 	}
-	return (NULL);
+	return (diff);
 }

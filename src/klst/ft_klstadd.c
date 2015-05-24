@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstpushback__.c                                :+:      :+:    :+:   */
+/*   ft_klstadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 18:48:47 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/23 15:42:18 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 15:10:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstpushfront__(size_t size, t_klst **alst, char *key)
+t_klst			*ft_klstadd(t_klst **alst, t_klst *new)
 {
-	t_klst		*klst;
+	t_klst		*prev;
+	t_klst		*old;
 
-	if (alst != NULL)
+	old = ft_klstprev(*alst, new->key, &prev);
+	if (!prev)
 	{
-		if (!(klst = ft_klstget(*alst, key)))
-		{
-			if (!(klst = ft_klstnew__(size, key)))
-				return (NULL);
-			ft_lstaddback((t_lst **)alst, (t_lst *)klst);
-		}
-		return (klst);
+		new->next = (*alst)->next;
+		*alst = new;
+		return (old);
 	}
-	return (NULL);
+	if (old)
+		new->next = old->next;
+	prev->next = new;
+	return (old);
 }

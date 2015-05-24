@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstrem.c                                       :+:      :+:    :+:   */
+/*   ft_klstinsert__.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 15:21:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/19 17:51:02 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:05:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstrem(t_klst **alst, char *key)
+t_klst			*ft_klstinsert__(size_t size, t_klst **dst, t_klst *src)
 {
-	t_klst		*lst;
-	t_klst		*prev;
+	t_klst		*cpy;
+	t_klst		*node;
+	t_klst		*diff;
 
-	if (!(lst = ft_klstprev(*alst, key, &prev)))
-		return (NULL);
-	if (prev)
-		prev->next = lst->next;
-	else
-		*alst = (*alst)->next;
-	return (lst);
+	diff = NULL;
+	while (src != NULL)
+	{
+		if (!(cpy = ft_memdup(src, size)))
+			return (NULL);
+		if ((node = ft_klstadd(dst, cpy)))
+			ft_klstadd(&diff, node);
+		src = src->next;
+	}
+	return (diff);
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstpushfront__.c                               :+:      :+:    :+:   */
+/*   ft_klstmerge.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/20 19:12:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/16 18:49:06 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/19 16:31:12 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:05:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstpushfront__(size_t size, t_klst **alst, char *key)
+t_klst			*ft_klstmerge(t_klst **dst, t_klst *src)
 {
-	t_klst		*klst;
+	t_klst		*node;
+	t_klst		*diff;
 
-	if (alst != NULL)
+	diff = NULL;
+	while (src != NULL)
 	{
-		if (!(klst = ft_klstget(*alst, key)))
-		{
-			if (!(klst = ft_klstnew__(size, key)))
-				return (NULL);
-			ft_lstaddfront((t_lst **)alst, (t_lst *)klst);
-		}
-		return (klst);
+		if ((node = ft_klstadd(dst, src)))
+			ft_klstadd(&diff, node);
+		src = src->next;
 	}
-	return (NULL);
+	return (diff);
 }

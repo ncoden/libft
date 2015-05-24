@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstrem.c                                       :+:      :+:    :+:   */
+/*   ft_klstset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 15:21:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/23 23:25:24 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:35:10 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstrem(t_klst **alst, char *key)
+void			ft_klstset(t_klst *lst, char *key, void *data, size_t size)
 {
-	t_klst		*lst;
-	t_klst		*prev;
-
-	if (!(lst = ft_klstprev(*alst, key, &prev)))
-		return (NULL);
-	if (prev)
-		prev->next = lst->next;
+	lst->key = key;
+	lst->data = data;
+	if (data)
+		lst->size = size;
 	else
-		*alst = (*alst)->next;
-	return (lst);
+		lst->size = 0;
 }

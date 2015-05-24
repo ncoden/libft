@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_klstrem.c                                       :+:      :+:    :+:   */
+/*   ft_klstprev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 15:21:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/23 22:26:55 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/24 16:34:44 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_klst			*ft_klstrem(t_klst **alst, char *key)
+t_klst			*ft_klstprev(t_klst *lst, char *key, t_klst **prev)
 {
-	t_klst		*lst;
-	t_klst		*prev;
-
-	if (!(lst = ft_klstprev(*alst, key, &prev)))
-		return (NULL);
-	if (prev)
-		prev->next = lst->next;
+	if (!lst)
+		*prev = NULL;
+	else if (ft_strequ(lst->key, key))
+	{
+		*prev = NULL;
+		return (lst);
+	}
 	else
-		*alst = (*alst)->next;
-	return (lst);
+	{
+		while (lst->next && (ft_strcmp(lst->next->key, key) > 0))
+			lst = lst->next;
+		*prev = lst;
+		if (ft_strequ(lst->next->key, key))
+			return (lst->next);
+	}
+	return (NULL);
 }

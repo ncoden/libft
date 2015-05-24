@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/17 19:04:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 15:12:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,12 @@ t_bool			ft_klstdelone(t_klst **alst, char *key,
 	t_klst		*lst;
 	t_klst		*prev;
 
-	if (!alst || !func)
+	if (!(lst = ft_klstprev(*alst, key, &prev)))
 		return (FALSE);
-	lst = *alst;
-	prev = NULL;
-	while (lst != NULL)
-	{
-		if (ft_strequ(lst->key, key))
-		{
-			if (prev == NULL)
-				*alst = NULL;
-			else
-				prev->next = lst->next;
-			(*func)(lst);
-			return (TRUE);
-		}
-		prev = lst;
-		lst = lst->next;
-	}
-	return (FALSE);
+	if (prev)
+		prev->next = lst->next;
+	else
+		*alst = (*alst)->next;
+	(*func)(lst);
+	return (TRUE);
 }
