@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/23 23:45:13 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 15:08:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_ilst			*ft_ilstnew(int index, void *data, size_t size);
 void			ft_ilstset(t_ilst *lst, int index, void *data, size_t size);
 
 t_ilst			*ft_ilstget(t_ilst *lst, int index);
-t_ilst			*ft_ilstprev(t_ilst *lst, int index);
+t_ilst			*ft_ilstprev(t_ilst *lst, int index, t_ilst **prev);
 t_ilst			*ft_ilstadd(t_ilst **alst, t_ilst *new);
 t_ilst			*ft_ilstpush(t_ilst **alst, int index, void *data,
 					size_t size);

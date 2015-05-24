@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 21:06:34 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 14:50:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 15:12:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,7 @@ t_bool			ft_ilstdelone(t_ilst **alst, int index,
 	t_ilst		*lst;
 	t_ilst		*prev;
 
-	prev = ft_ilstprev(*alst, index);
-	if (prev)
-		lst = prev->next;
-	else
-		lst = *alst;
-	if (!lst || lst->index != index)
+	if (!(lst = ft_ilstprev(*alst, index, &prev)))
 		return (FALSE);
 	if (prev)
 		prev->next = lst->next;
