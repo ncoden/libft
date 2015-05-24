@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 22:26:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 15:08:26 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/24 20:30:05 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_ilst			*ft_ilstprev(t_ilst *lst, int index, t_ilst **prev)
 	}
 	else
 	{
-		while (lst->next && lst->next->index < index)
+		while (lst->next && (lst->next->index < index))
 			lst = lst->next;
 		*prev = lst;
-		if (lst->next->index == index)
+		if (lst->next && (lst->next->index == index))
 			return (lst->next);
 	}
 	return (NULL);
