@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/24 16:35:50 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/24 16:49:26 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -277,7 +277,7 @@ SRC =\
 	trm/ft_trmgetout.c\
 	trm/ft_trmkeycmd.c\
 	trm/ft_trmkeyhook.c\
-	trm/ft_trmloop.c\
+	trm/ft_trmstart.c\
 	trm/ft_trmnew.c\
 	trm/ft_trmputcmd.c\
 	trm/ft_trmread.c\
