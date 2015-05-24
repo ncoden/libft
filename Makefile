@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/24 00:09:08 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/24 16:09:57 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ SRC =\
 	frmt/ft_frmtputx.c\
 	frmt/ft_frmtset.c\
 	ilst/ft_ilstadd.c\
+	ilst/ft_ilstcrush.c\
 	ilst/ft_ilstdelone.c\
 	ilst/ft_ilstget.c\
 	ilst/ft_ilstinsert.c\
