@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/24 20:16:53 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/25 17:43:41 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,9 @@ SRC =\
 	evnt/ft_evntnew.c\
 	evnt/ft_evntset.c\
 	evnt/ft_ievnttrigger.c\
+	evnt/ft_ievntstrigger.c\
 	evnt/ft_kevnttrigger.c\
+	evnt/ft_kevntstrigger.c\
 	file/ft_putfile.s\
 	file/ft_readline.c\
 	file/ft_readstop.c\
@@ -224,8 +226,11 @@ SRC =\
 	stck/ft_stcknew.c\
 	stck/ft_stckcount.c\
 	stck/ft_stckhead.c\
+	stck/ft_stckiter.c\
 	stck/ft_stckpull.c\
 	stck/ft_stckpush.c\
+	stck/ft_stckuntil.c\
+	stck/ft_stckwhile.c\
 	str/ft_putendl.c\
 	str/ft_putendl_fd.c\
 	str/ft_putistr.c\

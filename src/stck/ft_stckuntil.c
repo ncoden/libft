@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_kevnttrigger.c                                  :+:      :+:    :+:   */
+/*   ft_stckuntil.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/25 17:15:34 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/25 17:23:12 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/25 17:43:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key)
+t_bool			ft_stckuntil(t_stck *stck, t_bool (*func)(void *))
 {
-	t_klst_evnt	*lst;
+	int			count;
 
-	if (events)
+	while (stck != NULL)
 	{
-		if ((lst = (t_klst_evnt *)ft_klstget((t_klst *)events, key)))
+		count = stck->count;
+		while (count > 0)
 		{
-			lst->event.func(lst->event.data);
-			return (TRUE);
+			if ((*func)(stck->datas[count]))
+				return (TRUE);
+			count--;
 		}
 	}
 	return (FALSE);

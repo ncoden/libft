@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 15:57:41 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/25 17:29:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft_ilst.h"
 # include "libft_klst.h"
+# include "libft_stck.h"
 
 typedef struct	s_evnt
 {
@@ -38,7 +39,8 @@ t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
 void			ft_evntcall(t_evnt *event);
 
-void			ft_ievnttrigger(t_ilst_evnt *events, int index);
+t_bool			ft_ievnttrigger(t_ilst_evnt *events, int index);
+t_bool			ft_ievntstrigger(t_stck *events, int index);
 
 /*
 ** The following macros are very useful, but the norm don't accept them
@@ -53,7 +55,8 @@ void			ft_ievnttrigger(t_ilst_evnt *events, int index);
 ** # define ft_ilstrem_evnt(...)		ft_ilstrem_(t_ilst_evnt, __VA_ARGS__)
 */
 
-void			ft_kevnttrigger(t_klst_evnt *events, char *key);
+t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key);
+t_bool			ft_kevntstrigger(t_stck *events, char *key);
 
 /*
 ** The following macros are very useful, but the norm don't accept them
