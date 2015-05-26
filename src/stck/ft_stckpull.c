@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/24 19:56:01 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 20:05:54 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/26 14:40:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void			*ft_stckpull(t_stck **astck)
 		return (data);
 	}
 	stck->count--;
-	return (stck->datas[stck->count - 1]);
+	return (stck->datas[stck->count]);
 }
