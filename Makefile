@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 12:12:08 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/27 12:42:25 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -237,7 +237,6 @@ SRC =\
 	stck/ft_stckiter.c\
 	stck/ft_stckpull.c\
 	stck/ft_stckpush.c\
-	stck/ft_stckshift.c\
 	stck/ft_stcksrc.c\
 	stck/ft_stckuntil.c\
 	stck/ft_stckwhile.c\

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 12:12:34 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 12:38:28 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ t_bool			ft_kevntstrigger(t_stck *events, char *key);
 
 void			*ft_evntesrcget(t_type type);
 t_bool			ft_evntesrcset(t_type type, void *data);
-t_bool			ft_evntesrcrem(t_type type);
+t_bool			ft_evntesrcrem(void);
 
 #endif
