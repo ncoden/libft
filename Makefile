@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 12:56:59 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/27 13:40:52 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC =\
 	env3d/ft_print3dline.c\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
+	evnt/ft_esrccall.c\
 	evnt/ft_esrcget.c\
 	evnt/ft_esrcrem.c\
 	evnt/ft_esrcset.c\
@@ -226,6 +227,8 @@ SRC =\
 	sgnl/ft_sgnlcrush.c\
 	sgnl/ft_sgnldel.c\
 	sgnl/ft_sgnldelone.c\
+	sgnl/ft_sgnlesrcget.c\
+	sgnl/ft_sgnlesrcset.c\
 	sgnl/ft_sgnlget.c\
 	sgnl/ft_sgnlhook.c\
 	sgnl/ft_sgnlmerge.c\
