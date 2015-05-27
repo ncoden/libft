@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 13:40:52 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/27 14:09:29 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -174,6 +174,7 @@ SRC =\
 	mem/ft_memset.s\
 	mem/ft_memsub.c\
 	mt/ft_mtnew.c\
+	mt/ft_mtnew__.c\
 	mt/ft_mtaddchild.c\
 	mt/ft_mtaddnext.c\
 	mt/ft_mtpushchild.c\

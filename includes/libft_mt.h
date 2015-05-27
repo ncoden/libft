@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/26 18:28:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 14:09:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ void			ft_mtaddchild(t_mt *mt, t_mt *child);
 
 t_mt			*ft_mtpushnext(t_mt **amt, void *data, size_t size);
 t_mt			*ft_mtpushchild(t_mt **amt, void *data, size_t size);
+
+t_mt			*ft_mtnew__(size_t size);
 
 #endif
