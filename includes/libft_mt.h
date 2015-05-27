@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 14:09:15 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 16:35:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_MT_H
 
 # define EXTEND_MT(type)	struct {struct type *next; struct type *child;}
-# define MT_DATA(lst)		(lst + sizeof(void *))
+# define MT_DATA(mt)		(mt + sizeof(void *) + sizeof(void *))
 
 typedef struct	s_mt
 {
