@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft_tlst.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:30:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/02/03 08:24:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 11:20:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_TLST_H
 # define LIBFT_TLST_H
+
+# include "libft_type.h"
 
 typedef struct	s_tlst
 {
