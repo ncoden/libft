@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 11:26:08 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/27 11:40:10 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,8 @@ SRC =\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
 	evnt/ft_evntcall.c\
+	evnt/ft_evntesrcrem.c\
+	evnt/ft_evntesrcset.c\
 	evnt/ft_evntnew.c\
 	evnt/ft_evntset.c\
 	evnt/ft_ievnttrigger.c\
@@ -234,6 +236,7 @@ SRC =\
 	stck/ft_stckiter.c\
 	stck/ft_stckpull.c\
 	stck/ft_stckpush.c\
+	stck/ft_stckshift.c\
 	stck/ft_stckuntil.c\
 	stck/ft_stckwhile.c\
 	str/ft_putendl.c\

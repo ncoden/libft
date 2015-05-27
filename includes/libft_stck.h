@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/25 17:46:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 12:10:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stck			*ft_stcknew(int size);
 
 t_bool			ft_stckpush(t_stck **astck, void *data);
 void			*ft_stckpull(t_stck **astck);
+t_bool			ft_stckshift(t_stck **astck);
 
 void			*ft_stckhead(t_stck *stck);
 int				ft_stckcount(t_stck *stck);
