@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_evntesrcrem.c                                   :+:      :+:    :+:   */
+/*   ft_esrcset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/27 11:27:33 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 12:42:39 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 13:01:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_evntesrcrem(void)
+t_bool			ft_esrcset(t_type type, void *data)
 {
-	if (g_evnt_esrcs)
+	t_tdata		*tdata;
+
+	if ((tdata = ft_tdatanew(type, data)))
 	{
-		free(ft_stckpull(&g_evnt_esrcs));
-		return (TRUE);
+		if (ft_stckpush(&g_evnt_esrcs, tdata))
+			return (TRUE);
+		free(tdata);
 	}
 	return (FALSE);
 }

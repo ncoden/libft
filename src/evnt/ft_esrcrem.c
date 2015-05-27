@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_evntesrcget.c                                   :+:      :+:    :+:   */
+/*   ft_esrcrem.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 11:40:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 12:35:33 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/27 11:27:33 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/27 13:01:09 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_bool	find_esrc(t_tdata *esrc, t_type *type)
+t_bool			ft_esrcrem(void)
 {
-	if (esrc->type == *type)
+	if (g_evnt_esrcs)
+	{
+		free(ft_stckpull(&g_evnt_esrcs));
 		return (TRUE);
+	}
 	return (FALSE);
-}
-
-void			*ft_evntesrcget(t_type type)
-{
-	t_tdata		*esrc;
-
-	if (!type)
-		esrc = ft_stckhead(g_evnt_esrcs);
-	else
-		esrc = (t_tdata *)ft_stcksrc(g_evnt_esrcs,
-			(t_bool (*)(void *, void *))&find_esrc, &type);
-	if (esrc)
-		return (esrc->data);
-	return (NULL);
 }

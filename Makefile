@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 12:42:25 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/27 12:56:59 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,10 +77,10 @@ SRC =\
 	env3d/ft_print3dline.c\
 	err/ft_errdel.c\
 	err/ft_errnew.c\
+	evnt/ft_esrcget.c\
+	evnt/ft_esrcrem.c\
+	evnt/ft_esrcset.c\
 	evnt/ft_evntcall.c\
-	evnt/ft_evntesrcget.c\
-	evnt/ft_evntesrcrem.c\
-	evnt/ft_evntesrcset.c\
 	evnt/ft_evntnew.c\
 	evnt/ft_evntset.c\
 	evnt/ft_ievnttrigger.c\
