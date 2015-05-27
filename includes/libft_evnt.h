@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/25 17:29:39 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 12:12:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "libft_ilst.h"
 # include "libft_klst.h"
 # include "libft_stck.h"
+# include "libft_type.h"
+
+t_stck			*g_evnt_esrcs;
 
 typedef struct	s_evnt
 {
@@ -34,6 +37,12 @@ typedef struct	s_klst_evnt
 	EXTEND_KLST	(s_klst_evnt);
 	t_evnt		event;
 }				t_klst_evnt;
+
+typedef struct	s_ilst_esrc
+{
+	EXTEND_ILST	(s_ilst_esrc);
+	t_tdata		esrc;
+}				t_ilst_esrc;
 
 t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
@@ -70,5 +79,9 @@ t_bool			ft_kevntstrigger(t_stck *events, char *key);
 ** # define ft_klstdelone_evnt(...)		ft_klstdelone_(t_ilst_evnt, __VA_ARGS__)
 ** # define ft_klstrem_evnt(...)		ft_klstrem_(t_klst_evnt, __VA_ARGS__)
 */
+
+void			*ft_evntesrcget(t_type type);
+t_bool			ft_evntesrcset(t_type type, void *data);
+t_bool			ft_evntesrcrem(t_type type);
 
 #endif
