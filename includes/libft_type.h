@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 16:20:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 12:58:04 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 15:19:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ typedef int		t_type;
 # define TYPE_STCK			(14)
 
 # define TYPE_TRM			(15)
-# define TYPE_EVNT			(16)
-# define TYPE_ESRC			(17)
-
+# define TYPE_TPS			(16)
+# define TYPE_EVNT			(17)
+# define TYPE_ESRC			(18)
 
 typedef struct	s_tdata
 {
