@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 16:06:47 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 16:01:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 13:16:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void			ft_sgnldelone(char sig)
 {
-	if (g_sgnl)
+	if (g_sgnl_evnts)
 	{
 		signal(sig, SIG_DFL);
-		ft_ilstdelone((t_ilst **)&g_sgnl, sig, (void (*)(t_ilst *))&free);
+		ft_ilstdelone((t_ilst **)&g_sgnl_evnts, sig, (void (*)(t_ilst *))&free);
 	}
 }

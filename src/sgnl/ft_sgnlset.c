@@ -15,7 +15,7 @@
 void			ft_sgnlset(t_ilst_evnt *events)
 {
 	ft_sgnlclr();
-	g_sgnl = events;
+	g_sgnl_evnts = events;
 	while (events != NULL)
 	{
 		signal(events->index, (void (*)(int))&ft_sgnltrigger);

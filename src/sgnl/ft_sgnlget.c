@@ -14,5 +14,5 @@
 
 t_ilst_evnt		*ft_sgnlget(void)
 {
-	return (g_sgnl);
+	return (g_sgnl_evnts);
 }

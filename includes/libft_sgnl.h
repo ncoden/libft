@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 17:04:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 13:15:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft_evnt.h"
 
-t_ilst_evnt		*g_sgnl;
+t_ilst_evnt		*g_sgnl_evnts;
 
 t_ilst_evnt		*ft_sgnlget(void);
 void			ft_sgnlset(t_ilst_evnt *events);

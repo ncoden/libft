@@ -19,7 +19,7 @@ void			ft_sgnlhook(char sig, void (*func)(void *), void *data)
 	if (func)
 	{
 		if ((event = (t_ilst_evnt *)ft_ilstpush__(sizeof(t_ilst_evnt),
-			(t_ilst **)&g_sgnl, sig)))
+			(t_ilst **)&g_sgnl_evnts, sig)))
 		{
 			event->event.func = func;
 			event->event.data = data;

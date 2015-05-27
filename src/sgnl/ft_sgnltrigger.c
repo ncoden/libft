@@ -16,9 +16,9 @@ void			ft_sgnltrigger(char sig)
 {
 	t_ilst_evnt	*lst;
 
-	if (g_sgnl)
+	if (g_sgnl_evnts)
 	{
-		if ((lst = (t_ilst_evnt *)ft_ilstget((t_ilst *)g_sgnl, sig)))
+		if ((lst = (t_ilst_evnt *)ft_ilstget((t_ilst *)g_sgnl_evnts, sig)))
 			lst->event.func(lst->event.data);
 	}
 }

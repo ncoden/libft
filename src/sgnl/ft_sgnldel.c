@@ -16,12 +16,12 @@ void			ft_sgnldel(void)
 {
 	t_ilst_evnt		*next;
 
-	while (g_sgnl != NULL)
+	while (g_sgnl_evnts != NULL)
 	{
-		signal(g_sgnl->index, SIG_DFL);
-		next = g_sgnl->next;
-		free(g_sgnl);
-		g_sgnl = next;
+		signal(g_sgnl_evnts->index, SIG_DFL);
+		next = g_sgnl_evnts->next;
+		free(g_sgnl_evnts);
+		g_sgnl_evnts = next;
 	}
-	g_sgnl = NULL;
+	g_sgnl_evnts = NULL;
 }
