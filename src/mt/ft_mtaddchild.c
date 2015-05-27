@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 18:11:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/26 18:27:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 14:29:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void			ft_mtaddchild(t_mt *mt, t_mt *new)
 {
 	if (mt->child)
-		new->next = mt->child->next;
+		new->next = mt->child;
 	mt->child = new;
 }
