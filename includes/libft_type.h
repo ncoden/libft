@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 16:20:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 11:18:14 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/27 11:25:28 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ typedef struct	s_sdata
 	void		*data;
 	size_t		size;
 }				t_sdata;
+
+t_tdata			*ft_tdatanew(t_type type, void *data);
+t_sdata			*ft_sdatanew(size_t size, void *data);
 
 #endif
