@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/28 19:06:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/28 19:52:50 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static t_mt_tps		*start_tps(t_trm *trm)
 		tps->father = NULL;
 	}
 	tps->trm = trm;
-	tps->tid = g_trm_tid;
-	g_trm_tid++;
 	return (tps);
 }
 
@@ -67,6 +65,8 @@ void				ft_trmstart(t_trm *trm)
 	{
 		save_sgnl = ft_sgnlget();
 		tps = start_tps(trm);
+		if (trm->on_start != NULL)
+			(*trm->on_start)(tps);
 		sgnls = build_sgnls(tps, &esrcs);
 		tps->status = TRM_STACTIVE;
 		ft_trmset(trm);
