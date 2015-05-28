@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 15:20:41 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/28 19:08:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 
+# define TRM_STACTIVE		(1)
+# define TRM_STREADING		(2)
+
 typedef struct		s_trm
 {
 	struct termios	opts;
-	char			level;
 	t_klst_evnt		*on_key_press;
 	t_ilst_evnt		*on_signal;
 }					t_trm;
@@ -30,8 +32,10 @@ typedef struct		s_trm
 typedef struct		s_mt_tps
 {
 	EXTEND_MT		(s_mt_tps);
-	int				tid;
+	struct s_mt_tps	*father;
 	t_trm			*trm;
+	int				tid;
+	int				status;
 }					t_mt_tps;
 
 int					g_trm_tid;
@@ -40,7 +44,7 @@ t_mt_tps			*g_trm_tpss;
 t_trm				*ft_trmnew(void);
 t_bool				ft_trmset(t_trm *trm);
 void				ft_trmstart(t_trm *trm);
-void				ft_trmstop(t_trm *trm);
+void				ft_trmstop(t_mt_tps *tps);
 
 int					ft_trmgetout(void);
 void				ft_trmcloseout(void);
