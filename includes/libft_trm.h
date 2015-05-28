@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/28 19:44:46 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/28 20:41:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 # define TRM_STACTIVE		(1)
 # define TRM_STREADING		(2)
 
-struct				s_mt_tps;
+# define TRM_TPSSTOP		((void *)(1))
+
+struct s_mt_tps;
 
 typedef struct		s_trm
 {

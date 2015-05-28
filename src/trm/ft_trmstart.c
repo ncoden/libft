@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/28 19:52:50 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/28 20:35:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,23 @@ static t_ilst_evnt	*build_sgnls(t_mt_tps *tps, t_ilst_evnt **esrcs)
 	return (lsgnls);
 }
 
+static void			trigger_cmd(t_mt_tps *tps, char *cmd)
+{
+	t_klst_evnt		*evnt;
+
+	if ((evnt = (t_klst_evnt *)ft_klstget((t_klst *)tps->trm->on_key_press,
+		cmd)))
+	{
+		if (evnt->event.func == NULL)
+		{
+			if (evnt->event.data == TRM_TPSSTOP)
+				ft_trmstop(tps);
+		}
+		else
+			ft_esrccall(&evnt->event, TYPE_TPS, tps);
+	}
+}
+
 void				ft_trmstart(t_trm *trm)
 {
 	t_mt_tps		*tps;
@@ -74,11 +91,7 @@ void				ft_trmstart(t_trm *trm)
 		while (tps->status == TRM_STACTIVE)
 		{
 			if ((cmd = ft_read_trm()))
-			{
-				ft_esrcset(TYPE_TPS, tps);
-				ft_kevnttrigger(trm->on_key_press, cmd);
-				ft_esrcrem();
-			}
+				trigger_cmd(tps, cmd);
 		}
 		ft_sgnlset(save_sgnl);
 	}
