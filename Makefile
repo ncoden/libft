@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/27 14:09:29 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/28 19:11:10 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,6 +109,8 @@ SRC =\
 	ilst/ft_ilstcrush.c\
 	ilst/ft_ilstdelone.c\
 	ilst/ft_ilstget.c\
+	ilst/ft_ilstfill.c\
+	ilst/ft_ilstfill__.c\
 	ilst/ft_ilstinsert.c\
 	ilst/ft_ilstinsert__.c\
 	ilst/ft_ilstmerge.c\
@@ -147,6 +149,7 @@ SRC =\
 	lst/ft_lstdel.c\
 	lst/ft_lstdelone.c\
 	lst/ft_lstdup.c\
+	lst/ft_lstdup__.c\
 	lst/ft_lstfold.c\
 	lst/ft_lstiter.c\
 	lst/ft_lstlen.c\

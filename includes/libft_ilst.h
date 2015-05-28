@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 16:10:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/28 19:12:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ t_ilst			*ft_ilstrem(t_ilst **alst, int index);
 t_ilst			*ft_ilstinsert(t_ilst **dst, t_ilst *src);
 t_ilst			*ft_ilstmerge(t_ilst **dst, t_ilst *src);
 void			ft_ilstcrush(t_ilst **dst, t_ilst *src, void (*func)(t_ilst *));
+t_bool			ft_ilstfill(t_ilst **dst, t_ilst *src);
 
 t_ilst			*ft_ilstnew__(size_t size, int index);
 t_ilst			*ft_ilstpush__(size_t size, t_ilst **alst, int index);
 t_ilst			*ft_ilstinsert__(size_t size, t_ilst **dst, t_ilst *src);
+t_bool			ft_ilstfill__(size_t size, t_ilst **dst, t_ilst *src);
 
 /*
 ** The following macros are very useful, but the norm don't accept them
