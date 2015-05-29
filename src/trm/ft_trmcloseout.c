@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 19:18:12 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 19:19:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 23:47:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void			ft_trmcloseout(void)
 {
-	int			fd;
-
-	if ((fd = ft_trmgetout()) > 0)
-		close(fd);
+	if (g_trm_stdout > 0)
+		close(g_trm_stdout);
+	g_trm_stdout = -1;
 }

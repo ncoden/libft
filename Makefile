@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/29 20:35:03 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/29 23:32:01 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,6 @@ SRC =\
 	evnt/ft_kevnttrigger.c\
 	file/ft_putfile.s\
 	file/ft_readline.c\
-	file/ft_readstop.c\
 	file/ft_readtoarray.c\
 	file/ft_readtolst.c\
 	frmt/ft_frmtnew.c\
@@ -303,9 +302,11 @@ SRC =\
 	trm/ft_putchr_trm.c\
 	trm/ft_putstr_trm.c\
 	trm/ft_read_trm.c\
+	trm/ft_trmclosein.c\
 	trm/ft_trmcloseout.c\
 	trm/ft_trmclr.c\
 	trm/ft_trmgetcmd.c\
+	trm/ft_trmgetin.c\
 	trm/ft_trmgetout.c\
 	trm/ft_trmkeycmd.c\
 	trm/ft_trmkeyhook.c\
@@ -353,6 +354,18 @@ DEVMAIN = main.c
 # ALLOWED EXTENSIONS
 EXTENSIONS = .c .s
 
+# SPECIAL CHARS
+LOG_CLEAR		= \033[2K
+LOG_UP 			= \033[A
+LOG_NOCOLOR		= \033[0m
+LOG_BLACK		= \033[1;30m
+LOG_RED			= \033[1;31m
+LOG_GREEN		= \033[1;32m
+LOG_YELLOW		= \033[1;33m
+LOG_BLUE		= \033[1;34m
+LOG_VIOLET		= \033[1;35m
+LOG_CYAN		= \033[1;36m
+LOG_WHITE		= \033[1;37m
 
 # **************************************************************************** #
 
@@ -378,6 +391,7 @@ $(NAME): build $(LIBS) $(OBJS)
 	ar rc $(TEMPNAME) $(OBJS)
 	libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
 	ranlib $(NAME)
+	echo "$(LOG_CLEAR)$(LOG_GREEN)✓$(LOG_NOCOLOR) Libft compiled"
 build:
 	mkdir -p $(OBJDIR)
 	mkdir -p $(OBJS_DIRS)
@@ -394,8 +408,10 @@ dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
 	./$(DEVNAME)
 
 $(LIBDIR)/%.a:
-	make -s -C $(@D)
+	make -s -C $(@D) 2> /dev/null
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	echo "$(LOG_CLEAR)Compiling libft... $(LOG_GREEN)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(CC) -c -o $@ $< $(INCS) $(CCFLAGS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.s
+	echo "$(LOG_CLEAR)Compiling libft... $(LOG_GREEN)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(ASM) -o $@ $< $(INCS) $(ASMFLAGS)
