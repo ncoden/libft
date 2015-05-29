@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/29 15:56:18 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/29 16:10:15 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,8 +84,12 @@ SRC =\
 	evnt/ft_evntcall.c\
 	evnt/ft_evntnew.c\
 	evnt/ft_evntset.c\
+	evnt/ft_iesrctrigger.c\
+	evnt/ft_iesrcstrigger.c\
 	evnt/ft_ievnttrigger.c\
 	evnt/ft_ievntstrigger.c\
+	evnt/ft_kesrctrigger.c\
+	evnt/ft_kesrcstrigger.c\
 	evnt/ft_kevnttrigger.c\
 	evnt/ft_kevntstrigger.c\
 	file/ft_putfile.s\
