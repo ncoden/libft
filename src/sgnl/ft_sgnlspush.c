@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:08:18 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 16:38:51 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 17:57:38 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-	#include <stdio.h>
+
 t_bool			ft_sgnlspush(t_ilst_evnt *events)
 {
 	if (g_sgnl_evnts || g_sgnl_stckevnts)
