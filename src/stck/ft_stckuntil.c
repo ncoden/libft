@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/25 17:23:12 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 12:32:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 15:16:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_bool			ft_stckuntil(t_stck *stck, t_bool (*func)(void *))
 			if ((*func)(stck->datas[count]))
 				return (TRUE);
 		}
+		stck = stck->next;
 	}
 	return (FALSE);
 }
