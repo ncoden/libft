@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlspush.c                                     :+:      :+:    :+:   */
+/*   ft_sgnllisten.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/29 14:08:18 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 15:41:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/29 15:04:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/29 15:39:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_sgnlspush(t_ilst_evnt *events)
+void			ft_sgnllisten(t_ilst_evnt *evnts)
 {
-	if (ft_stckpush(&g_sgnl_stckevnts, g_sgnl_evnts))
+	while (evnts != NULL)
 	{
-		if (ft_stckpush(&g_sgnl_stckesrcs, g_sgnl_esrcs))
-		{
-			g_sgnl_evnts = events;
-			ft_sgnllisten(events);
-			g_sgnl_esrcs = NULL;
-			return (TRUE);
-		}
-		ft_stckpull(&g_sgnl_stckevnts);
+		signal(evnts->index, (void (*)(int))&ft_sgnltrigger);
+		evnts = evnts->next;
 	}
-	return (FALSE);
 }

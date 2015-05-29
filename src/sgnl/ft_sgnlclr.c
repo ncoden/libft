@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 19:11:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 17:03:33 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 15:44:27 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ t_ilst_evnt		*ft_sgnlclr(void)
 		g_sgnl_evnts = g_sgnl_evnts->next;
 	}
 	g_sgnl_evnts = NULL;
+	if (g_sgnl_stckevnts)
+		ft_stckiter(g_sgnl_stckevnts, (void (*)(void *))&ft_sgnllisten);
 	return (ret);
 }

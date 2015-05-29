@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/18 16:04:03 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 15:36:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void			ft_sgnltrigger(char sig)
 {
-	t_ilst_evnt	*lst;
-
-	if (g_sgnl_evnts)
+	if (!g_sgnl_evnts || !(ft_ievnttrigger(g_sgnl_evnts, sig)))
 	{
-		if ((lst = (t_ilst_evnt *)ft_ilstget((t_ilst *)g_sgnl_evnts, sig)))
-			lst->event.func(lst->event.data);
+		if (g_sgnl_stckevnts)
+			ft_ievntstrigger(g_sgnl_stckevnts, sig);
 	}
 }
