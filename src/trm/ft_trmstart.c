@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 17:51:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 18:07:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				ft_trmstart(t_trm *trm)
 		tps = start_tps(trm);
 		if (trm->on_start != NULL)
 			(*trm->on_start)(tps);
-		tps->status = TRM_STACTIVE;
+		tps->status |= TRM_STACTIVE;
 		ft_trmset(trm);
 		ft_sgnlspush(trm->on_signal);
 		while (tps->status == TRM_STACTIVE)
