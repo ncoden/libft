@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 15:56:26 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 18:23:09 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			ft_sgnldel();
 void			ft_sgnllisten(t_ilst_evnt *evnts);
 
 void			ft_sgnlhook(char sig, void (*func)(void *), void *data);
-void			ft_sgnltrigger(char sig);
+t_bool			ft_sgnltrigger(char sig);
 t_ilst_evnt		*ft_sgnlclrone(char sig);
 void			ft_sgnldelone(char sig);
 

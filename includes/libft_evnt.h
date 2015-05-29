@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 16:09:10 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 20:41:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,18 @@ typedef struct	s_ilst_esrc
 	t_tdata		esrc;
 }				t_ilst_esrc;
 
+typedef struct	s_klst_esrc
+{
+	EXTEND_KLST	(s_klst_esrc);
+	t_tdata		esrc;
+}				t_klst_esrc;
+
 t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
 void			ft_evntcall(t_evnt *event);
 
 t_bool			ft_ievnttrigger(t_ilst_evnt *events, int index);
-t_bool			ft_ievntstrigger(t_stck *events, int index);
+t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key);
 
 /*
 ** The following macros are very useful, but the norm don't accept them
@@ -63,9 +69,6 @@ t_bool			ft_ievntstrigger(t_stck *events, int index);
 ** # define ft_ilstdelone_evnt(...)		ft_ilstdelone_(t_ilst_evnt, __VA_ARGS__)
 ** # define ft_ilstrem_evnt(...)		ft_ilstrem_(t_ilst_evnt, __VA_ARGS__)
 */
-
-t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key);
-t_bool			ft_kevntstrigger(t_stck *events, char *key);
 
 /*
 ** The following macros are very useful, but the norm don't accept them
@@ -87,12 +90,12 @@ t_bool			ft_esrcrem(void);
 
 t_bool			ft_iesrctrigger(t_ilst_evnt *events, int index,
 					t_type esrc_type, void *esrc_data);
-t_bool			ft_iesrcstrigger(t_stck *events, int index,
-					t_type esrc_type, void *esrc_data);
-
 t_bool			ft_kesrctrigger(t_klst_evnt *events, char *key,
 					t_type esrc_type, void *esrc_data);
-t_bool			ft_kesrcstrigger(t_stck *events, char *key,
-					t_type esrc_type, void *esrc_data);
+
+t_bool			ft_iesrcstrigger(t_ilst_evnt *events, int index,
+					t_ilst_esrc *srcs);
+t_bool			ft_kesrcstrigger(t_klst_evnt *events, char *key,
+					t_klst_esrc *srcs);
 
 #endif

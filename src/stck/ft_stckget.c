@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ievntstrigger.c                                 :+:      :+:    :+:   */
+/*   ft_stckget.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 16:45:55 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/29 20:07:54 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/29 20:35:29 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_ievntstrigger(t_stck *events, int index)
+void			*ft_stckget(t_stck *stck, int index)
 {
-	int			count;
+	int			i;
 
-	while (events != NULL)
+	if (!stck)
+		return (NULL);
+	i = 0;
+	while (stck)
 	{
-		count = events->count;
-		while (count > 0)
-		{
-			count--;
-			if (ft_ievnttrigger(events->datas[count], index))
-				return (TRUE);
-		}
-		events = events->next;
+		if (i + stck->count > index)
+			return (stck->datas[stck->count - 1 - (index - i)]);
+		i += stck->count;
+		stck = stck->next;
 	}
-	return (FALSE);
+	return (NULL);
 }
