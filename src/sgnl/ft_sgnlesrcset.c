@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/27 13:20:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/28 20:41:30 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 21:22:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_sgnlesrcset(t_ilst_esrc *esrcs)
+void			ft_sgnlesrcset(t_tdata *esrc)
 {
-	g_sgnl_esrcs = esrcs;
+	g_sgnl_esrc = esrc;
 }

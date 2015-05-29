@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 18:07:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 00:26:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static t_mt_tps		*start_tps(t_trm *trm)
 
 void				ft_trmstart(t_trm *trm)
 {
+	t_tdata			*esrc;
 	t_mt_tps		*tps;
 	char			*cmd;
 
@@ -46,9 +47,15 @@ void				ft_trmstart(t_trm *trm)
 		tps->status |= TRM_STACTIVE;
 		ft_trmset(trm);
 		ft_sgnlspush(trm->on_signal);
-		while (tps->status == TRM_STACTIVE)
+		if (!(esrc = ft_tdatanew(TYPE_TPS, tps)))
+			return ;
+		ft_sgnlesrcset(esrc);
+		while (tps->status & TRM_STACTIVE)
 		{
-			if ((cmd = ft_read_trm()))
+			tps->status |= TRM_STREADING;
+			cmd = ft_read_trm();
+			tps->status &= ~TRM_STREADING;
+			if (cmd && !ft_strequ(cmd, ""))
 				ft_kesrctrigger(trm->on_key_press, cmd, TYPE_TPS, tps);
 		}
 		ft_sgnlspull();

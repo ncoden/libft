@@ -18,7 +18,7 @@ t_bool			ft_sgnlspush(t_ilst_evnt *events)
 	{
 		if (!(ft_stckpush(&g_sgnl_stckevnts, g_sgnl_evnts)))
 			return (FALSE);
-		if (!(ft_stckpush(&g_sgnl_stckesrcs, g_sgnl_esrcs)))
+		if (!(ft_stckpush(&g_sgnl_stckesrc, g_sgnl_esrc)))
 		{
 			ft_stckpull(&g_sgnl_stckevnts);
 			return (FALSE);
@@ -26,6 +26,6 @@ t_bool			ft_sgnlspush(t_ilst_evnt *events)
 	}
 	g_sgnl_evnts = events;
 	ft_sgnllisten(events);
-	g_sgnl_esrcs = NULL;
+	g_sgnl_esrc = NULL;
 	return (TRUE);
 }

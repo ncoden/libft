@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 20:43:51 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 22:33:49 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_bool			ft_sgnltrigger(char sig)
 {
 	int				index;
 	t_ilst_evnt		*evnt;
-	t_ilst_esrc		*esrc;
+	t_tdata			*esrc;
 
 	index = -1;
 	evnt = NULL;
@@ -52,13 +52,12 @@ t_bool			ft_sgnltrigger(char sig)
 	if (!evnt)
 		return (FALSE);
 	esrc = NULL;
-	if (g_sgnl_evnts && g_sgnl_esrcs)
-		esrc = (t_ilst_esrc *)ft_ilstget((t_ilst *)g_sgnl_esrcs, sig);
-	if (g_sgnl_stckevnts && g_sgnl_stckesrcs && index != -1)
-		if ((esrc = ft_stckget(g_sgnl_stckesrcs, sig)))
-			esrc = (t_ilst_esrc *)ft_ilstget((t_ilst *)esrc, sig);
+	if (g_sgnl_evnts && g_sgnl_esrc)
+		esrc = g_sgnl_esrc;
+	if (g_sgnl_stckevnts && g_sgnl_stckesrc && index != -1)
+		esrc = (t_tdata *)ft_stckget(g_sgnl_stckesrc, index);
 	if (esrc)
-		ft_esrccall(&evnt->event, esrc->esrc.type, esrc->esrc.data);
+		ft_esrccall(&evnt->event, esrc->type, esrc->data);
 	else
 		evnt->event.func(evnt->event.data);
 	return (TRUE);
