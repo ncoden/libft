@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/24 19:56:01 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/26 14:40:39 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 16:51:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void			*ft_stckpull(t_stck **astck)
 	t_stck		*stck;
 
 	stck = *astck;
-	if (stck->count <= 0)
+	if (!stck || stck->count <= 0)
 		return (NULL);
 	if (stck->count == 1)
 	{
