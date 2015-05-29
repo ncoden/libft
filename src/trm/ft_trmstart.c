@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 15:48:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 17:51:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,6 @@ static t_mt_tps		*start_tps(t_trm *trm)
 	return (tps);
 }
 
-static void			trigger_cmd(t_mt_tps *tps, char *cmd)
-{
-	t_klst_evnt		*evnt;
-
-	if ((evnt = (t_klst_evnt *)ft_klstget((t_klst *)tps->trm->on_key_press,
-		cmd)))
-	{
-		if (evnt->event.func == NULL)
-		{
-			if (evnt->event.data == TRM_TPSSTOP)
-				ft_trmstop(tps);
-		}
-		else
-			ft_esrccall(&evnt->event, TYPE_TPS, tps);
-	}
-}
-
 void				ft_trmstart(t_trm *trm)
 {
 	t_mt_tps		*tps;
@@ -66,7 +49,7 @@ void				ft_trmstart(t_trm *trm)
 		while (tps->status == TRM_STACTIVE)
 		{
 			if ((cmd = ft_read_trm()))
-				trigger_cmd(tps, cmd);
+				ft_kesrctrigger(trm->on_key_press, cmd, TYPE_TPS, tps);
 		}
 		ft_sgnlspull();
 	}
