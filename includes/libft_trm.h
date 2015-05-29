@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 17:55:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/29 18:09:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_mt_tps			*g_trm_tpss;
 t_trm				*ft_trmnew(void);
 t_bool				ft_trmset(t_trm *trm);
 void				ft_trmstart(t_trm *trm);
-void				ft_trmstop(t_mt_tps *tps);
+t_bool				ft_trmstop(t_mt_tps *tps);
 
 int					ft_trmgetout(void);
 void				ft_trmcloseout(void);
