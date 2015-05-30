@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 15:44:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 15:50:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ t_bool					ft_trmstart(t_trm *trm)
 	}
 	if (!trm_restore())
 		return (FALSE);
+	if (trm->on_stop != NULL)
+		(*trm->on_stop)(tps);
 	if (!(tps_stop(tps)))
 		return (FALSE);
 	return (TRUE);

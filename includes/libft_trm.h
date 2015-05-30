@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 15:31:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 15:50:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_trm
 {
 	struct termios	opts;
 	void			(*on_start)(struct s_mt_tps *);
+	void			(*on_stop)(struct s_mt_tps *);
 	t_klst_evnt		*on_key_press;
 	t_ilst_evnt		*on_signal;
 }					t_trm;

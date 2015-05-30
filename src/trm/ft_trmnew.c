@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/28 19:30:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 15:52:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_trm			*ft_trmnew(void)
 		if (tcgetattr(ft_trmgetout(), &trm->opts) != -1)
 		{
 			trm->on_start = NULL;
+			trm->on_stop = NULL;
 			trm->on_key_press = NULL;
 			trm->on_signal = NULL;
 			return (trm);
