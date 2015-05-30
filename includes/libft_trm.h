@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 16:24:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 16:41:48 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct		s_trm
 	void			(*on_stop)(struct s_mt_tps *);
 	t_klst_evnt		*on_key;
 	t_ilst_evnt		*on_signal;
+	t_bool			inherit_key;
+	t_bool			inherit_signal;
 }					t_trm;
 
 typedef struct		s_mt_tps
