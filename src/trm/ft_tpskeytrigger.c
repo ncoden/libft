@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_trmnew.c                                        :+:      :+:    :+:   */
+/*   ft_tpskeytrigger.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 15:52:06 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/30 16:09:36 by ncoden            #+#    #+#             */
+/*   Updated: 2015/05/30 16:21:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_trm			*ft_trmnew(void)
+t_bool			ft_tpskeytrigger(t_mt_tps *tps, char *key)
 {
-	t_trm		*trm;
-	char		*name;
-
-	if (!(name = ft_envget("TERM")))
-		return (NULL);
-	if (!(trm = (t_trm *)malloc(sizeof(t_trm))))
-		return (NULL);
-	if ((tgetent(NULL, name)))
+	if (!tps->trm->on_key)
+		return (FALSE);
+	while (tps)
 	{
-		if (tcgetattr(ft_trmgetout(), &trm->opts) != -1)
-		{
-			trm->on_start = NULL;
-			trm->on_stop = NULL;
-			trm->on_key = NULL;
-			trm->on_signal = NULL;
-			return (trm);
-		}
+		if (ft_kesrctrigger(tps->trm->on_key, key, TYPE_TPS, tps))
+			return (TRUE);
+		tps = tps->father;
 	}
-	free(trm);
-	return (NULL);
+	return (FALSE);
 }

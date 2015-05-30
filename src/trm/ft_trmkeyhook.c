@@ -18,7 +18,7 @@ void			ft_trmkeyhook(t_trm *trm, char *key, void (*func)(void *),
 	t_klst_evnt		*event;
 
 	if ((event = (t_klst_evnt *)ft_klstpush__(sizeof(t_klst_evnt),
-			(t_klst **)&trm->on_key_press, key)))
+			(t_klst **)&trm->on_key, key)))
 	{
 		event->event.func = func;
 		event->event.data = data;

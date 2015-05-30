@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 15:50:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 16:24:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_trm
 	struct termios	opts;
 	void			(*on_start)(struct s_mt_tps *);
 	void			(*on_stop)(struct s_mt_tps *);
-	t_klst_evnt		*on_key_press;
+	t_klst_evnt		*on_key;
 	t_ilst_evnt		*on_signal;
 }					t_trm;
 
@@ -70,5 +70,7 @@ void				ft_trmkeycmd(t_trm *trm, char *key, char *tc_cmd);
 void				ft_trmsignalhook(t_trm *trm, char sig, void (*func)(void *),
 						void *data);
 void				ft_trmsignalcmd(t_trm *trm, char sig, char *tc_cmd);
+
+t_bool				ft_tpskeytrigger(t_mt_tps *tps, char *key);
 
 #endif

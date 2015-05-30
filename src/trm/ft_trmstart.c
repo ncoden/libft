@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 15:50:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 16:12:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_bool					ft_trmstart(t_trm *trm)
 		cmd = ft_read_trm();
 		tps->status &= ~TRM_STREADING;
 		if (cmd && !ft_strequ(cmd, ""))
-			ft_kesrctrigger(trm->on_key_press, cmd, TYPE_TPS, tps);
+			ft_tpskeytrigger(tps, cmd);
 	}
 	if (!trm_restore())
 		return (FALSE);

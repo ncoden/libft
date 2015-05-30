@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/05/29 23:32:01 by ncoden           ###   ########.fr        #
+#    Updated: 2015/05/30 16:17:18 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -302,6 +302,7 @@ SRC =\
 	trm/ft_putchr_trm.c\
 	trm/ft_putstr_trm.c\
 	trm/ft_read_trm.c\
+	trm/ft_tpskeytrigger.c\
 	trm/ft_trmclosein.c\
 	trm/ft_trmcloseout.c\
 	trm/ft_trmclr.c\
