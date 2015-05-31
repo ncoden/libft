@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 21:21:50 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/05/30 18:05:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,19 @@
 
 # include "libft_evnt.h"
 
+/*
+**                 - - - About SGNL global variables - - -                    **
+** SGNL is an interface to control more easily signals. It implement many     **
+** features to make possible modular programming with signals.                **
+** However, signals are global by definition. So the use of global variables  **
+** here is fully justified.                                                   **
+*/
+
+int				g_sgnl_scope;
 t_ilst_evnt		*g_sgnl_evnts;
 t_tdata			*g_sgnl_esrc;
 
+t_stck			*g_sgnl_stckscope;
 t_stck			*g_sgnl_stckevnts;
 t_stck			*g_sgnl_stckesrc;
 
