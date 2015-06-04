@@ -241,10 +241,13 @@ SRC =\
 	sgnl/ft_sgnlspush.c\
 	sgnl/ft_sgnlset.c\
 	sgnl/ft_sgnltrigger.c\
+	stck/ft_stckclr.c\
+	stck/ft_stckenter.c\
 	stck/ft_stckget.c\
 	stck/ft_stckhead.c\
 	stck/ft_stckilstget.c\
 	stck/ft_stckiter.c\
+	stck/ft_stckleave.c\
 	stck/ft_stcknew.c\
 	stck/ft_stckpull.c\
 	stck/ft_stckpush.c\
