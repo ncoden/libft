@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 20:07:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 20:35:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/04 15:52:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void			*ft_stckget(t_stck *stck, int index)
 {
-	int			i;
+	int			size;
 
-	if (!stck)
+	if (!stck || stck->count <= index)
 		return (NULL);
-	i = 0;
-	while (stck)
+	size = stck->size;
+	while (index > size)
 	{
-		if (i + stck->count > index)
-			return (stck->datas[stck->count - 1 - (index - i)]);
-		i += stck->count;
-		stck = stck->next;
+		stck = (t_stck *)stck->next;
+		index -= size;
 	}
-	return (NULL);
+	return (stck->datas[index]);
 }

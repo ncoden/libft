@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/29 22:33:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/01 19:04:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,24 @@ static t_ilst	*find_ilst(t_stck *stck, int index, int *level)
 {
 	int			i;
 	int			count;
+	int			mod;
 	t_ilst		*ilst;
 
+	if (!stck)
+		return (NULL);
 	i = 0;
-	while (stck != NULL)
+	count = stck->count;
+	while (count > 0)
 	{
-		count = stck->count;
-		while (count > 0)
+		count--;
+		mod = count % stck->size;
+		if ((ilst = ft_ilstget(stck->datas[mod], index)))
 		{
-			count--;
-			if ((ilst = ft_ilstget(stck->datas[count], index)))
-			{
-				*level = i;
-				return (ilst);
-			}
-			i++;
+			*level = i;
+			return (stck->datas[mod]);
 		}
-		stck = stck->next;
+		if (mod == 0)
+			stck = (t_stck *)stck->next;
 	}
 	return (NULL);
 }
