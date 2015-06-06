@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/01 17:38:58 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/06 15:32:45 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -241,6 +241,7 @@ SRC =\
 	sgnl/ft_sgnlspush.c\
 	sgnl/ft_sgnlset.c\
 	sgnl/ft_sgnltrigger.c\
+	sgnl/ft_sgnlunset.c\
 	stck/ft_stckclr.c\
 	stck/ft_stckenter.c\
 	stck/ft_stckget.c\

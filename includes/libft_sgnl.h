@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 18:05:15 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/05 21:36:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@
 ** here is fully justified.                                                   **
 */
 
-int				g_sgnl_scope;
+int				g_sgnl_pushmode;
+
 t_ilst_evnt		*g_sgnl_evnts;
 t_tdata			*g_sgnl_esrc;
 
-t_stck			*g_sgnl_stckscope;
 t_stck			*g_sgnl_stckevnts;
 t_stck			*g_sgnl_stckesrc;
 
 t_ilst_evnt		*ft_sgnlget(void);
-void			ft_sgnlset(t_ilst_evnt *events);
+t_bool			ft_sgnlset(t_ilst_evnt *events);
+t_bool			ft_sgnlunset(void);
 void			ft_sgnlcrush(t_ilst_evnt *events);
 t_ilst_evnt		*ft_sgnlclr();
 void			ft_sgnldel();

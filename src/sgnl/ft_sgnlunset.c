@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlspush.c                                     :+:      :+:    :+:   */
+/*   ft_sgnlunset.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/29 14:08:18 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/05 21:39:37 by ncoden           ###   ########.fr       */
+/*   Created: 2015/06/05 18:17:32 by ncoden            #+#    #+#             */
+/*   Updated: 2015/06/05 21:44:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool			ft_sgnlspush(t_ilst_evnt *events)
+t_bool			ft_sgnlunset(void)
 {
-	if (g_sgnl_evnts || g_sgnl_stckevnts)
+	if (!(ft_stckleave(&g_sgnl_stckevnts)))
+		return (FALSE);
+	if (!(ft_stckleave(&g_sgnl_stckesrc)))
+		return (FALSE);
+	ft_sgnlclr();
+	if (g_sgnl_stckevnts->count > 0)
 	{
-		if (!(ft_stckpush(&g_sgnl_stckevnts, g_sgnl_evnts)))
-			return (FALSE);
-		if (!(ft_stckpush(&g_sgnl_stckesrc, g_sgnl_esrc)))
-		{
-			ft_stckpull(&g_sgnl_stckevnts);
-			return (FALSE);
-		}
+		g_sgnl_evnts = ft_stckpull(&g_sgnl_stckevnts);
+		g_sgnl_esrc = ft_stckpull(&g_sgnl_stckesrc);
+		ft_sgnllisten(g_sgnl_evnts);
 	}
-	g_sgnl_pushmode = TRUE;
-	g_sgnl_evnts = events;
-	ft_sgnllisten(events);
-	g_sgnl_esrc = NULL;
 	return (TRUE);
 }
