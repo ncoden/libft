@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:15:05 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/06 17:31:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			ft_putptrbase(size_t nbr, unsigned char base)
 			ft_putchr('0' + nbr);
 		else
 		{
-			ft_putnbrbase(nbr / base, base);
+			ft_putptrbase(nbr / base, base);
 			ft_putchr('0' + nbr % base);
 		}
 	}
