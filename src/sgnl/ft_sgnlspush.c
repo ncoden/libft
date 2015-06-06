@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlspush.c                                     :+:      :+:    :+:   */
+/*   ft_sgnlpush.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_bool			ft_sgnlspush(t_ilst_evnt *events)
+t_bool			ft_sgnlpush(t_ilst_evnt *events)
 {
 	if (g_sgnl_evnts || g_sgnl_stckevnts)
 	{

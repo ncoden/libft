@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlspull.c                                     :+:      :+:    :+:   */
+/*   ft_sgnlpull.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_ilst_evnt		*ft_sgnlspull(void)
+t_ilst_evnt		*ft_sgnlpull(void)
 {
 	ft_sgnlset(ft_stckpull(&g_sgnl_stckevnts));
 	g_sgnl_esrc = ft_stckpull(&g_sgnl_stckesrc);

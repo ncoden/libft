@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/06 15:51:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/06 16:19:10 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static inline t_mt_tps	*tps_start(t_trm *trm, t_mt_tps *tps_father)
 	tps->father = tps_father;
 	tps->trm = trm;
 	tps->status |= TRM_STACTIVE;
+	if (trm->on_start)
+		(*trm->on_start)(tps);
 	return (tps);
 }
 
@@ -34,7 +36,7 @@ static inline t_tdata	*trm_switch(t_mt_tps *tps)
 
 	ft_trmset(tps->trm);
 	if (tps->trm->inherit_signal)
-		ft_sgnlspush(tps->trm->on_signal);
+		ft_sgnlpush(tps->trm->on_signal);
 	else
 		ft_sgnlset(tps->trm->on_signal);
 	if (!(esrc = ft_tdatanew(TYPE_TPS, tps)))
@@ -48,7 +50,7 @@ static inline t_bool	trm_restore(t_trm *trm, t_mt_tps *tps_father,
 {
 	free(esrc);
 	if (trm->inherit_signal)
-		ft_sgnlspull();
+		ft_sgnlpull();
 	else
 		ft_sgnlunset();
 	if (tps_father)
@@ -58,6 +60,8 @@ static inline t_bool	trm_restore(t_trm *trm, t_mt_tps *tps_father,
 
 static inline t_bool	tps_stop(t_mt_tps *tps)
 {
+	if (tps->trm->on_stop)
+		(*tps->trm->on_stop)(tps);
 	if (tps->father)
 		tps->father->child = NULL;
 	free(tps);
@@ -74,8 +78,6 @@ t_bool					ft_trmstart(t_trm *trm)
 	tps_father = (t_mt_tps *)ft_esrcget(TYPE_TPS);
 	if (!(tps = tps_start(trm, tps_father)))
 		return (FALSE);
-	if (trm->on_start != NULL)
-		(*trm->on_start)(tps);
 	if (!(esrc = trm_switch(tps)))
 		return (FALSE);
 	while (tps->status & TRM_STACTIVE)
@@ -88,8 +90,6 @@ t_bool					ft_trmstart(t_trm *trm)
 	}
 	if (!trm_restore(tps->trm, tps_father, esrc))
 		return (FALSE);
-	if (trm->on_stop != NULL)
-		(*trm->on_stop)(tps);
 	if (!(tps_stop(tps)))
 		return (FALSE);
 	return (TRUE);

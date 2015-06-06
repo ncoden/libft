@@ -44,8 +44,8 @@ t_bool			ft_sgnltrigger(char sig);
 t_ilst_evnt		*ft_sgnlclrone(char sig);
 void			ft_sgnldelone(char sig);
 
-t_bool			ft_sgnlspush(t_ilst_evnt *events);
-t_ilst_evnt		*ft_sgnlspull(void);
+t_bool			ft_sgnlpush(t_ilst_evnt *events);
+t_ilst_evnt		*ft_sgnlpull(void);
 
 t_tdata			*ft_sgnlesrcget(void);
 void			ft_sgnlesrcset(t_tdata *esrcs);
