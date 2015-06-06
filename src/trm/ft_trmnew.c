@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 16:29:30 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/06 16:14:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ t_trm			*ft_trmnew(void)
 	if ((tgetent(NULL, name)))
 	{
 		if (tcgetattr(ft_trmgetout(), &trm->opts) != -1)
+		{
+			trm->inherit_signal = TRUE;
 			return (trm);
+		}
 	}
 	free(trm);
 	return (NULL);
