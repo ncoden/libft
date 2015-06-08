@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/06 17:15:41 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/08 19:24:50 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,10 +156,13 @@ SRC =\
 	lst/ft_lstlen.c\
 	lst/ft_lstmap.c\
 	lst/ft_lstnew.c\
+	lst/ft_lstnew__.c\
 	lst/ft_lstpushafter.c\
 	lst/ft_lstpushback.c\
+	lst/ft_lstpushback__.c\
 	lst/ft_lstpushby.c\
 	lst/ft_lstpushfront.c\
+	lst/ft_lstpushfront__.c\
 	lst/ft_lstpushrby.c\
 	lst/ft_lstshift.c\
 	lst/ft_lsttoarray.c\

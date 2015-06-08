@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/27 17:59:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/08 19:24:40 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ void			ft_lstshift(t_lst **alst);
 
 void			**ft_lsttoarray(t_lst *lst);
 
+t_lst			*ft_lstnew__(size_t size);
+t_lst			*ft_lstpushfront__(size_t size, t_lst **alst);
+t_lst			*ft_lstpushback__(size_t size, t_lst **alst);
 t_lst			*ft_lstdup__(size_t size, t_lst *lst);
 
 #endif
