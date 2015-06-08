@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/06 16:19:10 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/08 14:17:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static inline t_mt_tps	*tps_start(t_trm *trm, t_mt_tps *tps_father)
 	tps->status |= TRM_STACTIVE;
 	if (trm->on_start)
 		(*trm->on_start)(tps);
+	g_trm_current = tps;
 	return (tps);
 }
 
@@ -45,7 +46,7 @@ static inline t_tdata	*trm_switch(t_mt_tps *tps)
 	return (esrc);
 }
 
-static inline t_bool	trm_restore(t_trm *trm, t_mt_tps *tps_father,
+static inline t_bool	trm_restore(t_trm *trm, t_mt_tps *tps_prev,
 							t_tdata *esrc)
 {
 	free(esrc);
@@ -53,8 +54,8 @@ static inline t_bool	trm_restore(t_trm *trm, t_mt_tps *tps_father,
 		ft_sgnlpull();
 	else
 		ft_sgnlunset();
-	if (tps_father)
-		ft_trmset(tps_father->trm);
+	if (tps_prev)
+		ft_trmset(tps_prev->trm);
 	return (TRUE);
 }
 
@@ -72,9 +73,11 @@ t_bool					ft_trmstart(t_trm *trm)
 {
 	t_tdata				*esrc;
 	t_mt_tps			*tps;
+	t_mt_tps			*tps_prev;
 	t_mt_tps			*tps_father;
 	char				*cmd;
 
+	tps_prev = g_trm_current;
 	tps_father = (t_mt_tps *)ft_esrcget(TYPE_TPS);
 	if (!(tps = tps_start(trm, tps_father)))
 		return (FALSE);
@@ -88,7 +91,7 @@ t_bool					ft_trmstart(t_trm *trm)
 		if (cmd && !ft_strequ(cmd, ""))
 			ft_tpskeytrigger(tps, cmd);
 	}
-	if (!trm_restore(tps->trm, tps_father, esrc))
+	if (!trm_restore(tps->trm, tps_prev, esrc))
 		return (FALSE);
 	if (!(tps_stop(tps)))
 		return (FALSE);

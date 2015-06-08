@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/30 16:41:48 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/08 14:18:27 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct		s_mt_tps
 
 int					g_trm_stdin;
 int					g_trm_stdout;
+
+t_mt_tps			*g_trm_current;
 t_mt_tps			*g_trm_tpss;
 
 t_trm				*ft_trmnew(void);
