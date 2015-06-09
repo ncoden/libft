@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/08 19:24:50 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/09 14:50:52 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -152,6 +152,7 @@ SRC =\
 	lst/ft_lstdup.c\
 	lst/ft_lstdup__.c\
 	lst/ft_lstfold.c\
+	lst/ft_lstget.c\
 	lst/ft_lstiter.c\
 	lst/ft_lstlen.c\
 	lst/ft_lstmap.c\
