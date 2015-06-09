@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 22:45:15 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/26 14:18:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/09 16:20:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_ilst			*ft_ilstpush__(size_t size, t_ilst **alst, int index)
 	else
 	{
 		new->next = *alst;
-		(*alst) = new;
+		*alst = new;
 	}
 	return (new);
 }
