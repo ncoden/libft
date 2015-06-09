@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/08 14:18:27 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/09 19:15:46 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ int					ft_trmgetin(void);
 int					ft_trmgetout(void);
 void				ft_trmclosein(void);
 void				ft_trmcloseout(void);
+
+int					ft_trmwidth(void);
+int					ft_trmheight(void);
 
 void				ft_putchr_trm(char c);
 void				ft_putstr_trm(const char *s);

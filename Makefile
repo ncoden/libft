@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/09 14:50:52 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/09 19:17:05 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -316,6 +316,7 @@ SRC =\
 	trm/ft_trmgetcmd.c\
 	trm/ft_trmgetin.c\
 	trm/ft_trmgetout.c\
+	trm/ft_trmheight.c\
 	trm/ft_trmkeycmd.c\
 	trm/ft_trmkeyhook.c\
 	trm/ft_trmstart.c\
@@ -326,6 +327,7 @@ SRC =\
 	trm/ft_trmsignalcmd.c\
 	trm/ft_trmsignalhook.c\
 	trm/ft_trmstop.c\
+	trm/ft_trmwidth.c\
 	type/ft_sdatanew.c\
 	type/ft_tdatanew.c\
 	uni/ft_getunicode.c\
