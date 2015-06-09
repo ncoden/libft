@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/23 22:26:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/05/24 20:43:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/09 16:23:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_klst			*ft_klstprev(t_klst *lst, char *key, t_klst **prev)
 {
-	if (!lst)
+	if (!lst || (ft_strcmp(lst->next->key, key) > 0))
 		*prev = NULL;
 	else if (ft_strequ(lst->key, key))
 	{
