@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/10 22:38:45 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/10 22:41:23 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -401,7 +401,7 @@ $(NAME): build $(LIBS) $(OBJS)
 	ar rc $(TEMPNAME) $(OBJS)
 	libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
 	ranlib $(NAME)
-	echo "$(LOG_CLEAR)$(NAME) compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
+	echo "$(LOG_CLEAR)$(NAME)... compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
 build:
 	mkdir -p $(OBJDIR)
 	mkdir -p $(OBJS_DIRS)
