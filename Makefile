@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/09 19:17:05 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/10 22:38:45 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -401,7 +401,7 @@ $(NAME): build $(LIBS) $(OBJS)
 	ar rc $(TEMPNAME) $(OBJS)
 	libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
 	ranlib $(NAME)
-	echo "$(LOG_CLEAR)$(LOG_GREEN)✓$(LOG_NOCOLOR) Libft compiled"
+	echo "$(LOG_CLEAR)$(NAME) compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
 build:
 	mkdir -p $(OBJDIR)
 	mkdir -p $(OBJS_DIRS)
@@ -418,10 +418,11 @@ dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
 	./$(DEVNAME)
 
 $(LIBDIR)/%.a:
+	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$@$(LOG_NOCOLOR)$(LOG_UP)"
 	make -s -C $(@D) 2> /dev/null
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	echo "$(LOG_CLEAR)Compiling libft... $(LOG_GREEN)$<$(LOG_NOCOLOR)$(LOG_UP)"
+	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(CC) -c -o $@ $< $(INCS) $(CCFLAGS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.s
-	echo "$(LOG_CLEAR)Compiling libft... $(LOG_GREEN)$<$(LOG_NOCOLOR)$(LOG_UP)"
+	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(ASM) -o $@ $< $(INCS) $(ASMFLAGS)
