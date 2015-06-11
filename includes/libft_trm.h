@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/09 19:15:46 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/11 16:35:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@
 # include <sys/ioctl.h>
 # include <signal.h>
 
-# define TRM_STACTIVE		(1)
-# define TRM_STREADING		(2)
+# define TRM_STACTIVE			(1)
+# define TRM_STREADING			(2)
+
+# define TRM_KEY_ESC			("\x1B")
+# define TRM_KEY_BKSP			("\x7F")
+# define TRM_KEY_UP				("\x1B\x5B\x41")
+# define TRM_KEY_DOWN			("\x1B\x5B\x42")
+# define TRM_KEY_LEFT			("\x1B\x5B\x44")
+# define TRM_KEY_RIGHT			("\x1B\x5B\x43")
 
 struct s_mt_tps;
 
