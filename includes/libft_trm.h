@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/11 16:35:57 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/11 17:27:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@
 # define TRM_STACTIVE			(1)
 # define TRM_STREADING			(2)
 
+# define TRM_KEY_ENTER			("\x0A")
 # define TRM_KEY_ESC			("\x1B")
 # define TRM_KEY_BKSP			("\x7F")
+# define TRM_KEY_DEL			("\x1B\x5B\x33\x7E")
 # define TRM_KEY_UP				("\x1B\x5B\x41")
 # define TRM_KEY_DOWN			("\x1B\x5B\x42")
 # define TRM_KEY_LEFT			("\x1B\x5B\x44")
