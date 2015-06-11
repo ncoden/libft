@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/10 22:41:23 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/11 17:38:49 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC =\
 	chr/ft_putchr.s\
 	chr/ft_putchr_fd.s\
 	chr/ft_putnchr.c\
+	chr/ft_putnchr_fd.c\
 	chr/ft_putspace.c\
 	chr/ft_tolower.s\
 	chr/ft_toupper.s\

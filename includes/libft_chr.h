@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:52:22 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/05 13:31:26 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/11 17:38:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char			ft_chrswitch(const char *chrs, char c);
 void			ft_putchr(char c);
 void			ft_putchr_fd(char c, int fd);
 void			ft_putnchr(char c, size_t n);
+void			ft_putnchr_fd(char c, size_t n, int fd);
 void			ft_putspace(size_t n);
 
 #endif
