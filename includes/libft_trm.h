@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/12 18:51:25 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/12 20:10:18 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct		s_trm
 	struct termios	opts;
 	t_evnt			*on_start;
 	t_evnt			*on_stop;
+	t_evnt			*on_restore;
 	t_klst_evnt		*on_key;
 	t_ilst_evnt		*on_signal;
 	t_bool			inherit_key;
@@ -62,6 +63,7 @@ t_trm				*ft_trmnew(void);
 t_bool				ft_trmset(t_trm *trm);
 t_bool				ft_trmstart(t_trm *trm);
 t_bool				ft_trmstop(t_mt_tps *tps);
+t_bool				ft_trmrestore(t_mt_tps *tps);
 
 int					ft_trmgetin(void);
 int					ft_trmgetout(void);

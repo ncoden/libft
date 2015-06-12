@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/12 18:56:48 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/12 20:16:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static inline t_tdata	*trm_switch(t_mt_tps *tps, t_mt_tps *tps_prev)
 		ft_sgnlpush(tps->trm->on_signal);
 	else
 		ft_sgnlset(tps->trm->on_signal);
+	ft_sgnlhook(SIGCONT, (void (*)(void *))&ft_trmrestore, tps);
 	if (!(esrc = ft_tdatanew(TYPE_TPS, tps)))
 		return (NULL);
 	ft_sgnlesrcset(esrc);
@@ -52,6 +53,7 @@ static inline t_bool	trm_restore(t_mt_tps *tps, t_mt_tps *tps_prev,
 							t_tdata *esrc)
 {
 	free(esrc);
+	ft_sgnldel(SIGCONT);
 	if (tps->trm->on_stop)
 		ft_esrccall(tps->trm->on_stop, TYPE_TPS, tps);
 	if (tps->trm->inherit_signal)

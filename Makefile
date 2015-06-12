@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/11 17:38:49 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/12 20:10:37 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -324,6 +324,7 @@ SRC =\
 	trm/ft_trmnew.c\
 	trm/ft_trmputcmd.c\
 	trm/ft_trmread.c\
+	trm/ft_trmrestore.c\
 	trm/ft_trmset.c\
 	trm/ft_trmsignalcmd.c\
 	trm/ft_trmsignalhook.c\
