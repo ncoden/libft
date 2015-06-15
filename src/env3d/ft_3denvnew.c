@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_3dendnew.c                                      :+:      :+:    :+:   */
+/*   ft_3denvnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncoden <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 19:24:01 by ncoden            #+#    #+#             */
-/*   Updated: 2014/12/05 18:38:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/14 19:17:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_3denv				*ft_3denvnew(void *mlx, size_t x, size_t y, char *title)
 				if (ft_imgset(&e->img, mlx, x, y))
 					if ((e->cam = ft_3dcamnew(NULL, NULL, 0, NULL)))
 					{
+						e->obj = NULL;
 						ft_2dsizeset(&e->cam->view, x, y);
 						return (e);
 					}
