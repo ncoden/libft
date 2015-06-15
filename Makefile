@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/12 20:10:37 by ncoden           ###   ########.fr        #
+#    Updated: 2015/06/14 22:17:55 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ ASM = ~/.brew/Cellar/nasm/dev/bin/nasm
 ASMFLAGS = -f macho64
 
 LNK = gcc
-LNKFLAGS = -ltermcap
+LNKFLAGS =
 
 # DIRECTORIES
 LIBDIR = lib
@@ -232,6 +232,7 @@ SRC =\
 	prs/ft_prsnbr.c\
 	prs/ft_prsstr.c\
 	prs/ft_prsxchrs.c\
+	prs/ft_skpnbr.c\
 	sgnl/ft_sgnlclr.c\
 	sgnl/ft_sgnlclrone.c\
 	sgnl/ft_sgnlcrush.c\
