@@ -1,0 +1,3 @@
+[submodule "lib/minilibx"]
+	path = lib/minilibx
+	url = https://github.com/ncoden/minilibx_macos.git
