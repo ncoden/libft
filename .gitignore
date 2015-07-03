@@ -1,6 +1,6 @@
 # Executable & submodules
 libft
-lib/minilib/minilibx
+lib/minilibx
 
 # Object files
 *.o
