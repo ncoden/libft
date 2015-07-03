@@ -14,14 +14,19 @@
 
 t_bool			ft_imgset(t_img *img, void *mlx, size_t x, size_t y)
 {
-	int		bpp;
+	int			bpp;
 
 	if (mlx)
 	{
 		if ((img->data = mlx_new_image(mlx, x, y)))
+		{
 			if ((img->buff = mlx_get_data_addr(img->data, &bpp,
-					(int *)&img->size_x, (int *)&img->endian)))
+					&img->size_x, (int *)&img->endian)))
+			{
+				img->bpp = bpp / 8;
 				return (TRUE);
+			}
+		}
 		ft_imgclr(img, mlx);
 	}
 	return (FALSE);

@@ -21,7 +21,7 @@ typedef struct	s_img
 	char	*buff;
 	int		bpp;
 	t_bool	endian;
-	size_t	size_x;
+	int		size_x;
 }				t_img;
 
 t_img			*ft_imgnew(void *mlx, size_t x, size_t y);

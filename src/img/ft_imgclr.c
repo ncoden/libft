@@ -20,6 +20,7 @@ void			ft_imgclr(t_img *img, void *mlx)
 			mlx_destroy_image(mlx, img->data);
 		img->data = NULL;
 		img->buff = NULL;
+		img->bpp = 0;
 		img->endian = -1;
 		img->size_x = 0;
 	}

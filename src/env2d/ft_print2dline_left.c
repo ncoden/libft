@@ -14,12 +14,7 @@
 
 static inline void		print_pixel(t_img *img, int x, int y, int color)
 {
-	img->buff[(img->size_x * y) + 4 * x + (img->endian ? 3 : 0)] =
-		(color & 0x000000FF) >> 000;
-	img->buff[(img->size_x * y) + 4 * x + (img->endian ? 2 : 1)] =
-		(color & 0x0000FF00) >> 010;
-	img->buff[(img->size_x * y) + 4 * x + (img->endian ? 1 : 2)] =
-		(color & 0x00FF0000) >> 020;
+	ft_memcpy(&img->buff[(y * img->size_x) + (x * img->bpp)], &color, img->bpp);
 }
 
 inline void				ft_print2dline_octant4(t_2denv *e, t_2dline *line)
