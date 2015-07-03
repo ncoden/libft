@@ -418,7 +418,7 @@ re: fclean all
 
 $(LIBDIR)/%.a:
 	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$@$(LOG_NOCOLOR)$(LOG_UP)"
-	make -s -C $(@D) 2> /dev/null
+	make -s -C $(@D)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(CC) -c -o $@ $< $(INCS) $(CCFLAGS)
