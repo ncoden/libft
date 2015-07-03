@@ -397,28 +397,24 @@ INCS_DIRS += $(addsuffix /, $(dir $(LIBS)))
 INCS = $(addprefix -I , $(INCS_DIRS))
 
 TEMPNAME = $(addprefix $(OBJDIR)/, $(NAME))
-DEVMAIN_OBJ = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(basename $(DEVMAIN))))
 
 all: $(NAME)
 $(NAME): build $(LIBS) $(OBJS)
+	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)assembling...$(LOG_NOCOLOR)$(LOG_UP)"
 	ar rc $(TEMPNAME) $(OBJS)
 	libtool -static -o $(NAME) $(TEMPNAME) $(LIBS)
+	rm -f $(TEMPNAME)
 	ranlib $(NAME)
 	echo "$(LOG_CLEAR)$(NAME)... compiled $(LOG_GREEN)✓$(LOG_NOCOLOR)"
 build:
 	mkdir -p $(OBJDIR)
 	mkdir -p $(OBJS_DIRS)
 clean:
-	rm -f $(TEMPNAME)
 	rm -f $(LIBS)
 	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
-
-dev: build $(LIBS) $(OBJS) $(DEVMAIN_OBJ)
-	$(LNK) -o $(DEVNAME) $(LIBS) $(OBJS) $(DEVMAIN_OBJ) $(INCS) $(LNKFLAGS)
-	./$(DEVNAME)
 
 $(LIBDIR)/%.a:
 	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$@$(LOG_NOCOLOR)$(LOG_UP)"
