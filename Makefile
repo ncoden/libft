@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/06/14 22:17:55 by ncoden           ###   ########.fr        #
+#    Updated: 2015/08/15 14:52:35 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ NAME = libft.a
 CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
 
-ASM = ~/.brew/Cellar/nasm/dev/bin/nasm
-# dev : NASM v2.11.08 modified to accept extern redeclaration as global
+ASM = nasm
 ASMFLAGS = -f macho64
 
 LNK = gcc
@@ -382,7 +381,7 @@ LOG_WHITE		= \033[1;37m
 
 # **************************************************************************** #
 
-.PHONY: all $(NAME) build clean fclean re dev
+.PHONY: all $(NAME) build clean fclean re
 .SILENT:
 
 LIBS = $(addprefix $(LIBDIR)/, $(LIB))

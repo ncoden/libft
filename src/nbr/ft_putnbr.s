@@ -6,7 +6,7 @@
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/04 13:07:07 by ncoden            #+#    #+#              ;
-;    Updated: 2015/05/07 16:15:00 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/08/15 14:38:48 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -18,18 +18,20 @@
 SECTION .text
 	global		_ft_putnbr
 
+	extern		_ft_putchr
+
 _ft_putnbr:
-	push		rdi
+	push		rdi					; Save used registers
 	push 		rax
 	push		rbx
 	push		rdx
 
 	mov			eax, edi			; Prepare division (number to divide in %eax)
 	sub			rdx, rdx			; Clear %rdx (modulo is writed in %edx, but
-									;	the 64-bit register is pushed/printed)
+									;	the all 64-bit register is pushed/printed)
 	sub			ebx, ebx			; Start loop count at 0
 
-	cmp			eax, 0				; Skip for positive numbers
+	cmp			eax, 0				; Skip the next step for positive numbers
 	jge			prepare_loop
 
 prepare_negative:

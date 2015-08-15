@@ -6,7 +6,7 @@
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/04 13:07:07 by ncoden            #+#    #+#              ;
-;    Updated: 2015/05/07 16:33:33 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/08/15 14:42:03 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -19,8 +19,10 @@
 SECTION .text
 	global		_ft_putnbr_fd
 
+	extern		_ft_putchr_fd
+
 _ft_putnbr_fd:
-	push		rdi
+	push		rdi					; Save used registers
 	push 		rax
 	push		rbx
 	push		rdx

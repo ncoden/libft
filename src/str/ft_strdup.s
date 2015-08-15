@@ -6,7 +6,7 @@
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/04/30 18:52:15 by ncoden            #+#    #+#              ;
-;    Updated: 2015/05/02 17:06:32 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/08/15 14:49:27 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -17,6 +17,10 @@
 
 SECTION .text
 	global		_ft_strdup
+
+	extern		_malloc
+	extern		_ft_strlen
+	extern		_ft_memcpy
 
 _ft_strdup:
 	cmp			rdi, 0				; Check s
@@ -34,7 +38,7 @@ _ft_strdup:
 									;  malloc change theses registers)
 
 									; Call malloc with :
-	mov			rdi, rax			;  - %rdi : s length + 1
+	mov			rdi, rax			;  - %rdi : s length + 1 (the '\0' string end)
 	inc			rdi
 	call		_malloc
 

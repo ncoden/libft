@@ -6,7 +6,7 @@
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/04/29 14:08:21 by ncoden            #+#    #+#              ;
-;    Updated: 2015/05/02 17:28:06 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/08/15 14:44:34 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -17,7 +17,9 @@
 ;	%rsi : const char *		src
 
 SECTION .text
-	global	_ft_strcat
+	global		_ft_strcat
+
+	extern		_ft_strcpy
 
 _ft_strcat:
 	cmp			rdi, 0				; Check dst
@@ -35,7 +37,7 @@ _ft_strcat:
 	not			rcx
 
 	cld
-	repne		scasb				; Do loop
+	repne		scasb				; Do the loop
 
 	dec			rdi					; Back on the \0 (to overwrite it)
 
