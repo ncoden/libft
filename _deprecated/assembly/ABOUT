@@ -1,0 +1,2 @@
+Theses functions are now written in x86_64 Assembly (for NASM)
+You can find them in the sources directory, with the ".s" extension
