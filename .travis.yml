@@ -9,6 +9,9 @@ script: make
 
 # Dependencies
 before_install:
+  - brew update
+  - brew upgrade
+install :
   - brew install nasm
 
 # Matrix (4 builds)
@@ -17,5 +20,4 @@ compiler:
   - clang
 
 os:
-  - linux
   - osx
