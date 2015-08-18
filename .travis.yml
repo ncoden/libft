@@ -4,8 +4,12 @@
 language: c
 
 # Build options
-script: make
 sudo: false
+script: make
+
+# Dependencies
+before_install:
+  - brew install nasm
 
 # Matrix (4 builds)
 compiler:
