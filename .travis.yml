@@ -4,6 +4,7 @@
 language: c
 
 # Build options
+os: osx
 sudo: false
 script: make
 
@@ -14,10 +15,7 @@ before_install:
 install :
   - brew install nasm
 
-# Matrix (4 builds)
+# Matrix (2 builds)
 compiler:
   - gcc
   - clang
-
-os:
-  - osx
