@@ -11,9 +11,10 @@ install :
   - wget "http://www.nasm.us/pub/nasm/releasebuilds/2.11.08/nasm-2.11.08.tar.gz" -O "/tmp/nasm-2.11.08.tar.gz"
   - tar -xvf "/tmp/nasm-2.11.08.tar.gz"
   - cd nasm-2.11.08
-  - ./configure && make && make install
+  - sudo ./configure
+  - sudo make
+  - sudo make install
   - cd ..
-  - export PATH=$PATH:$PWD/nasm-2.11.08/bin/
 
 # Matrix (2 builds)
 os:
