@@ -5,15 +5,14 @@ language: c
 
 # Build options
 os: osx
-sudo: false
 script: make
 
 # Dependencies
 before_install:
-  - brew update
-  - brew upgrade
+  - sudo brew update
+  - sudo brew upgrade
 install :
-  - brew install nasm
+  - sudo brew install nasm
 
 # Matrix (2 builds)
 compiler:
