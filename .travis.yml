@@ -3,9 +3,11 @@
 
 language: c
 
-# Use the faster container-based infrastructure.
+# Build options
+script: make
 sudo: false
 
+# Matrix (4 builds)
 compiler:
   - gcc
   - clang
