@@ -8,9 +8,9 @@ script: make
 
 # Dependencies
 install :
-  - wget http://www.nasm.us/pub/nasm/releasebuilds/2.11.08/nasm-2.11.08.tar.gz -O /tmp/nasm-2.11.08.tar.gz
-  - tar -xvf /tmp/nasm-2.11.08.tar.gz
-  - cd /tmp/nasm-2.11.08
+  - wget "http://www.nasm.us/pub/nasm/releasebuilds/2.11.08/nasm-2.11.08.tar.gz" -O "/tmp/nasm-2.11.08.tar.gz"
+  - tar -xvf "/tmp/nasm-2.11.08.tar.gz"
+  - cd "nasm-2.11.08"
   - ./configure && make
   - export PATH=$PATH:$PWD/nasm-2.11.08/bin/
 
