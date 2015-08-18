@@ -6,8 +6,12 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/08/17 19:08:59 by ncoden           ###   ########.fr        #
+#    Updated: 2015/08/18 16:46:29 by ncoden           ###   ########.fr        #
 #                                                                              #
+# **************************************************************************** #
+
+# DEPENDENCIES
+
 # **************************************************************************** #
 
 NAME = libft.a
@@ -23,7 +27,6 @@ LNK = gcc
 LNKFLAGS =
 
 # DIRECTORIES
-LIBDIR = lib
 SRCDIR = src
 OBJDIR = obj
 INCDIR = includes
@@ -36,9 +39,18 @@ SRC =\
 	basics/bits/ft_bitset.c\
 	basics/chars/check/ft_chrpos.c\
 	basics/chars/check/ft_chrswitch.c\
+	basics/chars/check/ft_isalnum.s\
+	basics/chars/check/ft_isalpha.s\
+	basics/chars/check/ft_isascii.s\
+	basics/chars/check/ft_isdigit.s\
+	basics/chars/check/ft_isprint.s\
+	basics/chars/output/ft_putchr.s\
+	basics/chars/output/ft_putchr_fd.s\
 	basics/chars/output/ft_putnchr.c\
 	basics/chars/output/ft_putnchr_fd.c\
 	basics/chars/output/ft_putspace.c\
+	basics/chars/transform/ft_tolower.s\
+	basics/chars/transform/ft_toupper.s\
 	basics/memory/create/ft_memalloc.c\
 	basics/memory/create/ft_memdup.c\
 	basics/memory/create/ft_memsub.c\
@@ -47,12 +59,17 @@ SRC =\
 	basics/memory/iterate/ft_memcmp.c\
 	basics/memory/iterate/ft_memequ.c\
 	basics/memory/iterate/ft_memlen.c\
+	basics/memory/transform/ft_bzero.s\
 	basics/memory/transform/ft_memccpy.c\
+	basics/memory/transform/ft_memcpy.s\
 	basics/memory/transform/ft_memmove.c\
+	basics/memory/transform/ft_memset.s\
 	basics/numbers/integers/ft_atoi.c\
 	basics/numbers/integers/ft_itoa.c\
 	basics/numbers/integers/ft_nbrbaselen.c\
 	basics/numbers/integers/ft_nbrlen.c\
+	basics/numbers/integers/ft_putnbr.s\
+	basics/numbers/integers/ft_putnbr_fd.s\
 	basics/numbers/integers/ft_putnbrbase.c\
 	basics/numbers/integers/ft_putnbrdigits.c\
 	basics/numbers/integers/ft_putnbrhex.c\
@@ -77,6 +94,7 @@ SRC =\
 	basics/numbers/ullong/ft_ullonglen.c\
 	basics/strings/create/ft_strdiv.c\
 	basics/strings/create/ft_strdjoin.c\
+	basics/strings/create/ft_strdup.s\
 	basics/strings/create/ft_strjoin.c\
 	basics/strings/create/ft_strlstjoin.c\
 	basics/strings/create/ft_strmap.c\
@@ -93,6 +111,7 @@ SRC =\
 	basics/strings/iterate/ft_strequ.c\
 	basics/strings/iterate/ft_striter.c\
 	basics/strings/iterate/ft_striteri.c\
+	basics/strings/iterate/ft_strlen.s\
 	basics/strings/iterate/ft_strncmp.c\
 	basics/strings/iterate/ft_strnequ.c\
 	basics/strings/iterate/ft_strnlen.c\
@@ -103,10 +122,14 @@ SRC =\
 	basics/strings/output/ft_putendl_fd.c\
 	basics/strings/output/ft_putistr.c\
 	basics/strings/output/ft_putnstr.c\
+	basics/strings/output/ft_putstr.s\
+	basics/strings/output/ft_putstr_fd.s\
 	basics/strings/output/ft_putstrleft.c\
 	basics/strings/output/ft_putstrright.c\
+	basics/strings/transform/ft_strcat.s\
 	basics/strings/transform/ft_strccpy.c\
 	basics/strings/transform/ft_strclr.c\
+	basics/strings/transform/ft_strcpy.s\
 	basics/strings/transform/ft_stricpy.c\
 	basics/strings/transform/ft_strlcat.c\
 	basics/strings/transform/ft_strncat.c\
@@ -249,6 +272,7 @@ SRC =\
 	utils/events/ft_kesrcstrigger.c\
 	utils/events/ft_kesrctrigger.c\
 	utils/events/ft_kevnttrigger.c\
+	utils/file/ft_putfile.s\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
@@ -285,7 +309,6 @@ SRC =\
 	utils/unicode/wstr/ft_putwstr.c\
 	utils/unicode/wstr/ft_wstrnsize.c\
 	utils/unicode/wstr/ft_wstrsize.c
-
 
 # **************************************************************************** #
 
@@ -334,9 +357,6 @@ fclean: clean
 	rm -f $(NAME)
 re: fclean all
 
-$(LIBDIR)/%.a:
-	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$@$(LOG_NOCOLOR)$(LOG_UP)"
-	make -s -C $(@D)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	echo "$(LOG_CLEAR)$(NAME)... $(LOG_YELLOW)$<$(LOG_NOCOLOR)$(LOG_UP)"
 	$(CC) -c -o $@ $< $(INCS) $(CCFLAGS)

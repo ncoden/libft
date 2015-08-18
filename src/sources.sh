@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -type f -name "*.c"
+find . -type f -name "*.[cs]"
