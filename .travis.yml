@@ -5,16 +5,7 @@ language: c
 
 # Build options
 script: make
-
-# Dependencies
-install :
-  - wget "http://www.nasm.us/pub/nasm/releasebuilds/2.11.08/nasm-2.11.08.tar.gz" -O "/tmp/nasm-2.11.08.tar.gz"
-  - tar -xvf "/tmp/nasm-2.11.08.tar.gz"
-  - cd nasm-2.11.08
-  - sudo ./configure
-  - sudo make
-  - sudo make install
-  - cd ..
+sudo: false
 
 # Matrix (2 builds)
 os:
@@ -24,3 +15,9 @@ os:
 compiler:
   - gcc
   - clang
+
+# Dependencies
+addons:
+  apt:
+    packages:
+    - nasm
