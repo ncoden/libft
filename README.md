@@ -1,5 +1,6 @@
 Libft
 =====
+[![Build Status](https://travis-ci.org/ncoden/libft.svg)](https://travis-ci.org/ncoden/libft)
 
 #### About
 Libft project of the [42 school](http://42.fr).
