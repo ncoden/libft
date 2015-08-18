@@ -1,0 +1,15 @@
+# Travis-CI Build for ncoden/libft
+# see travis-ci.org for details
+
+language: c
+
+# Use the faster container-based infrastructure.
+sudo: false
+
+compiler:
+  - gcc
+  - clang
+
+os:
+  - linux
+  - osx
