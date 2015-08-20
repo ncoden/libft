@@ -1,2 +1,2 @@
-Theses functions are now written in x86_64 Assembly (for NASM)
-You can find them in the sources directory, with the ".s" extension
+These functions are now written in x86_64 Assembly (for NASM) for better performances, or written in C for a cross-system compatibility.
+You can find them in the sources directory under the same name, with the ".s" or ".c" extensions
