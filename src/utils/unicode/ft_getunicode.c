@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/27 17:37:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/04/28 10:58:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/20 22:57:35 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ static char		*parse_locale(char *locale)
 		locale++;
 	if (locale != '\0')
 		return (++locale);
-	else
-		return (start);
+	return (start);
 }
 
 char			ft_getunicode(void)
