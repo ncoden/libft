@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 17:59:44 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/17 19:09:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/24 15:31:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "libft_file.h"
 # include "libft_ilst.h"
 # include "libft_klst.h"
+# include "libft_loop.h"
 # include "libft_lst.h"
 # include "libft_mem.h"
 # include "libft_mt.h"
