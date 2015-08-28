@@ -1,0 +1,85 @@
+\hypertarget{bits_8h}{}\section{libft/basics/bits.h File Reference}
+\label{bits_8h}\index{libft/basics/bits.\+h@{libft/basics/bits.\+h}}
+
+
+Bits management functions.  
+
+
+{\ttfamily \#include \char`\"{}libft/basics/booleans.\+h\char`\"{}}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{bits_8h_a1491fa968932d0e39b783cbefc322d4e}{}typedef unsigned char {\bfseries t\+\_\+bitn}\label{bits_8h_a1491fa968932d0e39b783cbefc322d4e}
+
+\item 
+\hypertarget{bits_8h_a7289cdc63e7a52f2f4f5a04921b77ff5}{}typedef unsigned char {\bfseries t\+\_\+bits}\label{bits_8h_a7289cdc63e7a52f2f4f5a04921b77ff5}
+
+\item 
+\hypertarget{bits_8h_acafe67d3a63cb35387be8b7057abcff8}{}typedef unsigned short int {\bfseries t\+\_\+16bits}\label{bits_8h_acafe67d3a63cb35387be8b7057abcff8}
+
+\item 
+\hypertarget{bits_8h_a390e823f5b5d3a0b7e852566b30d2e1a}{}typedef unsigned int {\bfseries t\+\_\+32bits}\label{bits_8h_a390e823f5b5d3a0b7e852566b30d2e1a}
+
+\item 
+\hypertarget{bits_8h_a5d8c515d24b49f07664f0034e140daa0}{}typedef double {\bfseries t\+\_\+64bits}\label{bits_8h_a5d8c515d24b49f07664f0034e140daa0}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{booleans_8h_af9847afb81a785e63ca83f8594e45c72}{t\+\_\+bool} \hyperlink{bits_8h_a30c564b4549eed79ff455bcae2616507}{ft\+\_\+bitget} (void $\ast$bits, t\+\_\+bitn n)
+\begin{DoxyCompactList}\small\item\em Get the value or the {\ttfamily n} bit in a given byte. \end{DoxyCompactList}\item 
+void \hyperlink{bits_8h_a618786496fbdf24abbee54ee9ec95b21}{ft\+\_\+bitset} (void $\ast$bits, t\+\_\+bitn n, \hyperlink{booleans_8h_af9847afb81a785e63ca83f8594e45c72}{t\+\_\+bool} value)
+\begin{DoxyCompactList}\small\item\em Set the {\ttfamily n} bit in a given byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bits management functions. 
+
+Functions to set and get a bit in a byte 
+
+\subsection{Function Documentation}
+\hypertarget{bits_8h_a30c564b4549eed79ff455bcae2616507}{}\index{bits.\+h@{bits.\+h}!ft\+\_\+bitget@{ft\+\_\+bitget}}
+\index{ft\+\_\+bitget@{ft\+\_\+bitget}!bits.\+h@{bits.\+h}}
+\subsubsection[{ft\+\_\+bitget(void $\ast$bits, t\+\_\+bitn n)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+bool} ft\+\_\+bitget (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{bits, }
+\item[{t\+\_\+bitn}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{bits_8h_a30c564b4549eed79ff455bcae2616507}
+
+
+Get the value or the {\ttfamily n} bit in a given byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & Byte containing the bit \\
+\hline
+{\em n} & Bit index to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The {\ttfamily n} bit value 
+\end{DoxyReturn}
+\hypertarget{bits_8h_a618786496fbdf24abbee54ee9ec95b21}{}\index{bits.\+h@{bits.\+h}!ft\+\_\+bitset@{ft\+\_\+bitset}}
+\index{ft\+\_\+bitset@{ft\+\_\+bitset}!bits.\+h@{bits.\+h}}
+\subsubsection[{ft\+\_\+bitset(void $\ast$bits, t\+\_\+bitn n, t\+\_\+bool value)}]{\setlength{\rightskip}{0pt plus 5cm}void ft\+\_\+bitset (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{bits, }
+\item[{t\+\_\+bitn}]{n, }
+\item[{{\bf t\+\_\+bool}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{bits_8h_a618786496fbdf24abbee54ee9ec95b21}
+
+
+Set the {\ttfamily n} bit in a given byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & Byte containing the bit \\
+\hline
+{\em n} & Bit index to set \\
+\hline
+{\em value} & New value of the bit \\
+\hline
+\end{DoxyParams}

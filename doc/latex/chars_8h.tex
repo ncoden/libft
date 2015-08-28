@@ -1,0 +1,152 @@
+\hypertarget{chars_8h}{}\section{libft/basics/chars.h File Reference}
+\label{chars_8h}\index{libft/basics/chars.\+h@{libft/basics/chars.\+h}}
+
+
+C chars management functions.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{chars_8h_a9c2c3821ea43ebdf97de07b123503f8b}{ft\+\_\+isalnum} (int c)
+\begin{DoxyCompactList}\small\item\em Test if the character is alphabetic or numeric. \end{DoxyCompactList}\item 
+int \hyperlink{chars_8h_ac283963beaa3b8c7d09b78851cda297e}{ft\+\_\+isalpha} (int c)
+\begin{DoxyCompactList}\small\item\em Test if the character is alphabetic. \end{DoxyCompactList}\item 
+int \hyperlink{chars_8h_a2cf15b8a1a277d1e2ce3654101a2003d}{ft\+\_\+isdigit} (int c)
+\begin{DoxyCompactList}\small\item\em Test if the character is a digit. \end{DoxyCompactList}\item 
+int \hyperlink{chars_8h_abf60ddbec6479540e81f3648cf71f1f4}{ft\+\_\+isascii} (int c)
+\begin{DoxyCompactList}\small\item\em Test if the character is valid standard A\+S\+C\+I\+I char. \end{DoxyCompactList}\item 
+int \hyperlink{chars_8h_abcdba69692f21146aeea5b3d59b7d0ca}{ft\+\_\+isprint} (int c)
+\begin{DoxyCompactList}\small\item\em Test if the character is printable. \end{DoxyCompactList}\item 
+\hypertarget{chars_8h_ab86e5297914753b6c82d7e3c3020ce17}{}int {\bfseries ft\+\_\+tolower} (int c)\label{chars_8h_ab86e5297914753b6c82d7e3c3020ce17}
+
+\item 
+\hypertarget{chars_8h_aef116be7b5bceafff4b59f20a4433d12}{}int {\bfseries ft\+\_\+toupper} (int c)\label{chars_8h_aef116be7b5bceafff4b59f20a4433d12}
+
+\item 
+\hypertarget{chars_8h_a32ebca28d783e3a840e50e4c890c11ad}{}int {\bfseries ft\+\_\+chrpos} (const char $\ast$chrs, char c)\label{chars_8h_a32ebca28d783e3a840e50e4c890c11ad}
+
+\item 
+\hypertarget{chars_8h_a4d31f8b0cf0c8c916e4b66a6f296892f}{}char {\bfseries ft\+\_\+chrswitch} (const char $\ast$chrs, char c)\label{chars_8h_a4d31f8b0cf0c8c916e4b66a6f296892f}
+
+\item 
+\hypertarget{chars_8h_abdf2f4740fdbe2641ab20988ad440e08}{}void {\bfseries ft\+\_\+putchr} (char c)\label{chars_8h_abdf2f4740fdbe2641ab20988ad440e08}
+
+\item 
+\hypertarget{chars_8h_a012e76afdc5cf04930a37f2d9ff3ce93}{}void {\bfseries ft\+\_\+putchr\+\_\+fd} (char c, int fd)\label{chars_8h_a012e76afdc5cf04930a37f2d9ff3ce93}
+
+\item 
+\hypertarget{chars_8h_a99b22f9472e4713827293906e3ce9bc4}{}void {\bfseries ft\+\_\+putnchr} (char c, size\+\_\+t n)\label{chars_8h_a99b22f9472e4713827293906e3ce9bc4}
+
+\item 
+\hypertarget{chars_8h_af68d07c0947383eef0f25de14dd4f2e5}{}void {\bfseries ft\+\_\+putnchr\+\_\+fd} (char c, size\+\_\+t n, int fd)\label{chars_8h_af68d07c0947383eef0f25de14dd4f2e5}
+
+\item 
+\hypertarget{chars_8h_a714d87dfc01d312b3e3346023c1364ee}{}void {\bfseries ft\+\_\+putspace} (size\+\_\+t n)\label{chars_8h_a714d87dfc01d312b3e3346023c1364ee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C chars management functions. 
+
+Functions to test, transform and print the C native chars. 
+
+\subsection{Function Documentation}
+\hypertarget{chars_8h_a9c2c3821ea43ebdf97de07b123503f8b}{}\index{chars.\+h@{chars.\+h}!ft\+\_\+isalnum@{ft\+\_\+isalnum}}
+\index{ft\+\_\+isalnum@{ft\+\_\+isalnum}!chars.\+h@{chars.\+h}}
+\subsubsection[{ft\+\_\+isalnum(int c)}]{\setlength{\rightskip}{0pt plus 5cm}int ft\+\_\+isalnum (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\label{chars_8h_a9c2c3821ea43ebdf97de07b123503f8b}
+
+
+Test if the character is alphabetic or numeric. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return T\+R\+U\+E if the character is alphabetic or numeric, F\+A\+L\+S\+E otherwise.
+\end{DoxyReturn}
+Test if the character is alphabetic (between \textquotesingle{}a\textquotesingle{} and \textquotesingle{}z\textquotesingle{}, or \textquotesingle{}A\textquotesingle{} and \textquotesingle{}Z\textquotesingle{} inclusive), or numeric (between \textquotesingle{}0\textquotesingle{} and \textquotesingle{}9\textquotesingle{} inclusive) \hypertarget{chars_8h_ac283963beaa3b8c7d09b78851cda297e}{}\index{chars.\+h@{chars.\+h}!ft\+\_\+isalpha@{ft\+\_\+isalpha}}
+\index{ft\+\_\+isalpha@{ft\+\_\+isalpha}!chars.\+h@{chars.\+h}}
+\subsubsection[{ft\+\_\+isalpha(int c)}]{\setlength{\rightskip}{0pt plus 5cm}int ft\+\_\+isalpha (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\label{chars_8h_ac283963beaa3b8c7d09b78851cda297e}
+
+
+Test if the character is alphabetic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return T\+R\+U\+E if the character is alphabetic, F\+A\+L\+S\+E otherwise.
+\end{DoxyReturn}
+Test if the character is alphabetic (between \textquotesingle{}a\textquotesingle{} and \textquotesingle{}z\textquotesingle{}, or \textquotesingle{}A\textquotesingle{} and \textquotesingle{}Z\textquotesingle{} inclusive) \hypertarget{chars_8h_abf60ddbec6479540e81f3648cf71f1f4}{}\index{chars.\+h@{chars.\+h}!ft\+\_\+isascii@{ft\+\_\+isascii}}
+\index{ft\+\_\+isascii@{ft\+\_\+isascii}!chars.\+h@{chars.\+h}}
+\subsubsection[{ft\+\_\+isascii(int c)}]{\setlength{\rightskip}{0pt plus 5cm}int ft\+\_\+isascii (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\label{chars_8h_abf60ddbec6479540e81f3648cf71f1f4}
+
+
+Test if the character is valid standard A\+S\+C\+I\+I char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return T\+R\+U\+E if the character is in the A\+S\+C\+I\+I table, F\+A\+L\+S\+E otherwise.
+\end{DoxyReturn}
+Test if the character is in the standard A\+S\+C\+I\+I table (between the 0 and the 127th character inclusive) \hypertarget{chars_8h_a2cf15b8a1a277d1e2ce3654101a2003d}{}\index{chars.\+h@{chars.\+h}!ft\+\_\+isdigit@{ft\+\_\+isdigit}}
+\index{ft\+\_\+isdigit@{ft\+\_\+isdigit}!chars.\+h@{chars.\+h}}
+\subsubsection[{ft\+\_\+isdigit(int c)}]{\setlength{\rightskip}{0pt plus 5cm}int ft\+\_\+isdigit (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\label{chars_8h_a2cf15b8a1a277d1e2ce3654101a2003d}
+
+
+Test if the character is a digit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return T\+R\+U\+E if the character is a digit, F\+A\+L\+S\+E otherwise.
+\end{DoxyReturn}
+Test if the character is a digit (between \textquotesingle{}0\textquotesingle{} and \textquotesingle{}9\textquotesingle{} inclusive) \hypertarget{chars_8h_abcdba69692f21146aeea5b3d59b7d0ca}{}\index{chars.\+h@{chars.\+h}!ft\+\_\+isprint@{ft\+\_\+isprint}}
+\index{ft\+\_\+isprint@{ft\+\_\+isprint}!chars.\+h@{chars.\+h}}
+\subsubsection[{ft\+\_\+isprint(int c)}]{\setlength{\rightskip}{0pt plus 5cm}int ft\+\_\+isprint (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\label{chars_8h_abcdba69692f21146aeea5b3d59b7d0ca}
+
+
+Test if the character is printable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return T\+R\+U\+E if the character can be printed, F\+A\+L\+S\+E otherwise.
+\end{DoxyReturn}
+Test if the character can be printed. A character that can\textquotesingle{}t be printed displays nothing on output. 

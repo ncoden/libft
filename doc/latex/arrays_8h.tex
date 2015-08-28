@@ -1,0 +1,61 @@
+\hypertarget{arrays_8h}{}\section{libft/basics/arrays.h File Reference}
+\label{arrays_8h}\index{libft/basics/arrays.\+h@{libft/basics/arrays.\+h}}
+
+
+C arrays management functions.  
+
+
+{\ttfamily \#include \char`\"{}libft/containers/list.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{arrays_8h_a934fc62d3028e36e5080ee4dd9dba362}{ft\+\_\+arraylen} (void $\ast$array)
+\begin{DoxyCompactList}\small\item\em Return the length of the given array. \end{DoxyCompactList}\item 
+\hyperlink{structs__lst}{t\+\_\+lst} $\ast$ \hyperlink{arrays_8h_a8afea253886fcce1f5097f43bab9e778}{ft\+\_\+arraytolst} (void $\ast$$\ast$array)
+\begin{DoxyCompactList}\small\item\em Convert an array to a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C arrays management functions. 
+
+Functions to manage and convert the C native arrays. 
+
+\subsection{Function Documentation}
+\hypertarget{arrays_8h_a934fc62d3028e36e5080ee4dd9dba362}{}\index{arrays.\+h@{arrays.\+h}!ft\+\_\+arraylen@{ft\+\_\+arraylen}}
+\index{ft\+\_\+arraylen@{ft\+\_\+arraylen}!arrays.\+h@{arrays.\+h}}
+\subsubsection[{ft\+\_\+arraylen(void $\ast$array)}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t ft\+\_\+arraylen (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{array}
+\end{DoxyParamCaption}
+)}\label{arrays_8h_a934fc62d3028e36e5080ee4dd9dba362}
+
+
+Return the length of the given array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & A pointer to an array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The array length 
+\end{DoxyReturn}
+\hypertarget{arrays_8h_a8afea253886fcce1f5097f43bab9e778}{}\index{arrays.\+h@{arrays.\+h}!ft\+\_\+arraytolst@{ft\+\_\+arraytolst}}
+\index{ft\+\_\+arraytolst@{ft\+\_\+arraytolst}!arrays.\+h@{arrays.\+h}}
+\subsubsection[{ft\+\_\+arraytolst(void $\ast$$\ast$array)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+lst}$\ast$ ft\+\_\+arraytolst (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{array}
+\end{DoxyParamCaption}
+)}\label{arrays_8h_a8afea253886fcce1f5097f43bab9e778}
+
+
+Convert an array to a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & A pointer to an array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new list containing the array datas (array is free) 
+\end{DoxyReturn}

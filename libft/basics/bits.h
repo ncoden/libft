@@ -6,9 +6,16 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:46:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 00:06:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+** @file			bits.h
+** @brief			Bits management functions
+**
+** Functions to set and get a bit in a byte
+*/
 
 #ifndef LIBFT_BIT_H
 # define LIBFT_BIT_H
@@ -22,7 +29,20 @@ typedef unsigned short int	t_16bits;
 typedef unsigned int		t_32bits;
 typedef double				t_64bits;
 
+/**
+** @brief			Get the value or the \p n bit in a given byte
+** @param bits		Byte containing the bit
+** @param n			Bit index to read
+** @return			The \p n bit value
+*/
 t_bool						ft_bitget(void *bits, t_bitn n);
+
+/**
+** @brief			Set the \p n bit in a given byte
+** @param bits		Byte containing the bit
+** @param n			Bit index to set
+** @param value		New value of the bit
+*/
 void						ft_bitset(void *bits, t_bitn n, t_bool value);
 
 #endif
