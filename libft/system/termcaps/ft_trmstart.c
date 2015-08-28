@@ -6,11 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 22:00:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 19:23:00 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 00:31:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <signal.h>
 #include "libft/basics/booleans.h"
 #include "libft/basics/strings.h"
 #include "libft/basics/types.h"
