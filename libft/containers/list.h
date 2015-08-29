@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:17:24 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:28:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem));
 void			ft_lstshift(t_lst **alst);
 
 void			**ft_lsttoarray(t_lst *lst);
+
+/**
+** @brief			Convert an array to a list
+** @param array		A pointer to an array
+** @return			A new list containing the array datas (array is free)
+*/
+t_lst			*ft_arraytolst(void **array);
 
 t_lst			*ft_lstnew__(size_t size);
 t_lst			*ft_lstpushfront__(size_t size, t_lst **alst);

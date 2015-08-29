@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 15:28:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 00:06:09 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:28:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,5 @@
 ** @return			The array length
 */
 size_t			ft_arraylen(void *array);
-
-/**
-** @brief			Convert an array to a list
-** @param array		A pointer to an array
-** @return			A new list containing the array datas (array is free)
-*/
-t_lst			*ft_arraytolst(void **array);
 
 #endif

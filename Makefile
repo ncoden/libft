@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/08/27 00:15:11 by ncoden           ###   ########.fr        #
+#    Updated: 2015/08/29 20:29:30 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ INCDIR = .
 # SOURCES
 SRC =\
 	basics/arrays/ft_arraylen.c\
-	basics/arrays/ft_arraytolst.c\
 	basics/bits/ft_bitget.c\
 	basics/bits/ft_bitset.c\
 	basics/chars/check/ft_chrpos.c\
@@ -166,6 +165,7 @@ SRC =\
 	containers/klst/ft_klstpush__.c\
 	containers/klst/ft_klstrem.c\
 	containers/klst/ft_klstset.c\
+	containers/list/ft_arraytolst.c\
 	containers/list/ft_lstaddafter.c\
 	containers/list/ft_lstaddback.c\
 	containers/list/ft_lstaddby.c\
