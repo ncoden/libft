@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:52:22 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 00:07:54 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:56:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 ** Functions to test, transform and print the C native chars.
 */
 
-#ifndef LIBFT_CHR_H
-# define LIBFT_CHR_H
+#ifndef LIBFT_CHARS_H
+# define LIBFT_CHARS_H
 
 # include <stddef.h>
 

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 15:28:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:28:14 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 21:02:54 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 ** Functions to manage and convert the C native arrays.
 */
 
-#ifndef LIBFT_ARRAY_H
-# define LIBFT_ARRAY_H
+#ifndef LIBFT_ARRAYS_H
+# define LIBFT_ARRAYS_H
 
 # include "libft/containers/list.h"
 

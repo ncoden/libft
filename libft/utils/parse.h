@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 18:32:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:18:00 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:59:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_PRS_H
-# define LIBFT_PRS_H
+#ifndef LIBFT_PARSE_H
+# define LIBFT_PARSE_H
 
 # include "libft/basics/bits.h"
 # include "libft/basics/booleans.h"

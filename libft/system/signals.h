@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:34:13 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:58:48 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_SGNL_H
-# define LIBFT_SGNL_H
+#ifndef LIBFT_SIGNALS_H
+# define LIBFT_SIGNALS_H
 
 # include "libft/basics/booleans.h"
 # include "libft/basics/types.h"

@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/01 17:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:21:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:59:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UNI_H
-# define LIBFT_UNI_H
+#ifndef LIBFT_UNICODE_H
+# define LIBFT_UNICODE_H
 
 # include <stddef.h>
 # include "libft/basics/booleans.h"

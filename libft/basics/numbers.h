@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:37:47 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:57:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_NBR_H
-# define LIBFT_NBR_H
+#ifndef LIBFT_NUMBERS_H
+# define LIBFT_NUMBERS_H
 
 # include <stddef.h>
 

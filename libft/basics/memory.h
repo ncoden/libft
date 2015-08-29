@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:45:07 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:29:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:57:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_MEM_H
-# define LIBFT_MEM_H
+#ifndef LIBFT_MEMORY_H
+# define LIBFT_MEMORY_H
 
 # include <stddef.h>
 # include "libft/basics/booleans.h"

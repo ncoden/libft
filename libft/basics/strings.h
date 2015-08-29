@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:47:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:46:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:57:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_STR_H
-# define LIBFT_STR_H
+#ifndef LIBFT_STRINGS_H
+# define LIBFT_STRINGS_H
 
 # include <stddef.h>
 # include "libft/containers/list.h"

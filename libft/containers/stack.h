@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:25:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:58:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_STCK_H
-# define LIBFT_STCK_H
+#ifndef LIBFT_STACK_H
+# define LIBFT_STACK_H
 
 # include "libft/basics/booleans.h"
 # include "libft/containers/ilst.h"

@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:23:21 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:58:11 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_MT_H
-# define LIBFT_MT_H
+#ifndef LIBFT_TREE_H
+# define LIBFT_TREE_H
 
 #include <stddef.h>
 

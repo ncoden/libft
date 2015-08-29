@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:57:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 19:03:13 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:58:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_TRM_H
-# define LIBFT_TRM_H
+#ifndef LIBFT_TERMCAPS_H
+# define LIBFT_TERMCAPS_H
 
 # include <termios.h>
 # include "libft/basics/booleans.h"

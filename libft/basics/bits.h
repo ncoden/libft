@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 00:06:33 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 21:02:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 ** Functions to set and get a bit in a byte
 */
 
-#ifndef LIBFT_BIT_H
-# define LIBFT_BIT_H
+#ifndef LIBFT_BITS_H
+# define LIBFT_BITS_H
 
 #include "libft/basics/booleans.h"
 

@@ -6,12 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 21:43:22 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:59:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_EVNT_H
-# define LIBFT_EVNT_H
+#ifndef LIBFT_EVENTS_H
+# define LIBFT_EVENTS_H
 
 # include "libft/basics/booleans.h"
 # include "libft/containers/ilst.h"
