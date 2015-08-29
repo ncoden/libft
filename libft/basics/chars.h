@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:52:22 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:56:59 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 21:22:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define LIBFT_CHARS_H
 
 # include <stddef.h>
+# include "libft/basics/booleans.h"
 
 /**
 ** @brief      Test if the character is alphabetic or numeric
@@ -31,7 +32,7 @@
 ** Test if the character is alphabetic (between 'a' and 'z', or 'A' and 'Z'
 ** inclusive), or numeric (between '0' and '9' inclusive)
 */
-int				ft_isalnum(int c);
+t_bool			ft_isalnum(char c);
 
 /**
 ** @brief      Test if the character is alphabetic
@@ -41,7 +42,7 @@ int				ft_isalnum(int c);
 ** Test if the character is alphabetic (between 'a' and 'z', or 'A' and 'Z'
 ** inclusive)
 */
-int				ft_isalpha(int c);
+t_bool			ft_isalpha(char c);
 
 /**
 ** @brief      Test if the character is a digit
@@ -50,7 +51,7 @@ int				ft_isalpha(int c);
 **
 ** Test if the character is a digit (between '0' and '9' inclusive)
 */
-int				ft_isdigit(int c);
+t_bool			ft_isdigit(char c);
 
 /**
 ** @brief      Test if the character is valid standard ASCII char
@@ -61,7 +62,7 @@ int				ft_isdigit(int c);
 ** Test if the character is in the standard ASCII table (between the 0 and the
 ** 127th character inclusive)
 */
-int				ft_isascii(int c);
+t_bool			ft_isascii(char c);
 
 /**
 ** @brief      Test if the character is printable
@@ -71,10 +72,10 @@ int				ft_isascii(int c);
 ** Test if the character can be printed. A character that can't be printed
 ** displays nothing on output.
 */
-int				ft_isprint(int c);
+t_bool			ft_isprint(char c);
 
-int				ft_tolower(int c);
-int				ft_toupper(int c);
+t_bool			ft_tolower(char c);
+t_bool			ft_toupper(char c);
 
 int				ft_chrpos(const char *chrs, char c);
 char			ft_chrswitch(const char *chrs, char c);
