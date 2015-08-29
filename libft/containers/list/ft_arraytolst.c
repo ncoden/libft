@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 16:30:16 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 18:59:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/29 20:38:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ t_lst			*ft_arraytolst(void **array)
 			return (NULL);
 		i++;
 	}
-	free(array);
 	return (lst);
 }
