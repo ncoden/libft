@@ -3,9 +3,17 @@
 
 language: c
 
+# Dependencies
+install:
+- wget http://www.nasm.us/pub/nasm/releasebuilds/2.11.08/nasm-2.11.08.tar.bz2
+- tar xvf nasm-2.11.08.tar.bz2
+- rm nasm-2.11.08.tar.bz2
+- cd nasm-2.11.08
+- ./configure && make && sudo make install && sudo make spotless
+- cd ..
+
 # Build options
 script: make
-sudo: false
 
 # Matrix (2 builds)
 os:
@@ -15,9 +23,3 @@ os:
 compiler:
   - gcc
   - clang
-
-# Dependencies
-addons:
-  apt:
-    packages:
-    - nasm
