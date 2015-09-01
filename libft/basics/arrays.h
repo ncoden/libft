@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 15:28:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 21:02:54 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/30 19:50:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@
 ** @param array		A pointer to an array
 ** @return			The array length
 */
-size_t			ft_arraylen(void *array);
+size_t			ft_arraylen(const void *array);
 
 #endif
