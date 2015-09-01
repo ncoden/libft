@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 21:02:58 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/30 19:48:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #ifndef LIBFT_BITS_H
 # define LIBFT_BITS_H
 
-#include "libft/basics/booleans.h"
+# include "libft/basics/booleans.h"
 
 typedef unsigned char		t_bitn;
 
@@ -35,7 +35,7 @@ typedef double				t_64bits;
 ** @param n			Bit index to read
 ** @return			The \p n bit value
 */
-t_bool						ft_bitget(void *bits, t_bitn n);
+t_bool						ft_bitget(const void *bits, t_bitn n);
 
 /**
 ** @brief			Set the \p n bit in a given byte
