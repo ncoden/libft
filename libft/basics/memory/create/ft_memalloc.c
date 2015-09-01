@@ -6,26 +6,19 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 07:50:14 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:42:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 19:04:43 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft/basics/memory.h"
 
-void		*ft_memalloc(size_t size)
+void			*ft_memalloc(size_t n)
 {
-	size_t	i;
-	char	*buffer;
+	void		*mem;
 
-	buffer = (char *)malloc(size);
-	if (buffer != NULL)
-	{
-		i = 0;
-		while (i < size)
-		{
-			buffer[i] = 0;
-			i++;
-		}
-	}
-	return ((void *)buffer);
+	if (!(mem = malloc(n)))
+		return (NULL);
+	ft_bzero(mem, n);
+	return (mem);
 }

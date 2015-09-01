@@ -6,33 +6,32 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 16:28:29 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:42:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 19:32:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void			*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t		i;
-	char		*dst_char;
-	const char	*src_char;
-	char		*buffer;
 
-	i = 0;
-	dst_char = dst;
-	src_char = src;
-	buffer = (char *)malloc(sizeof(char) * (len + 2));
-	while (i < len)
+	if (dst < src)
 	{
-		buffer[i] = src_char[i];
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
-	i = 0;
-	while (i < len)
+	else if (dst > src)
 	{
-		dst_char[i] = buffer[i];
-		i++;
+		while (n > 0)
+		{
+			n--;
+			((char *)dst)[n] = ((char *)src)[n];
+		}
 	}
 	return (dst);
 }

@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 08:41:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:34:35 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 17:18:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/basics/booleans.h"
-#include "libft/basics/memory.h"
+#include "libft/system/endian.h"
 #include "libft/utils/unicode.h"
 #include "libft/utils/unicode/wchr.h"
 

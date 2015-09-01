@@ -6,18 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 08:53:58 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:30:10 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 19:06:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_memdel(void **ap)
+void			ft_memdel(void **mem)
 {
-	if (ap != NULL)
-	{
-		if (*ap != NULL)
-			free(*ap);
-		*ap = NULL;
-	}
+	free(*mem);
+	*mem = NULL;
 }

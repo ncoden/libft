@@ -6,26 +6,23 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 13:03:01 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:30:38 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 19:20:09 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/basics/booleans.h"
 
-int		ft_memequ(const void *b1, const void *b2, size_t size)
+t_bool			ft_memequ(const void *b1, const void *b2, size_t n)
 {
 	size_t		i;
-	const char	*view1;
-	const char	*view2;
 
 	i = 0;
-	view1 = b1;
-	view2 = b2;
-	while (i < size)
+	while (i < n)
 	{
-		if (view1[i] != view2[i])
-			return (0);
+		if (((char *)b1)[i] != ((char *)b2)[i])
+			return (FALSE);
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
