@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/08/29 20:29:30 by ncoden           ###   ########.fr        #
+#    Updated: 2015/08/31 19:36:09 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ SRC =\
 	basics/bits/ft_bitget.c\
 	basics/bits/ft_bitset.c\
 	basics/chars/check/ft_chrpos.c\
-	basics/chars/check/ft_chrswitch.c\
 	basics/chars/check/ft_isalnum.s\
 	basics/chars/check/ft_isalpha.s\
 	basics/chars/check/ft_isascii.s\
@@ -52,12 +51,10 @@ SRC =\
 	basics/chars/transform/ft_toupper.s\
 	basics/memory/create/ft_memalloc.c\
 	basics/memory/create/ft_memdup.c\
-	basics/memory/create/ft_memsub.c\
 	basics/memory/delete/ft_memdel.c\
 	basics/memory/iterate/ft_memchr.c\
 	basics/memory/iterate/ft_memcmp.c\
 	basics/memory/iterate/ft_memequ.c\
-	basics/memory/iterate/ft_memlen.c\
 	basics/memory/transform/ft_bzero.s\
 	basics/memory/transform/ft_memccpy.c\
 	basics/memory/transform/ft_memcpy.s\
@@ -217,8 +214,8 @@ SRC =\
 	containers/tree/ft_mtnew__.c\
 	containers/tree/ft_mtpushchild.c\
 	containers/tree/ft_mtpushnext.c\
+	system/endian/ft_getendian.c\
 	system/environment/ft_envget.c\
-	system/memory/ft_getendian.c\
 	system/signals/ft_sgnlclr.c\
 	system/signals/ft_sgnlclrone.c\
 	system/signals/ft_sgnlcrush.c\
