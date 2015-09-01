@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 08:29:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:22:25 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 16:12:38 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchr_fd(char c, int fd)
+void			ft_putchr_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

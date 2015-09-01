@@ -6,20 +6,17 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/19 14:30:51 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:22:33 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 16:14:55 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void		ft_putnchr_fd(char c, size_t n, int fd)
+void			ft_putnchr_fd(char c, unsigned int n, int fd)
 {
-	size_t		i;
-
-	i = 0;
-	while (i < n)
+	while (n > 0)
 	{
 		write(fd, &c, 1);
-		i++;
+		n--;
 	}
 }

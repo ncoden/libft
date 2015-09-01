@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:52:22 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 21:22:55 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/31 16:11:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,12 @@ t_bool			ft_isprint(char c);
 t_bool			ft_tolower(char c);
 t_bool			ft_toupper(char c);
 
-int				ft_chrpos(const char *chrs, char c);
-char			ft_chrswitch(const char *chrs, char c);
+int				ft_chrpos(const char *chars, char c);
 
 void			ft_putchr(char c);
 void			ft_putchr_fd(char c, int fd);
-void			ft_putnchr(char c, size_t n);
-void			ft_putnchr_fd(char c, size_t n, int fd);
-void			ft_putspace(size_t n);
+void			ft_putnchr(char c, unsigned int n);
+void			ft_putnchr_fd(char c, unsigned int n, int fd);
+void			ft_putspace(unsigned int n);
 
 #endif

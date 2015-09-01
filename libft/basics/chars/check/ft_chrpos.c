@@ -6,20 +6,18 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:39:59 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:18:02 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/08/30 17:54:51 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_chrpos(const char *chrs, char c)
+int				ft_chrpos(const char *chars, char c)
 {
 	int			i;
 
-	if (c == '\0')
-		return (-1);
 	i = 0;
-	while (chrs[i] != '\0')
+	while (chars[i] != '\0')
 	{
-		if (chrs[i] == c)
+		if (chars[i] == c)
 			return (i);
 		i++;
 	}
