@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/08/31 19:36:09 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/02 16:21:42 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ LNK = gcc
 LNKFLAGS =
 
 # DIRECTORIES
-SRCDIR = libft
+SRCDIR = src
 OBJDIR = obj
-INCDIR = .
+INCDIR = include
 
 # SOURCES
 SRC =\
