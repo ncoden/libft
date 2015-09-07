@@ -6,46 +6,26 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:35:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/07 21:28:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <limits.h>
 #include "libft/basics/chars.h"
 #include "libft/basics/strings.h"
+#include "libft/utils/math.h"
 
-static void		put_nbr_recursive(unsigned int nbr, const char *digits,
-						size_t digits_size)
+static void		print_next_digit(unsigned int nbr, size_t base,
+					const char *digits)
 {
-	if (nbr < digits_size)
-		ft_putchr(digits[nbr]);
-	else
-	{
-		put_nbr_recursive(nbr / digits_size, digits, digits_size);
-		ft_putchr(digits[nbr % digits_size]);
-	}
+	if (nbr >= base)
+		print_next_digit(nbr / base, base, digits);
+	ft_putchr(digits[nbr % base]);
 }
 
 void			ft_putnbrdigits(int nbr, const char *digits)
 {
-	size_t len;
-
-	if (digits)
-	{
-		len = ft_strlen(digits);
-		if (nbr < 0)
-			ft_putchr('-');
-		if (nbr == INT_MIN)
-		{
-			put_nbr_recursive(INT_MIN / len, digits, len);
-			ft_putchr('0' - INT_MIN % 10);
-		}
-		else
-		{
-			if (nbr < 0)
-				nbr = -nbr;
-			put_nbr_recursive((unsigned int)nbr, digits, len);
-		}
-	}
+	if (nbr < 0)
+		ft_putchr('-');
+	print_next_digit(ABS(nbr), ft_strlen(digits), digits);
 }
