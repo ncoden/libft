@@ -15,21 +15,9 @@
 
 # include <stddef.h>
 
-# define ABS(X) ((X > 0) ? X : -(X))
-# define MAX(N, M) ((N > M) ? N : M)
-# define MIN(N, M) ((N < M) ? N : M)
-# define SIGN(X) ((X > 0) ? 1 : -1)
-# define LIM(N, MN, MX) (MAX(MIN(N, MX), MN))
-# define UPDIV(N, D) (((N - 1) / D) + 1)
-
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 
-int				ft_min(int nbr1, int nbr2);
-int				ft_max(int nbr1, int nbr2);
-int				ft_power(int nbr, int power);
-double			ft_degtorad(double deg);
-double			ft_radtodeg(double rad);
 
 size_t			ft_nbrlen(int nbr);
 size_t			ft_nbrbaselen(int nbr, int base);
@@ -40,18 +28,24 @@ size_t			ft_ptrbaselen(size_t nbr, unsigned int base);
 size_t			ft_llonglen(long long int nbr);
 size_t			ft_llongbaselen(long long int nbr, int base);
 
-size_t			ft_ullonglen(unsigned long long int nbr);
-size_t			ft_ullongbaselen(unsigned long long int nbr, unsigned int base);
+unsigned int	ft_nbrlen(int nbr);
+unsigned int	ft_nbrbaselen(int nbr, int base);
 
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int nbr, int fd);
-void			ft_putnbrbase(int nbr, char base);
 void			ft_putnbrbase(int nbr, int base);
 void			ft_putnbrdigits(int nbr, const char *digits);
 
+unsigned int	ft_ptrlen(size_t nbr);
+unsigned int	ft_ptrbaselen(size_t nbr, unsigned int base);
+void			ft_putptr(long long nbr);
 
-void			ft_putllong(long long int nbr);
+unsigned int	ft_llonglen(long long nbr);
+unsigned int	ft_llongbaselen(long long nbr, int base);
+void			ft_putllong(long long nbr);
 
-void			ft_putullong(unsigned long long int nbr);
+unsigned int	ft_ullonglen(unsigned long long nbr);
+unsigned int	ft_ullongbaselen(unsigned long long nbr, unsigned int base);
+void			ft_putullong(unsigned long long nbr);
 
 #endif
