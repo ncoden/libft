@@ -73,6 +73,7 @@ SRC =\
 	basics/numbers/llongs/ft_putllong.c\
 	basics/numbers/pointers/ft_ptrbaselen.c\
 	basics/numbers/pointers/ft_ptrlen.c\
+	basics/numbers/pointers/ft_putptr.c\
 	basics/numbers/ullong/ft_putullong.c\
 	basics/numbers/ullong/ft_ullongbaselen.c\
 	basics/numbers/ullong/ft_ullonglen.c\
