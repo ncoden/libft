@@ -6,35 +6,30 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/04 14:37:16 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:32:01 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/04 19:32:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/basics/booleans.h"
-#include "libft/basics/strings.h"
 
-int			ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
-	int		i;
 	int		nbr;
-	t_bool	sign;
-	int		len;
+	t_bool	positiv;
 
-	i = 0;
 	nbr = 0;
-	sign = 1;
-	len = ft_strlen(str);
-	while (i < len)
+	positiv = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if ((i == 0) && (str[0] == '-'))
-			sign = 1;
-		else if (i > 0 || str[i] != '+')
-		{
-			if ((str[i] < '0') || (str[i] > '9'))
-				return (sign ? nbr : -nbr);
-			nbr = (nbr * 10) + (str[i] - '0');
-		}
-		i++;
+		positiv = (*str == '+');
+		str++;
 	}
-	return (sign ? nbr : -nbr);
+	while (*str >= '0' && *str <= '9')
+	{
+		nbr = (nbr * 10) + (*str - '0');
+		str++;
+	}
+	return (positiv ? nbr : -nbr);
 }
