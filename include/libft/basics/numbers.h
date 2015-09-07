@@ -16,7 +16,6 @@
 # include <stddef.h>
 
 int				ft_atoi(const char *str);
-char			*ft_itoa(int n);
 
 
 size_t			ft_nbrlen(int nbr);
@@ -27,6 +26,7 @@ size_t			ft_ptrbaselen(size_t nbr, unsigned int base);
 
 size_t			ft_llonglen(long long int nbr);
 size_t			ft_llongbaselen(long long int nbr, int base);
+char			*ft_itoa(int nbr);
 
 unsigned int	ft_nbrlen(int nbr);
 unsigned int	ft_nbrbaselen(int nbr, int base);

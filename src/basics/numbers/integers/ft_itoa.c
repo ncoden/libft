@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 17:05:56 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:32:18 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/04 13:56:40 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/basics/strings.h"
 
-static int	ft_itoa_recursive(char **str, int n, int isize, int space)
+static int	ft_itoa_recursive(char **str, unsigned int n, int isize, int space)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ static int	ft_itoa_recursive(char **str, int n, int isize, int space)
 	i = ft_itoa_recursive(str, (n / 10), (isize + 1), space);
 	if (i != -1)
 	{
-		(*str)[i] = '0' + (n - (n / 10 * 10));
+		(*str)[i] = '0' + (n % 10);
 		return (i + 1);
 	}
 	else
@@ -39,15 +39,9 @@ char		*ft_itoa(int n)
 
 	if (n >= 0)
 		ft_itoa_recursive(&str, n, 0, 0);
-	else if (n == -2147483648)
-	{
-		ft_itoa_recursive(&str, 147483648, 0, 2);
-		str[0] = '-';
-		str[1] = '2';
-	}
 	else
 	{
-		ft_itoa_recursive(&str, n * (-1), 0, 1);
+		ft_itoa_recursive(&str, -n, 0, 1);
 		str[0] = '-';
 	}
 	return (str);
