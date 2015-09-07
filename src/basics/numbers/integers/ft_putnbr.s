@@ -6,7 +6,7 @@
 ;    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/04 13:07:07 by ncoden            #+#    #+#              ;
-;    Updated: 2015/09/07 21:43:44 by ncoden           ###   ########.fr        ;
+;    Updated: 2015/09/07 23:29:00 by ncoden           ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -49,17 +49,21 @@ read_loop:							; Read loop : Save number digits into stack
 	sub			edx, edx			; | - Clear edx
 	div			edi					; | - Divise %edx:%eax with %edi
 									; |
-	push		rdx					; | -> Save each modulo
-	inc			ebx					; |
+	push		rdx					; | -> Save each digit
+	sub			rsp, 8				; |    (Align stack)
+									; |
+	inc			ebx					; | - Count digit number
 									; |
 	cmp			eax, 0				; |
 	jne			read_loop			; |_
 
 print_loop:							; Print loop : For each digit pushed, print
 									; |				it (in reversed order)
-	pop			rdi					; | <- Retrive each modulo
-	add			edi, '0'			; | - Print digit
-	call		_ft_putchr			; |
+	add			rsp, 8				; |    (Align stack)
+	pop			rdi					; | <- Retrive each digit
+									; |
+	add			edi, '0'			; | - Convert to printable digit
+	call		_ft_putchr			; | - Print digit
 									; |
 	dec			ebx					; |
 	cmp			ebx, 0				; |
