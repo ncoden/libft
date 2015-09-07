@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/02 16:21:42 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/07 12:09:42 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,24 +68,12 @@ SRC =\
 	basics/numbers/integers/ft_putnbr_fd.s\
 	basics/numbers/integers/ft_putnbrbase.c\
 	basics/numbers/integers/ft_putnbrdigits.c\
-	basics/numbers/integers/ft_putnbrhex.c\
-	basics/numbers/integers/ft_putnbrleft.c\
-	basics/numbers/integers/ft_putnbrright.c\
 	basics/numbers/llongs/ft_llongbaselen.c\
 	basics/numbers/llongs/ft_llonglen.c\
 	basics/numbers/llongs/ft_putllong.c\
-	basics/numbers/llongs/ft_putllongbase.c\
-	basics/numbers/llongs/ft_putllongdigits.c\
-	basics/numbers/llongs/ft_putllonghex.c\
 	basics/numbers/pointers/ft_ptrbaselen.c\
 	basics/numbers/pointers/ft_ptrlen.c\
-	basics/numbers/pointers/ft_putptrbase.c\
-	basics/numbers/pointers/ft_putptrdigits.c\
-	basics/numbers/pointers/ft_putptrhex.c\
 	basics/numbers/ullong/ft_putullong.c\
-	basics/numbers/ullong/ft_putullongbase.c\
-	basics/numbers/ullong/ft_putullongdigits.c\
-	basics/numbers/ullong/ft_putullonghex.c\
 	basics/numbers/ullong/ft_ullongbaselen.c\
 	basics/numbers/ullong/ft_ullonglen.c\
 	basics/strings/create/ft_strdiv.c\

@@ -45,26 +45,13 @@ size_t			ft_ullongbaselen(unsigned long long int nbr, unsigned int base);
 
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int nbr, int fd);
-void			ft_putnbrleft(int nbr, size_t min_len);
-void			ft_putnbrright(int nbr, size_t min_len);
 void			ft_putnbrbase(int nbr, char base);
+void			ft_putnbrbase(int nbr, int base);
 void			ft_putnbrdigits(int nbr, const char *digits);
-void			ft_putnbrhex(int nbr);
 
-void			ft_putptrbase(size_t nbr, unsigned char base);
-void			ft_putptrdigits(size_t nbr, const char *digits);
-void			ft_putptrhex(size_t nbr);
 
 void			ft_putllong(long long int nbr);
-void			ft_putllongbase(long long int nbr, char base);
-void			ft_putllongdigits(long long int nbr, const char *digits);
-void			ft_putllonghex(long long int nbr);
 
 void			ft_putullong(unsigned long long int nbr);
-void			ft_putullongbase(unsigned long long int nbr,
-					unsigned char base);
-void			ft_putullongdigits(unsigned long long int nbr,
-					const char *digits);
-void			ft_putullonghex(unsigned long long int nbr);
 
 #endif
