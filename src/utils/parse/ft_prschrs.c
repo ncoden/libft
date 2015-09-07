@@ -6,13 +6,13 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 19:21:08 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:15:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/03 23:29:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/basics/bits.h"
-#include "libft/basics/numbers.h"
 #include "libft/basics/strings.h"
+#include "libft/utils/math.h"
 
 t_bits			ft_prschrs(char **cursor, const char *chrs)
 {
