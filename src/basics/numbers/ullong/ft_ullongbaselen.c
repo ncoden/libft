@@ -6,18 +6,19 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:45:15 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/07 11:35:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/utils/math.h"
 
-size_t		ft_ullongbaselen(unsigned long long int nbr, unsigned int base)
+unsigned int	ft_ullongbaselen(unsigned long long nbr, int base)
 {
-	size_t		len;
+	unsigned int	len;
 
 	len = 1;
-	while (nbr >= base)
+	while (nbr > (unsigned long long)ABS(base))
 	{
 		nbr /= base;
 		len++;

@@ -6,20 +6,21 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:43:07 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/07 11:34:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/utils/math.h"
 
-size_t		ft_ptrbaselen(size_t ptr, unsigned int base)
+unsigned int	ft_ptrbaselen(size_t nbr, int base)
 {
-	size_t		len;
+	unsigned int	len;
 
 	len = 1;
-	while (ptr >= base)
+	while (nbr > (size_t)ABS(base))
 	{
-		ptr /= base;
+		nbr /= base;
 		len++;
 	}
 	return (len);

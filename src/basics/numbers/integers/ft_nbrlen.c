@@ -6,23 +6,19 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:33:02 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/06 19:08:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t		ft_nbrlen(int nbr)
+unsigned int	ft_nbrlen(int nbr)
 {
-	size_t		len;
+	unsigned int	len;
 
-	len = 1;
-	while (nbr > 9 || nbr < -9)
+	len = (nbr < 0) ? 2 : 1;
+	while (nbr < -9 || nbr > 9)
 	{
 		nbr /= 10;
 		len++;
 	}
-	if (nbr < 0)
-		len++;
 	return (len);
 }

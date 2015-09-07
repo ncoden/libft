@@ -6,15 +6,15 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:42:55 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/06 19:10:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t		ft_ptrlen(size_t nbr)
+unsigned int	ft_ptrlen(size_t nbr)
 {
-	size_t		len;
+	unsigned int	len;
 
 	len = 1;
 	while (nbr > 9)

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:57:31 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/07 12:02:22 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,6 @@
 # include <stddef.h>
 
 int				ft_atoi(const char *str);
-
-
-size_t			ft_nbrlen(int nbr);
-size_t			ft_nbrbaselen(int nbr, int base);
-
-size_t			ft_ptrlen(size_t nbr);
-size_t			ft_ptrbaselen(size_t nbr, unsigned int base);
-
-size_t			ft_llonglen(long long int nbr);
-size_t			ft_llongbaselen(long long int nbr, int base);
 char			*ft_itoa(int nbr);
 
 unsigned int	ft_nbrlen(int nbr);
