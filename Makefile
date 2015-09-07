@@ -118,6 +118,7 @@ SRC =\
 	basics/strings/transform/ft_strlcat.c\
 	basics/strings/transform/ft_strncat.c\
 	basics/strings/transform/ft_strncpy.c\
+	basics/strings/transform/ft_strreplace.c\
 	basics/types/ft_sdatanew.c\
 	basics/types/ft_tdatanew.c\
 	containers/ilst/ft_ilstadd.c\
