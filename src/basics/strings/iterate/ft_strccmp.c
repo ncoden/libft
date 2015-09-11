@@ -6,24 +6,22 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:39:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:16:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 14:34:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int				ft_strccmp(const char *s1, const char *s2, char c)
+int				ft_strccmp(const char *s1, const char *s2, char c1, char c2)
 {
-	size_t		i;
-
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s2[i] != c)
+	while (*s1 == *s2
+		&& *s1 != '\0'
+		&& *s1 != c1
+		&& *s2 != c2)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		s1++;
+		s2++;
 	}
-	if (s1[i] == s2[i] || s2[i] == c)
-		return (0);
-	return (s1[i] - s2[i]);
+	return ((unsigned char)(*s1 == c1 ? 0 : *s1)
+		 - (unsigned char)(*s2 == c2 ? 0 : *s2));
 }
