@@ -6,30 +6,26 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:43:28 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:53:09 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 00:22:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 #include "libft/basics/strings.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char			*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		size;
-	char	*new_str;
+	int			i;
+	char		*ret;
 
+	if (!(ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
 	i = 0;
-	size = ft_strlen(s);
-	new_str = ft_strnew(size);
-	if (new_str != NULL)
+	while (s[i] != '\0')
 	{
-		while (i < size)
-		{
-			new_str[i] = (*f)(i, s[i]);
-			i++;
-		}
-		new_str[i] = '\0';
+		ret[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (new_str);
+	ret[i] = '\0';
+	return (ret);
 }
