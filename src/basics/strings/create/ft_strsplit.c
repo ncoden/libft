@@ -6,15 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 13:28:07 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/10 16:12:51 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/11 21:49:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft/utils/parse.h"
-
-	#include <stdio.h>
-	#include "libft.h"
 
 static inline size_t	word_count(const char *s, char c)
 {
