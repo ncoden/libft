@@ -85,7 +85,6 @@ SRC =\
 	basics/strings/create/ft_strmapi.c\
 	basics/strings/create/ft_strnew.c\
 	basics/strings/create/ft_strsplit.c\
-	basics/strings/create/ft_strsplit_tolst.c\
 	basics/strings/create/ft_strsub.c\
 	basics/strings/create/ft_strtrim.c\
 	basics/strings/delete/ft_strdel.c\
@@ -174,6 +173,7 @@ SRC =\
 	containers/list/ft_lstpushrby.c\
 	containers/list/ft_lstshift.c\
 	containers/list/ft_lsttoarray.c\
+	containers/list/ft_strsplit_tolst.c\
 	containers/pair/ft_cpairnew.c\
 	containers/pair/ft_fpairnew.c\
 	containers/pair/ft_npairnew.c\

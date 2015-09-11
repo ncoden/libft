@@ -66,6 +66,7 @@ void			**ft_lsttoarray(t_lst *lst);
 ** @return			A new list containing the array datas (array is free)
 */
 t_lst			*ft_arraytolst(void **array);
+t_lst			*ft_strsplit_tolst(const char *s, char c);
 
 t_lst			*ft_lstnew__(size_t size);
 t_lst			*ft_lstpushfront__(size_t size, t_lst **alst);
