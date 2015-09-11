@@ -6,27 +6,20 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 12:14:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/27 23:58:40 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 11:19:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 #include "libft/basics/strings.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+char			*ft_strsub(const char *s, size_t start, size_t n)
 {
-	size_t	i;
-	char	*new_str;
+	char		*ret;
 
-	i = 0;
-	new_str = ft_strnew(len);
-	if (new_str != NULL)
-	{
-		while (i < len)
-		{
-			new_str[i] = s[start + i];
-			i++;
-		}
-	}
-	return (new_str);
+	if (!(ret = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	ft_strncpy(ret, &s[start], n);
+	ret[n] = '\0';
+	return (ret);
 }

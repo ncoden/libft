@@ -43,7 +43,7 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t size);
 char			*ft_strrchr(const char *str, int c);
 char			**ft_strsplit(const char *s, char c);
 char			*ft_strstr(const char *str, const char *to_find);
-char			*ft_strsub(const char *s, unsigned int start, size_t len);
+char			*ft_strsub(const char *s, size_t start, size_t n);
 char			*ft_strtrim(const char *s);
 
 void			ft_putstr(const char *s);
