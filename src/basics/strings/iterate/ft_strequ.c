@@ -6,23 +6,18 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:46:48 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:17:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 14:57:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strequ(const char *s1, const char *s2)
-{
-	int		i;
+#include "libft/basics/booleans.h"
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+t_bool			ft_strequ(const char *s1, const char *s2)
+{
+	while (*s1 != '\0' && *s1 == *s2)
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		s1++;
+		s2++;
 	}
-	if (s1[i] != s2[i])
-		return (0);
-	else
-		return (1);
+	return ((unsigned char)*s1 == (unsigned char)*s2);
 }

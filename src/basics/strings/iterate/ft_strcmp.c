@@ -6,16 +6,16 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/09 14:44:50 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:17:14 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/08 18:13:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(const char *s1, const char *s2)
+int				ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+	while (*s1 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
