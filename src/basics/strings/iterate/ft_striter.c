@@ -6,18 +6,15 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 10:15:51 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:17:26 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 00:06:29 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void			ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		(*f)(&(s[i]));
-		i++;
+		(*f)(s);
+		s++;
 	}
 }
