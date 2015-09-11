@@ -6,22 +6,24 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:56:21 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:18:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 15:30:49 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *str, int c)
-{
-	int		i;
-	char	*found;
+#include <stddef.h>
 
-	i = 0;
-	found = 0;
-	while (i == 0 || (i > 0 && str[i - 1] != '\0'))
+char			*ft_strrchr(const char *s, char c)
+{
+	char		*last_c;
+
+	last_c = NULL;
+	while (*s != '\0')
 	{
-		if (str[i] == (char)c)
-			found = (char*)(&str[i]);
-		i++;
+		if (*s == c)
+			last_c = (char *)s;
+		s++;
 	}
-	return (found);
+	if (*s == c)
+		return ((char *)s);
+	return (last_c);
 }

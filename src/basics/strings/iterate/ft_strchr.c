@@ -6,20 +6,18 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:39:59 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:16:46 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 15:28:03 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
-{
-	int		i;
+#include <stddef.h>
 
-	i = 0;
-	while (i == 0 || (i > 0 && str[i - 1] != '\0'))
-	{
-		if (str[i] == (char)c)
-			return ((char*)(&str[i]));
-		i++;
-	}
-	return (0);
+char			*ft_strchr(const char *s, char c)
+{
+	while (*s != c
+		&& *s != '\0')
+		s++;
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }
