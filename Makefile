@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/07 12:09:42 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/10 16:19:11 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,8 +104,8 @@ SRC =\
 	basics/strings/output/ft_putendl.c\
 	basics/strings/output/ft_putendl_fd.c\
 	basics/strings/output/ft_putnstr.c\
-	basics/strings/output/ft_putstr.s\
-	basics/strings/output/ft_putstr_fd.s\
+	basics/strings/output/ft_putstr.c\
+	basics/strings/output/ft_putstr_fd.c\
 	basics/strings/transform/ft_strcat.s\
 	basics/strings/transform/ft_strclr.c\
 	basics/strings/transform/ft_strcpy.s\
