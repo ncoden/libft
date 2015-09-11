@@ -151,7 +151,6 @@ SRC =\
 	containers/list/ft_lstaddby.c\
 	containers/list/ft_lstaddfront.c\
 	containers/list/ft_lstaddrby.c\
-	containers/list/ft_lstccpy_tostr.c\
 	containers/list/ft_lstcpy_tostr.c\
 	containers/list/ft_lstdel.c\
 	containers/list/ft_lstdelone.c\

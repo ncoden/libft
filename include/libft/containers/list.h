@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:57:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 01:21:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ t_lst			*ft_lstpushrby(t_lst **alst, void *data, size_t size,
 						int (*f)(const void *, const void *, size_t, size_t));
 
 char			*ft_lstcpy_tostr(t_lst *lst, char *dst, size_t n);
-char			*ft_lstccpy_tostr(t_lst *lst, char *dst, char c, size_t n);
 void			ft_lstdel(t_lst **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_lst **alst, void (*del)(void *, size_t));
 t_lst			*ft_lstdup(t_lst *lst);
