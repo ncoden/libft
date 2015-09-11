@@ -6,32 +6,30 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/09 14:44:26 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:18:46 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 16:03:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/strings.h"
+#include <stddef.h>
 
-char	*ft_strstr(const char *str, const char *to_find)
+char			*ft_strstr(const char *s, const char *search)
 {
-	int i;
-	int found_i;
-	int size;
+	size_t		i;
 
 	i = 0;
-	found_i = 0;
-	size = ft_strlen(to_find);
-	if (size == 0)
-		return ((char*)str);
-	while (str[i] != '\0')
+	while (*s != '\0'
+		&& search[i] != '\0')
 	{
-		if (str[i] == to_find[found_i])
-			found_i++;
+		if (*s == search[i])
+			i++;
 		else
-			found_i = 0;
-		i++;
-		if (found_i == (size))
-			return ((char*)(str + i - found_i));
+		{
+			s -= i;
+			i = 0;
+		}
+		s++;
 	}
-	return (0);
+	if (search[i] == '\0')
+		return ((char *)(s - i));
+	return (NULL);
 }
