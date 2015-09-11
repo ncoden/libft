@@ -6,78 +6,39 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 12:52:37 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:43:14 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 16:33:34 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft/utils/parse.h"
 
-static void			get_size(char *s, char c, size_t *size, size_t *count)
+static inline size_t	word_count(char *s, char c)
 {
-	char	word_found;
+	size_t		count;
 
-	*size = 0;
-	*count = 0;
-	word_found = 0;
-	while (*s != '\0')
-	{
-		if (*s != c || word_found)
-		{
-			word_found = 1;
-			(*size)++;
-		}
-		if (*s == c && word_found)
-			(*count)++;
-		if (*s == c)
-			word_found = 0;
-		s++;
-	}
-	if (word_found)
-	{
-		(*size)++;
-		(*count)++;
-	}
+	count = 0;
+	while (ft_prsword((const char **)&s, c))
+		count++;
+	return (count);
 }
 
-static void			make_array(char **array, char *s, char c)
+char					**ft_strdiv(char *s, char c)
 {
-	int		i;
-	size_t	size;
+	size_t		i;
+	char		**array;
 
+	if (!(array = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1))))
+		return (NULL);
 	i = 0;
-	size = 0;
-	while (*s != '\0')
+	while ((array[i] = ft_prsword((const char **)&s, c)))
 	{
-		if (*s == c && size > 0)
+		if (*s != '\0')
 		{
 			*s = '\0';
-			array[i] = s - size;
-			size = 0;
-			i++;
+			s++;
 		}
-		else if (*s != c)
-			size++;
-		s++;
-	}
-	if (size > 0)
-	{
-		array[i] = s - size;
 		i++;
 	}
-	array[i] = NULL;
-}
-
-char				**ft_strdiv(char *s, char c)
-{
-	size_t	size;
-	size_t	count;
-	char	**array;
-
-	if (!s)
-		return (NULL);
-	get_size(s, c, &size, &count);
-	if (!(array = (char **)malloc(sizeof(char *) * (count + 1))))
-		return (NULL);
-	make_array(array, s, c);
 	return (array);
 }
