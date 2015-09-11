@@ -78,7 +78,6 @@ SRC =\
 	basics/numbers/ullong/ft_ullongbaselen.c\
 	basics/numbers/ullong/ft_ullonglen.c\
 	basics/strings/create/ft_strdiv.c\
-	basics/strings/create/ft_strdjoin.c\
 	basics/strings/create/ft_strdup.s\
 	basics/strings/create/ft_strjoin.c\
 	basics/strings/create/ft_strlstjoin.c\
@@ -105,17 +104,12 @@ SRC =\
 	basics/strings/iterate/ft_strstr.c\
 	basics/strings/output/ft_putendl.c\
 	basics/strings/output/ft_putendl_fd.c\
-	basics/strings/output/ft_putistr.c\
 	basics/strings/output/ft_putnstr.c\
 	basics/strings/output/ft_putstr.s\
 	basics/strings/output/ft_putstr_fd.s\
-	basics/strings/output/ft_putstrleft.c\
-	basics/strings/output/ft_putstrright.c\
 	basics/strings/transform/ft_strcat.s\
-	basics/strings/transform/ft_strccpy.c\
 	basics/strings/transform/ft_strclr.c\
 	basics/strings/transform/ft_strcpy.s\
-	basics/strings/transform/ft_stricpy.c\
 	basics/strings/transform/ft_strlcat.c\
 	basics/strings/transform/ft_strncat.c\
 	basics/strings/transform/ft_strncpy.c\
