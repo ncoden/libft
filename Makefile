@@ -267,6 +267,7 @@ SRC =\
 	utils/parse/ft_prsichrs.c\
 	utils/parse/ft_prsnbr.c\
 	utils/parse/ft_prsstr.c\
+	utils/parse/ft_prsword.c\
 	utils/parse/ft_prsxchrs.c\
 	utils/parse/ft_skpnbr.c\
 	utils/unicode/ft_getunicode.c\

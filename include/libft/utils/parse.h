@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 18:32:42 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:59:31 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 15:57:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ t_bits			ft_prschrs(char **cursor, const char *chrs);
 t_bits			*ft_prsxchrs(char **cursor, const char *chrs);
 unsigned int	*ft_prsichrs(char **cursor, const char *chrs);
 unsigned int	ft_prsstr(char **cursor, const char *str);
+
+char			*ft_prsword(const char **cursor, char c);
 
 #endif
