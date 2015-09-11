@@ -6,18 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 10:04:57 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:15:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/08 17:44:49 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_strdel(char **as)
+void			ft_strdel(char **as)
 {
-	if (as != NULL)
-	{
-		if (*as != NULL)
-			free(*as);
-		*as = NULL;
-	}
+	free(*as);
+	*as = NULL;
 }
