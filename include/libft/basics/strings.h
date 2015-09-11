@@ -37,13 +37,13 @@ size_t			ft_strlen(const char *str);
 size_t			ft_strnlen(const char *s, size_t n);
 char			*ft_strmap(const char *s, char (*f)(char));
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-char			*ft_strncat(char *dest, const char *src, size_t nb);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strnstr(const char *str, const char *to_find, size_t size);
 char			*ft_strrchr(const char *str, int c);
 char			**ft_strsplit(const char *s, char c);
 char			*ft_strstr(const char *str, const char *to_find);
+char			*ft_strncat(char *dst, const char *src, size_t n);
 char			*ft_strsub(const char *s, size_t start, size_t n);
 char			*ft_strtrim(const char *s);
 
