@@ -6,30 +6,33 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:12:44 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:18:14 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 16:03:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t size)
+char			*ft_strnstr(const char *s, const char *search, size_t n)
 {
-	size_t	i;
-	size_t	found_i;
+	size_t		i;
+	size_t		i_search;
 
 	i = 0;
-	found_i = 0;
-	if (to_find[0] == '\0')
-		return ((char*)str);
-	while (i < size && str[i] != '\0')
+	i_search = 0;
+	while (s[i] != '\0'
+		&& search[i_search] != '\0'
+		&& i < n)
 	{
-		if (str[i] == to_find[found_i])
-			found_i++;
+		if (s[i] == search[i_search])
+			i_search++;
 		else
-			found_i = 0;
+		{
+			i -= i_search;
+			i_search = 0;
+		}
 		i++;
-		if (to_find[found_i] == '\0')
-			return ((char*)(str + i - found_i));
 	}
-	return (0);
+	if (search[i_search] == '\0')
+		return ((char *)(s + i - i_search));
+	return (NULL);
 }
