@@ -6,37 +6,29 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/07/09 19:15:11 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:24:48 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/11 19:28:28 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/basics/strings.h"
 
-static size_t	ft_unsstrlen(char *str, size_t max)
+size_t			ft_strlcat(char *dst, const char *src, size_t n)
 {
-	size_t	size;
-
-	size = 0;
-	while (str[size] != '\0' && size < max)
-		size++;
-	return (size);
-}
-
-size_t			ft_strlcat(char *dest, const char *src, size_t size)
-{
-	size_t	i;
-	size_t	end;
+	size_t		i;
+	size_t		end;
 
 	i = 0;
-	end = ft_unsstrlen(dest, size);
-	if (end == size)
-		return (end + ft_strlen(src));
-	while ((end + i) < size - 1 && src[i] != '\0')
+	end = ft_strnlen(dst, n);
+	if (end < n)
 	{
-		dest[end + i] = src[i];
-		i++;
+		while (src[i] != '\0'
+			&& (end + i) < (n - 1))
+		{
+			dst[end + i] = src[i];
+			i++;
+		}
+		dst[end + i] = '\0';
 	}
-	dest[end + i] = '\0';
 	return (end + ft_strlen(src));
 }
