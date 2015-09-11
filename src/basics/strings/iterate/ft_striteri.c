@@ -6,18 +6,18 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 10:20:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:17:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/10 00:07:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void			ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		(*f)(i, &(s[i]));
+		(*f)(i, &s[i]);
 		i++;
 	}
 }
