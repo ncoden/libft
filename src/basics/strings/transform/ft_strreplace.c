@@ -6,19 +6,16 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/03 23:48:22 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/03 23:52:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/09 16:04:41 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void			ft_strreplace(char *s, char search, char replace)
 {
-	int			i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == search)
-			s[i] = replace;
-		i++;
+		if (*s == search)
+			*s = replace;
+		s++;
 	}
 }
