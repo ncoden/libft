@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 09:48:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/09 14:41:37 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/12 21:14:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char			*ft_envget(char *name)
 	if (!environ)
 		return (NULL);
 	i = 0;
-
 	while (environ[i] != NULL)
 	{
 		if (ft_strccmp(name, environ[i], '\0', '=') == 0)

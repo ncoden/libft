@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/07 11:49:55 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/09/12 21:12:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static inline void	print_digit(unsigned char digit)
 		"0123456789"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		"abcdefghijklmnopqrstuvwxyz"
-		[digit]
-	);
+		[digit]);
 }
 
 static void			print_positive_base(int nbr, int base)
