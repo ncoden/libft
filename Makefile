@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/10 16:19:11 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/12 17:26:26 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -214,29 +214,6 @@ SRC =\
 	system/signals/ft_sgnlset.c\
 	system/signals/ft_sgnltrigger.c\
 	system/signals/ft_sgnlunset.c\
-	system/termcaps/ft_putchr_trm.c\
-	system/termcaps/ft_putstr_trm.c\
-	system/termcaps/ft_read_trm.c\
-	system/termcaps/ft_tpskeytrigger.c\
-	system/termcaps/ft_trmclosein.c\
-	system/termcaps/ft_trmcloseout.c\
-	system/termcaps/ft_trmclr.c\
-	system/termcaps/ft_trmgetcmd.c\
-	system/termcaps/ft_trmgetin.c\
-	system/termcaps/ft_trmgetout.c\
-	system/termcaps/ft_trmheight.c\
-	system/termcaps/ft_trmkeycmd.c\
-	system/termcaps/ft_trmkeyhook.c\
-	system/termcaps/ft_trmnew.c\
-	system/termcaps/ft_trmputcmd.c\
-	system/termcaps/ft_trmread.c\
-	system/termcaps/ft_trmrestore.c\
-	system/termcaps/ft_trmset.c\
-	system/termcaps/ft_trmsignalcmd.c\
-	system/termcaps/ft_trmsignalhook.c\
-	system/termcaps/ft_trmstart.c\
-	system/termcaps/ft_trmstop.c\
-	system/termcaps/ft_trmwidth.c\
 	utils/errors/ft_errdel.c\
 	utils/errors/ft_errnew.c\
 	utils/events/ft_esrccall.c\
