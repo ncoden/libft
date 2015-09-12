@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/12 17:26:26 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/12 18:43:52 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -214,8 +214,6 @@ SRC =\
 	system/signals/ft_sgnlset.c\
 	system/signals/ft_sgnltrigger.c\
 	system/signals/ft_sgnlunset.c\
-	utils/errors/ft_errdel.c\
-	utils/errors/ft_errnew.c\
 	utils/events/ft_esrccall.c\
 	utils/events/ft_esrcget.c\
 	utils/events/ft_esrcrem.c\
