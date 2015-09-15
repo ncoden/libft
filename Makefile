@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/12 18:43:52 by ncoden           ###   ########.fr        #
+#    Updated: 2015/09/15 21:51:08 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -234,6 +234,7 @@ SRC =\
 	utils/math/ft_degtorad.c\
 	utils/math/ft_max.c\
 	utils/math/ft_min.c\
+	utils/math/ft_mod.c\
 	utils/math/ft_power.c\
 	utils/math/ft_radtodeg.c\
 	utils/parse/ft_prschr.c\
