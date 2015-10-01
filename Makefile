@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/09/15 21:51:08 by ncoden           ###   ########.fr        #
+#    Updated: 2015/10/01 18:44:13 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,12 +150,9 @@ SRC =\
 	containers/list/ft_lstaddback.c\
 	containers/list/ft_lstaddby.c\
 	containers/list/ft_lstaddfront.c\
-	containers/list/ft_lstaddrby.c\
-	containers/list/ft_lstcpy_tostr.c\
 	containers/list/ft_lstdel.c\
 	containers/list/ft_lstdelone.c\
 	containers/list/ft_lstdup.c\
-	containers/list/ft_lstdup__.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
 	containers/list/ft_lstiter.c\
@@ -169,7 +166,6 @@ SRC =\
 	containers/list/ft_lstpushby.c\
 	containers/list/ft_lstpushfront.c\
 	containers/list/ft_lstpushfront__.c\
-	containers/list/ft_lstpushrby.c\
 	containers/list/ft_lstshift.c\
 	containers/list/ft_lsttoarray.c\
 	containers/list/ft_strsplit_tolst.c\
