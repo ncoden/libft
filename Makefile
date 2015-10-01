@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/10/01 18:44:13 by ncoden           ###   ########.fr        #
+#    Updated: 2015/10/01 20:42:11 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,6 @@ SRC =\
 	basics/strings/create/ft_strdiv.c\
 	basics/strings/create/ft_strdup.s\
 	basics/strings/create/ft_strjoin.c\
-	basics/strings/create/ft_strlstjoin.c\
 	basics/strings/create/ft_strmap.c\
 	basics/strings/create/ft_strmapi.c\
 	basics/strings/create/ft_strnew.c\
