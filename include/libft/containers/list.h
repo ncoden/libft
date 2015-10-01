@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/01 18:32:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 18:53:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,28 @@ typedef struct	s_lst
 {
 	EXTEND_LST	(s_lst);
 	void		*data;
-	size_t		size;
 }				t_lst;
 
-t_lst			*ft_lstnew(void *data, size_t size);
+t_lst			*ft_lstnew(void *data);
 t_lst			*ft_lstget(t_lst *lst, int index);
 
 void			ft_lstaddfront(t_lst **alst, t_lst *new);
 void			ft_lstaddback(t_lst **alst, t_lst *new);
 void			ft_lstaddafter(t_lst *lst, t_lst *new);
 void			ft_lstaddby(t_lst **alst, t_lst *new,
-						int (*f)(const void *, const void *, size_t, size_t));
+						int (*f)(const void *, const void *));
 
-t_lst			*ft_lstpushfront(t_lst **alst, void *data, size_t size);
-t_lst			*ft_lstpushback(t_lst **alst, void *data, size_t size);
-t_lst			*ft_lstpushafter(t_lst *lst, void *data,
-						size_t size);
-t_lst			*ft_lstpushby(t_lst **alst, void *data, size_t size,
-						int (*f)(const void *, const void *, size_t, size_t));
+t_lst			*ft_lstpushfront(t_lst **alst, void *data);
+t_lst			*ft_lstpushback(t_lst **alst, void *data);
+t_lst			*ft_lstpushafter(t_lst *lst, void *data);
+t_lst			*ft_lstpushby(t_lst **alst, void *data,
+						int (*f)(const void *, const void *));
 
-void			ft_lstdel(t_lst **alst, void (*del)(void *, size_t));
-void			ft_lstdelone(t_lst **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_lst **alst, void (*del)(void *));
+void			ft_lstdelone(t_lst **alst, void (*del)(void *));
 t_lst			*ft_lstdup(t_lst *lst);
 void			*ft_lstfold(t_lst *lst,
-						void *(*f)(const void *, const void *, size_t));
+						void *(*f)(const void *, const void *));
 void			ft_lstiter(t_lst *lst, void (*f)(t_lst *elem));
 int				ft_lstlen(t_lst *lst);
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem));

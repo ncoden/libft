@@ -6,14 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 17:01:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:10:42 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 19:02:27 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/containers/list.h"
 
-void	ft_lstdel(t_lst **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_lst **alst, void (*del)(void *))
 {
 	t_lst	*pnt;
 

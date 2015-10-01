@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 16:30:16 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:38:53 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 19:01:27 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_lst			*ft_arraytolst(void **array)
 	lst = NULL;
 	while (array[i] != NULL)
 	{
-		if (!ft_lstpushback(&lst, array[i], sizeof(array[i])))
+		if (!ft_lstpushback(&lst, array[i]))
 			return (NULL);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:15:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:27:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 20:40:08 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_lst	*ft_strsplit_tolst(const char *s, char c)
 		if ((s[i] == '\0' || s[i] == c) && size_word > 0)
 		{
 			ft_lstpushback(&lst,
-				(void*)ft_strsub(s, i - size_word, size_word), size_word + 1);
+				(void*)ft_strsub(s, i - size_word, size_word));
 			size_word = 0;
 		}
 		if (s[i] != c)

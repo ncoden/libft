@@ -6,14 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 16:29:21 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:10:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 19:02:46 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft/containers/list.h"
 
-void			ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
+void			ft_lstdelone(t_lst **alst, void (*del)(void *))
 {
 	t_lst		*next;
 
@@ -21,7 +21,7 @@ void			ft_lstdelone(t_lst **alst, void (*del)(void *, size_t))
 	{
 		next = (*alst)->next;
 		if (del)
-			(*del)((*alst)->data, (*alst)->size);
+			(*del)((*alst)->data);
 		free(*alst);
 		*alst = next;
 	}
