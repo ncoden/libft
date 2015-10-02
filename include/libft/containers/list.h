@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:25:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 23:58:38 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,14 @@ t_lst			*ft_lstpushafter(t_lst *lst, void *data);
 t_lst			*ft_lstpushby(t_lst **alst, void *data,
 						int (*cmp)(const void *data1, const void *data2));
 
-void			ft_lstdel(t_lst **alst, void (*del)(void *));
-void			ft_lstdelone(t_lst **alst, void (*del)(void *));
+void			ft_lstdel(t_lst **alst, void (*del)(void *data));
+void			ft_lstshift(t_lst **alst, void (*del)(void *data));
 t_lst			*ft_lstdup(t_lst *lst);
 void			*ft_lstfold(t_lst *lst,
 						void *(*f)(const void *data1, const void *data2));
 void			ft_lstiter(t_lst *lst, void (*f)(t_lst *node));
 int				ft_lstlen(t_lst *lst);
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *node));
-void			ft_lstshift(t_lst **alst);
 
 void			**ft_lsttoarray(t_lst *lst);
 

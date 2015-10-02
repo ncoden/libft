@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/10/01 20:42:11 by ncoden           ###   ########.fr        #
+#    Updated: 2015/10/02 23:57:15 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,7 +150,6 @@ SRC =\
 	containers/list/ft_lstaddby.c\
 	containers/list/ft_lstaddfront.c\
 	containers/list/ft_lstdel.c\
-	containers/list/ft_lstdelone.c\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
