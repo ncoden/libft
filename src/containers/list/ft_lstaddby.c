@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/20 19:21:39 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:39:44 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 21:52:50 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void			ft_lstaddby(t_lst **alst, t_lst *node,
 	t_lst		*lst;
 	t_lst		*lst_prev;
 
-	if (alst != NULL)
-		return ;
 	lst = *alst;
 	lst_prev = NULL;
 	while (lst != NULL && (*f)(node->data, lst->data) <= 0)

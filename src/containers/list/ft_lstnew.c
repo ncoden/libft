@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 13:46:38 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:33:23 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 22:57:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ t_lst			*ft_lstnew(void *data)
 {
 	t_lst		*node;
 
-	node = (t_lst *)malloc(sizeof(t_lst));
-	if (node != NULL)
-	{
-		node->data = data;
-		node->next = NULL;
-	}
+	if (!(node = (t_lst *)malloc(sizeof(t_lst))))
+		return (NULL);
+	node->data = data;
+	node->next = NULL;
 	return (node);
 }
