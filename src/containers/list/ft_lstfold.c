@@ -6,16 +6,16 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 10:48:23 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/01 19:09:33 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 15:11:36 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/containers/list.h"
 
-void	*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void*))
+void			*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void *))
 {
-	void	*result;
+	void		*result;
 
 	if (lst != NULL)
 	{

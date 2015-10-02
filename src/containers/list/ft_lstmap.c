@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 18:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:12:49 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 17:08:29 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "libft/basics/memory.h"
 #include "libft/containers/list.h"
 
-t_lst	*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem))
+t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *elem))
 {
-	t_lst	*newlst;
-	t_lst	*newlst_first;
-	t_lst	*newlst_prev;
+	t_lst		*newlst;
+	t_lst		*newlst_first;
+	t_lst		*newlst_prev;
 
 	newlst_first = NULL;
 	while (lst != NULL)
