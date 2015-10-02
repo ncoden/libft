@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/20 18:51:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:09:40 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 17:34:32 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 t_lst			*ft_lstpushback(t_lst **alst, void *data)
 {
-	t_lst		*new_lst;
+	t_lst		*node;
 
-	new_lst = ft_lstnew(data);
-	if (new_lst == NULL)
+	node = ft_lstnew(data);
+	if (node == NULL)
 		return (NULL);
-	ft_lstaddback(alst, new_lst);
-	return (new_lst);
+	ft_lstaddback(alst, node);
+	return (node);
 }

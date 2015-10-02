@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 13:46:38 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:13:11 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 17:33:49 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 t_lst			*ft_lstnew__(size_t size)
 {
-	t_lst		*new;
+	t_lst		*node;
 
-	if (!(new = (t_lst *)malloc(size)))
+	if (!(node = (t_lst *)malloc(size)))
 		return (NULL);
-	new->next = NULL;
-	return (new);
+	node->next = NULL;
+	return (node);
 }

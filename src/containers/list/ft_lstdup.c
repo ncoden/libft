@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:09:12 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 15:04:52 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 17:29:28 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 t_lst			*ft_lstdup(t_lst *lst)
 {
-	t_lst		*new_lst;
+	t_lst		*cpy;
 
-	new_lst = NULL;
+	cpy = NULL;
 	while (lst != NULL)
 	{
-		if (!(ft_lstpushback(&new_lst, lst->data)))
+		if (!(ft_lstpushback(&cpy, lst->data)))
 			return (NULL);
 		lst = lst->next;
 	}
-	return (new_lst);
+	return (cpy);
 }

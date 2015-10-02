@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 15:26:37 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:05:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 17:30:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int				ft_lstlen(t_lst *lst)
 {
-	int			size;
+	int			len;
 
-	size = 0;
+	len = 0;
 	while (lst != NULL)
 	{
-		size++;
+		len++;
 		lst = lst->next;
 	}
-	return (size);
+	return (len);
 }
