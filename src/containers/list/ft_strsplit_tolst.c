@@ -6,34 +6,24 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:15:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/02 17:37:59 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/03 18:21:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/basics/strings.h"
 #include "libft/containers/list.h"
+#include "libft/utils/parse.h"
 
 t_lst			*ft_strsplit_tolst(const char *s, char c)
 {
-	size_t		i;
-	size_t		word_size;
+	char		*word;
 	t_lst		*lst;
+	t_lst		*iter;
 
-	i = 0;
-	word_size = 0;
 	lst = NULL;
-	while (i == 0 || (i > 0 && s[i - 1] != '\0'))
-	{
-		if ((s[i] == '\0' || s[i] == c) && word_size > 0)
-		{
-			ft_lstpushback(&lst,
-				(void *)ft_strsub(s, i - word_size, word_size));
-			word_size = 0;
-		}
-		if (s[i] != c)
-			word_size++;
-		i++;
-	}
+	iter = NULL;
+	while ((word = ft_prsword(&s, c)))
+		ft_lstpushiter(&lst, &iter, ft_strsub(word, 0, s - word));
 	return (lst);
 }
