@@ -16,20 +16,14 @@
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *node))
 {
 	t_lst		*new;
-	t_lst		*new_begin;
-	t_lst		*new_prev;
+	t_lst		*iter;
 
-	new_begin = NULL;
-	new_prev = NULL;
+	new = NULL;
+	iter = NULL;
 	while (lst != NULL)
 	{
-		new = (*f)(lst);
-		if (new_begin == NULL)
-			new_begin = new;
-		else
-			new_prev->next = new;
-		new_prev = new;
+		ft_lstadditer(&new, &iter, (*f)(lst));
 		lst = lst->next;
 	}
-	return (new_begin);
+	return (new);
 }
