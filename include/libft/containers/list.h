@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/03 00:10:45 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/03 18:23:08 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			ft_lstaddby(t_lst **alst, t_lst *node,
 t_lst			*ft_lstpushfront(t_lst **alst, void *data);
 t_lst			*ft_lstpushback(t_lst **alst, void *data);
 t_lst			*ft_lstpushafter(t_lst *lst, void *data);
-t_lst			*ft_lstpushiter(t_lst **begin, t_lst **iterator, t_lst *node);
+t_lst			*ft_lstpushiter(t_lst **begin, t_lst **iterator, void *data);
 t_lst			*ft_lstpushby(t_lst **alst, void *data,
 						int (*cmp)(const void *data1, const void *data2));
 
