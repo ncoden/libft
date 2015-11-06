@@ -6,25 +6,25 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 15:09:12 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:11:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/03 00:17:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft/basics/memory.h"
 #include "libft/containers/list.h"
 
-t_lst	*ft_lstdup(t_lst *lst)
+t_lst			*ft_lstdup(t_lst *lst)
 {
-	t_lst	*new_lst;
+	t_lst		*cpy;
+	t_lst		*iter;
 
-	new_lst = NULL;
+	cpy = NULL;
+	iter = NULL;
 	while (lst != NULL)
 	{
-		if (!(ft_lstpushback(&new_lst, ft_memdup(lst->data, lst->size),
-				lst->size)))
+		if (!(ft_lstpushiter(&cpy, &iter, lst->data)))
 			return (NULL);
 		lst = lst->next;
 	}
-	return (new_lst);
+	return (cpy);
 }

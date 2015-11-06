@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/12 21:11:07 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/06 15:42:33 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define LIBFT_TREE_H
 
 # include <stddef.h>
+# include "libft/core/object.h"
 
-# define EXTEND_MT(type)	struct {struct type *next; struct type *child;}
-# define MT_DATA(mt)		(mt + sizeof(void *) + sizeof(void *))
+# define MT_BASE(type)			_BASE(type *next; type *child;)
 
 typedef struct	s_mt
 {
-	EXTEND_MT	(s_mt);
+	MT_BASE		(struct s_mt);
 	void		*data;
 	size_t		size;
 }				t_mt;

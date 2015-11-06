@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 16:52:23 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:10:10 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/01 20:51:36 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_lst		*ft_readtolst(int fd)
 	lst_first = NULL;
 	while (ft_readline(fd, &buffer))
 	{
-		if (!(lst = ft_lstpushafter(lst, buffer, sizeof(buffer))))
+		if (!(lst = ft_lstpushafter(lst, buffer)))
 			return (NULL);
 		if (lst_first == NULL)
 			lst_first = lst;

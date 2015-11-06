@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushrby.c                                    :+:      :+:    :+:   */
+/*   object.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/21 12:02:40 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:13:49 by ncoden           ###   ########.fr       */
+/*   Created: 2015/02/04 09:38:31 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/06 15:26:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "libft/containers/list.h"
+#ifndef LIBFT_OBJECT_H
+# define LIBFT_OBJECT_H
 
-t_lst		*ft_lstpushrby(t_lst **alst, void *data, size_t csize,
-				int (*f)(const void *, const void *, size_t, size_t))
-{
-	t_lst		*new;
+# define _BASE(...)				struct {__VA_ARGS__}
 
-	if (alst != NULL && f != NULL)
-	{
-		new = ft_lstnew(data, csize);
-		if (new != NULL)
-			ft_lstaddrby(alst, new, f);
-		return (new);
-	}
-	return (NULL);
-}
+#endif

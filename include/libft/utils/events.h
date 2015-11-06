@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:59:21 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/06 15:43:40 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,25 @@ typedef struct	s_evnt
 
 typedef struct	s_ilst_evnt
 {
-	EXTEND_ILST	(s_ilst_evnt);
+	ILST_BASE	(struct s_ilst_evnt);
 	t_evnt		event;
 }				t_ilst_evnt;
 
 typedef struct	s_klst_evnt
 {
-	EXTEND_KLST	(s_klst_evnt);
+	KLST_BASE	(struct s_klst_evnt);
 	t_evnt		event;
 }				t_klst_evnt;
 
 typedef struct	s_ilst_esrc
 {
-	EXTEND_ILST	(s_ilst_esrc);
+	ILST_BASE	(struct s_ilst_esrc);
 	t_tdata		esrc;
 }				t_ilst_esrc;
 
 typedef struct	s_klst_esrc
 {
-	EXTEND_KLST	(s_klst_esrc);
+	KLST_BASE	(struct s_klst_esrc);
 	t_tdata		esrc;
 }				t_klst_esrc;
 

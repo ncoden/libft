@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 18:34:52 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 23:12:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/03 01:31:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int		read_to_lst(t_fd *fdatas)
 	buffer = (char *)malloc(FILE_BUFF_SIZE + 1);
 	if (buffer == NULL)
 		return (-1);
-	new_lst = ft_lstnew(buffer, FILE_BUFF_SIZE);
+	new_lst = ft_lstnew(buffer);
 	if (new_lst == NULL)
 		return (-1);
 	ft_lstaddback(&(fdatas->lst), new_lst);
@@ -101,7 +101,7 @@ static char		*make_str(t_fd *fdatas, int const line_end)
 		ft_strncpy(&(str[i]), fdatas->lst->data + fdatas->start, (max - i));
 		i += FILE_BUFF_SIZE - fdatas->start;
 		if (i <= max)
-			ft_lstshift(&(fdatas->lst));
+			ft_lstshift(&(fdatas->lst), &free);
 		fdatas->start = 0;
 	}
 	str[max] = '\0';

@@ -6,27 +6,26 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 10:48:23 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:11:55 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/02 22:24:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft/containers/list.h"
 
-void	*ft_lstfold(t_lst *lst, void *(*f)(const void *, const void*, size_t))
+void			*ft_lstfold(t_lst *lst,
+					void *(*f)(const void *data1, const void *data2))
 {
-	void	*result;
+	void		*res;
 
-	if (lst != NULL)
+	if (lst == NULL)
+		return (NULL);
+	res = lst->data;
+	lst = lst->next;
+	while (lst != NULL)
 	{
-		result = lst->data;
+		res = (*f)(res, lst->data);
 		lst = lst->next;
-		while (lst != NULL)
-		{
-			result = (*f)(result, lst->data, lst->size);
-			lst = lst->next;
-		}
-		return (result);
 	}
-	return (NULL);
+	return (res);
 }

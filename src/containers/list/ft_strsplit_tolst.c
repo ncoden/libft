@@ -6,34 +6,32 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 11:15:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:27:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/10/03 18:45:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 #include "libft/basics/strings.h"
 #include "libft/containers/list.h"
+#include "libft/utils/parse.h"
 
-t_lst	*ft_strsplit_tolst(const char *s, char c)
+t_lst			*ft_strsplit_tolst(const char *s, char c)
 {
-	size_t		i;
-	size_t		size_word;
+	char		*word;
+	char		*cpy;
 	t_lst		*lst;
+	t_lst		*iter;
 
-	i = 0;
-	size_word = 0;
 	lst = NULL;
-	while (i == 0 || (i > 0 && s[i - 1] != '\0'))
+	iter = NULL;
+	while ((word = ft_prsword(&s, c)))
 	{
-		if ((s[i] == '\0' || s[i] == c) && size_word > 0)
+		if (!(cpy = ft_strsub(word, 0, s - word))
+			|| !ft_lstpushiter(&lst, &iter, cpy))
 		{
-			ft_lstpushback(&lst,
-				(void*)ft_strsub(s, i - size_word, size_word), size_word + 1);
-			size_word = 0;
+			ft_lstdel(&lst, &free);
+			return (NULL);
 		}
-		if (s[i] != c)
-			size_word++;
-		i++;
 	}
 	return (lst);
 }
