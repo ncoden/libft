@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:17:34 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/06 15:41:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 # define LIBFT_ILST_H
 
 # include <stddef.h>
+# include "libft/core/object.h"
 # include "libft/basics/booleans.h"
 # include "libft/containers/list.h"
 
-# define EXTEND_ILST(type)	struct {EXTEND_LST(type); int index;}
-# define ILST_DATA(ilst)	(LST_DATA(ilst) + sizeof(int))
+# define ILST_BASE(type)		_BASE(LST_BASE(type); int index;)
 
 typedef struct	s_ilst
 {
-	EXTEND_ILST	(s_ilst);
+	ILST_BASE	(struct s_ilst);
 	void		*data;
 	size_t		size;
 }				t_ilst;

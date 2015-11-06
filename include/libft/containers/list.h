@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/10/03 18:23:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/06 15:42:06 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define LIBFT_LIST_H
 
 # include <stddef.h>
+# include "libft/core/object.h"
 
-# define EXTEND_LST(type)	struct {struct type *next;}
-# define LST_DATA(lst)		(lst + sizeof(void *))
+# define LST_BASE(type)			_BASE(type *next;)
 
 typedef struct	s_lst
 {
-	EXTEND_LST	(s_lst);
+	LST_BASE	(struct s_lst);
 	void		*data;
 }				t_lst;
 
