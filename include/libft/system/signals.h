@@ -6,51 +6,41 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/29 20:58:48 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/07 16:05:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_SIGNALS_H
 # define LIBFT_SIGNALS_H
 
-# include "libft/basics/booleans.h"
-# include "libft/basics/types.h"
-# include "libft/containers/stack.h"
+# include <stdint.h>
+# include "libft/utils/callback.h"
 # include "libft/utils/events.h"
 
-/*
-**                 - - - About SGNL global variables - - -                    **
-** SGNL is an interface to control more easily signals. It implement many     **
-** features to make possible modular programming with signals.                **
-** However, signals are global by definition. So the use of global variables  **
-** here is fully justified.                                                   **
-*/
+typedef struct	s_hook_sig
+{
+	t_evnt		*event;
+	int			sig;
+}				t_hook_sig;
 
-int				g_sgnl_pushmode;
+typedef struct	s_hook_sigs
+{
+	t_cb		*callback;
+	int32_t		sigs;
+}				t_hook_sigs;
 
-t_ilst_evnt		*g_sgnl_evnts;
-t_tdata			*g_sgnl_esrc;
+t_hook_sig		ft_sighook(int sig, t_evnt *event);
+t_hook_sig		ft_signew(int sig, t_evnt *event);
+void			ft_sigadd(t_hook_sig *hook);
+void			ft_sigrem(t_hook_sig *hook);
+void			ft_sigdel(t_hook_sig *hook, void (*del)(void *));
 
-t_stck			*g_sgnl_stckevnts;
-t_stck			*g_sgnl_stckesrc;
+t_hook_sigs		ft_sigshook(int32_t sigs, t_cb *callback);
+t_hook_sigs		ft_sigsnew(int32_t sigs, t_cb *callback);
+void			ft_sigsadd(t_hook_sigs *hook);
+void			ft_sigsrem(t_hook_sigs *hook);
+void			ft_sigsdel(t_hook_sigs *hook, void (*del)(void *));
 
-t_ilst_evnt		*ft_sgnlget(void);
-t_bool			ft_sgnlset(t_ilst_evnt *events);
-t_bool			ft_sgnlunset(void);
-void			ft_sgnlcrush(t_ilst_evnt *events);
-t_ilst_evnt		*ft_sgnlclr();
-void			ft_sgnldel();
-void			ft_sgnllisten(t_ilst_evnt *evnts);
-
-void			ft_sgnlhook(char sig, void (*func)(void *), void *data);
-t_bool			ft_sgnltrigger(char sig);
-t_ilst_evnt		*ft_sgnlclrone(char sig);
-void			ft_sgnldelone(char sig);
-
-t_bool			ft_sgnlpush(t_ilst_evnt *events);
-t_ilst_evnt		*ft_sgnlpull(void);
-
-t_tdata			*ft_sgnlesrcget(void);
-void			ft_sgnlesrcset(t_tdata *esrcs);
+void			ft_sigtrigger(int sig);
 
 #endif
