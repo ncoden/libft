@@ -25,7 +25,6 @@ typedef struct	s_lst
 }				t_lst;
 
 t_lst			*ft_lstnew(void *data);
-t_lst			*ft_lstget(t_lst *lst, int index);
 
 void			ft_lstaddfront(t_lst **alst, t_lst *node);
 void			ft_lstaddback(t_lst **alst, t_lst *node);
@@ -49,6 +48,7 @@ void			*ft_lstfold(t_lst *lst,
 void			ft_lstiter(t_lst *lst, void (*f)(t_lst *node));
 int				ft_lstlen(t_lst *lst);
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *node));
+t_lst			*ft_lstgetn(t_lst *lst, int index);
 
 void			**ft_lsttoarray(t_lst *lst);
 
