@@ -153,7 +153,9 @@ SRC =\
 	containers/list/ft_lstdel.c\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
+	containers/list/ft_lstget.c\
 	containers/list/ft_lstgetn.c\
+	containers/list/ft_lstgetprev.c\
 	containers/list/ft_lstiter.c\
 	containers/list/ft_lstlen.c\
 	containers/list/ft_lstmap.c\
