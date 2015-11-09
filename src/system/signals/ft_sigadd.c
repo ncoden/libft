@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 14:28:06 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/09 18:17:43 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "libft/system/signals.h"
 #include "libft/system/signals/private.h"
 
-static inline t_bool	add_hook(void *hook, enum e_sgnl_hook_type type,
-							int32_t mask)
+static inline t_bool	add_hook(void *hook, enum e_sgnl_hook_type type)
 {
 	t_lst_sgnl_hook		*node;
 
@@ -26,16 +25,21 @@ static inline t_bool	add_hook(void *hook, enum e_sgnl_hook_type type,
 		return (FALSE);
 	node->hook = hook;
 	node->type = type;
-	sgnl_set_mask(mask);
 	return (TRUE);
 }
 
 t_bool					ft_sigadd(t_hook_sig *hook)
 {
-	return (add_hook(hook, HOOK_SIG, (g_sgnl_mask | 1 << (hook->sig - 1))));
+	if (!(add_hook(hook, HOOK_SIG)))
+		return (FALSE);
+	sgnl_mask_add(hook->sig);
+	return (TRUE);
 }
 
 t_bool					ft_sigsadd(t_hook_sigs *hook)
 {
-	return (add_hook(hook, HOOK_SIGS, (g_sgnl_mask | hook->sigs)));
+	if (!(add_hook(hook, HOOK_SIGS)))
+		return (FALSE);
+	sgnl_mask_set(g_sgnl_mask | hook->sigs);
+	return (TRUE);
 }

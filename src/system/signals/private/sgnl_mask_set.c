@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sigupdate.c                                     :+:      :+:    :+:   */
+/*   sgnl_mask_set.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/09 02:16:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 14:28:20 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/09 01:16:08 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 18:28:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdint.h>
-#include "libft/system/signals.h"
+#include <stddef.h>
+#include <signal.h>
 #include "libft/system/signals/private.h"
 
-void			ft_sigupdate(void)
+void			sgnl_mask_set(int32_t mask)
 {
-	int32_t			mask;
-	t_lst_sgnl_hook	*node;
+	t_bool		hooked;
+	t_bool		to_hook;
+	int			i;
+	int32_t		save;
 
-	mask = 0;
-	node = g_sgnl_hooks;
-	while (node != NULL)
+	save = mask;
+	i = 0;
+	while (i < 32)
 	{
-		if (node->type == HOOK_SIG)
-			mask = mask | 1 << (((t_hook_sig *)node->hook)->sig - 1);
-		else
-			mask = mask | ((t_hook_sigs *)node->hook)->sigs;
-		node = node->next;
+		hooked = g_sgnl_mask & 1;
+		to_hook = mask & 1;
+		if (!hooked && to_hook)
+			signal(i, &ft_sigtrigger);
+		else if (hooked && !to_hook)
+			signal(i, NULL);
+		g_sgnl_mask >>= 1;
+		mask >>= 1;
+		i++;
 	}
-	sgnl_mask_set(mask);
+	g_sgnl_mask = save;
 }

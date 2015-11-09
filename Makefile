@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/11/09 14:27:36 by ncoden           ###   ########.fr        #
+#    Updated: 2015/11/09 18:19:46 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -205,7 +205,8 @@ SRC =\
 	system/signals/ft_sigrem.c\
 	system/signals/ft_sigtrigger.c\
 	system/signals/ft_sigupdate.c\
-	system/signals/private/sgnl_set_mask.c\
+	system/signals/private/sgnl_mask_add.c\
+	system/signals/private/sgnl_mask_set.c\
 	utils/callback/ft_cbcall.c\
 	utils/callback/ft_cbnew.c\
 	utils/callback/ft_cbset.c\
