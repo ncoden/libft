@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlcrush.c                                     :+:      :+:    :+:   */
+/*   ft_sigdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/17 18:27:41 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:39:06 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/08 22:44:22 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <signal.h>
+#include <stdlib.h>
 #include "libft/system/signals.h"
-#include "libft/utils/events.h"
 
-void			ft_sgnlcrush(t_ilst_evnt *events)
+void			ft_sigdel(t_hook_sig *hook, void (*del)(void *))
 {
-	ft_sgnldel();
-	g_sgnl_evnts = events;
-	while (events != NULL)
-	{
-		signal(events->index, (void (*)(int))&ft_sgnltrigger);
-		events = events->next;
-	}
+	ft_sigrem(hook);
+	if (del)
+		(*del)(hook->event);
+	free(hook);
+}
+
+void			ft_sigsdel(t_hook_sigs *hook, void (*del)(void *))
+{
+	ft_sigsrem(hook);
+	if (del)
+		(*del)(hook->callback);
+	free(hook);
 }

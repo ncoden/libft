@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/10/03 00:10:12 by ncoden           ###   ########.fr        #
+#    Updated: 2015/11/09 18:19:46 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,6 +154,8 @@ SRC =\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
+	containers/list/ft_lstgetn.c\
+	containers/list/ft_lstgetprev.c\
 	containers/list/ft_lstiter.c\
 	containers/list/ft_lstlen.c\
 	containers/list/ft_lstmap.c\
@@ -195,21 +197,19 @@ SRC =\
 	containers/tree/ft_mtpushnext.c\
 	system/endian/ft_getendian.c\
 	system/environment/ft_envget.c\
-	system/signals/ft_sgnlclr.c\
-	system/signals/ft_sgnlclrone.c\
-	system/signals/ft_sgnlcrush.c\
-	system/signals/ft_sgnldel.c\
-	system/signals/ft_sgnldelone.c\
-	system/signals/ft_sgnlesrcget.c\
-	system/signals/ft_sgnlesrcset.c\
-	system/signals/ft_sgnlget.c\
-	system/signals/ft_sgnlhook.c\
-	system/signals/ft_sgnllisten.c\
-	system/signals/ft_sgnlpull.c\
-	system/signals/ft_sgnlpush.c\
-	system/signals/ft_sgnlset.c\
-	system/signals/ft_sgnltrigger.c\
-	system/signals/ft_sgnlunset.c\
+	system/signals/ft_sigadd.c\
+	system/signals/ft_sigdel.c\
+	system/signals/ft_sighook.c\
+	system/signals/ft_sigmove.c\
+	system/signals/ft_signew.c\
+	system/signals/ft_sigrem.c\
+	system/signals/ft_sigtrigger.c\
+	system/signals/ft_sigupdate.c\
+	system/signals/private/sgnl_mask_add.c\
+	system/signals/private/sgnl_mask_set.c\
+	utils/callback/ft_cbcall.c\
+	utils/callback/ft_cbnew.c\
+	utils/callback/ft_cbset.c\
 	utils/events/ft_esrccall.c\
 	utils/events/ft_esrcget.c\
 	utils/events/ft_esrcrem.c\

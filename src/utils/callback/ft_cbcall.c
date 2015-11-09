@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnllisten.c                                    :+:      :+:    :+:   */
+/*   ft_cbcall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/29 15:04:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:44:42 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/07 15:38:15 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <signal.h>
-#include "libft/system/signals.h"
-#include "libft/utils/events.h"
+#include "libft/utils/callback.h"
 
-void			ft_sgnllisten(t_ilst_evnt *evnts)
+void			ft_cbcall(t_cb *callback, void *res)
 {
-	while (evnts != NULL)
-	{
-		signal(evnts->index, (void (*)(int))&ft_sgnltrigger);
-		evnts = evnts->next;
-	}
+	callback->func(callback->data, res);
 }

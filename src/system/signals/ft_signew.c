@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlhook.c                                      :+:      :+:    :+:   */
+/*   ft_signew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/15 16:11:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:44:13 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/08 22:28:48 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include "libft/containers/ilst.h"
+#include <stdlib.h>
 #include "libft/system/signals.h"
-#include "libft/utils/events.h"
 
-void			ft_sgnlhook(char sig, void (*func)(void *), void *data)
+t_hook_sig		*ft_signew(int sig, t_evnt *event)
 {
-	t_ilst_evnt	*event;
+	t_hook_sig	*hook;
 
-	if (func)
-	{
-		if ((event = (t_ilst_evnt *)ft_ilstpush__(sizeof(t_ilst_evnt),
-			(t_ilst **)&g_sgnl_evnts, sig)))
-		{
-			event->event.func = func;
-			event->event.data = data;
-			signal(sig, (void (*)(int))&ft_sgnltrigger);
-		}
-	}
+	if (!(hook = (t_hook_sig *)malloc(sizeof(t_hook_sig))))
+		return (NULL);
+	hook->sig = sig;
+	hook->event = event;
+	return (hook);
+}
+
+t_hook_sigs		*ft_sigsnew(int32_t sigs, t_cb *callback)
+{
+	t_hook_sigs	*hook;
+
+	if (!(hook = (t_hook_sigs *)malloc(sizeof(t_hook_sigs))))
+		return (NULL);
+	hook->sigs = sigs;
+	hook->callback = callback;
+	return (hook);
 }

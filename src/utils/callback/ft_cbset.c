@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlesrcset.c                                   :+:      :+:    :+:   */
+/*   ft_cbset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 13:20:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:42:51 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/07 15:36:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/types.h"
-#include "libft/system/signals.h"
+#include "libft/utils/callback.h"
 
-void			ft_sgnlesrcset(t_tdata *esrc)
+void			ft_cbset(t_cb *callback, void (*func)(void *, void *),
+					void *data)
 {
-	g_sgnl_esrc = esrc;
+	callback->func = func;
+	callback->data = data;
 }

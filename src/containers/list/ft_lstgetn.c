@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlesrcget.c                                   :+:      :+:    :+:   */
+/*   ft_lstgetn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 13:20:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:42:40 by ncoden           ###   ########.fr       */
+/*   Created: 2015/06/09 14:46:31 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/08 16:18:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/types.h"
-#include "libft/system/signals.h"
+#include <stddef.h>
+#include "libft/containers/list.h"
 
-t_tdata			*ft_sgnlesrcget(void)
+t_lst			*ft_lstgetn(t_lst *lst, int index)
 {
-	return (g_sgnl_esrc);
+	while (lst != NULL && index > 0)
+	{
+		lst = lst->next;
+		index--;
+	}
+	return (lst);
 }
