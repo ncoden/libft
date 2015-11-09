@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/11/07 16:09:42 by ncoden           ###   ########.fr        #
+#    Updated: 2015/11/09 14:27:36 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -197,6 +197,14 @@ SRC =\
 	containers/tree/ft_mtpushnext.c\
 	system/endian/ft_getendian.c\
 	system/environment/ft_envget.c\
+	system/signals/ft_sigadd.c\
+	system/signals/ft_sigdel.c\
+	system/signals/ft_sighook.c\
+	system/signals/ft_signew.c\
+	system/signals/ft_sigrem.c\
+	system/signals/ft_sigtrigger.c\
+	system/signals/ft_sigupdate.c\
+	system/signals/private/sgnl_set_mask.c\
 	utils/callback/ft_cbcall.c\
 	utils/callback/ft_cbnew.c\
 	utils/callback/ft_cbset.c\
