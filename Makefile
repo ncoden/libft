@@ -200,6 +200,7 @@ SRC =\
 	system/signals/ft_sigadd.c\
 	system/signals/ft_sigdel.c\
 	system/signals/ft_sighook.c\
+	system/signals/ft_sigmove.c\
 	system/signals/ft_signew.c\
 	system/signals/ft_sigrem.c\
 	system/signals/ft_sigtrigger.c\
