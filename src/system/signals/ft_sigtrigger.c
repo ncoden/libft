@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/07 22:46:55 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 02:45:39 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/09 18:32:13 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 void			ft_sigtrigger(int sig)
 {
-	int32_t			mask;
+	int32_t			sig_mask;
 	t_lst_sgnl_hook	*node;
 
-	mask = 1 << (sig - 1);
+	sig_mask = 1 << sig;
 	node = g_sgnl_hooks;
 	while (node != NULL)
 	{
@@ -33,7 +33,7 @@ void			ft_sigtrigger(int sig)
 		}
 		else
 		{
-			if (((t_hook_sigs *)node->hook)->sigs & mask)
+			if (((t_hook_sigs *)node->hook)->sigs & sig_mask)
 				ft_cbcall(((t_hook_sigs *)node->hook)->callback, &sig);
 		}
 		node = node->next;

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/09 02:16:31 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 14:28:20 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/09 18:27:25 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void			ft_sigupdate(void)
 	while (node != NULL)
 	{
 		if (node->type == HOOK_SIG)
-			mask = mask | 1 << (((t_hook_sig *)node->hook)->sig - 1);
+			mask |= 1 << ((t_hook_sig *)node->hook)->sig;
 		else
-			mask = mask | ((t_hook_sigs *)node->hook)->sigs;
+			mask |= ((t_hook_sigs *)node->hook)->sigs;
 		node = node->next;
 	}
 	sgnl_mask_set(mask);
