@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 18:19:16 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/10 02:05:37 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdint.h>
 # include "libft/basics/booleans.h"
-# include "libft/utils/callback.h"
 # include "libft/utils/events.h"
 
 typedef struct	s_hook_sig

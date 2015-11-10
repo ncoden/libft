@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/06 15:43:40 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/10 02:04:20 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ typedef struct	s_klst_esrc
 
 t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
-void			ft_evntcall(t_evnt *event);
+t_bool			ft_evntcall(t_evnt *event);
+void			ft_evntstop(void);
 
 t_bool			ft_ievnttrigger(t_ilst_evnt *events, int index);
 t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key);
@@ -98,5 +99,16 @@ t_bool			ft_iesrcstrigger(t_ilst_evnt *events, int index,
 					t_ilst_esrc *srcs);
 t_bool			ft_kesrcstrigger(t_klst_evnt *events, char *key,
 					t_klst_esrc *srcs);
+
+typedef struct	s_cb
+{
+	void		(*func)(void *data, void *res);
+	void		*data;
+}				t_cb;
+
+t_cb			*ft_cbnew(void (*func)(void *, void *), void *data);
+void			ft_cbset(t_cb *callback, void (*func)(void *, void *),
+					void *data);
+t_bool			ft_cbcall(t_cb *callback, void *res);
 
 #endif

@@ -6,13 +6,12 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/08 22:41:19 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/10 02:05:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft/utils/events.h"
-#include "libft/utils/callback.h"
 #include "libft/system/signals.h"
 
 t_hook_sig		*ft_sighook(int sig, t_evnt *event)

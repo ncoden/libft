@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cbset.c                                         :+:      :+:    :+:   */
+/*   ft_evntstop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/07 15:36:37 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/09 21:33:13 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 22:33:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/utils/callback.h"
+#include "libft/utils/events.h"
+#include "libft/utils/events/private.h"
 
-void			ft_cbset(t_cb *callback, void (*func)(void *, void *),
-					void *data)
+void			ft_evntstop(void)
 {
-	callback->func = func;
-	callback->data = data;
+	g_evnt_propagate = FALSE;
 }

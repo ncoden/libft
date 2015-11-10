@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cbnew.c                                         :+:      :+:    :+:   */
+/*   private.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/07 15:34:35 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 22:33:44 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft/utils/callback.h"
+#ifndef LIBFT_EVENTS_PRIVATE_H
+# define LIBFT_EVENTS_PRIVATE_H
 
-t_cb			*ft_cbnew(void (*func)(void *, void *), void *data)
-{
-	t_cb		*callback;
+# include "libft/basics/booleans.h"
 
-	if (!(callback = (t_cb *)malloc(sizeof(t_cb))))
-		return (NULL);
-	callback->func = func;
-	callback->data = data;
-	return (callback);
-}
+t_bool			g_evnt_propagate;
+
+#endif

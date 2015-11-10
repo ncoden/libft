@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/11/09 18:19:46 by ncoden           ###   ########.fr        #
+#    Updated: 2015/11/10 02:04:08 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -207,9 +207,9 @@ SRC =\
 	system/signals/ft_sigupdate.c\
 	system/signals/private/sgnl_mask_add.c\
 	system/signals/private/sgnl_mask_set.c\
-	utils/callback/ft_cbcall.c\
-	utils/callback/ft_cbnew.c\
-	utils/callback/ft_cbset.c\
+	utils/events/ft_cbcall.c\
+	utils/events/ft_cbnew.c\
+	utils/events/ft_cbset.c\
 	utils/events/ft_esrccall.c\
 	utils/events/ft_esrcget.c\
 	utils/events/ft_esrcrem.c\
@@ -217,6 +217,7 @@ SRC =\
 	utils/events/ft_evntcall.c\
 	utils/events/ft_evntnew.c\
 	utils/events/ft_evntset.c\
+	utils/events/ft_evntstop.c\
 	utils/events/ft_iesrcstrigger.c\
 	utils/events/ft_iesrctrigger.c\
 	utils/events/ft_ievnttrigger.c\
