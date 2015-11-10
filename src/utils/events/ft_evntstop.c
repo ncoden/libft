@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   callback.h                                         :+:      :+:    :+:   */
+/*   ft_evntstop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/07 15:36:58 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/09 21:33:13 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 22:33:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_CALLBACK_H
-# define LIBFT_CALLBACK_H
+#include "libft/utils/events.h"
+#include "libft/utils/events/private.h"
 
-typedef struct	s_cb
+void			ft_evntstop(void)
 {
-	void		(*func)(void *data, void *res);
-	void		*data;
-}				t_cb;
-
-t_cb			*ft_cbnew(void (*func)(void *, void *), void *data);
-void			ft_cbset(t_cb *callback, void (*func)(void *, void *),
-					void *data);
-void			ft_cbcall(t_cb *callback, void *res);
-
-#endif
+	g_evnt_propagate = FALSE;
+}

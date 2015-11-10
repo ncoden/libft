@@ -53,7 +53,8 @@ typedef struct	s_klst_esrc
 
 t_evnt			*ft_evntnew(void (*func)(void *), void *data);
 void			ft_evntset(t_evnt *event, void (*func)(void *), void *data);
-void			ft_evntcall(t_evnt *event);
+t_bool			ft_evntcall(t_evnt *event);
+void			ft_evntstop(void);
 
 t_bool			ft_ievnttrigger(t_ilst_evnt *events, int index);
 t_bool			ft_kevnttrigger(t_klst_evnt *events, char *key);

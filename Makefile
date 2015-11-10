@@ -217,6 +217,7 @@ SRC =\
 	utils/events/ft_evntcall.c\
 	utils/events/ft_evntnew.c\
 	utils/events/ft_evntset.c\
+	utils/events/ft_evntstop.c\
 	utils/events/ft_iesrcstrigger.c\
 	utils/events/ft_iesrctrigger.c\
 	utils/events/ft_ievnttrigger.c\

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_evntcall.c                                      :+:      :+:    :+:   */
+/*   private.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/09 22:35:25 by ncoden           ###   ########.fr       */
+/*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 22:33:44 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/utils/events.h"
-#include "libft/utils/events/private.h"
+#ifndef LIBFT_EVENTS_PRIVATE_H
+# define LIBFT_EVENTS_PRIVATE_H
 
-t_bool			ft_evntcall(t_evnt *event)
-{
-	t_bool		save;
-	t_bool		ret;
+# include "libft/basics/booleans.h"
 
-	save = g_evnt_propagate;
-	g_evnt_propagate = TRUE;
-	event->func(event->data);
-	ret = g_evnt_propagate;
-	g_evnt_propagate = save;
-	return (ret);
-}
+t_bool			g_evnt_propagate;
+
+#endif
