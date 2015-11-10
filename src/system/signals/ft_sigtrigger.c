@@ -14,7 +14,6 @@
 #include "libft/containers/list.h"
 #include "libft/system/signals.h"
 #include "libft/system/signals/private.h"
-#include "libft/utils/callback.h"
 #include "libft/utils/events.h"
 
 void			ft_sigtrigger(int sig)
