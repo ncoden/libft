@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 13:43:12 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 22:36:47 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/12/14 22:48:00 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ssize_t			_ft_ios_read_to_end(t_ios *ios, void *dst, size_t n,
 		else if (ret <= 0)
 			break;
 		if ((end = get_end(dst + i, ret)) != NULL)
-			ret = end - &dst[i];
+			ret = end - (dst + i);
 		i += ret;
 	}
 	ios->end = (end != NULL);
