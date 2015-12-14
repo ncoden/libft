@@ -209,6 +209,11 @@ SRC =\
 	system/signals/ft_sigupdate.c\
 	system/signals/private/sgnl_mask_add.c\
 	system/signals/private/sgnl_mask_set.c\
+	utils/buffer/ft_buffalloc.c\
+	utils/buffer/ft_buffclr.c\
+	utils/buffer/ft_buffgetfree.c\
+	utils/buffer/ft_buffgetused.c\
+	utils/buffer/ft_buffnew.c\
 	utils/events/ft_cbcall.c\
 	utils/events/ft_cbnew.c\
 	utils/events/ft_cbset.c\
