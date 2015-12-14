@@ -6,12 +6,14 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/03 14:25:06 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/15 21:50:36 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/12/14 17:21:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_MATH_H
 # define LIBFT_MATH_H
+
+# include <stddef.h>
 
 # define ABS(X)			((X > 0) ? X : -(X))
 # define MAX(N, M)		((N > M) ? N : M)
@@ -28,5 +30,7 @@ int				ft_power(int nbr, int power);
 
 double			ft_degtorad(double deg);
 double			ft_radtodeg(double rad);
+
+size_t			ft_sizemin(size_t nbr1, size_t nbr2);
 
 #endif

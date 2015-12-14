@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_iosnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/12/05 10:37:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft/utils/iostream.h"
+#include "libft/utils/buffer.h"
 
-int				ft_min(int nbr1, int nbr2)
+t_ios			*ft_iosnew(int fd)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
+	t_ios		*ios;
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if (!(ios = (t_ios *)malloc(sizeof(t_ios))))
+		return (NULL);
+	if (!ft_buffalloc(&ios->_buff))
+	{
+		free(ios);
+		return (NULL);
+	}
+	ios->_cursor = 0;
+	ios->fd = fd;
+	ios->end = FALSE;
+	return (ios);
 }

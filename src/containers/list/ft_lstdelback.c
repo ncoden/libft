@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_lstdelback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/06 17:01:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/16 00:11:12 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft/containers/list.h"
 
-int				ft_min(int nbr1, int nbr2)
+void			ft_lstdelback(t_lst **alst, void (*del)(void *data))
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
+	t_lst		*node;
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if ((node = ft_lstremback(alst)))
+	{
+		if (del)
+			(*del)(node->data);
+		free(node);
+	}
 }

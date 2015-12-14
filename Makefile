@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/11/10 02:04:08 by ncoden           ###   ########.fr        #
+#    Updated: 2015/12/14 17:27:40 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,6 +151,7 @@ SRC =\
 	containers/list/ft_lstaddfront.c\
 	containers/list/ft_lstadditer.c\
 	containers/list/ft_lstdel.c\
+	containers/list/ft_lstdelback.c\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
@@ -168,6 +169,7 @@ SRC =\
 	containers/list/ft_lstpushfront.c\
 	containers/list/ft_lstpushfront__.c\
 	containers/list/ft_lstpushiter.c\
+	containers/list/ft_lstremback.c\
 	containers/list/ft_lstshift.c\
 	containers/list/ft_lsttoarray.c\
 	containers/list/ft_strsplit_tolst.c\
@@ -207,6 +209,11 @@ SRC =\
 	system/signals/ft_sigupdate.c\
 	system/signals/private/sgnl_mask_add.c\
 	system/signals/private/sgnl_mask_set.c\
+	utils/buffer/ft_buffalloc.c\
+	utils/buffer/ft_buffclr.c\
+	utils/buffer/ft_buffgetfree.c\
+	utils/buffer/ft_buffgetused.c\
+	utils/buffer/ft_buffnew.c\
 	utils/events/ft_cbcall.c\
 	utils/events/ft_cbnew.c\
 	utils/events/ft_cbset.c\
@@ -228,6 +235,17 @@ SRC =\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
+	utils/iostream/ft_iosdatas.c\
+	utils/iostream/ft_iosgetline.c\
+	utils/iostream/ft_iosgetstr.c\
+	utils/iostream/ft_iosnew.c\
+	utils/iostream/ft_iosread.c\
+	utils/iostream/ft_iosreadline.c\
+	utils/iostream/ft_iosreadstr.c\
+	utils/iostream/private/_ft_ios_copy_buff.c\
+	utils/iostream/private/_ft_ios_copy_stock.c\
+	utils/iostream/private/_ft_ios_read_to_end.c\
+	utils/iostream/private/_ft_ios_stock_to_end.c\
 	utils/math/ft_degtorad.c\
 	utils/math/ft_max.c\
 	utils/math/ft_min.c\

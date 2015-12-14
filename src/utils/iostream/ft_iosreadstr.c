@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_iosreadstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/12/05 17:24:28 by ncoden            #+#    #+#             */
+/*   Updated: 2015/12/14 17:27:10 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
+#include "libft/basics/memory.h"
+#include "libft/utils/iostream.h"
+#include "libft/utils/iostream/private.h"
 
-int				ft_min(int nbr1, int nbr2)
+static void 	*str_end(void *mem, size_t size)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	return (ft_memchr(mem, '\0', size));
 }
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
+ssize_t			ft_iosreadstr(t_ios *ios, char *dst, size_t n)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	ssize_t		size;
+
+	if ((size = _ft_ios_read_to_end(ios, dst, n, &str_end)) == -1)
+		return (-1);
+	dst[size] = '\0';
+	return (size);
 }
