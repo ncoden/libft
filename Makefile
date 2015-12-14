@@ -151,6 +151,7 @@ SRC =\
 	containers/list/ft_lstaddfront.c\
 	containers/list/ft_lstadditer.c\
 	containers/list/ft_lstdel.c\
+	containers/list/ft_lstdelback.c\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
@@ -168,6 +169,7 @@ SRC =\
 	containers/list/ft_lstpushfront.c\
 	containers/list/ft_lstpushfront__.c\
 	containers/list/ft_lstpushiter.c\
+	containers/list/ft_lstremback.c\
 	containers/list/ft_lstshift.c\
 	containers/list/ft_lsttoarray.c\
 	containers/list/ft_strsplit_tolst.c\

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:21:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/11/08 16:25:25 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/11/15 23:50:02 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ t_lst			*ft_lstpushby(t_lst **alst, void *data,
 t_lst			*ft_lstdup(t_lst *lst);
 t_lst			*ft_lstmap(t_lst *lst, t_lst *(*f)(t_lst *node));
 
+t_lst			*ft_lstremback(t_lst **alst);
+
 void			ft_lstdel(t_lst **alst, void (*del)(void *data));
 void			ft_lstshift(t_lst **alst, void (*del)(void *data));
+void			ft_lstdelback(t_lst **alst, void (*del)(void *data));
 
 int				ft_lstlen(t_lst *lst);
 void			ft_lstiter(t_lst *lst, void (*f)(t_lst *node));
