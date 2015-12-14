@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_lstgetn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/06/09 14:46:31 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/08 16:18:53 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/containers/list.h"
 
-int				ft_min(int nbr1, int nbr2)
+t_lst			*ft_lstgetn(t_lst *lst, int index)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
-
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	while (lst != NULL && index > 0)
+	{
+		lst = lst->next;
+		index--;
+	}
+	return (lst);
 }

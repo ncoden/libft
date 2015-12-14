@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_sigdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/08 22:44:22 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft/system/signals.h"
 
-int				ft_min(int nbr1, int nbr2)
+void			ft_sigdel(t_hook_sig *hook, void (*del)(void *))
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	ft_sigrem(hook);
+	if (del)
+		(*del)(hook->event);
+	free(hook);
 }
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
+void			ft_sigsdel(t_hook_sigs *hook, void (*del)(void *))
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	ft_sigsrem(hook);
+	if (del)
+		(*del)(hook->callback);
+	free(hook);
 }

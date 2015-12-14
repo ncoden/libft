@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlunset.c                                     :+:      :+:    :+:   */
+/*   ft_sigmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/05 18:17:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:50:49 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/09 14:55:56 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 18:20:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/booleans.h"
-#include "libft/containers/stack.h"
+#include <stdint.h>
 #include "libft/system/signals.h"
 
-t_bool			ft_sgnlunset(void)
+void			ft_sigmove(t_hook_sig *hook, int sig)
 {
-	if (!(ft_stckleave(&g_sgnl_stckevnts)))
-		return (FALSE);
-	if (!(ft_stckleave(&g_sgnl_stckesrc)))
-		return (FALSE);
-	ft_sgnlclr();
-	if (g_sgnl_stckevnts->count > 0)
-	{
-		g_sgnl_evnts = ft_stckpull(&g_sgnl_stckevnts);
-		g_sgnl_esrc = ft_stckpull(&g_sgnl_stckesrc);
-		ft_sgnllisten(g_sgnl_evnts);
-	}
-	return (TRUE);
+	hook->sig = sig;
+	ft_sigupdate();
+}
+
+void			ft_sigsmove(t_hook_sigs *hook, int32_t sigs)
+{
+	hook->sigs = sigs;
+	ft_sigupdate();
 }

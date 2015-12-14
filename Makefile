@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/10/03 00:10:12 by ncoden           ###   ########.fr        #
+#    Updated: 2015/12/14 17:27:40 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -151,9 +151,12 @@ SRC =\
 	containers/list/ft_lstaddfront.c\
 	containers/list/ft_lstadditer.c\
 	containers/list/ft_lstdel.c\
+	containers/list/ft_lstdelback.c\
 	containers/list/ft_lstdup.c\
 	containers/list/ft_lstfold.c\
 	containers/list/ft_lstget.c\
+	containers/list/ft_lstgetn.c\
+	containers/list/ft_lstgetprev.c\
 	containers/list/ft_lstiter.c\
 	containers/list/ft_lstlen.c\
 	containers/list/ft_lstmap.c\
@@ -166,6 +169,7 @@ SRC =\
 	containers/list/ft_lstpushfront.c\
 	containers/list/ft_lstpushfront__.c\
 	containers/list/ft_lstpushiter.c\
+	containers/list/ft_lstremback.c\
 	containers/list/ft_lstshift.c\
 	containers/list/ft_lsttoarray.c\
 	containers/list/ft_strsplit_tolst.c\
@@ -195,21 +199,24 @@ SRC =\
 	containers/tree/ft_mtpushnext.c\
 	system/endian/ft_getendian.c\
 	system/environment/ft_envget.c\
-	system/signals/ft_sgnlclr.c\
-	system/signals/ft_sgnlclrone.c\
-	system/signals/ft_sgnlcrush.c\
-	system/signals/ft_sgnldel.c\
-	system/signals/ft_sgnldelone.c\
-	system/signals/ft_sgnlesrcget.c\
-	system/signals/ft_sgnlesrcset.c\
-	system/signals/ft_sgnlget.c\
-	system/signals/ft_sgnlhook.c\
-	system/signals/ft_sgnllisten.c\
-	system/signals/ft_sgnlpull.c\
-	system/signals/ft_sgnlpush.c\
-	system/signals/ft_sgnlset.c\
-	system/signals/ft_sgnltrigger.c\
-	system/signals/ft_sgnlunset.c\
+	system/signals/ft_sigadd.c\
+	system/signals/ft_sigdel.c\
+	system/signals/ft_sighook.c\
+	system/signals/ft_sigmove.c\
+	system/signals/ft_signew.c\
+	system/signals/ft_sigrem.c\
+	system/signals/ft_sigtrigger.c\
+	system/signals/ft_sigupdate.c\
+	system/signals/private/sgnl_mask_add.c\
+	system/signals/private/sgnl_mask_set.c\
+	utils/buffer/ft_buffalloc.c\
+	utils/buffer/ft_buffclr.c\
+	utils/buffer/ft_buffgetfree.c\
+	utils/buffer/ft_buffgetused.c\
+	utils/buffer/ft_buffnew.c\
+	utils/events/ft_cbcall.c\
+	utils/events/ft_cbnew.c\
+	utils/events/ft_cbset.c\
 	utils/events/ft_esrccall.c\
 	utils/events/ft_esrcget.c\
 	utils/events/ft_esrcrem.c\
@@ -217,6 +224,7 @@ SRC =\
 	utils/events/ft_evntcall.c\
 	utils/events/ft_evntnew.c\
 	utils/events/ft_evntset.c\
+	utils/events/ft_evntstop.c\
 	utils/events/ft_iesrcstrigger.c\
 	utils/events/ft_iesrctrigger.c\
 	utils/events/ft_ievnttrigger.c\
@@ -227,6 +235,17 @@ SRC =\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
+	utils/iostream/ft_iosdatas.c\
+	utils/iostream/ft_iosgetline.c\
+	utils/iostream/ft_iosgetstr.c\
+	utils/iostream/ft_iosnew.c\
+	utils/iostream/ft_iosread.c\
+	utils/iostream/ft_iosreadline.c\
+	utils/iostream/ft_iosreadstr.c\
+	utils/iostream/private/_ft_ios_copy_buff.c\
+	utils/iostream/private/_ft_ios_copy_stock.c\
+	utils/iostream/private/_ft_ios_read_to_end.c\
+	utils/iostream/private/_ft_ios_stock_to_end.c\
 	utils/math/ft_degtorad.c\
 	utils/math/ft_max.c\
 	utils/math/ft_min.c\

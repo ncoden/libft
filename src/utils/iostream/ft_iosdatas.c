@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlcrush.c                                     :+:      :+:    :+:   */
+/*   ft_iosdatas.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/17 18:27:41 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:39:06 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/13 18:46:39 by ncoden            #+#    #+#             */
+/*   Updated: 2015/12/14 17:35:27 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <signal.h>
-#include "libft/system/signals.h"
-#include "libft/utils/events.h"
+#include <unistd.h>
+#include "libft/basics/booleans.h"
+#include "libft/utils/buffer.h"
+#include "libft/utils/iostream.h"
 
-void			ft_sgnlcrush(t_ilst_evnt *events)
+t_bool			ft_iosdatas(t_ios *ios)
 {
-	ft_sgnldel();
-	g_sgnl_evnts = events;
-	while (events != NULL)
+	ssize_t		copied;
+
+	if (ft_buffgetused(&ios->_buff) > ios->_cursor)
+		return (TRUE);
+	copied = read(ios->fd, ios->_buff.end, ft_buffgetfree(&ios->_buff));
+	if (copied > 0)
 	{
-		signal(events->index, (void (*)(int))&ft_sgnltrigger);
-		events = events->next;
+		ios->_buff.end += copied;
+		return (TRUE);
 	}
+	return (FALSE);
 }

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlhook.c                                      :+:      :+:    :+:   */
+/*   ft_sigupdate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/15 16:11:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:44:13 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/09 02:16:31 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/09 18:27:25 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include "libft/containers/ilst.h"
+#include <stddef.h>
+#include <stdint.h>
 #include "libft/system/signals.h"
-#include "libft/utils/events.h"
+#include "libft/system/signals/private.h"
 
-void			ft_sgnlhook(char sig, void (*func)(void *), void *data)
+void			ft_sigupdate(void)
 {
-	t_ilst_evnt	*event;
+	int32_t			mask;
+	t_lst_sgnl_hook	*node;
 
-	if (func)
+	mask = 0;
+	node = g_sgnl_hooks;
+	while (node != NULL)
 	{
-		if ((event = (t_ilst_evnt *)ft_ilstpush__(sizeof(t_ilst_evnt),
-			(t_ilst **)&g_sgnl_evnts, sig)))
-		{
-			event->event.func = func;
-			event->event.data = data;
-			signal(sig, (void (*)(int))&ft_sgnltrigger);
-		}
+		if (node->type == HOOK_SIG)
+			mask |= 1 << ((t_hook_sig *)node->hook)->sig;
+		else
+			mask |= ((t_hook_sigs *)node->hook)->sigs;
+		node = node->next;
 	}
+	sgnl_mask_set(mask);
 }

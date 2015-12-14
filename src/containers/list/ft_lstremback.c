@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_lstremback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/06 17:01:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/16 00:06:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/containers/list.h"
 
-int				ft_min(int nbr1, int nbr2)
+t_lst			*ft_lstremback(t_lst **alst)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
+	t_lst		*node;
+	t_lst		*prev;
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if ((prev = *alst) == NULL)
+		return (NULL);
+	if ((node = prev->next) == NULL)
+	{
+		*alst = NULL;
+		return (prev);
+	}
+	while (node->next != NULL)
+	{
+		prev = node;
+		node = node->next;
+	}
+	prev->next = NULL;
+	return (node);
 }

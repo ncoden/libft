@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlclr.c                                       :+:      :+:    :+:   */
+/*   ft_cbcall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/17 19:11:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:38:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/10 02:02:38 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <signal.h>
-#include "libft/containers/stack.h"
-#include "libft/system/signals.h"
 #include "libft/utils/events.h"
+#include "libft/utils/events/private.h"
 
-t_ilst_evnt		*ft_sgnlclr(void)
+t_bool			ft_cbcall(t_cb *callback, void *res)
 {
-	t_ilst_evnt		*ret;
+	t_bool		save;
+	t_bool		ret;
 
-	ret = g_sgnl_evnts;
-	while (g_sgnl_evnts != NULL)
-	{
-		signal(g_sgnl_evnts->index, SIG_DFL);
-		g_sgnl_evnts = g_sgnl_evnts->next;
-	}
-	g_sgnl_evnts = NULL;
-	if (g_sgnl_stckevnts)
-		ft_stckiter(g_sgnl_stckevnts, (void (*)(void *))&ft_sgnllisten);
+	save = g_evnt_propagate;
+	g_evnt_propagate = TRUE;
+	callback->func(callback->data, res);
+	ret = g_evnt_propagate;
+	g_evnt_propagate = save;
 	return (ret);
 }

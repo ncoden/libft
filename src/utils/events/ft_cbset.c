@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlpull.c                                      :+:      :+:    :+:   */
+/*   ft_cbset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/29 14:19:23 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:45:31 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/10 02:03:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/containers/stack.h"
-#include "libft/system/signals.h"
 #include "libft/utils/events.h"
 
-t_ilst_evnt		*ft_sgnlpull(void)
+void			ft_cbset(t_cb *callback, void (*func)(void *, void *),
+					void *data)
 {
-	ft_sgnlset(ft_stckpull(&g_sgnl_stckevnts));
-	g_sgnl_esrc = ft_stckpull(&g_sgnl_stckesrc);
-	return (g_sgnl_evnts);
+	callback->func = func;
+	callback->data = data;
 }

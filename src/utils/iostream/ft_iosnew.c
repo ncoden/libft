@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnllisten.c                                    :+:      :+:    :+:   */
+/*   ft_iosnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/29 15:04:32 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:44:42 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/12/05 10:37:26 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <signal.h>
-#include "libft/system/signals.h"
-#include "libft/utils/events.h"
+#include <stdlib.h>
+#include "libft/utils/iostream.h"
+#include "libft/utils/buffer.h"
 
-void			ft_sgnllisten(t_ilst_evnt *evnts)
+t_ios			*ft_iosnew(int fd)
 {
-	while (evnts != NULL)
+	t_ios		*ios;
+
+	if (!(ios = (t_ios *)malloc(sizeof(t_ios))))
+		return (NULL);
+	if (!ft_buffalloc(&ios->_buff))
 	{
-		signal(evnts->index, (void (*)(int))&ft_sgnltrigger);
-		evnts = evnts->next;
+		free(ios);
+		return (NULL);
 	}
+	ios->_cursor = 0;
+	ios->fd = fd;
+	ios->end = FALSE;
+	return (ios);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_cbnew.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/05/08 12:26:49 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/10 02:02:57 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft/utils/events.h"
 
-int				ft_min(int nbr1, int nbr2)
+t_cb			*ft_cbnew(void (*func)(void *, void *), void *data)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
+	t_cb		*callback;
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if (!(callback = (t_cb *)malloc(sizeof(t_cb))))
+		return (NULL);
+	callback->func = func;
+	callback->data = data;
+	return (callback);
 }

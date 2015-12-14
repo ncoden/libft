@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sgnlesrcset.c                                   :+:      :+:    :+:   */
+/*   ft_buffclr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 13:20:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 18:42:51 by ncoden           ###   ########.fr       */
+/*   Created: 2015/11/18 00:38:29 by ncoden            #+#    #+#             */
+/*   Updated: 2015/11/18 00:39:31 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/types.h"
-#include "libft/system/signals.h"
+#include <stddef.h>
+#include "libft/utils/buffer.h"
 
-void			ft_sgnlesrcset(t_tdata *esrc)
+inline void		ft_buffclr(t_buff *buff)
 {
-	g_sgnl_esrc = esrc;
+	buff->end = buff->begin;
 }
