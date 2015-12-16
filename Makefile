@@ -231,7 +231,6 @@ SRC =\
 	utils/events/ft_kesrcstrigger.c\
 	utils/events/ft_kesrctrigger.c\
 	utils/events/ft_kevnttrigger.c\
-	utils/file/ft_putfile.s\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
