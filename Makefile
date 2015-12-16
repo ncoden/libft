@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/12/14 17:27:40 by ncoden           ###   ########.fr        #
+#    Updated: 2015/12/16 01:18:07 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -215,20 +215,10 @@ SRC =\
 	utils/events/ft_cbcall.c\
 	utils/events/ft_cbnew.c\
 	utils/events/ft_cbset.c\
-	utils/events/ft_esrccall.c\
-	utils/events/ft_esrcget.c\
-	utils/events/ft_esrcrem.c\
-	utils/events/ft_esrcset.c\
 	utils/events/ft_evntcall.c\
 	utils/events/ft_evntnew.c\
 	utils/events/ft_evntset.c\
 	utils/events/ft_evntstop.c\
-	utils/events/ft_iesrcstrigger.c\
-	utils/events/ft_iesrctrigger.c\
-	utils/events/ft_ievnttrigger.c\
-	utils/events/ft_kesrcstrigger.c\
-	utils/events/ft_kesrctrigger.c\
-	utils/events/ft_kevnttrigger.c\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
