@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/12/16 01:18:07 by ncoden           ###   ########.fr        #
+#    Updated: 2016/01/05 18:00:24 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,23 +60,17 @@ SRC =\
 	basics/memory/transform/ft_memcpy.s\
 	basics/memory/transform/ft_memmove.c\
 	basics/memory/transform/ft_memset.s\
-	basics/numbers/integers/ft_atoi.c\
-	basics/numbers/integers/ft_itoa.c\
-	basics/numbers/integers/ft_nbrbaselen.c\
-	basics/numbers/integers/ft_nbrlen.c\
-	basics/numbers/integers/ft_putnbr.s\
-	basics/numbers/integers/ft_putnbr_fd.s\
-	basics/numbers/integers/ft_putnbrbase.c\
-	basics/numbers/integers/ft_putnbrdigits.c\
-	basics/numbers/llongs/ft_llongbaselen.c\
-	basics/numbers/llongs/ft_llonglen.c\
-	basics/numbers/llongs/ft_putllong.c\
-	basics/numbers/pointers/ft_ptrbaselen.c\
-	basics/numbers/pointers/ft_ptrlen.c\
-	basics/numbers/pointers/ft_putptr.c\
-	basics/numbers/ullong/ft_putullong.c\
-	basics/numbers/ullong/ft_ullongbaselen.c\
-	basics/numbers/ullong/ft_ullonglen.c\
+	basics/numbers/convers/ft_atoi.c\
+	basics/numbers/convers/ft_itoa.c\
+	basics/numbers/maths/baselen.c\
+	basics/numbers/maths/len.c\
+	basics/numbers/output/ft_putllong.c\
+	basics/numbers/output/ft_putptr.c\
+	basics/numbers/output/ft_putullong.c\
+	basics/numbers/output/integers/ft_putnbr.s\
+	basics/numbers/output/integers/ft_putnbr_fd.s\
+	basics/numbers/output/integers/ft_putnbrbase.c\
+	basics/numbers/output/integers/ft_putnbrdigits.c\
 	basics/strings/create/ft_strdiv.c\
 	basics/strings/create/ft_strdup.s\
 	basics/strings/create/ft_strjoin.c\
