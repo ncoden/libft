@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2016/01/05 18:05:52 by ncoden           ###   ########.fr        #
+#    Updated: 2016/01/05 18:13:35 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -227,12 +227,10 @@ SRC =\
 	utils/iostream/private/_ft_ios_copy_stock.c\
 	utils/iostream/private/_ft_ios_read_to_end.c\
 	utils/iostream/private/_ft_ios_stock_to_end.c\
-	utils/math/ft_degtorad.c\
 	utils/math/ft_max.c\
 	utils/math/ft_min.c\
 	utils/math/ft_mod.c\
 	utils/math/ft_power.c\
-	utils/math/ft_radtodeg.c\
 	utils/parse/ft_prschr.c\
 	utils/parse/ft_prschrs.c\
 	utils/parse/ft_prsichrs.c\

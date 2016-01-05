@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/03 14:25:06 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:21:59 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:13:51 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ int				ft_max(int n1, int n2);
 
 int				ft_mod(int n1, int n2);
 int				ft_power(int nbr, int power);
-
-double			ft_degtorad(double deg);
-double			ft_radtodeg(double rad);
 
 size_t			ft_sizemin(size_t nbr1, size_t nbr2);
 
