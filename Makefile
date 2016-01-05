@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2016/01/05 18:00:24 by ncoden           ###   ########.fr        #
+#    Updated: 2016/01/05 18:05:52 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,8 +65,8 @@ SRC =\
 	basics/numbers/maths/baselen.c\
 	basics/numbers/maths/len.c\
 	basics/numbers/output/ft_putllong.c\
-	basics/numbers/output/ft_putptr.c\
 	basics/numbers/output/ft_putullong.c\
+	basics/numbers/output/ft_putsize.c\
 	basics/numbers/output/integers/ft_putnbr.s\
 	basics/numbers/output/integers/ft_putnbr_fd.s\
 	basics/numbers/output/integers/ft_putnbrbase.c\

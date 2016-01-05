@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2016/01/05 17:41:05 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:04:12 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ unsigned int	ft_ullonglen(unsigned long long nbr)
 	return (len);
 }
 
-unsigned int	ft_ptrlen(size_t nbr)
+unsigned int	ft_sizelen(size_t nbr)
 {
 	unsigned int	len;
 

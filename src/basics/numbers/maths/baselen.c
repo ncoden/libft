@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2016/01/05 17:42:31 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:04:07 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ unsigned int	ft_ullongbaselen(unsigned long long nbr, int base)
 	return (len);
 }
 
-unsigned int	ft_ptrbaselen(size_t nbr, int base)
+unsigned int	ft_sizebaselen(size_t nbr, int base)
 {
 	unsigned int	len;
 

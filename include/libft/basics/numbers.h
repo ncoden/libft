@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/22 10:38:54 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/07 12:02:22 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:05:24 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void			ft_putnbr_fd(int nbr, int fd);
 void			ft_putnbrbase(int nbr, int base);
 void			ft_putnbrdigits(int nbr, const char *digits);
 
-unsigned int	ft_ptrlen(size_t nbr);
-unsigned int	ft_ptrbaselen(size_t nbr, unsigned int base);
-void			ft_putptr(long long nbr);
+unsigned int	ft_sizelen(size_t nbr);
+unsigned int	ft_sizebaselen(size_t nbr, unsigned int base);
+void			ft_putsize(size_t nbr);
 
 unsigned int	ft_llonglen(long long nbr);
 unsigned int	ft_llongbaselen(long long nbr, int base);

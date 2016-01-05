@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 15:29:04 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/06 19:27:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:06:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/basics/chars.h"
 
-void			ft_putptr(size_t nbr)
+void			ft_putsize(size_t nbr)
 {
 	if (nbr < 10)
 		ft_putchr('0' + nbr);
 	else
 	{
-		ft_putptr(nbr / 10);
+		ft_putsize(nbr / 10);
 		ft_putchr('0' + (nbr % 10));
 	}
 }
