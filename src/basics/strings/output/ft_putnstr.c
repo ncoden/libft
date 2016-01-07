@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 #include "libft/basics/strings.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 void			ft_putnstr(const char *s, size_t n)
 {

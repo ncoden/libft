@@ -14,7 +14,7 @@
 #include "libft/basics/memory.h"
 #include "libft/containers/list.h"
 #include "libft/utils/iostream.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 size_t			_ft_ios_copy_stock(t_ios *ios, t_lst *stock, void *dst,
 					size_t n)

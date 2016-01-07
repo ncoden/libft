@@ -13,7 +13,7 @@
 #include "libft/basics/memory.h"
 #include "libft/utils/buffer.h"
 #include "libft/utils/iostream.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 size_t			_ft_ios_copy_buff(t_ios *ios, void *dst, size_t n)
 {

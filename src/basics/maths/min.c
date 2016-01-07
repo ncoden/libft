@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrdigits.c                                  :+:      :+:    :+:   */
+/*   min.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/07 21:28:01 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
+/*   Updated: 2016/01/05 19:04:59 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft/basics/chars.h"
-#include "libft/basics/strings.h"
 #include "libft/basics/maths.h"
 
-static void		print_next_digit(unsigned int nbr, size_t base,
-					const char *digits)
+inline int					ft_nbrmin(int n1, int n2)
 {
-	if (nbr >= base)
-		print_next_digit(nbr / base, base, digits);
-	ft_putchr(digits[nbr % base]);
+	return ((n1 < n2) ? n1 : n2);
 }
 
-void			ft_putnbrdigits(int nbr, const char *digits)
+inline long long			ft_llongmin(long long n1, long long n2)
 {
-	if (nbr < 0)
-		ft_putchr('-');
-	print_next_digit(ABS(nbr), ft_strlen(digits), digits);
+	return ((n1 < n2) ? n1 : n2);
+}
+
+inline unsigned long long	ft_ullongmin(unsigned long long n1,
+								unsigned long long n2)
+{
+	return ((n1 < n2) ? n1 : n2);
+}
+
+inline size_t				ft_sizemin(size_t n1, size_t n2)
+{
+	return ((n1 < n2) ? n1 : n2);
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 unsigned int	ft_nbrbaselen(int nbr, int base)
 {

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_nbrpow.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/19 11:15:51 by ncoden            #+#    #+#             */
+/*   Updated: 2016/01/05 18:35:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int				ft_min(int nbr1, int nbr2)
+int				ft_nbrpow(int nbr, int power)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
-}
+	int		result;
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
-{
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if (power < 0)
+		return (0);
+	result = 1;
+	while (power > 0)
+	{
+		result *= nbr;
+		power--;
+	}
+	return (result);
 }

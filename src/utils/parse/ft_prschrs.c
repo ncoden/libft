@@ -12,7 +12,7 @@
 
 #include "libft/basics/bits.h"
 #include "libft/basics/strings.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 t_bits			ft_prschrs(char **cursor, const char *chrs)
 {

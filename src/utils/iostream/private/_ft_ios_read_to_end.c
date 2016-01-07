@@ -16,7 +16,7 @@
 #include "libft/utils/buffer.h"
 #include "libft/utils/iostream.h"
 #include "libft/utils/iostream/private.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 static inline void	save_overflow(t_ios *ios, void *mem, size_t size)
 {

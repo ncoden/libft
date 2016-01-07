@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2016/01/05 18:13:35 by ncoden           ###   ########.fr        #
+#    Updated: 2016/01/05 18:38:00 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,10 @@ SRC =\
 	basics/chars/output/ft_putspace.c\
 	basics/chars/transform/ft_tolower.s\
 	basics/chars/transform/ft_toupper.s\
+	basics/maths/integers/ft_nbrmod.c\
+	basics/maths/integers/ft_nbrpow.c\
+	basics/maths/max.c\
+	basics/maths/min.c\
 	basics/memory/create/ft_memalloc.c\
 	basics/memory/create/ft_memdup.c\
 	basics/memory/delete/ft_memdel.c\
@@ -227,10 +231,6 @@ SRC =\
 	utils/iostream/private/_ft_ios_copy_stock.c\
 	utils/iostream/private/_ft_ios_read_to_end.c\
 	utils/iostream/private/_ft_ios_stock_to_end.c\
-	utils/math/ft_max.c\
-	utils/math/ft_min.c\
-	utils/math/ft_mod.c\
-	utils/math/ft_power.c\
 	utils/parse/ft_prschr.c\
 	utils/parse/ft_prschrs.c\
 	utils/parse/ft_prsichrs.c\
