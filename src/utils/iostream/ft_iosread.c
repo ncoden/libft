@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include "libft/utils/iostream.h"
 #include "libft/utils/iostream/private.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 ssize_t			ft_iosread(t_ios *ios, void *dst, size_t n)
 {

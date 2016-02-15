@@ -6,7 +6,7 @@
 #    By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 18:00:49 by ncoden            #+#    #+#              #
-#    Updated: 2015/12/14 17:27:40 by ncoden           ###   ########.fr        #
+#    Updated: 2016/01/05 18:38:00 by ncoden           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,10 @@ SRC =\
 	basics/chars/output/ft_putspace.c\
 	basics/chars/transform/ft_tolower.s\
 	basics/chars/transform/ft_toupper.s\
+	basics/maths/integers/ft_nbrmod.c\
+	basics/maths/integers/ft_nbrpow.c\
+	basics/maths/max.c\
+	basics/maths/min.c\
 	basics/memory/create/ft_memalloc.c\
 	basics/memory/create/ft_memdup.c\
 	basics/memory/delete/ft_memdel.c\
@@ -60,23 +64,17 @@ SRC =\
 	basics/memory/transform/ft_memcpy.s\
 	basics/memory/transform/ft_memmove.c\
 	basics/memory/transform/ft_memset.s\
-	basics/numbers/integers/ft_atoi.c\
-	basics/numbers/integers/ft_itoa.c\
-	basics/numbers/integers/ft_nbrbaselen.c\
-	basics/numbers/integers/ft_nbrlen.c\
-	basics/numbers/integers/ft_putnbr.s\
-	basics/numbers/integers/ft_putnbr_fd.s\
-	basics/numbers/integers/ft_putnbrbase.c\
-	basics/numbers/integers/ft_putnbrdigits.c\
-	basics/numbers/llongs/ft_llongbaselen.c\
-	basics/numbers/llongs/ft_llonglen.c\
-	basics/numbers/llongs/ft_putllong.c\
-	basics/numbers/pointers/ft_ptrbaselen.c\
-	basics/numbers/pointers/ft_ptrlen.c\
-	basics/numbers/pointers/ft_putptr.c\
-	basics/numbers/ullong/ft_putullong.c\
-	basics/numbers/ullong/ft_ullongbaselen.c\
-	basics/numbers/ullong/ft_ullonglen.c\
+	basics/numbers/convers/ft_atoi.c\
+	basics/numbers/convers/ft_itoa.c\
+	basics/numbers/maths/baselen.c\
+	basics/numbers/maths/len.c\
+	basics/numbers/output/ft_putllong.c\
+	basics/numbers/output/ft_putullong.c\
+	basics/numbers/output/ft_putsize.c\
+	basics/numbers/output/integers/ft_putnbr.s\
+	basics/numbers/output/integers/ft_putnbr_fd.s\
+	basics/numbers/output/integers/ft_putnbrbase.c\
+	basics/numbers/output/integers/ft_putnbrdigits.c\
 	basics/strings/create/ft_strdiv.c\
 	basics/strings/create/ft_strdup.s\
 	basics/strings/create/ft_strjoin.c\
@@ -112,8 +110,6 @@ SRC =\
 	basics/strings/transform/ft_strncat.c\
 	basics/strings/transform/ft_strncpy.c\
 	basics/strings/transform/ft_strreplace.c\
-	basics/types/ft_sdatanew.c\
-	basics/types/ft_tdatanew.c\
 	containers/ilst/ft_ilstadd.c\
 	containers/ilst/ft_ilstcrush.c\
 	containers/ilst/ft_ilstdelone.c\
@@ -217,21 +213,10 @@ SRC =\
 	utils/events/ft_cbcall.c\
 	utils/events/ft_cbnew.c\
 	utils/events/ft_cbset.c\
-	utils/events/ft_esrccall.c\
-	utils/events/ft_esrcget.c\
-	utils/events/ft_esrcrem.c\
-	utils/events/ft_esrcset.c\
 	utils/events/ft_evntcall.c\
 	utils/events/ft_evntnew.c\
 	utils/events/ft_evntset.c\
 	utils/events/ft_evntstop.c\
-	utils/events/ft_iesrcstrigger.c\
-	utils/events/ft_iesrctrigger.c\
-	utils/events/ft_ievnttrigger.c\
-	utils/events/ft_kesrcstrigger.c\
-	utils/events/ft_kesrctrigger.c\
-	utils/events/ft_kevnttrigger.c\
-	utils/file/ft_putfile.s\
 	utils/file/ft_readline.c\
 	utils/file/ft_readtoarray.c\
 	utils/file/ft_readtolst.c\
@@ -246,12 +231,6 @@ SRC =\
 	utils/iostream/private/_ft_ios_copy_stock.c\
 	utils/iostream/private/_ft_ios_read_to_end.c\
 	utils/iostream/private/_ft_ios_stock_to_end.c\
-	utils/math/ft_degtorad.c\
-	utils/math/ft_max.c\
-	utils/math/ft_min.c\
-	utils/math/ft_mod.c\
-	utils/math/ft_power.c\
-	utils/math/ft_radtodeg.c\
 	utils/parse/ft_prschr.c\
 	utils/parse/ft_prschrs.c\
 	utils/parse/ft_prsichrs.c\

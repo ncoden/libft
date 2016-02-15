@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_putnbrdigits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/24 15:05:20 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:19:05 by ncoden           ###   ########.fr       */
+/*   Created: 2015/04/04 19:14:17 by ncoden            #+#    #+#             */
+/*   Updated: 2015/09/07 21:28:01 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft/basics/chars.h"
+#include "libft/basics/strings.h"
+#include "libft/basics/maths.h"
 
-int				ft_min(int nbr1, int nbr2)
+static void		print_next_digit(unsigned int nbr, size_t base,
+					const char *digits)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if (nbr >= base)
+		print_next_digit(nbr / base, base, digits);
+	ft_putchr(digits[nbr % base]);
 }
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2)
+void			ft_putnbrdigits(int nbr, const char *digits)
 {
-	return ((nbr1 < nbr2) ? nbr1 : nbr2);
+	if (nbr < 0)
+		ft_putchr('-');
+	print_next_digit(ABS(nbr), ft_strlen(digits), digits);
 }

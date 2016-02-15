@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sdatanew.c                                      :+:      :+:    :+:   */
+/*   ft_nbrmod.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 11:22:16 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 00:32:27 by ncoden           ###   ########.fr       */
+/*   Created: 2015/09/15 21:47:41 by ncoden            #+#    #+#             */
+/*   Updated: 2016/01/05 18:34:49 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft/basics/types.h"
-
-t_sdata			*ft_sdatanew(size_t size, void *data)
+int				ft_nbrmod(int n1, int n2)
 {
-	t_sdata		*new;
+    int			r;
 
-	if ((new = (t_sdata *)malloc(sizeof(t_sdata))))
-	{
-		new->size = size;
-		new->data = data;
-		return (new);
-	}
-	return (NULL);
+	r = n1 % n2;
+	return (r < 0 ? r + n2 : r);
 }

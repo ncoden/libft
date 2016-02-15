@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ievnttrigger.c                                  :+:      :+:    :+:   */
+/*   ft_putsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 19:57:43 by ncoden            #+#    #+#             */
-/*   Updated: 2015/08/28 21:52:43 by ncoden           ###   ########.fr       */
+/*   Created: 2015/03/29 15:29:04 by ncoden            #+#    #+#             */
+/*   Updated: 2016/01/05 18:06:14 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/basics/booleans.h"
-#include "libft/containers/ilst.h"
-#include "libft/utils/events.h"
+#include "libft/basics/chars.h"
 
-t_bool			ft_ievnttrigger(t_ilst_evnt *events, int index)
+void			ft_putsize(size_t nbr)
 {
-	t_ilst_evnt	*lst;
-
-	if (events)
+	if (nbr < 10)
+		ft_putchr('0' + nbr);
+	else
 	{
-		if ((lst = (t_ilst_evnt *)ft_ilstget((t_ilst *)events, index)))
-		{
-			lst->event.func(lst->event.data);
-			return (TRUE);
-		}
+		ft_putsize(nbr / 10);
+		ft_putchr('0' + (nbr % 10));
 	}
-	return (FALSE);
 }

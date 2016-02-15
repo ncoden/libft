@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.h                                             :+:      :+:    :+:   */
+/*   maths.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/03 14:25:06 by ncoden            #+#    #+#             */
-/*   Updated: 2015/12/14 17:21:59 by ncoden           ###   ########.fr       */
+/*   Updated: 2016/01/05 18:43:44 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_MATH_H
-# define LIBFT_MATH_H
+#ifndef LIBFT_MATHS_H
+# define LIBFT_MATHS_H
 
 # include <stddef.h>
 
@@ -22,15 +22,21 @@
 # define LIM(N, MN, MX)	(MAX(MIN(N, MX), MN))
 # define UPDIV(N, D)	(((N - 1) / D) + 1)
 
-int				ft_min(int n1, int n2);
-int				ft_max(int n1, int n2);
+int					ft_nbrmin(int n1, int n2);
+int					ft_nbrmax(int n1, int n2);
 
-int				ft_mod(int n1, int n2);
-int				ft_power(int nbr, int power);
+long long			ft_llongmin(long long n1, long long n2);
+long long			ft_llongmax(long long n1, long long n2);
 
-double			ft_degtorad(double deg);
-double			ft_radtodeg(double rad);
+unsigned long long	ft_ullongmin(unsigned long long n1,
+								unsigned long long n2);
+unsigned long long	ft_ullongmax(unsigned long long n1,
+								unsigned long long n2);
 
-size_t			ft_sizemin(size_t nbr1, size_t nbr2);
+size_t				ft_sizemin(size_t n1, size_t n2);
+size_t				ft_sizemax(size_t n1, size_t n2);
+
+int					ft_nbrmod(int n1, int n2);
+int					ft_nbrpow(int nbr, int power);
 
 #endif

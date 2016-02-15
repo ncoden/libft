@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft/basics/chars.h"
-#include "libft/utils/math.h"
+#include "libft/basics/maths.h"
 
 static inline void	print_digit(unsigned char digit)
 {

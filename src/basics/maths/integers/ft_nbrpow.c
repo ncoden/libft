@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_nbrpow.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/18 11:39:05 by ncoden            #+#    #+#             */
-/*   Updated: 2015/09/06 19:08:31 by ncoden           ###   ########.fr       */
+/*   Created: 2014/11/19 11:15:51 by ncoden            #+#    #+#             */
+/*   Updated: 2016/01/05 18:35:42 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_nbrlen(int nbr)
+int				ft_nbrpow(int nbr, int power)
 {
-	unsigned int	len;
+	int		result;
 
-	len = (nbr < 0) ? 2 : 1;
-	while (nbr < -9 || nbr > 9)
+	if (power < 0)
+		return (0);
+	result = 1;
+	while (power > 0)
 	{
-		nbr /= 10;
-		len++;
+		result *= nbr;
+		power--;
 	}
-	return (len);
+	return (result);
 }
